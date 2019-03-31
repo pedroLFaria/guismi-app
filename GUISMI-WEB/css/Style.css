@@ -1,13 +1,17 @@
 body {
+    background-color:grey;
     margin: 0;
 }
 .character {
 }
-
 .character-header {
+    margin-left:98px;
+    background-color:grey;
     top:0;
-    position: static;
+    position: sticky;
     height: 60px;
+    border-bottom:solid black;
+
 }
 .character-header-info1{
     position:absolute;
@@ -27,7 +31,6 @@ body {
     display:inline;
     font-size:larger;
 }
-
 .character-sidebar {
     width:100px;
     float: left;
@@ -38,6 +41,7 @@ body {
     height: 100%;
 }
 .character-main {
+    background-color:white;
     margin-left: 98px;
     height:1000px;
     border-top: solid black;
