@@ -13,6 +13,8 @@ body {
     border-bottom:solid black;
 }
 .container {
+    width:50px;
+    padding-left:10px;
     cursor: pointer;
 }
 .character-header-dropdown {
@@ -24,7 +26,7 @@ body {
     list-style-type: none;
 }
 .bar1, .bar2, .bar3 {
-    width: 35px;
+    width: 40px;
     height: 5px;
     background-color: #333;
     margin: 6px 0;
@@ -79,29 +81,8 @@ body {
     display:inline;
     font-size:larger;
 }
-/*.character-sidebar {
-    width:100px;
-    float: left;
-    position: fixed;
-    
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}*/
 .character-main {
+    margin-top:9px;
     background-color:white;
     height:1000px;
-    border-top: solid black;
-    border-left: solid black;
-    text-align: center;
 }
-/*.character-sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.character-sidebar li {
-    overflow: margin:1px;
-}
-
-*/
