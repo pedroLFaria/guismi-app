@@ -1,0 +1,32 @@
+.character-main {
+    padding: 10px;
+    background-color:white;
+    height: 1000px;
+}
+.character-main div{
+    margin-bottom:5px;
+}
+.character-main-descendencias{
+    display:inline-block;
+}
+.character-main-descendencias > input{
+    display:block;
+}
+.character-main-historia{
+    display:inline-block;
+}
+.character-main-caractFisicas{
+    display:inline-block;
+}
+.character-main-idade{
+    display:inline-block;
+}
+.character-main-idade > input{
+    width:45px;
+}
+.character-main-caractFisicas > label{
+    display:block;
+}
+.character-main-historia > label{
+    display:block;
+}

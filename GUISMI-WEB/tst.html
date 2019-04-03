@@ -2,6 +2,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href='css/style-main-caracteristicas.css'>
+    <script src="js/functions.js"></script>
 </head>
 <body>
     <div class="character">
@@ -13,10 +15,10 @@
                     <div class="bar3"></div>
                 </div>
                 <ul class="character-header-hover">
-                    <li><button>Caracteristicas</button></li>
-                    <li><button>Antecedentes</button></li>
-                    <li><button>Habilidades</button></li>
-                    <li><button>Inventário</button></li>
+                    <li><button onclick='abrirCaracteristicas()'>Caracteristicas</button></li>
+                    <li><button onclick='abrirAntecedentes()'>Antecedentes</button></li>
+                    <li><button  onclick='abrirHabilidades()'>Habilidades</button></li>
+                    <li><button onclick='abrirInventario()'>Inventario</button></li>
                 </ul>
             </div>
             <div class="character-header-info1">
@@ -36,45 +38,97 @@
             </div>
         </div>
         <div class="character-main">
-            <div class="character-main-chracteristcs">
+                <div class="character-main-chracteristcs">
                 <form>
-                    nome:
+                    <label>nome:</label>    
                     <input type="text" value="NOME PERSONAGEM">
-                    Idade:
-                    <input type="number" name="idade" min="0">
-                    Afiliação:
-                    <input type="text"><br />
-                    Raça:
-                    <select name="raca">
-                        <option>draconato</option>
-                        <option>Elfo normal</option>
-                        <option>Humano Comum</option>
-                        <option>Anão putão</option>
-                    </select>
-                    idiomas:
-                    <select name="idiomas" size="3" multiple>
-                        <option>Draconico</option>
-                        <option>Elfo</option>
-                        <option>Comum</option>
-                        <option>Anão</option>
-                    </select>
-                    sanidade:
-                    <input type="number" name="sanidade" min="-4" max="0" />
-                    caminho:
-                    <select name="caminho">
-                        <option>Guerreiro</option>
-                        <option>Ladion</option>
-                        <option>Mago</option>
-                    </select>
-                    reputação:
-                    <input type="number" name="reputacao" min="-3" max="3" />
-                    historia:
-                    <textarea name="historia" rows="10" cols="10"></textarea>
-                    Descendências
-                    [cu]
-                    Caracteristicas Fisicas:
-                    <textarea name="caracteristicasFisicas" rows="10" cols="10"></textarea>
+                    <div class='character-main-idade'>
+                        <label>Idade:</label>
+                        <input type="number" name="idade" min="0" >
+                    </div>
+                    <div class='character-main-afiliacao'>
+                        Afiliacao:
+                        <input type="text"><br />
+                    </div>
+                    <div class='character-main-raca'>
+                        Raca:
+                        <select name="raca">
+                            <option>draconato</option>
+                            <option>Elfo normal</option>
+                            <option>Humano Comum</option>
+                            <option>Anao putao</option>
+                        </select>
+                    </div>
+                    <div class='character-main-idioma'>
+                        idiomas:
+                        <label>Descendencias:</label>
+                        <input list='idiomas' value='Draconico'>
+                        <input list='idiomas' value='Comum'>
+                        <input list='idiomas' value='Elfo'>
+                         <datalist id='idiomas'>
+                            <option value='Anao'>
+                            <option value = 'Comum'>
+                            <option value = 'Draconico'>
+                            <option value = 'Elfo'> 
+                    </div>
+                    <div class='character-main-sanidade'>
+                        sanidade:
+                        <input type="number" name="sanidade" min="-4" max="0" />
+                    </div>
+                    <div class='character-main-caminho'>
+                        caminho:
+                        <select name="caminho">
+                            <option>Guerreiro</option>
+                            <option>Ladion</option>
+                            <option>Mago</option>
+                        </select>
+                    </div>
+                    <div class='character-main-reputacao'>
+                        <label>reputacao:</label>
+                        <input type="number" name="reputacao" min="-3" max="3" />
+                    </div>
+                    <div class='character-main-historia'>
+                        <label>historia:</label>
+                        <textarea name="historia" rows="10" cols="10"></textarea>
+                    </div>
+                    <div class='character-main-descendencias'>
+                        <label>Descendencias:</label>
+                        <input list='descendencias' value='Transformar Vampiro'>
+                        <input list='descendencias' value='Ampliador de Mana'>
+                        <input list='descendencias' value='Conversar com animais'>
+                        <input list='descendencias' value='MÃ£os Ultra-HÃ¡bies'>
+                        <input list='descendencias' value='Auro Divina'> 
+                        <datalist id='descendencias'>
+                            <option value='Ampliador de Mana'>
+                            <option value = 'Transformar Vampiro'>
+                            <option value = 'Sentido aguÃ§ado'>
+                            <option value = 'Conversar com animais'>
+                            <option value = 'MÃ£os Ultra-HÃ¡bies'>
+                            <option value = 'Auro Divina'>
+                            <option value = 'Aliados'>
+                            <option value = 'CamelÃ£o Social'>
+                            <option value = 'contato magico'>
+                            <option value = 'Senso de direÃ§Ã£o'>
+                            <option value = 'Luxuria'>
+                            <option value = 'Incapaz de matar'>
+                            <option value = 'MaldiÃ§Ã£o desconhecida'>
+                            <option value = 'Xenofilia'>
+                        </datalist>
+                    </div>
+                    <div class='character-main-caractFisicas'>
+                       <label>Caracteristicas Fisicas:</label>
+                        <textarea name="caracteristicasFisicas" rows="10" cols="10"></textarea>
+                    </div>
                 </form>
+            </div>
+            <div class='character-main-antecedentes'>
+                antecedentes 
+            </div>
+            <div class='character-main-habilidades'>
+                habilidades 
+            </div>
+            <div class='character-main-inventario'>
+                inventario 
             </div>
         </div>
     </div>
