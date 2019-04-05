@@ -17,7 +17,7 @@
                 <ul class="character-header-hover">
                     <li><button onclick='abrirCaracteristicas()'>Caracteristicas</button></li>
                     <li><button onclick='abrirAntecedentes()'>Antecedentes</button></li>
-                    <li><button  onclick='abrirHabilidades()'>Habilidades</button></li>
+<!--                    <li><button  onclick='abrirHabilidades()'>Habilidades</button></li>-->
                     <li><button onclick='abrirInventario()'>Inventario</button></li>
                 </ul>
             </div>
@@ -72,7 +72,7 @@
                             <option value = 'Elfo'> 
                     </div>
                     <div class='character-main-sanidade'>
-                        sanidade:
+    x                    sanidade:
                         <input type="number" name="sanidade" min="-4" max="0" />
                     </div>
                     <div class='character-main-caminho'>
@@ -87,14 +87,36 @@
                         <label>reputacao:</label>
                         <input type="number" name="reputacao" min="-3" max="3" />
                     </div>
-                    <div class='character-main-historia'>
-                        <label>historia:</label>
-                        <textarea name="historia" rows="10" cols="10"></textarea>
+                    <div>
+                    	<label>atributos</label>
+                    	<table class="tabela_atributos">
+		            	<thead>
+		            		<tr>
+		            			<th>con</th>
+		            			<th>for</th>
+		            			<th>dex</th>
+		            			<th>int</th>
+		            			<th>sab</th>                    			
+		            		</tr>
+		            	</thead>
+		            	<tbody>
+		        	    	<tr>
+				    		<td>5</td>
+				    		<td>5</td>
+				    		<td>5</td>
+				    		<td>5</td>
+		        	    		<td>5</td>
+					</tr>    		
+		            	</tbody>
+			</table>
                     </div>
-                    <div class='character-main-descendencias'>
+                </form>
+            </div>
+            <div class='character-main-antecedentes'>
+               <div class='character-main-descendencias'>
                         <label>Descendencias:</label>
-                        <input list='descendencias' value='Transformar Vampiro'>
-                        <input list='descendencias' value='Ampliador de Mana'>
+                        <input list='descendencias' value="Transformar Vampiro">
+                        <input list='descendencias' value="Ampliador de Mana">
                         <input list='descendencias' value='Conversar com animais'>
                         <input list='descendencias' value='Mãos Ultra-Hábies'>
                         <input list='descendencias' value='Auro Divina'> 
@@ -115,18 +137,19 @@
                             <option value = 'Xenofilia'>
                         </datalist>
                     </div>
+                    <div class='character-main-historia'>
+                        <label>historia:</label>
+                        <textarea name="historia" rows="10" cols="10"></textarea>
+                    </div>
+                    
                     <div class='character-main-caractFisicas'>
                        <label>Caracteristicas Fisicas:</label>
                         <textarea name="caracteristicasFisicas" rows="10" cols="10"></textarea>
                     </div>
-                </form>
             </div>
-            <div class='character-main-antecedentes'>
-                antecedentes 
-            </div>
-            <div class='character-main-habilidades'>
+           <!-- <div class='character-main-habilidades'>
                 habilidades 
-            </div>
+            </div>-->
             <div class='character-main-inventario'>
                 inventario 
             </div>

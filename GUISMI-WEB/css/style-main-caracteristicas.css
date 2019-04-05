@@ -30,3 +30,9 @@
 .character-main-historia > label{
     display:block;
 }
+.tabela_atributos td,th{
+	display:block;
+}
+.tabela_atributos tr{
+	display:inline-block;
+}
