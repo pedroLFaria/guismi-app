@@ -1,4 +1,4 @@
-function abrirCaracteristicas(){
+function abrirCaracteristicas() {
     document.getElementsByClassName('character-main-chracteristcs')[0].style.display = 'block';
     document.getElementsByClassName('character-main-inventario')[0].style.display = 'none';
     document.getElementsByClassName('character-main-antecedentes')[0].style.display = 'none';
@@ -21,4 +21,14 @@ function abrirInventario(){
     document.getElementsByClassName('character-main-inventario')[0].style.display = 'block';
     document.getElementsByClassName('character-main-antecedentes')[0].style.display = 'none';
     document.getElementsByClassName('character-main-habilidades')[0].style.display = 'none';  
+}
+function modalCharacterName(node) {
+    console.log(node);
+    node.style.display = "none";
+    node.nextElementSibling.style.display = "inline-block";
+    node.nextElementSibling.focus();
+}
+function modalCharacterNameInput(node){
+    node.previousElementSibling.style.display = "inline-block";
+    node.style.display = "none";
 }

@@ -30,13 +30,33 @@
 .character-main-historia > label{
     display:block;
 }
-.tabela_atributos tbody,thead{
+.tabela-atributos tbody,thead{
 	display:inline;
 }
-.tabela_atributos td,th{
+.tabela-atributos td,th{
 	display:block;
 	border-bottom:solid black;
 }
-.tabela_atributos tr{
+.tabela-atributos tr{
 	display:inline-block;
+}
+.tabela-atributos{
+    display:inline-block;
+    margin-left:25px;
+}
+.character-main-descendenciasRacias {
+    display: inline-block;
+}
+.character-main-descendenciasRacias > span{
+    display:block;
+    border:solid grey 1px; 
+}
+.character-name > input {
+    display: none;
+    font-family: Arial;
+    font-size: medium;
+}
+.character-name > label {
+    font-family: Arial;
+    font-size: medium;
 }

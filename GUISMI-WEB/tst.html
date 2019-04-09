@@ -17,7 +17,7 @@
                 <ul class="character-header-hover">
                     <li><button onclick='abrirCaracteristicas()'>Caracteristicas</button></li>
                     <li><button onclick='abrirAntecedentes()'>Antecedentes</button></li>
-<!--                    <li><button  onclick='abrirHabilidades()'>Habilidades</button></li>-->
+                    <!--<li><button  onclick='abrirHabilidades()'>Habilidades</button></li-->
                     <li><button onclick='abrirInventario()'>Inventario</button></li>
                 </ul>
             </div>
@@ -38,17 +38,20 @@
             </div>
         </div>
         <div class="character-main">
-                <div class="character-main-chracteristcs">
+            <div class="character-main-chracteristcs">
                 <form>
-                    <label>nome:</label>    
-                    <input type="text" value="NOME PERSONAGEM">
+                    <div class="character-name">
+                        <label>nome:</label>
+                        <label ondblclick="modalCharacterName(this)">Nome Personagem</label>
+                        <input type="text" value="Nome Personagem" onfocusout="modalCharacterNameInput(this)">
+                    </div>
                     <div class='character-main-idade'>
                         <label>Idade:</label>
-                        <input type="number" name="idade" min="0" >
+                        <input type="number" name="idade" min="0" value="70">
                     </div>
                     <div class='character-main-afiliacao'>
                         Afiliacao:
-                        <input type="text"><br />
+                        <input type="text" value="Conclave do jumento flamejante"><br />
                     </div>
                     <div class='character-main-raca'>
                         Raca:
@@ -60,142 +63,160 @@
                         </select>
                     </div>
                     <div class='character-main-idioma'>
-                        idiomas:
-                        <label>Descendencias:</label>
+                        <label>idiomas:</label>
                         <input list='idiomas' value='Draconico'>
                         <input list='idiomas' value='Comum'>
                         <input list='idiomas' value='Elfo'>
-                         <datalist id='idiomas'>
+                        <datalist id='idiomas'>
                             <option value='Anao'>
-                            <option value = 'Comum'>
-                            <option value = 'Draconico'>
-                            <option value = 'Elfo'> 
+                            <option value='Comum'>
+                            <option value='Draconico'>
+                            <option value='Elfo'>
+                        </datalist>
                     </div>
                     <div class='character-main-sanidade'>
-    x                    sanidade:
-                        <input type="number" name="sanidade" min="-4" max="0" />
+                        sanidade:
+                        <input type="number" name="sanidade" min="-4" max="0" value="0" />
                     </div>
                     <div class='character-main-caminho'>
                         caminho:
-                        <select name="caminho">
+                        <select name="caminho1">
+                            <option value="Guerreiro">Guerreiro</option>
+                            <option value="Ladino" selected>Ladion</option>
+                            <option value="Mago">Mago</option>
+                        </select>
+                        <select name="caminho2">
                             <option>Guerreiro</option>
                             <option>Ladion</option>
-                            <option>Mago</option>
+                            <option selected>Mago</option>
                         </select>
                     </div>
                     <div class='character-main-reputacao'>
                         <label>reputacao:</label>
-                        <input type="number" name="reputacao" min="-3" max="3" />
+                        <input type="number" name="reputacao" min="-3" max="3" value="0" />
                     </div>
                     <div>
-                    	<label>atributos</label>
-                    	<table class="tabela_atributos">
-		            	<thead>
-		            		<tr>
-		            			<th>con</th>
-		            			<th>for</th>
-		            			<th>dex</th>
-		            			<th>int</th>
-		            			<th>sab</th>                    			
-		            		</tr>
-		            	</thead>
-		            	<tbody>
-		        	    	<tr>
-				    		<td>5</td>
-				    		<td>5</td>
-				    		<td>5</td>
-				    		<td>5</td>
-		        	    		<td>5</td>
-					</tr>    		
-		            	</tbody>
-			</table>
-			<table class="tabela_atributos">
-				<caption>Modificadores</caption>
-		            	<thead>
-		            		<tr>
-		            			<th>con</th>
-		            			<th>for</th>
-		            			<th>dex</th>
-		            			<th>int</th>
-		            			<th>sab</th>                    			
-		            		</tr>
-		            	</thead>
-		            	<tbody>
-		        	    	<tr>
-				    		<td>1</td>
-				    		<td>1</td>
-				    		<td>1</td>
-				    		<td>1</td>
-		        	    		<td>1</td>
-					</tr>    		
-		            	</tbody>
-			</table>
-			<table class="tabela_atributos">
-				<caption>Defesas</caption>
-		            	<thead>
-		            		<tr>
-		            			<th>Reflex</th>
-		            			<th>fortitude </th>
-		            			<th>Vontade</th>
-	            			</tr>
-		            	</thead>
-		            	<tbody>
-		        	    	<tr>
-				    		<td>1</td>
-				    		<td>1</td>
-				    		<td>1</td>
-				    	</tr>    		
-		            	</tbody>
-			</table>
-			<table>
-				<thead>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+                        <table class="tabela-atributos">
+                            <caption>atributos</caption>
+                            <thead>
+                                <tr>    
+                                    <th>Con</th>
+                                    <th>For</th>
+                                    <th>Agi</th>
+                                    <th>Des</th>
+                                    <th>Int</th>
+                                    <th>Sab</th>
+                                    <th>Car</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tabela-atributos">
+                            <caption>Defesas</caption>
+                            <thead>
+                                <tr>
+                                    <th>Reflex</th>
+                                    <th>fortitude </th>
+                                    <th>Vontade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tabela-atributos">
+                            <caption>Habitos</caption>
+                            <thead>
+                                <tr>
+                                    <th>Magia</th>
+                                    <th>Furtividade</th>
+                                    <th>Arcanismo</th>
+                                    <th>Ler e Escrever</th>
+                                    <th>Trovar</th>
+                                    <th>Diplomacia</th>
+                                    <th>Montar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </form>
             </div>
             <div class='character-main-antecedentes'>
-               <div class='character-main-descendencias'>
-                        <label>Descendencias:</label>
-                        <input list='descendencias' value="Transformar Vampiro">
-                        <input list='descendencias' value="Ampliador de Mana">
-                        <input list='descendencias' value='Conversar com animais'>
-                        <input list='descendencias' value='Mãos Ultra-Hábies'>
-                        <input list='descendencias' value='Auro Divina'> 
-                        <datalist id='descendencias'>
-                            <option value='Ampliador de Mana'>
-                            <option value = 'Transformar Vampiro'>
-                            <option value = 'Sentido aguçado'>
-                            <option value = 'Conversar com animais'>
-                            <option value = 'Mãos Ultra-Hábies'>
-                            <option value = 'Auro Divina'>
-                            <option value = 'Aliados'>
-                            <option value = 'Camelão Social'>
-                            <option value = 'contato magico'>
-                            <option value = 'Senso de direção'>
-                            <option value = 'Luxuria'>
-                            <option value = 'Incapaz de matar'>
-                            <option value = 'Maldição desconhecida'>
-                            <option value = 'Xenofilia'>
-                        </datalist>
-                    </div>
-                    <div class='character-main-historia'>
-                        <label>historia:</label>
-                        <textarea name="historia" rows="10" cols="10"></textarea>
-                    </div>
-                    
-                    <div class='character-main-caractFisicas'>
-                       <label>Caracteristicas Fisicas:</label>
-                        <textarea name="caracteristicasFisicas" rows="10" cols="10"></textarea>
-                    </div>
+                <div class='character-main-descendencias'>
+                    <label>Descendencias:</label>
+                    <input list='descendencias' value="Transformar Vampiro">
+                    <input list='descendencias' value="Ampliador de Mana">
+                    <input list='descendencias' value='Conversar com animais'>
+                    <input list='descendencias' value='Mãos Ultra-Hábies'>
+                    <input list='descendencias' value='Auro Divina'>
+                    <datalist id='descendencias'>
+                        <option value='Ampliador de Mana'>
+                        <option value='Transformar Vampiro'>
+                        <option value='Sentido aguçado'>
+                        <option value='Conversar com animais'>
+                        <option value='Mãos Ultra-Hábies'>
+                        <option value='Auro Divina'>
+                        <option value='Aliados'>
+                        <option value='Camelão Social'>
+                        <option value='contato magico'>
+                        <option value='Senso de direção'>
+                        <option value='Luxuria'>
+                        <option value='Incapaz de matar'>
+                        <option value='Maldição desconhecida'>
+                        <option value='Xenofilia'>
+                    </datalist>
+                </div>
+                <div class='character-main-historia'>
+                    <label>historia:</label>
+                    <textarea name="historia" rows="10" cols="10"></textarea>
+                </div>
+                <div class="character-main-descendenciasRacias">
+                    <label>Descendencias Raciais:</label>
+                    <span>Seres Noturnos</span>
+                    <span>Resistencia ao Frio II</span>
+                    <span>Passos Silenciosos</span>
+                </div>
+                <div class='character-main-caractFisicas'>
+                    <label>Caracteristicas Fisicas:</label>
+                    <textarea name="caracteristicasFisicas" rows="10" cols="10"></textarea>
+                </div>
             </div>
-           <!-- <div class='character-main-habilidades'>
-                habilidades 
-            </div>-->
+            <!-- <div class='character-main-habilidades'>
+                 habilidades
+             </div>-->
+            <div class='character-main-antecedentes'>
+                antecedentes
+            </div>
+            <div class='character-main-habilidades'>
+                habilidades
+            </div>
             <div class='character-main-inventario'>
-                inventario 
+                inventario
             </div>
         </div>
     </div>

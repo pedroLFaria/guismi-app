@@ -50,7 +50,7 @@ body {
 .character-header-dropdown:hover .character-header-hover{
     display:block;
 }
-.character-header-hover li button {
+.character-header-hover > li > button {
     width: 100%;
     text-align: left;
     text-decoration: none;
@@ -84,7 +84,7 @@ body {
     display:none;
 }
 .character-main-chracteristcs{
-    display:none;
+    display:block;
 }
 .character-main-antecedentes{
     display:none;
