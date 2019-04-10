@@ -38,15 +38,6 @@
 .character-main-historia > label{
     display:block;
 }
-.tabela-atributos tbody,thead{
-	display:inline;
-}
-.tabela-atributos td,th{
-	display:block;
-}
-.tabela-atributos tr{
-	display:inline-block;
-}
 .tabela-atributos{
     display:inline-block;
     margin-left:25px;
@@ -68,7 +59,9 @@
     font-size: medium;
 }
 .character-tabela{
-    float:right;
+    position: absolute;
+    display: inline-block;
+    float: right;
 }
 .character-not-tabela{
     display:inline-block;
