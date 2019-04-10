@@ -85,13 +85,15 @@
                             <input type="number" name="sanidade" min="-4" max="0" value="0" onfocusout="modalInputBox(this)" />
                         </div>
                         <div class='character-main-caminho'>
-                            caminho:
-                            <select name="caminho1">
+                            <label>caminho:</label>
+                            <label ondblclick="modalTextBox(this)">Ladino</label>
+                            <select name="caminho1" onfocusout="modalInputBox(this)">
                                 <option value="Guerreiro">Guerreiro</option>
                                 <option value="Ladino" selected>Ladion</option>
                                 <option value="Mago">Mago</option>
                             </select>
-                            <select name="caminho2">
+                            <labe ondblclick="modalTextBox(this)">Mago</labe>
+                            <select name="caminho2" onfocusout="modalInputBox(this)">
                                 <option>Guerreiro</option>
                                 <option>Ladion</option>
                                 <option selected>Mago</option>
@@ -99,7 +101,8 @@
                         </div>
                         <div class='character-main-reputacao'>
                             <label>reputacao:</label>
-                            <input type="number" name="reputacao" min="-3" max="3" value="0" />
+                            <label ondblclick="modalTextBox(this)">0</label>
+                            <input type="number" name="reputacao" min="-3" max="3" value="0" onfocusout="modalInputBox(this)"/>
                         </div>
                     </div>
                     <div class="character-tabela">

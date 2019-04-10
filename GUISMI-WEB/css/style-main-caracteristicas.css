@@ -43,7 +43,6 @@
 }
 .tabela-atributos td,th{
 	display:block;
-	border-bottom:solid black;
 }
 .tabela-atributos tr{
 	display:inline-block;
@@ -80,3 +79,9 @@
 .character-main-sanidade > input{
     display:none;
 }
+.character-main-caminho > select{
+    display:none;   
+}
+.character-main-reputacao > input{
+    display:none;
+} 
