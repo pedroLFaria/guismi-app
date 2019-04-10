@@ -34,3 +34,19 @@ function modalInputBox(node) {
     node.style.display = "none";
     
 }
+function habilidadeDropdown(node) {
+    console.log("dropdown");
+    node.nextElementSibling.classList.toggle("show");
+}
+window.onclick = function (event) {
+    if (!event.target.matches('.habilidade-nome')) {
+        var dropdowns = document.getElementsByClassName("habilidade-descricao");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}

@@ -80,9 +80,6 @@ body {
     display:inline;
     font-size:larger;
 }
-.character-main-habilidades{
-    display:none;
-}
 .character-main-chracteristcs{
     display:block;
 }
@@ -91,4 +88,7 @@ body {
 }
 .character-main-inventario{
     display:none;
+}
+.show {
+    display: block;
 }
