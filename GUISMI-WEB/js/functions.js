@@ -27,8 +27,9 @@ function modalTextBox(node) {
     node.nextElementSibling.style.display = "inline-block";
     node.nextElementSibling.focus();
 }
-function modalInputBox(node){
-    node.previousElementSibling.innerHTML = node.value;
+function modalInputBox(node) {
+    if(node.value!="")
+        node.previousElementSibling.innerHTML = node.value;
     node.previousElementSibling.style.display = "inline-block";
     node.style.display = "none";
     
