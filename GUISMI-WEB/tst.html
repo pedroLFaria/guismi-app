@@ -68,9 +68,10 @@
                         </div>
                         <div class='character-main-idioma'>
                             <label>idiomas:</label>
-                            <input list='idiomas' value='Draconico'>
-                            <input list='idiomas' value='Comum'>
-                            <input list='idiomas' value='Elfo'>
+                            <label ondblclick="modalTextBox(this)">Draconico</label>
+                            <input list='idiomas' value='Draconico' onfocusout="modalInputBox(this)">
+                            <label ondblclick="modalTextBox(this)">Comum</label>
+                            <input list='idiomas' value='Comum' onfocusout="modalInputBox(this)">
                             <datalist id='idiomas'>
                                 <option value='Anao'>
                                 <option value='Comum'>
@@ -79,8 +80,9 @@
                             </datalist>
                         </div>
                         <div class='character-main-sanidade'>
-                            sanidade:
-                            <input type="number" name="sanidade" min="-4" max="0" value="0" />
+                            <label>sanidade:</label>
+                            <label ondblclick="modalTextBox(this)">0</label>
+                            <input type="number" name="sanidade" min="-4" max="0" value="0" onfocusout="modalInputBox(this)" />
                         </div>
                         <div class='character-main-caminho'>
                             caminho:

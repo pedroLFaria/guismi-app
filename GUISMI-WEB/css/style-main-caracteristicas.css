@@ -74,3 +74,9 @@
 .character-not-tabela{
     display:inline-block;
 }
+.character-main-idioma > input{
+    display:none;
+}
+.character-main-sanidade > input{
+    display:none;
+}
