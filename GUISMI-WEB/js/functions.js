@@ -22,13 +22,14 @@ function abrirInventario(){
     document.getElementsByClassName('character-main-antecedentes')[0].style.display = 'none';
     document.getElementsByClassName('character-main-habilidades')[0].style.display = 'none';  
 }
-function modalCharacterName(node) {
-    console.log(node);
+function modalTextBox(node) {
     node.style.display = "none";
     node.nextElementSibling.style.display = "inline-block";
     node.nextElementSibling.focus();
 }
-function modalCharacterNameInput(node){
+function modalInputBox(node){
+    node.previousElementSibling.innerHTML = node.value;
     node.previousElementSibling.style.display = "inline-block";
     node.style.display = "none";
+    
 }

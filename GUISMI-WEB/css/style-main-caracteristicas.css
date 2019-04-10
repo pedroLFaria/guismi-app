@@ -21,8 +21,16 @@
 .character-main-idade{
     display:inline-block;
 }
-.character-main-idade > input{
-    width:45px;
+.character-main-afiliacao > input{
+    width:220px;
+    display:none;
+}
+.character-main-raca > select{
+    display:none;
+}
+.character-main-idade > input {
+    display: none;
+    width: 45px;
 }
 .character-main-caractFisicas > label{
     display:block;
@@ -59,4 +67,10 @@
 .character-name > label {
     font-family: Arial;
     font-size: medium;
+}
+.character-tabela{
+    float:right;
+}
+.character-not-tabela{
+    display:inline-block;
 }

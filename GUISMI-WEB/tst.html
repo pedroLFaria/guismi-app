@@ -40,66 +40,71 @@
         <div class="character-main">
             <div class="character-main-chracteristcs">
                 <form>
-                    <div class="character-name">
-                        <label>nome:</label>
-                        <label ondblclick="modalCharacterName(this)">Nome Personagem</label>
-                        <input type="text" value="Nome Personagem" onfocusout="modalCharacterNameInput(this)">
+                    <div class="character-not-tabela">
+                        <div class="character-name">
+                            <label>nome:</label>
+                            <label ondblclick="modalTextBox(this)">Neo Taquion</label>
+                            <input type="text" value="Neo Taquion" onfocusout="modalInputBox(this)">
+                        </div>
+                        <div class='character-main-idade'>
+                            <label>Idade:</label>
+                            <label ondblclick="modalTextBox(this)">70</label>
+                            <input type="number" name="idade" min="0" value="70" onfocusout="modalInputBox(this)">
+                        </div>
+                        <div class='character-main-afiliacao'>
+                            <label>Afiliacao:</label>
+                            <label ondblclick="modalTextBox(this)">Conclave do jumento flamejante</label>
+                            <input type="text" value="Conclave do jumento flamejante" onfocusout="modalInputBox(this)"><br />
+                        </div>
+                        <div class='character-main-raca'>
+                            <label>Raca:</label>
+                            <label ondblclick="modalTextBox(this)">Draconato</label>
+                            <select name="raca" onfocusout="modalInputBox(this)">
+                                <option>draconato</option>
+                                <option>Elfo normal</option>
+                                <option>Humano Comum</option>
+                                <option>Anao putao</option>
+                            </select>
+                        </div>
+                        <div class='character-main-idioma'>
+                            <label>idiomas:</label>
+                            <input list='idiomas' value='Draconico'>
+                            <input list='idiomas' value='Comum'>
+                            <input list='idiomas' value='Elfo'>
+                            <datalist id='idiomas'>
+                                <option value='Anao'>
+                                <option value='Comum'>
+                                <option value='Draconico'>
+                                <option value='Elfo'>
+                            </datalist>
+                        </div>
+                        <div class='character-main-sanidade'>
+                            sanidade:
+                            <input type="number" name="sanidade" min="-4" max="0" value="0" />
+                        </div>
+                        <div class='character-main-caminho'>
+                            caminho:
+                            <select name="caminho1">
+                                <option value="Guerreiro">Guerreiro</option>
+                                <option value="Ladino" selected>Ladion</option>
+                                <option value="Mago">Mago</option>
+                            </select>
+                            <select name="caminho2">
+                                <option>Guerreiro</option>
+                                <option>Ladion</option>
+                                <option selected>Mago</option>
+                            </select>
+                        </div>
+                        <div class='character-main-reputacao'>
+                            <label>reputacao:</label>
+                            <input type="number" name="reputacao" min="-3" max="3" value="0" />
+                        </div>
                     </div>
-                    <div class='character-main-idade'>
-                        <label>Idade:</label>
-                        <input type="number" name="idade" min="0" value="70">
-                    </div>
-                    <div class='character-main-afiliacao'>
-                        Afiliacao:
-                        <input type="text" value="Conclave do jumento flamejante"><br />
-                    </div>
-                    <div class='character-main-raca'>
-                        Raca:
-                        <select name="raca">
-                            <option>draconato</option>
-                            <option>Elfo normal</option>
-                            <option>Humano Comum</option>
-                            <option>Anao putao</option>
-                        </select>
-                    </div>
-                    <div class='character-main-idioma'>
-                        <label>idiomas:</label>
-                        <input list='idiomas' value='Draconico'>
-                        <input list='idiomas' value='Comum'>
-                        <input list='idiomas' value='Elfo'>
-                        <datalist id='idiomas'>
-                            <option value='Anao'>
-                            <option value='Comum'>
-                            <option value='Draconico'>
-                            <option value='Elfo'>
-                        </datalist>
-                    </div>
-                    <div class='character-main-sanidade'>
-                        sanidade:
-                        <input type="number" name="sanidade" min="-4" max="0" value="0" />
-                    </div>
-                    <div class='character-main-caminho'>
-                        caminho:
-                        <select name="caminho1">
-                            <option value="Guerreiro">Guerreiro</option>
-                            <option value="Ladino" selected>Ladion</option>
-                            <option value="Mago">Mago</option>
-                        </select>
-                        <select name="caminho2">
-                            <option>Guerreiro</option>
-                            <option>Ladion</option>
-                            <option selected>Mago</option>
-                        </select>
-                    </div>
-                    <div class='character-main-reputacao'>
-                        <label>reputacao:</label>
-                        <input type="number" name="reputacao" min="-3" max="3" value="0" />
-                    </div>
-                    <div>
+                    <div class="character-tabela">
                         <table class="tabela-atributos">
                             <caption>atributos</caption>
                             <thead>
-                                <tr>    
+                                <tr>
                                     <th>Con</th>
                                     <th>For</th>
                                     <th>Agi</th>
