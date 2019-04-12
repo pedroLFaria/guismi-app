@@ -51,9 +51,6 @@
     background-color:white;
     height: 1000px;
 }
-.character-main div{
-    margin-bottom:5px;
-}
 .character-main-descendencias{
     display:inline-block;
 }
@@ -105,11 +102,6 @@
 .character-name > label {
     font-family: Arial;
     font-size: medium;
-}
-.character-tabela{
-    position: absolute;
-    display: inline-block;
-    float: right;
 }
 .character-main-idioma > input{
     display:none;
