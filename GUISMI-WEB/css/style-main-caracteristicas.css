@@ -126,6 +126,40 @@
 .character-main-habilidades li{
     list-style-type: none;
 }
+.character-main-habilidades ul{
+	padding-left: 20px;
+}
+.character-main-habilidades > div{
+	display:block;
+}
+.character-main-habilidades > div > label{
+	margin-left:40%; 
+}
+.character-main-habilidades > div > button{
+	background:white;
+	border:solid black;
+	float:right;
+	border-radius:999px;
+}
+.character-main-habilidades > div > button:hover{
+ background:lightgrey;
+}
 .habilidade-descricao{
     display:none;
+    border:solid black;
+    padding: 5px;
+    width: 95%;
+    margin-left: 9px;
+    margin-top: -3px;
+}
+.habilidade-nome{
+	border:solid black;
+	border-radius: 8px;
+	margin-bottom: 0;
+}
+.habilidade-nome:hover{
+	background:lightgrey;
+}
+.habilidade-descricao:hover{
+	background:lightgrey;
 }
