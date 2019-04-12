@@ -27,10 +27,15 @@ function modalInputBox(node) {
     
 }
 function habilidadeDropdown(node) {
-    console.log("dropdown");
-    node.nextElementSibling.style.display="block";
+    	console.log("dropdown");
+	if(node.nextElementSibling.style.display=="none"){
+		node.nextElementSibling.style.display="block";
+	}
+	else{
+		node.nextElementSibling.style.display="none";
+		}
 }
-window.onclick = function (event) {
+/*window.onclick = function (event) {
     if (!event.target.matches('.habilidade-nome')) {
         console.log("windows Event");
         var dropdowns = document.getElementsByClassName("habilidade-descricao");
@@ -41,5 +46,5 @@ window.onclick = function (event) {
                 openDropdown.style.display="none";
             }
         }
-    }
-}
+    }*/
+
