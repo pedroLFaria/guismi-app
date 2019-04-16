@@ -105,6 +105,169 @@
                     </div>
                 </div>
                 <div class="character-tabela col-5">
+                    <button onclick="abrirModalAtributos()">Modal</button>
+                    <div class="modal-habilidades">
+                        <div class="modal-tabelas">
+                            <table class="tabela-atributos-completa col-5">
+                                <caption>Atributos</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Atributos</th>
+                                        <th>R</th>
+                                        <th>DS</th>
+                                        <th>B.Gerais</th>
+                                        <th>TT</th>
+                                        <th>M5</th>
+                                        <th>M2</th>
+                                    </tr> 
+                                </thead>
+                                <tbody>
+                                    <tr id="tabela-modal-for">
+                                        <th>FOR</th>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                    <tr id="tabela-modal-con">
+                                        <th>CON</th>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                    <tr id="tabela-modal-agi">
+                                        <th>AGI</th>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">14</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                    <tr id="tabela-modal-des">
+                                        <th>DES</th>
+                                        <td>10</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">10</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                    <tr id="tabela-modal-int">
+                                        <th>INT</th>
+                                        <td>9</td>
+                                        <td>19</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">28</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                    <tr id="tabela-modal-sab">
+                                        <th>SAB</th>
+                                        <td>5</td>
+                                        <td>20</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">25</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                    <tr id="tabela-modal-car">
+                                        <th>CAR</th>
+                                        <td>2</td>
+                                        <td>28</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">30</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="tabela-habitos-completa col-4">
+                                <caption>Habitos</caption>
+                                <thead>
+                                    <tr>
+                                        <th id="tabela-habitos-compelta-habitos">Hábitos</th>
+                                        <th>G</th>
+                                        <th>DT</th>
+                                        <th>BG</th>
+                                        <th>TT</th> 
+                                        <th>M10</th>
+                                        <th>M5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Magia</th>
+                                        <td>5</td>
+                                        <td>32</td>
+                                        <td>2</td>
+                                        <td class="tabela-modal-coluna-importante">30</td>
+                                        <td class="tabela-modal-coluna-importante">3</td>
+                                        <td class="tabela-modal-coluna-importante">6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Furtividade</th>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">7</td>
+                                        <td class="tabela-modal-coluna-importante">0.7</td>
+                                        <td class="tabela-modal-coluna-importante">1.4</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Arcanismo</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td class="tabela-modal-coluna-importante">1</td>
+                                        <td class="tabela-modal-coluna-importante">0.1</td>
+                                        <td class="tabela-modal-coluna-importante">0.2</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ler e Escrever</th>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">10</td>
+                                        <td class="tabela-modal-coluna-importante">1</td>
+                                        <td class="tabela-modal-coluna-importante">2 </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Trovar</th>
+                                        <td>15</td>
+                                        <td>8</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">23</td>
+                                        <td class="tabela-modal-coluna-importante">2.3</td>
+                                        <td class="tabela-modal-coluna-importante">4.6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Diplomacia</th>
+                                        <td>12</td>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">15</td>
+                                        <td class="tabela-modal-coluna-importante">1.5</td>
+                                        <td class="tabela-modal-coluna-importante">3</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Montar</th>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td class="tabela-modal-coluna-importante">5</td>
+                                        <td class="tabela-modal-coluna-importante">0.5</td>
+                                        <td class="tabela-modal-coluna-importante">1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     <table class="tabela-atributos col-3">
                         <caption>atributos</caption>
                         <tr>

@@ -27,24 +27,14 @@ function modalInputBox(node) {
     
 }
 function habilidadeDropdown(node) {
-    	console.log("dropdown");
-	if(node.nextElementSibling.style.display=="none"){
-		node.nextElementSibling.style.display="block";
-	}
-	else{
-		node.nextElementSibling.style.display="none";
-		}
+    console.log("dropdown");
+    node.nextElementSibling.classList.toggle("show");
 }
-/*window.onclick = function (event) {
-    if (!event.target.matches('.habilidade-nome')) {
-        console.log("windows Event");
-        var dropdowns = document.getElementsByClassName("habilidade-descricao");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.style.display == "block") {
-                openDropdown.style.display="none";
-            }
-        }
-    }*/
-
+function abrirModalAtributos() {
+    document.getElementsByClassName("modal-habilidades")[0].style.display = "block";
+}
+window.onclick = function (event) {
+    if (event.target == document.getElementsByClassName("modal-habilidades")[0]) {
+        document.getElementsByClassName("modal-habilidades")[0].style.display = "none";
+    }
+}
