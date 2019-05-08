@@ -2,7 +2,6 @@ body {
     background-color:grey;
     margin: 0;
 }
-.character {}
 .character-header {
     padding-left:20px;
     background-color:grey;
@@ -10,6 +9,7 @@ body {
     position: sticky;
     height: 60px;
     border-bottom:solid black;
+    max-height: fit-content;
 }
 .container {
     width:50px;
