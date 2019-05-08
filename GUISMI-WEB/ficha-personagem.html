@@ -7,12 +7,6 @@
     <label>nome:</label>
     <label ondblclick="modalTextBox(this)">Neo Taquion</label>
     <input type="text" value="Neo Taquion">
-    <label>Idade:</label>
-    <label ondblclick="modalTextBox(this)">70</label>
-    <input type="number" name="idade" min="0" value="70">
-    <label>Afiliacao:</label>
-    <label ondblclick="modalTextBox(this)">Conclave do jumento flamejante</label>
-    <input type="text" value="Conclave do jumento flamejante">
     <label>Raca:</label>
     <label ondblclick="modalTextBox(this)"></label>
     <select name="raca"></select>
@@ -22,14 +16,63 @@
     <button>+</button>
     <label>sanidade:</label>
     <label ondblclick="modalTextBox(this)">0</label>
-    <input type="number" name="sanidade" min="-4" max="0" value="0" />
+    <input type="number" name="sanidade" min="-4" max="0" value="0" title="" />
     <label>caminho:</label>
     <label ondblclick="modalTextBox(this)">Ladino</label>
     <select name="caminho"></select>
     <button>+</button>
-    <label>reputacao:</label>
-    <label ondblclick="modalTextBox(this)">0</label>
-    <input type="number" name="reputacao" min="-3" max="3" value="0" onfocusout="modalInputBox(this)" />
+    <label>Nivel</label>
+    <input type="number" name="nivel_pers" />
+    <label>Experiencia</label>
+    <input type="number" name="exp_pers" />
+    <span>9999</span>
+    <label>Descendências</label>
+    <ul>
+        <li>Descendência 1</li>
+    </ul>
+    <table>
+        <caption>Quadro</caption>
+        <tbody>
+            <tr>
+                <th>Sangue</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Vigor</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Mana</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th>Regen. Sangue</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Regen. Vigor</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Regen. Mana</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
     <table>
         <caption>Atributos</caption>
         <thead>
@@ -109,7 +152,7 @@
             </tr>
         </tbody>
     </table>
-    <table>
+    <table name="">
         <caption>Habitos</caption>
         <thead>
             <tr>
@@ -156,6 +199,57 @@
         <tr>
             <th>Vontade</th>
             <td>1</td>
+        </tr>
+    </table>
+    <table>
+        <caption>Habilidades</caption>
+        <tr>
+            <th>Nome Habilidade<input type="text" value="Nome Habilidade"></th>
+            <td>AtAc.:
+                <label>FOR</label>
+                <select>
+                    <option>FOR</option>
+                    <option>CON</option>
+                    <option>AGI</option>
+                    <option>DES</option>
+                    <option>INT</option>
+                    <option>SAB</option>
+                    <option>CAR</option>
+                </select>
+                Mod.:<label>0</label>
+                Tipo<span></span><input type="text" />
+            </td>
+            <td>
+                Hábito:<label>XXX</label>
+                <select>
+
+                </select>
+                M10:<label></label>
+                5:<label></label>
+            </td>
+            <td>
+                Gastos:
+                <label></label>
+                <label></label>
+                <label></label>
+            </td>
+            <td>
+                Utilização:
+                <input type="text" />
+                <label></label>
+            </td>
+            <td>
+                <label nome="desc_hab">
+                </label>
+                <textarea>
+                    descrição da Habilidade
+                </textarea>
+            </td>
+            <td>
+                <label></label>
+                <input type="text" nome="pre_req"/>
+            </td>
+            
         </tr>
     </table>
 </body>
