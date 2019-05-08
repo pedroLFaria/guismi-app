@@ -252,6 +252,29 @@ constraint fk_cidade foreign key(idCidade) references Cidade(idCidade),
 constraint fk_Jogador foreign key(idJogador) references Jogador(idJogador)
 )
 
+DIA 07/05/2019 ATUALIZADO DB:
+alter table caminho_has_habitos add(
+quantidade int(3)
+)
 
+alter table descendencia_has_habitos add(
+quantidade int(3)
+)
+
+alter table descendencia_has_sanidade add(
+quantidade int(1)
+)
+
+alter table habitos_has_especializacao add(
+quantidade int(3)
+)
+
+alter table inventario_has_item add(
+quantidade int(4)
+)
+
+alter table raca_has_habitos add(
+quantidade int(3)
+)
 
 
