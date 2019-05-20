@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<?php include "php\config.php";?>
+<script src="js/ficha-personagem.js"></script>
 </head>
-<body>
+<body onload='inicializaRacas()'>
+<?php 
+	$result = mysqli_query($con, "SELECT * FROM ficha WHERE idFicha='3'");
+	$row = mysqli_fetch_assoc($result);
+	foreach($row as $key => $value)
+	{
+		$_POST[$key] = $value;
+	}
+
+?>
     <label>nome:</label>
-    <label ondblclick="modalTextBox(this)">Neo Taquion</label>
-    <input type="text" value="Neo Taquion">
+    <label ondblclick="modalTextBox(this)"><?php echo $_POST['nome_pers'];?></label>
+    <input type="text" value="<?php echo $_POST['nome_pers'];?>">
     <label>Raca:</label>
-    <label ondblclick="modalTextBox(this)"></label>
-    <select name="raca"></select>
+    <label ondblclick="modalTextBox(this)"> <?php echo $_POST['idRaca'];?> </label>
+	<select name="raca" onchange='onChangeRaca(this.value)'>
+	</select>
     <label>idiomas:</label>
     <label ondblclick="modalTextBox(this)">Draconico</label>
-    <select list='idiomas' value='Draconico'></select>
+    <select list='idiomas'>
+<?php	
+	$result = mysqli_query($con,"SELECT * FROM idiomas");
+	while($coluna = mysqli_fetch_array($result)){
+		echo "<option value='".$coluna['idIdiomas']."'>".$coluna['nome']."</option>";
+	}	
+?>
+	</select>
     <button>+</button>
     <label>sanidade:</label>
     <label ondblclick="modalTextBox(this)">0</label>
@@ -26,11 +44,11 @@
     <label>Experiencia</label>
     <input type="number" name="exp_pers" />
     <span>9999</span>
-    <label>Descendências</label>
+    <label>Descendï¿½ncias</label>
     <ul>
-        <li>Descendência 1</li>
+        <li>Descendï¿½ncia 1</li>
     </ul>
-    <table>
+    <table> <!-- quadro de combate -->
         <caption>Quadro</caption>
         <tbody>
             <tr>
@@ -89,8 +107,10 @@
         <tbody>
             <tr>
                 <th>FOR</th>
-                <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td>0
+				
+				</td>
+                <td><label><?php echo $_POST['dist_for'];?></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -99,7 +119,7 @@
             <tr>
                 <th>CON</th>
                 <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td><label><?php echo $_POST['dist_con'];?></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -108,7 +128,7 @@
             <tr>
                 <th>AGI</th>
                 <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td><label><?php echo $_POST['dist_agi'];?></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -156,7 +176,7 @@
         <caption>Habitos</caption>
         <thead>
             <tr>
-                <th id="tabela-habitos-compelta-habitos">Hábitos</th>
+                <th id="tabela-habitos-compelta-habitos">Hï¿½bitos</th>
                 <th>G</th>
                 <th>DT</th>
                 <th>BG</th>
@@ -179,7 +199,7 @@
     </table>
     <button>+</button>
     <table>
-        <caption>Especialização</caption>
+        <caption>Especializaï¿½ï¿½o</caption>
         <tbody>
             <tr>
                 <td>ESP:XXXX</td>
@@ -220,7 +240,7 @@
                 Tipo<span></span><input type="text" />
             </td>
             <td>
-                Hábito:<label>XXX</label>
+                Hï¿½bito:<label>XXX</label>
                 <select>
 
                 </select>
@@ -234,7 +254,7 @@
                 <label></label>
             </td>
             <td>
-                Utilização:
+                Utilizaï¿½ï¿½o:
                 <input type="text" />
                 <label></label>
             </td>
@@ -242,7 +262,7 @@
                 <label nome="desc_hab">
                 </label>
                 <textarea>
-                    descrição da Habilidade
+                    descriï¿½ï¿½o da Habilidade
                 </textarea>
             </td>
             <td>

@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cadastro",
+    "\\ficha-base",
+    "\\ficha-base\\js",
+    "\\ficha-base\\php"
   ],
-  "SelectedNode": "\\tst.html",
+  "SelectedNode": "\\ficha-base\\ficha-personagem.php",
   "PreviewInSolutionExplorer": false
 }
