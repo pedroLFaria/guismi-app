@@ -4,46 +4,32 @@
 <?php include "php\config.php";?>
 <script src="js/ficha-personagem.js"></script>
 </head>
-<body onload='inicializaRacas()'>
-<?php 
-	$result = mysqli_query($con, "SELECT * FROM ficha WHERE idFicha='3'");
-	$row = mysqli_fetch_assoc($result);
-	foreach($row as $key => $value)
-	{
-		$_POST[$key] = $value;
-	}
-
-?>
+<body onload='inicializa()'>
     <label>nome:</label>
-    <label ondblclick="modalTextBox(this)"><?php echo $_POST['nome_pers'];?></label>
-    <input type="text" value="<?php echo $_POST['nome_pers'];?>">
+    <label ondblclick="modalTextBox(this)" id="nome_pers"></label>
+    <input type="text" id="nome_pers_input" />
     <label>Raca:</label>
-    <label ondblclick="modalTextBox(this)"> <?php echo $_POST['idRaca'];?> </label>
-	<select name="raca" onchange='onChangeRaca(this.value)'>
+    <label ondblclick="modalTextBox(this)" id="raca_pers"></label>
+	<select id="raca_pers_input" onchange='onChangeRaca(this.value)'><option>-</option>
 	</select>
+    <label>caminho:</label>
+    <label ondblclick="modalTextBox(this)" id="caminhos_pers">Ladino</label>
+    <select id="caminhos_pers_input"></select>
+    <button>+</button>
     <label>idiomas:</label>
-    <label ondblclick="modalTextBox(this)">Draconico</label>
-    <select list='idiomas'>
-<?php	
-	$result = mysqli_query($con,"SELECT * FROM idiomas");
-	while($coluna = mysqli_fetch_array($result)){
-		echo "<option value='".$coluna['idIdiomas']."'>".$coluna['nome']."</option>";
-	}	
-?>
-	</select>
+    <label ondblclick="modalTextBox(this)" id="idiomas_pers">Draconico</label>
+    <select list='idiomas_pers_input'></select>
     <button>+</button>
     <label>sanidade:</label>
-    <label ondblclick="modalTextBox(this)">0</label>
-    <input type="number" name="sanidade" min="-4" max="0" value="0" title="" />
-    <label>caminho:</label>
-    <label ondblclick="modalTextBox(this)">Ladino</label>
-    <select name="caminho"></select>
-    <button>+</button>
+    <label ondblclick="modalTextBox(this)" id="sanidade_pers">0</label>
+    <input type="number" id="sanidade_pers_input" min="-4" max="0" value="0" title="" />
     <label>Nivel</label>
-    <input type="number" name="nivel_pers" />
+    <label id="nivel_pers"></label>
+    <input type="number" name="nivel_pers_input" />
     <label>Experiencia</label>
-    <input type="number" name="exp_pers" />
-    <span>9999</span>
+    <label id="exp_pers"></label>
+    <input type="number" name="exp_pers_input" />
+    <span id='exp_pers_nivel'>9999</span>
     <label>Descend�ncias</label>
     <ul>
         <li>Descend�ncia 1</li>
@@ -107,10 +93,8 @@
         <tbody>
             <tr>
                 <th>FOR</th>
-                <td>0
-				
-				</td>
-                <td><label><?php echo $_POST['dist_for'];?></label><input type="number" /></td>
+                <td id="raca_for">0</td>
+                <td><label id="dist_for"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -118,8 +102,8 @@
             </tr>
             <tr>
                 <th>CON</th>
-                <td>0</td>
-                <td><label><?php echo $_POST['dist_con'];?></label><input type="number" /></td>
+                <td id="raca_con">0</td>
+                <td><label id="dist_con"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -127,8 +111,8 @@
             </tr>
             <tr>
                 <th>AGI</th>
-                <td>0</td>
-                <td><label><?php echo $_POST['dist_agi'];?></label><input type="number" /></td>
+                <td id="raca_agi">0</td>
+                <td><label id="dist_agi"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -136,8 +120,8 @@
             </tr>
             <tr>
                 <th>DES</th>
-                <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td id="raca_des">0</td>
+                <td><label id="dist_des"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -145,8 +129,8 @@
             </tr>
             <tr>
                 <th>INT</th>
-                <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td id="raca_int">0</td>
+                <td><label id="dist_int"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -154,8 +138,8 @@
             </tr>
             <tr>
                 <th>SAB</th>
-                <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td id="raca_sab">0</td>
+                <td><label id="dist_sab"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -163,8 +147,8 @@
             </tr>
             <tr>
                 <th>CAR</th>
-                <td>0</td>
-                <td><label>0</label><input type="number" /></td>
+                <td id="raca_car">0</td>
+                <td><label id="dist_car"></label><input type="number" /></td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
