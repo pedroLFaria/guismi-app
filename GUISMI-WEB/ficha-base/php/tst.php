@@ -1,10 +1,7 @@
 <?php 
 	$result = mysqli_query($con, "SELECT * FROM ficha WHERE idFicha='3'");
 	$row = mysqli_fetch_assoc($result);
-	foreach($row as $key => $value)
-	{
-		$_POST[$key] = $value;
-	}
+
 
 ?>
 

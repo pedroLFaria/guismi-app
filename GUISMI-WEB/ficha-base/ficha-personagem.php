@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include "php\config.php";?>
-<script src="js/ficha-personagem.js"></script>
+	<meta charset="UTF-8">
+	<?php include "php\config.php";?>
+	<script src="js/ficha-personagem.js"></script>
 </head>
 <body onload='inicializa()'>
     <label>nome:</label>
@@ -26,13 +27,13 @@
     <label>Nivel</label>
     <label id="nivel_pers"></label>
     <input type="number" name="nivel_pers_input" />
-    <label>Experiencia</label>
+    <label>Experiência</label>
     <label id="exp_pers"></label>
     <input type="number" name="exp_pers_input" />
     <span id='exp_pers_nivel'>9999</span>
-    <label>Descend�ncias</label>
+    <label>Descendências</label>
     <ul>
-        <li>Descend�ncia 1</li>
+        <li>Descendência 1</li>
     </ul>
     <table> <!-- quadro de combate -->
         <caption>Quadro</caption>
@@ -156,10 +157,10 @@
         </tbody>
     </table>
     <table name="">
-        <caption>Habitos</caption>
+        <caption>Hábitos</caption>
         <thead>
             <tr>
-                <th id="tabela-habitos-compelta-habitos">H�bitos</th>
+                <th id="tabela-habitos-compelta-habitos">Hábitos</th>
                 <th>G</th>
                 <th>DT</th>
                 <th>BG</th>
@@ -182,7 +183,7 @@
     </table>
     <button>+</button>
     <table>
-        <caption>Especializa��o</caption>
+        <caption>Especialização</caption>
         <tbody>
             <tr>
                 <td>ESP:XXXX</td>
@@ -223,7 +224,7 @@
                 Tipo<span></span><input type="text" />
             </td>
             <td>
-                H�bito:<label>XXX</label>
+                Hábito:<label>XXX</label>
                 <select>
 
                 </select>
@@ -237,7 +238,7 @@
                 <label></label>
             </td>
             <td>
-                Utiliza��o:
+                Utilização:
                 <input type="text" />
                 <label></label>
             </td>
