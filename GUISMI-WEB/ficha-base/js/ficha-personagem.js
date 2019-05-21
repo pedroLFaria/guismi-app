@@ -3,6 +3,7 @@ function inicializa(){
     setaEscolhaRacas();
     armazenaFicha();
     setaInfoFichas();
+    calculaAtributosFinais();
 }
 
 function armazenaFicha(){
@@ -71,7 +72,8 @@ function criaOption(raca){
 
 function onChangeRaca(idRaca){
     racas = JSON.parse(sessionStorage.getItem("racas"));
-    setaAtributosRaca(racas[idRaca-1]);
+    setaAtributosRaca(racas[idRaca - 1]);
+    calculaAtributosFinais();
 }
 
 function setaAtributosRaca(raca){
@@ -82,4 +84,42 @@ function setaAtributosRaca(raca){
     document.getElementById("raca_int").innerHTML = raca.raca_int;
     document.getElementById("raca_sab").innerHTML = raca.raca_sab;
     document.getElementById("raca_car").innerHTML = raca.raca_car;
+}
+
+function calculaAtributosFinais() {
+
+    var FOR = document.querySelectorAll('[id$="_for"]')
+    FOR[2].innerHTML = Number(FOR[0].innerHTML) + Number(FOR[1].innerHTML);
+    FOR[3].innerHTML = (Number(FOR[0].innerHTML) + Number(FOR[1].innerHTML)) / 5;
+    FOR[4].innerHTML = (Number(FOR[0].innerHTML) + Number(FOR[1].innerHTML)) / 2;
+
+    var CON = document.querySelectorAll('[id$="_con"]');
+    CON[2].innerHTML = Number(CON[0].innerHTML) + Number(CON[1].innerHTML);
+    CON[3].innerHTML = (Number(CON[0].innerHTML) + Number(CON[1].innerHTML)) / 5;
+    CON[4].innerHTML = (Number(CON[0].innerHTML) + Number(CON[1].innerHTML)) / 2;
+
+    var AGI = document.querySelectorAll('[id$="_agi"]');
+    AGI[2].innerHTML = Number(AGI[0].innerHTML) + Number(AGI[1].innerHTML);
+    AGI[3].innerHTML = (Number(AGI[0].innerHTML) + Number(AGI[1].innerHTML)) / 5;
+    AGI[4].innerHTML = (Number(AGI[0].innerHTML) + Number(AGI[1].innerHTML)) / 2;
+
+    var DES = document.querySelectorAll('[id$="_des"]');
+    DES[2].innerHTML = Number(DES[0].innerHTML) + Number(DES[1].innerHTML);
+    DES[3].innerHTML = (Number(DES[0].innerHTML) + Number(DES[1].innerHTML)) / 5;
+    DES[4].innerHTML = (Number(DES[0].innerHTML) + Number(DES[1].innerHTML)) / 2;
+
+    var INT = document.querySelectorAll('[id$="_int"]');
+    INT[2].innerHTML = Number(INT[0].innerHTML) + Number(INT[1].innerHTML);
+    INT[3].innerHTML = (Number(INT[0].innerHTML) + Number(INT[1].innerHTML)) / 5;
+    INT[4].innerHTML = (Number(INT[0].innerHTML) + Number(INT[1].innerHTML)) / 2;
+
+    var SAB = document.querySelectorAll('[id$="_sab"]');
+    SAB[2].innerHTML = Number(SAB[0].innerHTML) + Number(SAB[1].innerHTML);
+    SAB[3].innerHTML = (Number(SAB[0].innerHTML) + Number(SAB[1].innerHTML)) / 5;
+    SAB[4].innerHTML = (Number(SAB[0].innerHTML) + Number(SAB[1].innerHTML)) / 2;
+
+    var CAR = document.querySelectorAll('[id$="_car"]');
+    CAR[2].innerHTML = Number(CAR[0].innerHTML) + Number(CAR[1].innerHTML);
+    CAR[3].innerHTML = (Number(CAR[0].innerHTML) + Number(CAR[1].innerHTML)) / 5;
+    CAR[4].innerHTML = (Number(CAR[0].innerHTML) + Number(CAR[1].innerHTML)) / 2;
 }

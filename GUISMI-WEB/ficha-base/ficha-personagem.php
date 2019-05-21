@@ -96,64 +96,63 @@
                 <td id="raca_for">0</td>
                 <td><label id="dist_for"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="tt_for">0</td>
+                <td id="m5_for">0</td>
+                <td id="m2_for">0</td>
             </tr>
             <tr>
                 <th>CON</th>
                 <td id="raca_con">0</td>
                 <td><label id="dist_con"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="tt_con">0</td>
+                <td id="m5_con">0</td>
+                <td id="m2_con">0</td>
             </tr>
             <tr>
                 <th>AGI</th>
                 <td id="raca_agi">0</td>
                 <td><label id="dist_agi"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
+                <td id="tt_agi">0</td>
+                <td id="m5_agi">0</td>
+                <td id="m2_agi">0</td>
             <tr>
                 <th>DES</th>
                 <td id="raca_des">0</td>
                 <td><label id="dist_des"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="tt_des">0</td>
+                <td id="m5_des">0</td>
+                <td id="m2_des">0</td>
             </tr>
             <tr>
                 <th>INT</th>
                 <td id="raca_int">0</td>
                 <td><label id="dist_int"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="tt_int">0</td>
+                <td id="m5_int">0</td>
+                <td id="m2_int">0</td>
             </tr>
             <tr>
                 <th>SAB</th>
                 <td id="raca_sab">0</td>
                 <td><label id="dist_sab"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="tt_sab">0</td>
+                <td id="m5_sab">0</td>
+                <td id="m2_sab">0</td>
             </tr>
             <tr>
                 <th>CAR</th>
                 <td id="raca_car">0</td>
                 <td><label id="dist_car"></label><input type="number" /></td>
                 <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
+                <td id="tt_car">0</td>
+                <td id="m5_car">0</td>
+                <td id="m2_car">0</td>
+			</tr>
         </tbody>
     </table>
     <table name="">
