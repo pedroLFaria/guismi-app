@@ -1,56 +1,58 @@
 <?php
-
+	function concatenaSelect($vetor,$id){
+		$texto = "";
+		if(!$id){
+			for($i=0;$i<sizeof($vetor);$i++){
+				if($i<sizeof($vetor)-1){
+					$texto = $texto.$vetor[$i].",";
+				}
+				else{
+					$texto = $texto.$vetor[$i];
+				};
+			};
+		}
+		else{
+			for($i=0;$i<sizeof($vetor);$i++){
+				if($i%2==0){
+					$texto = $texto.$vetor[$i]." = ";
+				}
+				else if($i<sizeof($vetor)-1){
+					$texto = $texto.$vetor[$i]." and ";
+				}
+				else{
+					$texto = $texto.$vetor[$i];
+				}
+			};
+		}
+		return $texto;
+	}
+	
 	function selecionaLimpo($con,$tabela){
 		return mysqli_query($con, "SELECT * FROM $tabela");
 	}
-	function selecionaPorID($con,$tabela,$id){
-		return mysqli_query($con, "SELECT * FROM $tabela WHERE $id");
+	
+	function selecionaPorID($con,$tabela,$id,$idN){
+		return mysqli_query($con, "SELECT * FROM $tabela WHERE $id=$idN");
 	}
-	function selecionaINNERJOINR1(){
-		
+	
+	function selecionaWHERE($con,$tabelas,$ids,$campos){
+		$tabela = concatenaSelect($tabelas,false);
+		$id = concatenaSelect($ids,true);
+		$campo = concatenaSelect($campos,false);
+		return mysqli_query($con, "SELECT ".$campo." FROM ".$tabela." WHERE $id");
 	}
-	function insereLimpo($con,$tabela,$id,$alvos,$objetos){
-		$alvo = "";
-		for($i=0;$i<sizeof($alvos);$i++){
-			if($i<sizeof($alvos)-1){
-				$alvo = $alvo.$alvos[$i].",";
-			}
-			else{
-				$alvo = $alvo.$alvos[$i];
-			};
-		};
-		$objeto = "";
-		for($i=0;$i<sizeof($objetos);$i++){
-			if($i<sizeof($objetos)-1){
-				$objeto = $objeto.$objetos[$i].",";
-			}
-			else{
-				$objeto = $objeto.$objetos[$i];
-			};
+	
+	function insereAtualiza($con,$tabela,$id,$idN,$alvos,$objetos,$insere){
+		$alvo = concatenaSelect($alvos,false);
+		$objeto = concatenaSelect($objetos,false);
+		if($insere){
+			return mysqli_query($con,"INSERT INTO $tabela(".$alvo.") values (".$objeto.")");
 		}
-		return mysqli_query($con,"INSERT INTO $tabela(".$alvo.") values (".$objeto.") WHERE $id");
-	}
-	function atualizaLimpo($con,$tabela,$id,$alvos,$objetos){
-		$alvo = "";
-		for($i=0;$i<sizeof($alvos);$i++){
-			if($i<sizeof($alvos)-1){
-				$alvo = $alvo.$alvos[$i].",";
-			}
-			else{
-				$alvo = $alvo.$alvos[$i];
-			};
-		};
-		$objeto = "";
-		for($i=0;$i<sizeof($objetos);$i++){
-			if($i<sizeof($objetos)-1){
-				$objeto = $objeto.$objetos[$i].",";
-			}
-			else{
-				$objeto = $objeto.$objetos[$i];
-			};
+		else{
+			return mysqli_query($con,"UPDATE $tabela(".$alvo.") values (".$objeto.") WHERE $id=$idN");
 		}
-		return mysqli_query($con,"UPDATE $tabela(".$alvo.") values (".$objeto.") WHERE $id");
 	}
+	
 	function loopColunaAJAX($result,$vetor){
 		while($coluna=mysqli_fetch_array($result)){
 			array_push($vetor,$coluna);
