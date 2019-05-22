@@ -7,6 +7,11 @@
 	<script src="js/ficha-personagem.js"></script>
 </head>
 <body onload='inicializa()'>
+
+<?php
+	session_start(); // resume a sessao que veio do index
+	//$_SESSION['LoginID']; pega o ID
+?>
     <label>nome:</label>
     <label ondblclick="modalTextBox(this)" id="nome_pers"></label>
     <input type="text" id="nome_pers_input" />

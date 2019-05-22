@@ -16,7 +16,7 @@
 		$login = $_POST['login'];
 		$senha = $_POST['senha'];
 	
-		$result = mysqli_query($con, "SELECT idJogador,login,senha,mestre FROM jogador WHERE login = '".$login."' AND sha1(senha) = sha1('".$senha."')");
+		$result = mysqli_query($con, "SELECT idJogador,nome,login,senha,mestre FROM jogador WHERE login = '".$login."' AND sha1(senha) = sha1('".$senha."')");
 		if (mysqli_num_rows($result)!=1){
 			echo "Login inválido!"; exit;
 		} 
@@ -25,9 +25,10 @@
 			
 			if(!isset($_SESSION)) session_start();
 			
-			$_SESSION['LoginID'] = $resultado['id'];
-			$_SESSION['LoginNome'] = $resultado['login'];
+			$_SESSION['LoginID'] = $resultado['idJogador'];
+			$_SESSION['LoginNome'] = $resultado['nome'];
 			$_SESSION['LoginMestre'] = $resultado['mestre'];
+			
 			
 			header("Location: ficha-personagem.php"); exit;
 		}
