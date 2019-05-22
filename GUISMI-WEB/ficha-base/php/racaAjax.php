@@ -5,5 +5,5 @@
 	while($raca = mysqli_fetch_array($result)){
 		array_push($racas,$raca);	
 	}
-	echo json_encode ($racas);
+	echo json_encode($racas);
 ?>

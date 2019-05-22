@@ -19,6 +19,8 @@ function armazenaFicha(){
 
 function setaInfoFichas() {
     ficha = JSON.parse(sessionStorage.getItem("ficha"));
+    if(ficha==null)
+        return;
     document.getElementById('nome_pers').innerHTML = ficha.nome_pers;
     document.getElementById('nome_pers_input').value = ficha.nome_pers; setaAtributosFicha(ficha);
     setaRacaFicha(ficha);
@@ -122,4 +124,15 @@ function calculaAtributosFinais() {
     CAR[2].innerHTML = Number(CAR[0].innerHTML) + Number(CAR[1].innerHTML);
     CAR[3].innerHTML = Math.round((Number(CAR[0].innerHTML) + Number(CAR[1].innerHTML)) / 5);
     CAR[4].innerHTML = Math.round((Number(CAR[0].innerHTML) + Number(CAR[1].innerHTML)) / 2);
+}
+
+function calculaAtributosTotal(campoResultado, listaAtributos) {
+    campoResultadoinnerHTML = 0;
+    listaAtributos.forEach(function (atributo) {
+        campoResultado.innerHTML = Number(campoResultado.innerHTML) + Number(atributo);
+    });
+}
+
+function onKeyUpAtributos(elemento) {
+   
 }
