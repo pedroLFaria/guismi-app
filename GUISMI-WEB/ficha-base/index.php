@@ -30,7 +30,7 @@
 			$_SESSION['LoginMestre'] = $resultado['mestre'];
 			
 			
-			header("Location: ficha-personagem.php"); exit;
+			header("Location: escolhe-ficha.php"); exit;
 		}
 	}
 ?>			
