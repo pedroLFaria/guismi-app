@@ -4,23 +4,23 @@
 		if(!$id){
 			for($i=0;$i<sizeof($vetor);$i++){
 				if($i<sizeof($vetor)-1){
-					$texto = $texto.$vetor[$i].",";
+					$texto = $texto."'".$vetor[$i]."',";
 				}
 				else{
-					$texto = $texto.$vetor[$i];
+					$texto = $texto."'".$vetor[$i]."'";
 				};
 			};
 		}
 		else{
 			for($i=0;$i<sizeof($vetor);$i++){
 				if($i%2==0){
-					$texto = $texto.$vetor[$i]." = ";
+					$texto = $texto.$vetor[$i]." = '";
 				}
 				else if($i<sizeof($vetor)-1){
-					$texto = $texto.$vetor[$i]." and ";
+					$texto = $texto.$vetor[$i]."' and ";
 				}
 				else{
-					$texto = $texto.$vetor[$i];
+					$texto = $texto.$vetor[$i]."'";
 				}
 			};
 		}

@@ -7,10 +7,6 @@
 	<script src="js/ficha-personagem.js"></script>
 </head>
 <body onload='inicializa()'>
-<?php
-	//selecionaWHERE($con,$tabelas,$ids,$campos)
-	selecionaWHERE($con, array("teste1","teste2"),array("teste3","teste4","teste4","teste8"),array("teste5","teste6"));
-?><br>
     <label>nome:</label>
     <label ondblclick="modalTextBox(this)" id="nome_pers"></label>
     <input type="text" id="nome_pers_input" />
