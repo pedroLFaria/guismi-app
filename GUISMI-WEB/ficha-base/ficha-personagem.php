@@ -2,10 +2,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<?php include "php\config.php";?>
+	<?php include "php\config.php";
+		include "php/function.php";?>
 	<script src="js/ficha-personagem.js"></script>
 </head>
 <body onload='inicializa()'>
+<?php
+?>
     <label>nome:</label>
     <label ondblclick="modalTextBox(this)" id="nome_pers"></label>
     <input type="text" id="nome_pers_input" />
