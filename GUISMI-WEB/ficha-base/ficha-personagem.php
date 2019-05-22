@@ -7,7 +7,6 @@
 	<script src="js/ficha-personagem.js"></script>
 </head>
 <body onload='inicializa()'>
-
 <?php
 	session_start(); // resume a sessao que veio do index
 	//$_SESSION['LoginID']; pega o ID
@@ -19,10 +18,12 @@
     <label ondblclick="modalTextBox(this)" id="raca_pers"></label>
 	<select id="raca_pers_input" onchange='onChangeRaca(this.value)'><option>-</option>
 	</select>
-    <label>caminho:</label>
-    <label ondblclick="modalTextBox(this)" id="caminhos_pers">Ladino</label>
-    <select id="caminhos_pers_input"></select>
-    <button>+</button>
+	<div id="caminhos_pers">
+		<label>caminho:</label>
+		<label ondblclick="modalTextBox(this)">Ladino</label>
+		<select id="caminhos_pers_input"></select>
+		<button>+</button>
+	</div>
     <label>idiomas:</label>
     <label ondblclick="modalTextBox(this)" id="idiomas_pers">Draconico</label>
     <select list='idiomas_pers_input'></select>
@@ -46,41 +47,41 @@
         <tbody>
             <tr>
                 <th>Sangue</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id='sangue_base'>0</td>
+                <td id='sangue_perdido'>0</td>
+                <td id='sangue_total'>0</td>
             </tr>
             <tr>
                 <th>Vigor</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id='vigor_base'>0</td>
+                <td id='vigor_perdido'>0</td>
+                <td id='vigor_final'>0</td>
             </tr>
             <tr>
                 <th>Mana</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id='mana_base'>0</td>
+                <td id='mana_perdida'>0</td>
+                <td id='mana_final'>0</td>
             </tr>
         </tbody>
         <tbody>
             <tr>
                 <th>Regen. Sangue</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id='regen_sangue_base'>0</td>
+                <td id='regen_sangue_buff'>0</td>
+                <td id='regen_sange_final'>0</td>
             </tr>
             <tr>
                 <th>Regen. Vigor</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id='regen_vigor_base'>0</td>
+                <td id='regen_vigor_buff'>0</td>
+                <td id='regen_vigor_final'>0</td>
             </tr>
             <tr>
                 <th>Regen. Mana</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id='regen_mana_base'>0</td>
+                <td id='regen_mana_buff'>0</td>
+                <td id='regen_mana_final'>0</td>
             </tr>
         </tbody>
     </table>
@@ -101,8 +102,8 @@
             <tr>
                 <th>FOR</th>
                 <td id="raca_for">0</td>
-                <td><label id="dist_for"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_for"></label><input type="number" id="dist_for_input" /></td>
+                <td><input type='number' id='bg_for' /></td>
                 <td id="tt_for">0</td>
                 <td id="m5_for">0</td>
                 <td id="m2_for">0</td>
@@ -110,8 +111,8 @@
             <tr>
                 <th>CON</th>
                 <td id="raca_con">0</td>
-                <td><label id="dist_con"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_con"></label><input type="number" id="dist_con_input"/></td>
+                <td><input type='number' id='bg_con' /></td>
                 <td id="tt_con">0</td>
                 <td id="m5_con">0</td>
                 <td id="m2_con">0</td>
@@ -119,16 +120,16 @@
             <tr>
                 <th>AGI</th>
                 <td id="raca_agi">0</td>
-                <td><label id="dist_agi"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_agi"></label><input type="number" id="dist_agi_input"/></td>
+                <td><input type='number' id='bg_agi' /></td>
                 <td id="tt_agi">0</td>
                 <td id="m5_agi">0</td>
                 <td id="m2_agi">0</td>
             <tr>
                 <th>DES</th>
                 <td id="raca_des">0</td>
-                <td><label id="dist_des"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_des"></label><input type="number" id="dist_des_input"/></td>
+                <td><input type='number' id='bg_des' /></td>
                 <td id="tt_des">0</td>
                 <td id="m5_des">0</td>
                 <td id="m2_des">0</td>
@@ -136,8 +137,8 @@
             <tr>
                 <th>INT</th>
                 <td id="raca_int">0</td>
-                <td><label id="dist_int"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_int"></label><input type="number" id="dist_int_input"/></td>
+                <td><input type='number' id='bg_int' /></td>
                 <td id="tt_int">0</td>
                 <td id="m5_int">0</td>
                 <td id="m2_int">0</td>
@@ -145,8 +146,8 @@
             <tr>
                 <th>SAB</th>
                 <td id="raca_sab">0</td>
-                <td><label id="dist_sab"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_sab"></label><input type="number" id="dist_sab_input"/></td>
+                <td><input type='number' id='bg_sab' /></td>
                 <td id="tt_sab">0</td>
                 <td id="m5_sab">0</td>
                 <td id="m2_sab">0</td>
@@ -154,8 +155,8 @@
             <tr>
                 <th>CAR</th>
                 <td id="raca_car">0</td>
-                <td><label id="dist_car"></label><input type="number" /></td>
-                <td>0</td>
+                <td><label id="dist_car"></label><input type="number" id="dist_car_input"/></td>
+                <td><input type='number' id='bg_car' /></td>
                 <td id="tt_car">0</td>
                 <td id="m5_car">0</td>
                 <td id="m2_car">0</td>

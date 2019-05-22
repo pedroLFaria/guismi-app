@@ -28,12 +28,19 @@ function setaInfoFichas() {
 
 function setaAtributosFicha(ficha){
     document.getElementById('dist_for').innerHTML = ficha.dist_for;
+    document.getElementById('dist_for_input').innerHTML = ficha.dist_for;
     document.getElementById('dist_con').innerHTML = ficha.dist_con;
+    document.getElementById('dist_con_input').innerHTML = ficha.dist_con;
     document.getElementById('dist_agi').innerHTML = ficha.dist_agi;
+    document.getElementById('dist_agi_input').innerHTML = ficha.dist_agi;
     document.getElementById('dist_des').innerHTML = ficha.dist_des;
+    document.getElementById('dist_des_input').innerHTML = ficha.dist_des;
     document.getElementById('dist_int').innerHTML = ficha.dist_int;
+    document.getElementById('dist_int_input').innerHTML = ficha.dist_int;
     document.getElementById('dist_sab').innerHTML = ficha.dist_sab;
+    document.getElementById('dist_sab_input').innerHTML = ficha.dist_sab;
     document.getElementById('dist_car').innerHTML = ficha.dist_car;
+    document.getElementById('dist_car_input').innerHTML = ficha.dist_car;
 }
 
 function setaRacaFicha(ficha) {
@@ -136,3 +143,4 @@ function calculaAtributosTotal(campoResultado, listaAtributos) {
 function onKeyUpAtributos(elemento) {
    
 }
+
