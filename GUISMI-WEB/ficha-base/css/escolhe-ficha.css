@@ -9,7 +9,7 @@
 .ficha-sel{
 	width:650px;
 	height:100px;
-	padding:5px;
+	padding:4px;
 	margin:20px 20px 30px 20px;
 	border:1px grey solid;
 	background-color:white;
@@ -17,14 +17,15 @@
 	box-shadow:0px 0px 10px grey;
 	transition:all 0.5s;
 }
-.ficha-sel:focus{
-	border:1px grey solid;
-}
+
 .ficha-sel:hover{
 	box-shadow:0px 0px 20px black;
 }
 .botao-texto{
 	float:left;
+}
+.botao-text h3{
+	border:;
 }
 
 .ficha-sel img{
