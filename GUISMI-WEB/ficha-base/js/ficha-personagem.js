@@ -83,6 +83,7 @@ function onChangeRaca(idRaca){
     racas = JSON.parse(sessionStorage.getItem("racas"));
     setaAtributosRaca(racas[idRaca - 1]);
     calculaAtributosFinais();
+     console.log('tete');
 }
 
 function setaAtributosRaca(raca){
@@ -105,12 +106,14 @@ function calculaAtributosFinais() {
         document.querySelectorAll('[id$="_sab"]'),
         document.querySelectorAll('[id$="_car"]')
     ]
+     console.log('tete2');
     
     atributos.forEach(function (atributo) {
         calculaAtributosTotal(atributo[3], [atributo[0].innerHTML, atributo[1].innerHTML])
         calculaAtributosM5(atributo[4], [atributo[0].innerHTML, atributo[1].innerHTML])
         calculaAtributosM2(atributo[5], [atributo[0].innerHTML, atributo[1].innerHTML])
     });
+ 
     calculaQuadro(atributos);
 }
 
@@ -118,21 +121,22 @@ function calculaQuadro(atributos) {
     var racaPersonagem = {sangue:10, vigor:15}
     calculaSangueFinal()
     calculaVigorFinal()
+    calculaManaFinal();
 }
 
 function calculaSangueFinal(con, sangueRaca) {
     calculaAtributosTotal(document.getElementById("sangue_base"), [con, sangueRaca]);
-    calculaAtributosFinais(document.getElementById('sangue_total'), [con, sangueRaca, -Number(document.getElementById('sangue_perdido').value)])
+    calculaAtributosTotal(document.getElementById('sangue_total'), [con, sangueRaca, -Number(document.getElementById('sangue_perdido').value)])
 }
 
 function calculaVigorFinal(con, vigorRaca) {
     calculaAtributosTotal(document.getElementById("vigor_base"), [con, vigorRaca]);
-    calculaAtributosFinais(document.getElementById('vigor_total'), [con, vigorRaca, -Number(document.getElementById('vigor_perdido').value)])
+    calculaAtributosTotal(document.getElementById('vigor_total'), [con, vigorRaca, -Number(document.getElementById('vigor_perdido').value)])
 }
 
 function calculaManaFinal(int, temAmpliadorMana) {
-    temAmpliadorMana ? calculaAtributosTotal(document.getElementById("mana_base"), [int * 7]) : calculaAtributosTotal(document.getElementById("vigor_base"), [int * 5]);
-    calculaAtributosFinais(document.getElementById('mana_total'), [Number(document.getElementById("mana_base")), -Number(document.getElementById('mana_perdido').value)])
+    temAmpliadorMana ? calculaAtributosTotal(document.getElementById("mana_base"), [int * 7]) : calculaAtributosTotal(document.getElementById("mana_base"), [int * 5]);
+    calculaAtributosTotal(document.getElementById('mana_total'), [Number(document.getElementById("mana_base")), -Number(document.getElementById('mana_perdido').value)])
 }
 
 function calculaAtributosTotal(campoResultado, listaAtributos) {
@@ -145,8 +149,6 @@ function calculaAtributosTotal(campoResultado, listaAtributos) {
 
 function calculaAtributosM5(campoResultado, listaAtributos) {
     var resultado = 0;
-    console.log(campoResultado);
-    console.log(listaAtributos);
     listaAtributos.forEach(function (atributo) {
         resultado += Number(atributo);
     });

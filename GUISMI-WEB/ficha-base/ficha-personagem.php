@@ -55,13 +55,13 @@
                 <th>Vigor</th>
                 <td id='vigor_base'>0</td>
                 <td id='vigor_perdido'>0</td>
-                <td id='vigor_final'>0</td>
+                <td id='vigor_total'>0</td>
             </tr>
             <tr>
                 <th>Mana</th>
                 <td id='mana_base'>0</td>
-                <td id='mana_perdida'>0</td>
-                <td id='mana_final'>0</td>
+                <td id='mana_perdido'>0</td>
+                <td id='mana_total'>0</td>
             </tr>
         </tbody>
         <tbody>
