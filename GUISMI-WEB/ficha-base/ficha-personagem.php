@@ -8,8 +8,8 @@
 </head>
 <body onload='inicializa()'>
 <?php
-	session_start(); // resume a sessao que veio do index
-	//$_SESSION['LoginID']; pega o ID
+	session_start(); 
+	$_SESSION["idFichaAtual"] = @$_REQUEST['idFicha'];
 ?>
     <label>nome:</label>
     <label ondblclick="modalTextBox(this)" id="nome_pers"></label>

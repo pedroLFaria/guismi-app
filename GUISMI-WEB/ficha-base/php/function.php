@@ -32,7 +32,7 @@
 	}
 	
 	function selecionaPorID($con,$tabela,$id,$idN){
-		return mysqli_query($con, "SELECT * FROM $tabela WHERE $id=$idN");
+		return mysqli_query($con, "SELECT * FROM $tabela WHERE $id='$idN'");
 	}
 	
 	function selecionaWHERE($con,$tabelas,$ids,$campos){
