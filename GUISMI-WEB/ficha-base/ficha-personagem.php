@@ -20,7 +20,7 @@
 	</select>
 	<div id="caminhos_pers">
 		<label>caminho:</label>
-		<label ondblclick="modalTextBox(this)">Ladino</label>
+		<label ondblclick="modalTextBox(this)"></label>
 		<select id="caminhos_pers_input"></select>
 		<button>+</button>
 	</div>
@@ -33,10 +33,10 @@
     <input type="number" id="sanidade_pers_input" min="-4" max="0" value="0" title="" />
     <label>Nivel</label>
     <label id="nivel_pers"></label>
-    <input type="number" name="nivel_pers_input" />
+    <input type="number" id="nivel_pers_input" />
     <label>Experiência</label>
     <label id="exp_pers"></label>
-    <input type="number" name="exp_pers_input" />
+    <input type="number" id="exp_pers_input" />
     <span id='exp_pers_nivel'>9999</span>
     <label>Descendências</label>
     <ul>
@@ -48,19 +48,19 @@
             <tr>
                 <th>Sangue</th>
                 <td id='sangue_base'>0</td>
-                <td id='sangue_perdido'>0</td>
+                <td><input type="number" id='sangue_perdido' onkeyup='calculaQuadro()' onchange='calculaQuadro()'/></td>
                 <td id='sangue_total'>0</td>
             </tr>
             <tr>
                 <th>Vigor</th>
                 <td id='vigor_base'>0</td>
-                <td id='vigor_perdido'>0</td>
+                <td><input type="number"  id='vigor_perdido' onkeyup='calculaQuadro()' onchange='calculaQuadro()'/></td>
                 <td id='vigor_total'>0</td>
             </tr>
             <tr>
                 <th>Mana</th>
                 <td id='mana_base'>0</td>
-                <td id='mana_perdido'>0</td>
+                <td><input type="number" id='mana_perdido' onkeyup='calculaQuadro()' onchange='calculaQuadro()'/></td>
                 <td id='mana_total'>0</td>
             </tr>
         </tbody>
