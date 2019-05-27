@@ -13,11 +13,12 @@
 		<div class="cabecalho">
 		</div>
 		<div class="corpo">
+			<form action="ficha-personagem.php?idFicha=<?php echo $_GET['idFicha'];?>" method=get>
 <?php
 	$result = mysqli_query($con, "SELECT ficha.idFicha,ficha.nome_pers,ficha.img,ficha.idade,raca.nome FROM ficha,raca WHERE idJogador = '".$_SESSION['LoginID']."' and ficha.idRaca=raca.idRaca");
 	while($coluna=mysqli_fetch_array($result)){
 ?>
-			<button class="ficha-sel" name="botao-personagem <?php echo $coluna['idFicha'];?>" onclick="location.href='ficha-personagem.php?idFicha=<?php echo $coluna['idFicha'];?>';">
+			<button class="ficha-sel" name="idFicha" value="<?php echo $coluna['idFicha'];?>">
 			<label class="botao-texto">
 				<label>Nome: </label><h3><?php echo $coluna['nome_pers'];?></h3>
 				<label>Raça: </label><h5><?php echo $coluna['nome']?></h5>
@@ -28,6 +29,7 @@
 <?php 
 	}
 ?>
+			</form>
 		</div>		
 	</body>
 </html>
