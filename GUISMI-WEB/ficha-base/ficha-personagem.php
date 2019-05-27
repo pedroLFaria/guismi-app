@@ -157,7 +157,7 @@
                 <td id="raca_car">0</td>
                 <td><label id="dist_car"></label><input type="number" id="dist_car_input"/></td>
                 <td><input type='number' id='bg_car' /></td>
-                <td id="tt_car">0</td>
+                <td id="tt_car" >0</td>
                 <td id="m5_car">0</td>
                 <td id="m2_car">0</td>
 			</tr>
