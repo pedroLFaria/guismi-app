@@ -18,7 +18,6 @@ function armazenaFicha(){
 }
 
 function setaInfoFichas() {
-
     if(ficha==null)
         return;
     document.getElementById('nome_pers').innerHTML = ficha.nome_pers;
@@ -30,23 +29,22 @@ function setaInfoFichas() {
 
 function setaAtributosFicha(ficha){
     document.getElementById('dist_for').innerHTML = ficha.dist_for;
-    document.getElementById('dist_for_input').innerHTML = ficha.dist_for;
     document.getElementById('dist_con').innerHTML = ficha.dist_con;
-    document.getElementById('dist_con_input').innerHTML = ficha.dist_con;
     document.getElementById('dist_agi').innerHTML = ficha.dist_agi;
-    document.getElementById('dist_agi_input').innerHTML = ficha.dist_agi;
     document.getElementById('dist_des').innerHTML = ficha.dist_des;
-    document.getElementById('dist_des_input').innerHTML = ficha.dist_des;
     document.getElementById('dist_int').innerHTML = ficha.dist_int;
-    document.getElementById('dist_int_input').innerHTML = ficha.dist_int;
     document.getElementById('dist_sab').innerHTML = ficha.dist_sab;
-    document.getElementById('dist_sab_input').innerHTML = ficha.dist_sab;
     document.getElementById('dist_car').innerHTML = ficha.dist_car;
-    document.getElementById('dist_car_input').innerHTML = ficha.dist_car;
+    document.getElementById('input_dist_for').value = ficha.dist_for;
+    document.getElementById('input_dist_con').value = ficha.dist_con;
+    document.getElementById('input_dist_agi').value = ficha.dist_agi;
+    document.getElementById('input_dist_des').value = ficha.dist_des;
+    document.getElementById('input_dist_int').value = ficha.dist_int;
+    document.getElementById('input_dist_sab').value = ficha.dist_sab;
+    document.getElementById('input_dist_car').value = ficha.dist_car;
 }
 
 function setaRacaFicha(ficha) {
-    
     raca_pers = racas.filter(function (raca) { return raca.idRaca == this; }, ficha.idRaca)[0];
     document.getElementById("raca_pers").innerHTML = raca_pers.nome;
     document.getElementById("raca_pers_input").selectedIndex  = raca_pers.idRaca;
@@ -114,20 +112,23 @@ function calculaAtributosFinais() {
         document.querySelectorAll('[id$="_int"]'),
         document.querySelectorAll('[id$="_sab"]'),
         document.querySelectorAll('[id$="_car"]')
-    ]
-    atributos.forEach(function (atributo) {
-        calculaAtributosTotal(atributo[3], [atributo[0].innerHTML, atributo[1].innerHTML])
-        calculaAtributosM5(atributo[4], [atributo[0].innerHTML, atributo[1].innerHTML])
-        calculaAtributosM2(atributo[5], [atributo[0].innerHTML, atributo[1].innerHTML])
+    ];
+    atributos.forEach(function (atributo) {        
+        calculaAtributosTotal(atributo[4], [atributo[0].innerHTML, atributo[2].value, atributo[3].value])
+        calculaAtributosM5(atributo[5], [atributo[0].innerHTML, atributo[2].value, atributo[3].value])
+        calculaAtributosM2(atributo[6], [atributo[0].innerHTML, atributo[2].value, atributo[3].value])
     });
     calculaQuadro();
 }
-
+ 
 function calculaQuadro() {
     raca_escolhida = racas.filter(function (raca) { return raca.idRaca == this; }, document.getElementById("raca_pers_input").selectedOptions[0].value)[0];
-    calculaSangueFinal(Number(document.getElementById("tt_con").innerText), raca_pers.sangue)
-    calculaVigorFinal(Number(document.getElementById("tt_con").innerText), raca_pers.vigor)
+    calculaSangueFinal(Number(document.getElementById("tt_con").innerText), raca_pers.sangue);
+    calculaVigorFinal(Number(document.getElementById("tt_con").innerText), raca_pers.vigor);
     calculaManaFinal(Number(document.getElementById("tt_int").innerText), false);
+    calculaRegenSangue(Number(document.getElementById("sangue_base").innerText));
+    calculaRegenVigor(Number(document.getElementById('tt_con').innerText), Number(document.getElementById('tt_agi').innerText));
+    calculaRegenMana(Number(document.getElementById('tt_sab').innerText));
 }
 
 function calculaSangueFinal(con, sangueRaca) {
@@ -145,12 +146,37 @@ function calculaManaFinal(int, temAmpliadorMana) {
     calculaAtributosTotal(document.getElementById('mana_total'), [Number(document.getElementById("mana_base").innerText), document.getElementById('mana_perdido').value])
 }
 
+function calculaRegenSangue(sangueBase) {
+    calculaAtributosTotal(document.getElementById('regen_sangue_base'), [sangueBase / 2])
+    calculaAtributosTotal(document.getElementById('regen_sange_final'), [Number(document.getElementById("regen_sangue_base").innerText), document.getElementById('regen_sangue_buff').value])
+}
+
+function calculaRegenVigor(conTT, agiTT) {
+    calculaAtributosTotal(document.getElementById('regen_vigor_base'), [conTT + agiTT/ 8])
+    calculaAtributosTotal(document.getElementById('regen_vigor_final'), [Number(document.getElementById("regen_vigor_base").innerText), document.getElementById('regen_vigor_buff').value])
+}
+
+function calculaRegenMana(sabTT) {
+    calculaAtributosTotal(document.getElementById('regen_mana_base'), [sabTT / 2])
+    calculaAtributosTotal(document.getElementById('regen_mana_final'), [Number(document.getElementById("regen_mana_base").innerText), document.getElementById('regen_mana_buff').value])
+}
+
+function setaAtributosInputEmLabel() {
+    document.getElementById('dist_for').innerHTML = document.getElementById('input_dist_for').value;
+    document.getElementById('dist_con').innerHTML = document.getElementById('input_dist_con').value;
+    document.getElementById('dist_agi').innerHTML = document.getElementById('input_dist_agi').value;
+    document.getElementById('dist_des').innerHTML = document.getElementById('input_dist_des').value;
+    document.getElementById('dist_int').innerHTML = document.getElementById('input_dist_int').value;
+    document.getElementById('dist_sab').innerHTML = document.getElementById('input_dist_sab').value;
+    document.getElementById('dist_car').innerHTML = document.getElementById('input_dist_car').value;
+}
+
 function calculaAtributosTotal(campoResultado, listaAtributos) {
     var resultado = 0;
     listaAtributos.forEach(function (atributo) {
            resultado += Number(atributo);
     });
-    campoResultado.innerHTML = resultado;
+    campoResultado.innerHTML = Math.round(resultado);
 }
 
 function calculaAtributosM5(campoResultado, listaAtributos) {

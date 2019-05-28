@@ -68,19 +68,19 @@
             <tr>
                 <th>Regen. Sangue</th>
                 <td id='regen_sangue_base'>0</td>
-                <td id='regen_sangue_buff'>0</td>
+                <td><input type="number" id='regen_sangue_buff' onkeyup='calculaQuadro()' onchange='calculaQuadro()'/></td>
                 <td id='regen_sange_final'>0</td>
             </tr>
             <tr>
                 <th>Regen. Vigor</th>
                 <td id='regen_vigor_base'>0</td>
-                <td id='regen_vigor_buff'>0</td>
+                <td><input type="number" id='regen_vigor_buff' onkeyup='calculaQuadro()' onchange='calculaQuadro()'/></td>
                 <td id='regen_vigor_final'>0</td>
             </tr>
             <tr>
                 <th>Regen. Mana</th>
                 <td id='regen_mana_base'>0</td>
-                <td id='regen_mana_buff'>0</td>
+                <td><input type="number" id='regen_mana_buff' onkeyup='calculaQuadro()' onchange='calculaQuadro()'/></td>
                 <td id='regen_mana_final'>0</td>
             </tr>
         </tbody>
@@ -102,8 +102,8 @@
             <tr>
                 <th>FOR</th>
                 <td id="raca_for">0</td>
-                <td><label id="dist_for"></label><input type="number" id="dist_for_input" /></td>
-                <td><input type='number' id='bg_for' /></td>
+                <td><label id="dist_for"></label><input type="number" id="input_dist_for" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_for'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_for">0</td>
                 <td id="m5_for">0</td>
                 <td id="m2_for">0</td>
@@ -111,8 +111,8 @@
             <tr>
                 <th>CON</th>
                 <td id="raca_con">0</td>
-                <td><label id="dist_con"></label><input type="number" id="dist_con_input"/></td>
-                <td><input type='number' id='bg_con' /></td>
+                <td><label id="dist_con"></label><input type="number" id="input_dist_con" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_con'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_con">0</td>
                 <td id="m5_con">0</td>
                 <td id="m2_con">0</td>
@@ -120,16 +120,16 @@
             <tr>
                 <th>AGI</th>
                 <td id="raca_agi">0</td>
-                <td><label id="dist_agi"></label><input type="number" id="dist_agi_input"/></td>
-                <td><input type='number' id='bg_agi' /></td>
+                <td><label id="dist_agi"></label><input type="number" id="input_dist_agi" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_agi'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_agi">0</td>
                 <td id="m5_agi">0</td>
                 <td id="m2_agi">0</td>
             <tr>
                 <th>DES</th>
                 <td id="raca_des">0</td>
-                <td><label id="dist_des"></label><input type="number" id="dist_des_input"/></td>
-                <td><input type='number' id='bg_des' /></td>
+                <td><label id="dist_des"></label><input type="number" id="input_dist_des" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_des'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_des">0</td>
                 <td id="m5_des">0</td>
                 <td id="m2_des">0</td>
@@ -137,8 +137,8 @@
             <tr>
                 <th>INT</th>
                 <td id="raca_int">0</td>
-                <td><label id="dist_int"></label><input type="number" id="dist_int_input"/></td>
-                <td><input type='number' id='bg_int' /></td>
+                <td><label id="dist_int"></label><input type="number" id="input_dist_int" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_int'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_int">0</td>
                 <td id="m5_int">0</td>
                 <td id="m2_int">0</td>
@@ -146,8 +146,8 @@
             <tr>
                 <th>SAB</th>
                 <td id="raca_sab">0</td>
-                <td><label id="dist_sab"></label><input type="number" id="dist_sab_input"/></td>
-                <td><input type='number' id='bg_sab' /></td>
+                <td><label id="dist_sab"></label><input type="number" id="input_dist_sab" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_sab'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_sab">0</td>
                 <td id="m5_sab">0</td>
                 <td id="m2_sab">0</td>
@@ -155,8 +155,8 @@
             <tr>
                 <th>CAR</th>
                 <td id="raca_car">0</td>
-                <td><label id="dist_car"></label><input type="number" id="dist_car_input"/></td>
-                <td><input type='number' id='bg_car' /></td>
+                <td><label id="dist_car"></label><input type="number" id="input_dist_car" onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()' onfocusout='setaAtributosInputEmLabel()'/></td>
+                <td><input type='number' id='bg_car'  onkeyup='calculaAtributosFinais()' onchange='calculaAtributosFinais()'/></td>
                 <td id="tt_car">0</td>
                 <td id="m5_car">0</td>
                 <td id="m2_car">0</td>
