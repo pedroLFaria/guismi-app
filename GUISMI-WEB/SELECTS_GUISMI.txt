@@ -1,4 +1,4 @@
-/*SELECT FICHA ATUALIZADO(SUBSTITUINDO CAMPOS)[HOMOLOGAR]*/
+/*SELECT FICHA[HOMOLOGAR]*/
 
 SELECT nome_pers.ficha,
 CASE idcidade.ficha
@@ -10,20 +10,25 @@ END,
 img.ficha,idade.ficha,afiliacao.ficha,cla.ficha,sorte_dia.ficha,dist_for.ficha,dist_con.ficha,dist_agi.ficha,dist_des.ficha,dist_int.ficha,dist_sab.ficha,dist_car.ficha,nivel_pers.fichaL,exp_pers.ficha,pers_desc.ficha,pers_hist.ficha,nota.ficha,
 CASE idSanidade.ficha
 	WHEN idsanidade.sanidade THEN nome.sanidade
-END
+END,
+CASE idreputacao.ficha
+	WHEN idreputacao.reputacao THEN nome.reputacao
+END, 
+efeito.reputacao
 FROM ficha 
 LEFT JOIN cidade ON ficha.idcidade = cidade.idcidade 
 LEFT JOIN raca ON ficha.idraca = raca.idraca
 LEFT JOIN sanidade ON ficha.idsanidade = sanidade.idsanidade
+LEFT JOIN reputacao ON ficha.idreputacao = reputacao.idreputacao
 WHERE idFicha= 'VAR'
 
 /*SELECT DESCENDENCIAS[HOMOLOGAR]*/
  
-SELECT * FROM ficha 
+SELECT *.descendencia FROM ficha 
 LEFT JOIN descendencia_has_ficha ON descendencia_has_ficha.idficha = ficha.idficha 
 LEFT JOIN raca_has_descendencia ON raca_has_descendencia.idraca = ficha.idraca LEFT JOIN descendencia ON raca_has_descendencia.iddescendencia = descendencia.iddescendencia OR descendencia_has_ficha.iddescendencia = descendencia.iddescendencia WHERE ficha.idficha = 'VAR'
 
-/*SELECT HABITOS [APROVADO]*/
+/*SELECT HABITOS[APROVADO]*/
 
 SELECT habitos.nome,habitos.desc_hab,ficha_has_habitos.qtd_fic_hab,caminho_has_habitos.qtd_cam_hab,descendencia_has_habitos.qtd_desc_hab,raca_has_habitos.qtd_rac_hab FROM ficha
 LEFT JOIN ficha_has_caminho ON ficha_has_caminho.idFicha = ficha.idFicha
@@ -39,12 +44,46 @@ where ficha.idFicha = 'VAR'
 
 /*SELECT ESPECIALIZACAO[]*/
 
-/*SELECT TRACOS_RACIAIS[]*/
+/*SELECT TRACOS_RACIAIS[HOMOLOGAR]*/
 
-/*SELECT CAMINHO[]*/
+SELECT *.tracos_raciais 
+FROM ficha
+LEFT JOIN racas ON ficha.idraca = raca.idraca
+LEFT JOIN tracos_raciais ON raca.idraca = tracos_raciais.idraca
+WHERE ficha.idficha = 'VAR'
 
-/*SELECT INVENTARIO/ITEM?[]*/
+/*SELECT CAMINHO[HOMOLOGAR]*/
 
-/*SELECT SITUAÇÃO[]*/
+SELECT idcaminho.ficha_has_caminho,nome.caminho 
+FROM ficha
+LEFT JOIN ficha_has_caminho ON ficha.idficha = ficha_has_caminho.idficha
+LEFT JOIN caminho ON ficha_has_caminho.idcaminho = caminho.idcaminho
+WHERE ficha.idficha = 'VAR'
+
+/*SELECT INVENTARIO[HOMOLOGAR]*/
+
+SELECT *.inventario
+FROM ficha
+LEFT JOIN ficha_has_inventario ON ficha.idficha = ficha_has_inventario.idficha
+LEFT JOIN inventario ON ficha_has_inventario.idinventario = inventario.idinventario
+WHERE ficha.idficha = 'VAR'
+
+/*SELECT ITEM[HOMOLOGAR]*/
+
+SELECT *.item,quantidade.inventario_has_item 
+FROM ficha
+LEFT JOIN ficha_has_inventario ON ficha.idficha = ficha_has_inventario.idficha
+LEFT JOIN inventario_has_item ON ficha_has_inventario.idinventario = inventario_has_item.idinventario
+LEFT JOIN item ON ficha_has_item.iditem = item.iditem
+WHERE ficha.idficha = 'VAR'
+
+
+/*SELECT SITUAÇÃO[HOMOLOGAR]*/
+
+SELECT *.situacao
+FROM ficha
+LEFT JOIN ficha_has_situacao ON ficha.idficha = ficha_has_situacao.idficha
+LEFT JOIN situacao ON ficha_has_situacao.idsituacao = situacao.idsituacao
+WHERE ficha.idficha = 'VAR'
 
 /*SELECT REPUTACAO[]*/
