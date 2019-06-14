@@ -1,0 +1,50 @@
+/*SELECT FICHA ATUALIZADO(SUBSTITUINDO CAMPOS)[HOMOLOGAR]*/
+
+SELECT nome_pers.ficha,
+CASE idcidade.ficha
+	WHEN idcidade.cidade THEN nome.cidade
+END,
+CASE idraca.ficha
+	WHEN idraca.raca THEN nome.raca
+END,
+img.ficha,idade.ficha,afiliacao.ficha,cla.ficha,sorte_dia.ficha,dist_for.ficha,dist_con.ficha,dist_agi.ficha,dist_des.ficha,dist_int.ficha,dist_sab.ficha,dist_car.ficha,nivel_pers.fichaL,exp_pers.ficha,pers_desc.ficha,pers_hist.ficha,nota.ficha,
+CASE idSanidade.ficha
+	WHEN idsanidade.sanidade THEN nome.sanidade
+END
+FROM ficha 
+LEFT JOIN cidade ON ficha.idcidade = cidade.idcidade 
+LEFT JOIN raca ON ficha.idraca = raca.idraca
+LEFT JOIN sanidade ON ficha.idsanidade = sanidade.idsanidade
+WHERE idFicha= 'VAR'
+
+/*SELECT DESCENDENCIAS[HOMOLOGAR]*/
+ 
+SELECT * FROM ficha 
+LEFT JOIN descendencia_has_ficha ON descendencia_has_ficha.idficha = ficha.idficha 
+LEFT JOIN raca_has_descendencia ON raca_has_descendencia.idraca = ficha.idraca LEFT JOIN descendencia ON raca_has_descendencia.iddescendencia = descendencia.iddescendencia OR descendencia_has_ficha.iddescendencia = descendencia.iddescendencia WHERE ficha.idficha = 'VAR'
+
+/*SELECT HABITOS [APROVADO]*/
+
+SELECT habitos.nome,habitos.desc_hab,ficha_has_habitos.qtd_fic_hab,caminho_has_habitos.qtd_cam_hab,descendencia_has_habitos.qtd_desc_hab,raca_has_habitos.qtd_rac_hab FROM ficha
+LEFT JOIN ficha_has_caminho ON ficha_has_caminho.idFicha = ficha.idFicha
+LEFT JOIN descendencia_has_ficha ON descendencia_has_ficha.idFicha = ficha.idFicha
+LEFT JOIN habitos ON habitos.idHabitos IS NOT NULL
+LEFT JOIN ficha_has_habitos ON ficha_has_habitos.idFicha = ficha.idFicha AND  ficha_has_habitos.idHabitos = habitos.idHabitos
+LEFT JOIN raca_has_habitos ON raca_has_habitos.idRaca = ficha.idRaca AND raca_has_habitos.idHabitos = habitos.idHabitos
+LEFT JOIN caminho_has_habitos ON caminho_has_habitos.idCaminho = ficha_has_caminho.idCaminho AND caminho_has_habitos.idHabitos = habitos.idHabitos
+LEFT JOIN descendencia_has_habitos ON descendencia_has_habitos.idDescendencia = descendencia_has_ficha.idDescendencia AND descendencia_has_habitos.idHabitos = habitos.idHabitos
+where ficha.idFicha = 'VAR'
+
+/*SELECT HABILIDADES[]*/
+
+/*SELECT ESPECIALIZACAO[]*/
+
+/*SELECT TRACOS_RACIAIS[]*/
+
+/*SELECT CAMINHO[]*/
+
+/*SELECT INVENTARIO/ITEM?[]*/
+
+/*SELECT SITUAÇÃO[]*/
+
+/*SELECT REPUTACAO[]*/
