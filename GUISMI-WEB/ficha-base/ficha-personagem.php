@@ -2,15 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<?php include "php\config.php";
-		include "php/function.php";?>
-	<script src="js/ficha-personagem.js"></script>
-</head>
-<body onload='inicializa()'>
-<?php
+<?php include "php\config.php";
+	include "php/function.php";
+	
 	session_start(); 
 	$_SESSION["idFichaAtual"] = @$_REQUEST['idFicha'];
 ?>
+	<script src="js/ficha-personagem.js"></script>
+</head>
+<body onload='inicializa()'>
     <label>nome:</label>
     <label ondblclick="modalTextBox(this)" id="nome_pers"></label>
     <input type="text" id="nome_pers_input" />
