@@ -57,6 +57,6 @@
 		while($coluna=mysqli_fetch_array($result)){
 			array_push($vetor,$coluna);
 		}
-		return json_encode($vetor);
+		return $vetor;
 	}
 ?>

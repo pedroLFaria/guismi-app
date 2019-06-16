@@ -9,5 +9,5 @@
 	}
 	echo json_encode($racas);*/
 	$racas = array();
-	echo loopColunaAJAX(selecionaLimpo($con, "raca"),$racas);
+	echo json_encode(loopColunaAJAX(selecionaLimpo($con, "raca"),$racas));
 ?>
