@@ -26,7 +26,9 @@ WHERE ficha.idFicha = 'VAR'
  
 SELECT descendencia.* FROM ficha 
 LEFT JOIN descendencia_has_ficha ON descendencia_has_ficha.idficha = ficha.idficha 
-LEFT JOIN raca_has_descendencia ON raca_has_descendencia.idraca = ficha.idraca LEFT JOIN descendencia ON raca_has_descendencia.iddescendencia = descendencia.iddescendencia OR descendencia_has_ficha.iddescendencia = descendencia.iddescendencia WHERE ficha.idficha = 'VAR'
+LEFT JOIN raca_has_descendencia ON raca_has_descendencia.idraca = ficha.idraca 
+LEFT JOIN descendencia ON raca_has_descendencia.iddescendencia = descendencia.iddescendencia OR descendencia_has_ficha.iddescendencia = descendencia.iddescendencia 
+WHERE ficha.idficha = 'VAR'
 
 /*SELECT HABITOS[APROVADO]*/
 
@@ -40,9 +42,48 @@ LEFT JOIN caminho_has_habitos ON caminho_has_habitos.idCaminho = ficha_has_camin
 LEFT JOIN descendencia_has_habitos ON descendencia_has_habitos.idDescendencia = descendencia_has_ficha.idDescendencia AND descendencia_has_habitos.idHabitos = habitos.idHabitos
 where ficha.idFicha = 'VAR'
 
-/*SELECT HABILIDADES[]*/
+SELECT habitos.nome,habitos.desc_hab,ficha_has_habitos.qtd_fic_hab,caminho_has_habitos.qtd_cam_hab,descendencia_has_habitos.qtd_desc_hab,raca_has_habitos.qtd_rac_hab 
+FROM ficha
+LEFT JOIN ficha_has_caminho ON ficha_has_caminho.idFicha = ficha.idFicha 
+LEFT JOIN descendencia_has_ficha ON descendencia_has_ficha.idFicha = ficha.idFicha
+LEFT JOIN ficha_has_habitos ON ficha_has_habitos.idFicha = ficha.idFicha 
+LEFT JOIN raca_has_habitos ON raca_has_habitos.idRaca = ficha.idRaca 
+LEFT JOIN caminho_has_habitos ON caminho_has_habitos.idCaminho = ficha_has_caminho.idCaminho 
+LEFT JOIN descendencia_has_habitos ON descendencia_has_habitos.idDescendencia = descendencia_has_ficha.idDescendencia
+LEFT JOIN habitos ON habitos.idHabitos = ficha_has_habitos.idHabitos 
+OR habitos.idHabitos = raca_has_habitos.idHabitos 
+OR habitos.idHabitos = caminho_has_habitos.idHabitos 
+OR habitos.idHabitos = descendencia_has_habitos.idHabitos
+where ficha.idFicha = 1
+
+/*SELECT HABILIDADES[APROVADO]*/
+
+SELECT *
+FROM ficha
+LEFT JOIN habilidades_has_ficha ON habilidades_has_ficha.idFicha = ficha.idFicha
+LEFT JOIN raca_has_habilidades ON raca_has_habilidades.idraca = ficha.idraca 
+LEFT JOIN descendencia_has_ficha ON descendencia_has_ficha.idficha = ficha.idficha 
+LEFT JOIN raca_has_descendencia ON raca_has_descendencia.idraca = ficha.idraca 
+LEFT JOIN descendencia_has_habilidades ON descendencia_has_ficha.idDescendencia = descendencia_has_habilidades.idDescendencia OR raca_has_descendencia.idDescendencia = descendencia_has_habilidades.idDescendencia 
+LEFT JOIN habilidades ON habilidades.idhabilidades
+WHERE ficha.idficha = 'VAR'
+
+------ SELECT ADICIONAL SITUACAO/HABILIDADES
+SELECT situacao.nome,situacao.desc_sit
+FROM habilidades
+LEFT JOIN situacao_has_habilidades ON habilidades.idhabilidades = situacao_has_habilidades.idhabilidades
+LEFT JOIN situacao ON situacao_has_habilidades.idsituacao = situacao.idsituacao
+WHERE habilidades.idhabilidades = 'VAR'
+------ SELECT ADICIONAL ACAO/HABILIDADES
+SELECT acao.nome,situacao.desc_sit
+FROM habilidades
+LEFT JOIN acao_has_habilidades ON habilidades.idhabilidades = acao_has_habilidades.idhabilidades
+LEFT JOIN acao ON acao_has_habilidades.idacao = acao.idacao
+WHERE habilidades.idhabilidades = 'VAR'
 
 /*SELECT ESPECIALIZACAO[]*/
+
+
 
 /*SELECT TRACOS_RACIAIS[APROVADO]*/
 
