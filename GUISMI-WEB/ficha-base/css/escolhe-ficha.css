@@ -24,11 +24,9 @@
 }
 .ficha-sel:hover{
 	box-shadow:0px 0px 20px black;
-	
 }
 .ficha-sel:focus{
 	outline:0px;
-	
 }
 .botao-texto{
 	float:left;
@@ -40,4 +38,18 @@
 	border-radius:100%;
 	border:2px black solid;
 	box-shadow:0px 0px 10px black;
+}
+.botao-cabecalho{
+	height:8vh;
+	width:100px;
+	float:right;
+	background-color:#7c7c76;
+	border:1px black solid;
+	color:#c9c9bf;
+}
+.botao-cabecalho:focus{
+	outline:0;
+	background-color:#b5b584;
+	border-color:#b5b584;
+	border-radius:2px;
 }

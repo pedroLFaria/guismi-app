@@ -1,40 +1,34 @@
-function abrirCaracteristicas() {
-    document.getElementsByClassName('character-main-chracteristcs')[0].style.display = 'block';
-    document.getElementsByClassName('character-main-inventario')[0].style.display = 'none';
-    document.getElementsByClassName('character-main-antecedentes')[0].style.display = 'none'; 
+function alterarDisplay(item, alterar){
+	document.getElementsByClassName(item)[0].style.display = alterar;
 }
-function abrirAntecedentes(){
-    document.getElementsByClassName('character-main-chracteristcs')[0].style.display = 'none';
-    document.getElementsByClassName('character-main-inventario')[0].style.display = 'none';
-    document.getElementsByClassName('character-main-antecedentes')[0].style.display = 'block';
 
-}
-function abrirInventario(){
-    document.getElementsByClassName('character-main-chracteristcs')[0].style.display = 'none';
-    document.getElementsByClassName('character-main-inventario')[0].style.display = 'block';
-    document.getElementsByClassName('character-main-antecedentes')[0].style.display = 'none';
-}
-function modalTextBox(node) {
-    node.style.display = "none";
-    node.nextElementSibling.style.display = "inline-block";
-    node.nextElementSibling.focus();
-}
-function modalInputBox(node) {
-    if(node.value!="")
-        node.previousElementSibling.innerHTML = node.value;
-    node.previousElementSibling.style.display = "inline-block";
-    node.style.display = "none";
-    
-}
-function habilidadeDropdown(node) {
-    console.log("dropdown");
-    node.nextElementSibling.classList.toggle("show");
-}
-function abrirModalAtributos() {
-    document.getElementsByClassName("modal-habilidades")[0].style.display = "block";
-}
-window.onclick = function (event) {
-    if (event.target == document.getElementsByClassName("modal-habilidades")[0]) {
-        document.getElementsByClassName("modal-habilidades")[0].style.display = "none";
-    }
+function validaFormulario(){
+	var nome = document.getElementById("nome-cadastro").value;
+	var login = document.getElementById("login-cadastro").value;
+	var senha = document.getElementById("senha-cadastro").value;
+	var repsenha = document.getElementById("repsenha-cadastro").value;
+	var valido = false;
+	
+	if(login.search(" ") > 0 || senha.search(" ") > 0 || repsenha.search(" ") > 0){
+		alert('Não deve haver espaço nos campos (exceto o campo Nome)!');
+	}
+	else if(login.length < 8 || login.length > 15 ){
+		alert('O login deve conter entre 8 e 15 caracteres!');
+		
+	}
+	else if(senha.length < 8 || senha.length > 15 ){
+		alert('A senha deve conter entre 8 e 15 caracteres!');
+	}
+	else if(senha != repsenha){
+		alert('As senhas devem ser iguais!');
+	}
+	else{
+		valido = true;
+	}
+	
+	if(!valido){
+		document.getElementById("FormCadastro").addEventListener("submit",function previne(event){
+			event.preventDefault();
+		});
+	}
 }
