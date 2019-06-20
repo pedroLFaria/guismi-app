@@ -29,15 +29,23 @@ input::placeholder{
 	background:#7c7c76;
 	border:1px black solid;
 }
-.login input[type=text]:focus, .login input[type=password]:focus, .login input[type=submit]:focus{
+.login input[type=text]:focus, .login input[type=password]:focus, .login input[type=submit]:focus, .login button:focus{
 	outline:0;
 	background-color:#b5b584;
 	border-color:#b5b584;
 	border-radius:2px;
 }
-.login input[type=submit]{
+.login input[type=submit], .login button{
 	padding:2px;
 	background-color:#7c7c76;
 	border:1px black solid;
 	color:#c9c9bf;
+}
+.tela-cadastro{
+	display:none;
+	position:absolute;
+	top:0;
+	height:100%;
+	width:100%;
+	background-color:rgba(0,0,0,0.5);
 }

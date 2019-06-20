@@ -2,46 +2,39 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<?php include "php\config.php";
-			include "php/function.php"; ?>
+		<?php 
+			include "php\config.php";
+			include "php\login.php";
+		?>
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css" >
 		<link rel="stylesheet" type="text/css" href="css/index.css" >
+		<script type="text/javascript" src="js/functions.js"></script>
 		<title>Login GUISMI</title>
 	</head>
 	<body>
-			<form method=POST>
 			<table class="login">
-<?php
-	if(@$_REQUEST['botao']== "Acessar"){
-		$login = $_POST['login'];
-		$senha = $_POST['senha'];
-	
-		$result = mysqli_query($con, "SELECT idJogador,nome,login,senha,mestre FROM jogador WHERE login = '".$login."' AND sha1(senha) = sha1('".$senha."')");
-		if (mysqli_num_rows($result)!=1){
-			echo "<script> alert('Login inválido!'); </script>";
-		} 
-		else{
-			$resultado = mysqli_fetch_assoc($result);
-			
-			if(!isset($_SESSION)) session_start();
-			
-			$_SESSION['LoginID'] = $resultado['idJogador'];
-			$_SESSION['LoginNome'] = $resultado['nome'];
-			$_SESSION['LoginMestre'] = $resultado['mestre'];
-			
-			
-			header("Location: escolhe-ficha.php"); exit;
-		}
-	}
-	else if(@$_REQUEST['botao']=="Cadastrar"){
-		
-	}
-?>					<tr><td> Guia de Sobrevivencia em um Mundo Improvisado </td></tr>
-					<tr><td><input type=text name="login" placeholder="Login"></td></tr>
-					<tr><td><input type=password name="senha" placeholder="Senha"></td></tr>
-					<tr><td><input type=submit name="botao" value="Acessar"> &nbsp <input type=submit name="botao" value="Cadastrar"></td></tr>
-				</table>
+				<form method=POST>
+					<tr><td> Guia de Sobrevivencia em um Mundo Improvisado </td></tr>
+					<tr><td><input type=text name="login" placeholder="Login" required></td></tr>
+					<tr><td><input type=password name="senha" placeholder="Senha" required></td></tr>
+					<tr><td><input type=submit name="botao" value="Acessar"> &nbsp 
 				</form>
+				<button name="abre-cadastro" onClick="alterarDisplay('tela-cadastro','block');">Cadastrar</button></td></tr>
+			</table>
+			
+			<div class="tela-cadastro">
+				<table class="login">
+						<tr><td> Cadastro </td><td><a onClick="alterarDisplay('tela-cadastro','none');">&times;</a></td></tr>
+					<form method=POST id="FormCadastro">
+						<tr><td><input type=text id="nome-cadastro" name="nome-cadastro" placeholder="Nome" required></td></tr>
+						<tr><td><input type=text id="login-cadastro" name="login-cadastro" placeholder="Login" required></td></tr>
+						<tr><td><input type=password id="senha-cadastro" name="senha-cadastro" placeholder="Senha" required></td></tr>
+						<tr><td><input type=password id="repsenha-cadastro" name="repsenha-cadastro" placeholder="Repetir Senha" required></td></tr>
+						<tr><td><input type=submit name="botao-cadastro" value="Cadastrar" onClick="validaFormulario()"></td></tr>
+					</form>
+				</table>
+			</div>
+
 
 	</body>
 </html>
