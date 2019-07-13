@@ -26,22 +26,22 @@
 		}
 		return $texto;
 	}
-	
+
 	function selecionaLimpo($con,$tabela){
 		return mysqli_query($con, "SELECT * FROM $tabela");
 	}
-	
+
 	function selecionaPorID($con,$tabela,$id,$idN){
 		return mysqli_query($con, "SELECT * FROM $tabela WHERE $id='$idN'");
 	}
-	
+
 	function selecionaWHERE($con,$tabelas,$ids,$campos){
 		$tabela = concatenaSelect($tabelas,false);
 		$id = concatenaSelect($ids,true);
 		$campo = concatenaSelect($campos,false);
 		return mysqli_query($con, "SELECT ".$campo." FROM ".$tabela." WHERE $id");
 	}
-	
+
 	function insereAtualiza($con,$tabela,$id,$idN,$alvos,$objetos,$insere){
 		$alvo = concatenaSelect($alvos,false);
 		$objeto = concatenaSelect($objetos,false);
@@ -52,11 +52,12 @@
 			return mysqli_query($con,"UPDATE $tabela(".$alvo.") values (".$objeto.") WHERE $id=$idN");
 		}
 	}
-	
-	function loopColunaAJAX($result,$vetor){
-		while($coluna=mysqli_fetch_array($result)){
-			array_push($vetor,$coluna);
+
+	function loopColunaAJAX($input){
+        $output = array();
+		while($coluna=mysqli_fetch_array($input)){
+			array_push($output,$coluna);
 		}
-		return $vetor;
+		return $output;
 	}
 ?>

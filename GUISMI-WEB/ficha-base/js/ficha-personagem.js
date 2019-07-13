@@ -1,11 +1,36 @@
 function inicializa(){
-    armazenaRacas();
-    setaEscolhaRacas();
+    armazenaSistema();
     armazenaFicha();
+    setaSistema();
     setaInfoFichas();
     calculaAtributosFinais();
 }
-
+function armazenaSistema() {
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            sessionStorage.setItem("sistema", this.responseText);
+        }
+    };
+    xmlhttp.open("GET", "php/sistemaAjax.php", true);
+    xmlhttp.send();
+}
+function setaSistema() {
+    setaEscolhaCaminhos();
+    setaEscolhaIdiomas();
+    setaEscolhaRacas();
+}
+function setaEscolhaCaminhos() {
+    var selectCaminhos = document.getElementById("caminhos_pers_input");
+    for (i in caminhos)
+        selectCaminhos.appendChild(criaOption(caminhos[i]));
+}
+function setaEscolhaIdiomas() {
+    raca_pers = racas.filter(function (raca) { return raca.nome == this; }, ficha.raca.nome)[0];
+    document.getElementById("raca_pers").innerHTML = raca_pers.nome;
+    document.getElementById("raca_pers_input").selectedIndex = raca_pers.idRaca;
+    setaAtributosRaca(raca_pers);
+}
 function armazenaFicha(){
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -16,7 +41,6 @@ function armazenaFicha(){
     xmlhttp.open("GET", "php/fichaAjax.php", true);
     xmlhttp.send();
 }
-
 function setaInfoFichas() {
     if(ficha==null)
         return;
@@ -26,7 +50,6 @@ function setaInfoFichas() {
     setaRacaFicha(ficha);
     setaLevelFicha(ficha);
 }
-
 function setaAtributosFicha(ficha){
     document.getElementById('dist_for').innerHTML = ficha.dist_for;
     document.getElementById('dist_con').innerHTML = ficha.dist_con;
@@ -43,26 +66,19 @@ function setaAtributosFicha(ficha){
     document.getElementById('input_dist_sab').value = ficha.dist_sab;
     document.getElementById('input_dist_car').value = ficha.dist_car;
 }
-
 function setaRacaFicha(ficha) {
-    raca_pers = racas.filter(function (raca) { return raca.idRaca == this; }, ficha.idRaca)[0];
+    raca_pers = racas.filter(function (raca) { return raca.nome == this; }, ficha.raca.nome)[0];
     document.getElementById("raca_pers").innerHTML = raca_pers.nome;
     document.getElementById("raca_pers_input").selectedIndex  = raca_pers.idRaca;
     setaAtributosRaca(raca_pers);
 }
-
 function setaLevelFicha(ficha) {
-    document.getElementById('nivel_pers').innerText = ficha.nivel_pers;
     document.getElementById('nivel_pers_input').value = ficha.nivel_pers;
     setaXP(ficha.nivel_pers);
 }
-
 function setaXP(nivel) {
-    document.getElementById('exp_pers_nivel').innerText = progressao[nivel].xp;
-    document.getElementById('exp_pers').innerText = progressao[nivel].xp;
-    document.getElementById('exp_pers_input').value = Number(progressao[nivel].xp);
+    document.getElementById('exp_pers_input').value = Number(ficha.exp_pers);
 }
-
 function armazenaRacas() {
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -73,17 +89,15 @@ function armazenaRacas() {
     xmlhttp.open("GET", "php/racaAjax.php", true);
     xmlhttp.send();
 }
-
 function setaEscolhaRacas(){
     var selectRacas = document.getElementById("raca_pers_input");
     for(i in racas)
         selectRacas.appendChild(criaOption(racas[i]));
 }
-
-function criaOption(raca){
+function criaOption(objeto){
     var opt = document.createElement('option');
-    opt.innerHTML = raca.nome;
-    opt.value = raca.idRaca;
+    opt.innerHTML = objeto.nome;
+    //opt.value = objeto.id;
     return opt;
 }
 
@@ -198,57 +212,57 @@ function calculaAtributosM2(campoResultado, listaAtributos) {
 var progressao = [
     { xp: 0, habito: 0, atributo: 0, criacaoHabilidade: 0, habilidade: 0 },
     { xp: 0, habito: 0, atributo: 0, criacaoHabilidade: 0, habilidade: 1 },
-    { xp: 1000, habito: 2, atributo: 2, criacaoHabilidade: 0, habilidade: 1 },
-    { xp: 3000, habito: 4, atributo: 4, criacaoHabilidade: 0, habilidade: 1 },
-    { xp: 6000, habito: 6, atributo: 6, criacaoHabilidade: 0, habilidade: 1 },
-    { xp: 10000, habito: 8, atributo: 8, criacaoHabilidade: 1, habilidade: 2 },
-    { xp: 15000, habito: 10, atributo: 10, criacaoHabilidade: 1, habilidade: 2 },
-    { xp: 21000, habito: 12, atributo: 12, criacaoHabilidade: 1, habilidade: 2 },
-    { xp: 28000, habito: 14, atributo: 14, criacaoHabilidade: 1, habilidade: 2 },
-    { xp: 36000, habito: 16, atributo: 16, criacaoHabilidade: 1, habilidade: 2 },
-    { xp: 45000, habito: 18, atributo: 18, criacaoHabilidade: 2, habilidade: 2 },
-    { xp: 55000, habito: 20, atributo: 20, criacaoHabilidade: 2, habilidade: 2 },
-    { xp: 66000, habito: 22, atributo: 22, criacaoHabilidade: 2, habilidade: 2 },
-    { xp: 79500, habito: 24, atributo: 24, criacaoHabilidade: 2, habilidade: 2 },
-    { xp: 95500, habito: 26, atributo: 26, criacaoHabilidade: 2, habilidade: 2 },
-    { xp: 114000, habito: 29, atributo: 28, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 135000, habito: 32, atributo: 30, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 158500, habito: 35, atributo: 32, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 184500, habito: 38, atributo: 34, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 213000, habito: 41, atributo: 36, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 240000, habito: 44, atributo: 38, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 277500, habito: 47, atributo: 40, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 313500, habito: 50, atributo: 42, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 354500, habito: 53, atributo: 44, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 400500, habito: 56, atributo: 46, criacaoHabilidade: 3, habilidade: 3 },
-    { xp: 451500, habito: 59, atributo: 48, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 507500, habito: 62, atributo: 50, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 568500, habito: 65, atributo: 52, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 634500, habito: 68, atributo: 54, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 705500, habito: 71, atributo: 56, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 781500, habito: 74, atributo: 58, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 862500, habito: 77, atributo: 60, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 953500, habito: 80, atributo: 62, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1054500, habito: 83, atributo: 64, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1165500, habito: 86, atributo: 66, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1286500, habito: 89, atributo: 68, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1417500, habito: 92, atributo: 70, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1558500, habito: 95, atributo: 72, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1709500, habito: 98, atributo: 74, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 1870500, habito: 101, atributo: 76, criacaoHabilidade: 4, habilidade: 4 },
-    { xp: 2041500, habito: 104, atributo: 78, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 2241500, habito: 107, atributo: 80, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 2541500, habito: 110, atributo: 82, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 2941500, habito: 115, atributo: 85, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 3441500, habito: 120, atributo: 88, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 4041500, habito: 125, atributo: 91, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 4741500, habito: 130, atributo: 94, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 5541500, habito: 135, atributo: 97, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 6441500, habito: 140, atributo: 100, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 7441500, habito: 145, atributo: 105, criacaoHabilidade: 5, habilidade: 5 },
-    { xp: 8941500, habito: 150, atributo: 110, criacaoHabilidade: 6, habilidade: 6 }
+    { xp: 100, habito: 2, atributo: 2, criacaoHabilidade: 0, habilidade: 1 },
+    { xp: 300, habito: 4, atributo: 4, criacaoHabilidade: 0, habilidade: 1 },
+    { xp: 600, habito: 6, atributo: 6, criacaoHabilidade: 0, habilidade: 1 },
+    { xp: 1000, habito: 8, atributo: 8, criacaoHabilidade: 1, habilidade: 2 },
+    { xp: 1500, habito: 10, atributo: 10, criacaoHabilidade: 1, habilidade: 2 },
+    { xp: 2100, habito: 12, atributo: 12, criacaoHabilidade: 1, habilidade: 2 },
+    { xp: 2800, habito: 14, atributo: 14, criacaoHabilidade: 1, habilidade: 2 },
+    { xp: 3600, habito: 16, atributo: 16, criacaoHabilidade: 1, habilidade: 2 },
+    { xp: 4500, habito: 18, atributo: 18, criacaoHabilidade: 2, habilidade: 2 },
+    { xp: 5500, habito: 20, atributo: 20, criacaoHabilidade: 2, habilidade: 2 },
+    { xp: 6600, habito: 22, atributo: 22, criacaoHabilidade: 2, habilidade: 2 },
+    { xp: 7950, habito: 24, atributo: 24, criacaoHabilidade: 2, habilidade: 2 },
+    { xp: 9550, habito: 26, atributo: 26, criacaoHabilidade: 2, habilidade: 2 },
+    { xp: 11400, habito: 29, atributo: 28, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 13500, habito: 32, atributo: 30, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 15850, habito: 35, atributo: 32, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 18450, habito: 38, atributo: 34, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 21300, habito: 41, atributo: 36, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 24000, habito: 44, atributo: 38, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 27750, habito: 47, atributo: 40, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 31350, habito: 50, atributo: 42, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 35450, habito: 53, atributo: 44, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 40050, habito: 56, atributo: 46, criacaoHabilidade: 3, habilidade: 3 },
+    { xp: 45150, habito: 59, atributo: 48, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 50750, habito: 62, atributo: 50, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 56850, habito: 65, atributo: 52, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 63450, habito: 68, atributo: 54, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 70550, habito: 71, atributo: 56, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 78150, habito: 74, atributo: 58, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 86250, habito: 77, atributo: 60, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 95350, habito: 80, atributo: 62, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 105450, habito: 83, atributo: 64, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 116550, habito: 86, atributo: 66, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 128650, habito: 89, atributo: 68, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 141750, habito: 92, atributo: 70, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 155850, habito: 95, atributo: 72, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 170950, habito: 98, atributo: 74, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 187050, habito: 101, atributo: 76, criacaoHabilidade: 4, habilidade: 4 },
+    { xp: 204150, habito: 104, atributo: 78, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 224150, habito: 107, atributo: 80, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 254150, habito: 110, atributo: 82, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 294150, habito: 115, atributo: 85, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 344150, habito: 120, atributo: 88, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 404150, habito: 125, atributo: 91, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 474150, habito: 130, atributo: 94, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 554150, habito: 135, atributo: 97, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 644150, habito: 140, atributo: 100, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 744150, habito: 145, atributo: 105, criacaoHabilidade: 5, habilidade: 5 },
+    { xp: 894150, habito: 150, atributo: 110, criacaoHabilidade: 6, habilidade: 6 }
 ]
-
 var ficha = JSON.parse(sessionStorage.getItem("ficha"));
-
-var racas = JSON.parse(sessionStorage.getItem("racas"));
+var racas = JSON.parse(sessionStorage.getItem("sistema")).racas;
+var idiomas = JSON.parse(sessionStorage.getItem("sistema")).idiomas;
+var caminhos = JSON.parse(sessionStorage.getItem("sistema")).caminhos;

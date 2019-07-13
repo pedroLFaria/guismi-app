@@ -16,7 +16,7 @@
 		</div>
 		<div class="corpo">
 			<form action="ficha-personagem.php?idFicha=<?php echo $_GET['idFicha'];?>" method=get>
-				<?php include "php/escolhe.php" ?>
+				<?php include "php/escolheFicha.php" ?>
 			</form>
 		</div>		
 	</body>
