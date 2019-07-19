@@ -150,15 +150,15 @@
             <div class="row">
                 <aside class="col-2 px-0 fixed-top" id="left" style="height: 100%; background-color: lavender">
                     <div class="list-group w-100">
-                        <a href="#" class="list-group-item active">Putaria</a>
-                        <a href="#" class="list-group-item">Sexo Anal</a>
-                        <a href="#" class="list-group-item">Vai se fuder doca</a>
-                        <a href="#" class="list-group-item">pq eu to fazendo isso?</a>
-                        <h3 class="list-group-item">Conteudo que o gabriel ainda vai decidir</h3>
-                        <a href="#" class="list-group-item active">jojo pt 5</a>
-                        <a href="#" class="list-group-item">é A segunda pior parte</a>
-                        <a href="#" class="list-group-item">So perdendo pra parte 6</a>
-                        <a href="#" class="list-group-item">que eu nem vou assistir</a>
+                        <a href="#" class="list-group-item active">Teste 1</a>
+                        <a href="#" class="list-group-item">Teste 2</a>
+                        <a href="#" class="list-group-item">Teste 3</a>
+                        <a href="#" class="list-group-item">Teste 4</a>
+                        <h3 class="list-group-item">Teste 5</h3>
+                        <a href="#" class="list-group-item active">Teste 6</a>
+                        <a href="#" class="list-group-item">Teste 7</a>
+                        <a href="#" class="list-group-item">Teste 8</a>
+                        <a href="#" class="list-group-item">Teste 9</a>
                     </div>
                 </aside>
                 <main class="col-10 invisible">
