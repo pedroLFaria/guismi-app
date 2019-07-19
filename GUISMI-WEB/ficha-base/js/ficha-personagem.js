@@ -1,6 +1,6 @@
-function inicializa(){
-    armazenaSistema();
-    armazenaFicha();
+armazenaSistema();
+armazenaFicha();
+function inicializa() {
     setaSistema();
     setaInfoFichas();
     calculaAtributosFinais();
@@ -12,7 +12,17 @@ function armazenaSistema() {
             sessionStorage.setItem("sistema", this.responseText);
         }
     };
-    xmlhttp.open("GET", "php/sistemaAjax.php", true);
+    xmlhttp.open("GET", "php/sistemaAjax.php", false);
+    xmlhttp.send();
+}
+function armazenaFicha() {
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            sessionStorage.setItem("ficha", this.responseText);
+        }
+    };
+    xmlhttp.open("GET", "php/fichaAjax.php", false);
     xmlhttp.send();
 }
 function setaSistema() {
@@ -31,16 +41,7 @@ function setaEscolhaIdiomas() {
     document.getElementById("raca_pers_input").selectedIndex = raca_pers.idRaca;
     setaAtributosRaca(raca_pers);
 }
-function armazenaFicha(){
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            sessionStorage.setItem("ficha", this.responseText);
-        }
-    };
-    xmlhttp.open("GET", "php/fichaAjax.php", true);
-    xmlhttp.send();
-}
+
 function setaInfoFichas() {
     if(ficha==null)
         return;
