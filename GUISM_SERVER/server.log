@@ -1,0 +1,747 @@
+20:50:12.170 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:50:12.230 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:50:12.231 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:50:12.234 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:50:12.355 ERROR - Unable to start org.vibur.dbcp.ViburDBCPDataSource@233fe9b6[driverClassName = null, jdbcUrl = null, username = null, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 100, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0] due to:
+java.lang.IllegalArgumentException: null
+	at org.vibur.objectpool.util.ArgumentValidation.forbidIllegalArgument(ArgumentValidation.java:28)
+	at org.vibur.dbcp.ViburDBCPDataSource.validateConfig(ViburDBCPDataSource.java:283)
+	at org.vibur.dbcp.ViburDBCPDataSource.doStart(ViburDBCPDataSource.java:226)
+	at org.vibur.dbcp.ViburDBCPDataSource.start(ViburDBCPDataSource.java:211)
+	at kikaha.db.ViburDataSourceFactory.newDataSource(ViburDataSourceFactory.java:19)
+	at kikaha.db.DataSourceProducer.startAndCacheConfiguredDataSources(DataSourceProducer.java:37)
+	at kikaha.db.DataSourceProducer.getCachedDataSources(DataSourceProducer.java:18)
+	at kikaha.jdbi.KikahaJDBIExtension.createAJdbiConnection(KikahaJDBIExtension.java:51)
+	at kikaha.jdbi.KikahaJDBIExtension.lambda$instantiate$0(KikahaJDBIExtension.java:36)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at kikaha.jdbi.KikahaJDBIExtension.instantiate(KikahaJDBIExtension.java:34)
+	at kikaha.core.cdi.InjectionContext.instantiate(InjectionContext.java:41)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:181)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:191)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:184)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI.lambda$injectOn$3(DefaultCDI.java:100)
+	at kikaha.core.cdi.DefaultCDI.withInjector(DefaultCDI.java:105)
+	at kikaha.core.cdi.DefaultCDI.injectOn(DefaultCDI.java:100)
+	at kikaha.core.test.KikahaRunner$1.withBefores(KikahaRunner.java:24)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:276)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at kikaha.core.test.KikahaRunner.run(KikahaRunner.java:32)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+20:50:12.541 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@233fe9b6[driverClassName = null, jdbcUrl = null, username = null, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 100, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:50:12.544 WARN  - No data found for carros.CarroQueries; Location: carros.CarrosResource; Condition: IsAssignableFrom(carros.CarroQueries) AND Qualifiers(])
+20:53:49.781 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:53:49.849 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:53:49.851 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:53:49.853 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:53:49.858 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:53:50.024 ERROR - Unable to start org.vibur.dbcp.ViburDBCPDataSource@4278a03f[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0] due to:
+org.vibur.dbcp.ViburDBCPException: java.lang.ClassNotFoundException: com.mysql.cj.jdbc.Driver
+	at org.vibur.dbcp.ViburDBCPDataSource.initDriverAndProperties(ViburDBCPDataSource.java:345)
+	at org.vibur.dbcp.ViburDBCPDataSource.doStart(ViburDBCPDataSource.java:229)
+	at org.vibur.dbcp.ViburDBCPDataSource.start(ViburDBCPDataSource.java:211)
+	at kikaha.db.ViburDataSourceFactory.newDataSource(ViburDataSourceFactory.java:19)
+	at kikaha.db.DataSourceProducer.startAndCacheConfiguredDataSources(DataSourceProducer.java:37)
+	at kikaha.db.DataSourceProducer.getCachedDataSources(DataSourceProducer.java:18)
+	at kikaha.jdbi.KikahaJDBIExtension.createAJdbiConnection(KikahaJDBIExtension.java:51)
+	at kikaha.jdbi.KikahaJDBIExtension.lambda$instantiate$0(KikahaJDBIExtension.java:36)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at kikaha.jdbi.KikahaJDBIExtension.instantiate(KikahaJDBIExtension.java:34)
+	at kikaha.core.cdi.InjectionContext.instantiate(InjectionContext.java:41)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:181)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:191)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:184)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI.lambda$injectOn$3(DefaultCDI.java:100)
+	at kikaha.core.cdi.DefaultCDI.withInjector(DefaultCDI.java:105)
+	at kikaha.core.cdi.DefaultCDI.injectOn(DefaultCDI.java:100)
+	at kikaha.core.test.KikahaRunner$1.withBefores(KikahaRunner.java:24)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:276)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at kikaha.core.test.KikahaRunner.run(KikahaRunner.java:32)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.lang.ClassNotFoundException: com.mysql.cj.jdbc.Driver
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.vibur.dbcp.ViburDBCPDataSource.initDriverAndProperties(ViburDBCPDataSource.java:341)
+	... 48 common frames omitted
+20:53:50.124 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4278a03f[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:53:50.124 WARN  - No data found for carros.CarroQueries; Location: carros.CarrosResource; Condition: IsAssignableFrom(carros.CarroQueries) AND Qualifiers(])
+20:55:06.462 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:55:06.523 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:55:06.524 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:55:06.528 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:55:06.532 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:55:11.770 ERROR - Unable to start org.vibur.dbcp.ViburDBCPDataSource@4dbb42b7[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0] due to:
+org.vibur.dbcp.ViburDBCPException: java.sql.SQLException: Unable to load authentication plugin 'caching_sha2_password'.
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:87)
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:71)
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:49)
+	at org.vibur.objectpool.ConcurrentPool.create(ConcurrentPool.java:138)
+	at org.vibur.objectpool.ConcurrentPool.addInitialObjects(ConcurrentPool.java:128)
+	at org.vibur.objectpool.ConcurrentPool.<init>(ConcurrentPool.java:122)
+	at org.vibur.dbcp.ViburDBCPDataSource.doStart(ViburDBCPDataSource.java:241)
+	at org.vibur.dbcp.ViburDBCPDataSource.start(ViburDBCPDataSource.java:211)
+	at kikaha.db.ViburDataSourceFactory.newDataSource(ViburDataSourceFactory.java:19)
+	at kikaha.db.DataSourceProducer.startAndCacheConfiguredDataSources(DataSourceProducer.java:37)
+	at kikaha.db.DataSourceProducer.getCachedDataSources(DataSourceProducer.java:18)
+	at kikaha.jdbi.KikahaJDBIExtension.createAJdbiConnection(KikahaJDBIExtension.java:51)
+	at kikaha.jdbi.KikahaJDBIExtension.lambda$instantiate$0(KikahaJDBIExtension.java:36)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at kikaha.jdbi.KikahaJDBIExtension.instantiate(KikahaJDBIExtension.java:34)
+	at kikaha.core.cdi.InjectionContext.instantiate(InjectionContext.java:41)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:181)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:191)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:184)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI.lambda$injectOn$3(DefaultCDI.java:100)
+	at kikaha.core.cdi.DefaultCDI.withInjector(DefaultCDI.java:105)
+	at kikaha.core.cdi.DefaultCDI.injectOn(DefaultCDI.java:100)
+	at kikaha.core.test.KikahaRunner$1.withBefores(KikahaRunner.java:24)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:276)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at kikaha.core.test.KikahaRunner.run(KikahaRunner.java:32)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.sql.SQLException: Unable to load authentication plugin 'caching_sha2_password'.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:545)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:505)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:479)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:489)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:78)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1606)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219)
+	at org.vibur.dbcp.pool.Connector$Builder$Driver.connect(Connector.java:70)
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:83)
+	... 53 common frames omitted
+Caused by: com.mysql.cj.core.exceptions.WrongArgumentException: Unable to load authentication plugin 'caching_sha2_password'.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54)
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
+	at com.mysql.cj.mysqla.authentication.MysqlaAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(MysqlaAuthenticationProvider.java:564)
+	at com.mysql.cj.mysqla.authentication.MysqlaAuthenticationProvider.connect(MysqlaAuthenticationProvider.java:204)
+	at com.mysql.cj.mysqla.io.MysqlaProtocol.connect(MysqlaProtocol.java:1414)
+	at com.mysql.cj.mysqla.MysqlaSession.connect(MysqlaSession.java:132)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:1726)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1596)
+	... 58 common frames omitted
+20:55:11.833 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4dbb42b7[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:55:11.833 WARN  - No data found for carros.CarroQueries; Location: carros.CarrosResource; Condition: IsAssignableFrom(carros.CarroQueries) AND Qualifiers(])
+20:57:03.136 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:57:03.190 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:57:03.192 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:57:03.205 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:57:03.210 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:57:07.253 ERROR - Unable to start org.vibur.dbcp.ViburDBCPDataSource@5b218417[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0] due to:
+org.vibur.dbcp.ViburDBCPException: java.sql.SQLException: The server time zone value 'Hora oficial do Brasil' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:87)
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:71)
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:49)
+	at org.vibur.objectpool.ConcurrentPool.create(ConcurrentPool.java:138)
+	at org.vibur.objectpool.ConcurrentPool.addInitialObjects(ConcurrentPool.java:128)
+	at org.vibur.objectpool.ConcurrentPool.<init>(ConcurrentPool.java:122)
+	at org.vibur.dbcp.ViburDBCPDataSource.doStart(ViburDBCPDataSource.java:241)
+	at org.vibur.dbcp.ViburDBCPDataSource.start(ViburDBCPDataSource.java:211)
+	at kikaha.db.ViburDataSourceFactory.newDataSource(ViburDataSourceFactory.java:19)
+	at kikaha.db.DataSourceProducer.startAndCacheConfiguredDataSources(DataSourceProducer.java:37)
+	at kikaha.db.DataSourceProducer.getCachedDataSources(DataSourceProducer.java:18)
+	at kikaha.jdbi.KikahaJDBIExtension.createAJdbiConnection(KikahaJDBIExtension.java:51)
+	at kikaha.jdbi.KikahaJDBIExtension.lambda$instantiate$0(KikahaJDBIExtension.java:36)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at kikaha.jdbi.KikahaJDBIExtension.instantiate(KikahaJDBIExtension.java:34)
+	at kikaha.core.cdi.InjectionContext.instantiate(InjectionContext.java:41)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:181)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:191)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadServicesFor(DefaultCDI.java:184)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:169)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadAll(DefaultCDI.java:160)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.lambda$load$0(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.Reference.getOrElse(Reference.java:23)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.load(DefaultCDI.java:137)
+	at kikaha.core.cdi.helpers.SingleElementProvidableField.provide(SingleElementProvidableField.java:27)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.tryInjectFields(DefaultCDI.java:204)
+	at kikaha.core.cdi.DefaultCDI$DependencyInjector.loadDependenciesAndInjectInto(DefaultCDI.java:197)
+	at kikaha.core.cdi.DefaultCDI.lambda$injectOn$3(DefaultCDI.java:100)
+	at kikaha.core.cdi.DefaultCDI.withInjector(DefaultCDI.java:105)
+	at kikaha.core.cdi.DefaultCDI.injectOn(DefaultCDI.java:100)
+	at kikaha.core.test.KikahaRunner$1.withBefores(KikahaRunner.java:24)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:276)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at kikaha.core.test.KikahaRunner.run(KikahaRunner.java:32)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.sql.SQLException: The server time zone value 'Hora oficial do Brasil' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:76)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at org.vibur.dbcp.pool.Connector$Builder$Driver.connect(Connector.java:70)
+	at org.vibur.dbcp.pool.ConnectionFactory.create(ConnectionFactory.java:83)
+	... 53 common frames omitted
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value 'Hora oficial do Brasil' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:132)
+	at com.mysql.cj.protocol.a.NativeProtocol.configureTimezone(NativeProtocol.java:2243)
+	at com.mysql.cj.protocol.a.NativeProtocol.initServerSession(NativeProtocol.java:2267)
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:1319)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:966)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	... 58 common frames omitted
+20:57:07.313 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@5b218417[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = null, name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:57:07.313 WARN  - No data found for carros.CarroQueries; Location: carros.CarrosResource; Condition: IsAssignableFrom(carros.CarroQueries) AND Qualifiers(])
+20:57:53.230 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:57:53.288 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:57:53.290 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:57:53.292 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:57:53.315 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:57:54.519 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:57:54.943 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:58:17.459 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:58:17.508 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:58:17.509 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:58:17.512 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:58:17.514 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:58:18.786 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:58:19.280 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:59:02.290 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:59:02.344 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:59:02.346 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:59:02.348 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:59:02.350 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:59:03.583 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:59:04.079 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+20:59:17.823 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+20:59:17.879 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+20:59:17.882 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+20:59:17.884 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+20:59:17.886 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+20:59:18.905 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@5f7f2382[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@407cf41[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:00:27.057 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@5f7f2382[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@407cf41[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:01:44.206 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:01:44.254 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:01:44.255 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:01:44.258 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:01:44.260 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:01:45.405 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:01:45.911 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@536f2a7e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@72bc6553[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:03:46.525 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:03:46.577 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:03:46.578 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:03:46.580 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:03:46.582 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:03:46.792 INFO  - REST API Session Store: no session will be persisted on server.
+21:03:46.931 INFO  - Micro Routing API
+21:03:46.931 INFO  -   default-encoding: UTF-8
+21:03:46.931 INFO  -   default-content-type: application/json
+21:03:46.931 INFO  -   content-type-priority: REQUEST
+21:03:48.017 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34129c78[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7d61eb55[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:03:48.093 INFO  - Looking for modules...
+21:03:48.097 INFO  - Registering route: POST:/auth/callback
+21:03:48.102 INFO  - Registering route: GET:/api/carros/{id}
+21:03:48.103 INFO  - Registering route: POST:/api/carros
+21:03:48.103 INFO  - Registering route: GET:/users/{id}
+21:03:48.106 INFO  - Registering route: POST:/users
+21:03:48.106 INFO  - Registering route: GET:/users
+21:03:48.150 INFO  - XNIO version 3.3.8.Final
+21:03:48.173 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:03:48.210 INFO  - Configuring Undertow options...
+21:03:48.210 INFO  -   buffer-size: 1024
+21:03:48.214 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:03:48.214 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:03:48.214 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:03:48.214 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:03:48.241 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:03:48.321 ERROR - Could not start server
+java.lang.RuntimeException: java.net.BindException: Address already in use: bind
+	at io.undertow.Undertow.start(Undertow.java:249)
+	at kikaha.core.KikahaUndertowServer.start(KikahaUndertowServer.java:48)
+	at kikaha.core.KikahaUndertowServer.run(KikahaUndertowServer.java:32)
+	at kikaha.core.test.KikahaServerRunner.<clinit>(KikahaServerRunner.java:25)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.junit.internal.requests.FilterRequest.getRunner(FilterRequest.java:36)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:49)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:190)
+	at org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:243)
+	at io.undertow.Undertow.start(Undertow.java:192)
+	... 18 common frames omitted
+21:03:48.322 INFO  - Server stopped!
+21:03:48.327 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34129c78[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7d61eb55[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:04:43.705 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:04:43.758 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:04:43.759 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:04:43.761 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:04:43.763 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:04:43.971 INFO  - REST API Session Store: no session will be persisted on server.
+21:04:44.086 INFO  - Micro Routing API
+21:04:44.086 INFO  -   default-encoding: UTF-8
+21:04:44.086 INFO  -   default-content-type: application/json
+21:04:44.086 INFO  -   content-type-priority: REQUEST
+21:04:45.130 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34129c78[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7d61eb55[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:04:45.201 INFO  - Looking for modules...
+21:04:45.205 INFO  - Registering route: POST:/auth/callback
+21:04:45.210 INFO  - Registering route: GET:/api/carros/{id}
+21:04:45.210 INFO  - Registering route: POST:/api/carros
+21:04:45.211 INFO  - Registering route: GET:/users/{id}
+21:04:45.213 INFO  - Registering route: POST:/users
+21:04:45.214 INFO  - Registering route: GET:/users
+21:04:45.249 INFO  - XNIO version 3.3.8.Final
+21:04:45.272 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:04:45.296 INFO  - Configuring Undertow options...
+21:04:45.296 INFO  -   buffer-size: 1024
+21:04:45.299 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:04:45.300 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:04:45.300 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:04:45.300 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:04:45.324 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:04:45.398 INFO  - Unit test server started.
+21:06:21.978 ERROR - Could not found an unserializer for application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getUnserializerFor(SerializerAndUnserializerProvider.java:42)
+	at kikaha.urouting.RoutingMethodParameterReader.unserializeReceivedBodyStream(RoutingMethodParameterReader.java:223)
+	at kikaha.urouting.RoutingMethodParameterReader.getBody(RoutingMethodParameterReader.java:214)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:48)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:22.030 ERROR - Could not found a serializer for application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getSerializerFor(SerializerAndUnserializerProvider.java:20)
+	at kikaha.urouting.RoutingMethodResponseWriter.getSerializer(RoutingMethodResponseWriter.java:119)
+	at kikaha.urouting.RoutingMethodResponseWriter.sendBodyResponse(RoutingMethodResponseWriter.java:114)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:102)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:56)
+	at carros.GeneratedCarrosResource3092233271.handleException(GeneratedCarrosResource3092233271.java:63)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:51)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:22.030 ERROR - Could not handle the failure. Reason: application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getSerializerFor(SerializerAndUnserializerProvider.java:20)
+	at kikaha.urouting.RoutingMethodResponseWriter.getSerializer(RoutingMethodResponseWriter.java:119)
+	at kikaha.urouting.RoutingMethodResponseWriter.sendBodyResponse(RoutingMethodResponseWriter.java:114)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:102)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:56)
+	at carros.GeneratedCarrosResource3092233271.handleException(GeneratedCarrosResource3092233271.java:63)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:51)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:22.030 ERROR - Original failure reason: application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getUnserializerFor(SerializerAndUnserializerProvider.java:42)
+	at kikaha.urouting.RoutingMethodParameterReader.unserializeReceivedBodyStream(RoutingMethodParameterReader.java:223)
+	at kikaha.urouting.RoutingMethodParameterReader.getBody(RoutingMethodParameterReader.java:214)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:48)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:22.033 ERROR - Please double check your ExceptionHandler implementations for possible issues...
+21:06:37.669 ERROR - Could not found an unserializer for application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getUnserializerFor(SerializerAndUnserializerProvider.java:42)
+	at kikaha.urouting.RoutingMethodParameterReader.unserializeReceivedBodyStream(RoutingMethodParameterReader.java:223)
+	at kikaha.urouting.RoutingMethodParameterReader.getBody(RoutingMethodParameterReader.java:214)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:48)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:37.676 ERROR - Could not found a serializer for application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getSerializerFor(SerializerAndUnserializerProvider.java:20)
+	at kikaha.urouting.RoutingMethodResponseWriter.getSerializer(RoutingMethodResponseWriter.java:119)
+	at kikaha.urouting.RoutingMethodResponseWriter.sendBodyResponse(RoutingMethodResponseWriter.java:114)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:102)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:56)
+	at carros.GeneratedCarrosResource3092233271.handleException(GeneratedCarrosResource3092233271.java:63)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:51)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:37.676 ERROR - Could not handle the failure. Reason: application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getSerializerFor(SerializerAndUnserializerProvider.java:20)
+	at kikaha.urouting.RoutingMethodResponseWriter.getSerializer(RoutingMethodResponseWriter.java:119)
+	at kikaha.urouting.RoutingMethodResponseWriter.sendBodyResponse(RoutingMethodResponseWriter.java:114)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:102)
+	at kikaha.urouting.RoutingMethodResponseWriter.write(RoutingMethodResponseWriter.java:56)
+	at carros.GeneratedCarrosResource3092233271.handleException(GeneratedCarrosResource3092233271.java:63)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:51)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:37.688 ERROR - Original failure reason: application/json
+kikaha.urouting.UnsupportedMediaTypeException: application/json
+	at kikaha.urouting.SerializerAndUnserializerProvider.getUnserializerFor(SerializerAndUnserializerProvider.java:42)
+	at kikaha.urouting.RoutingMethodParameterReader.unserializeReceivedBodyStream(RoutingMethodParameterReader.java:223)
+	at kikaha.urouting.RoutingMethodParameterReader.getBody(RoutingMethodParameterReader.java:214)
+	at carros.GeneratedCarrosResource3092233271.runMethod(GeneratedCarrosResource3092233271.java:48)
+	at carros.GeneratedCarrosResource3092233271.lambda$runMethod$0(GeneratedCarrosResource3092233271.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:06:37.689 ERROR - Please double check your ExceptionHandler implementations for possible issues...
+21:09:24.356 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:09:24.428 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:09:24.430 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:09:24.430 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:09:24.441 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:09:24.445 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:09:24.655 INFO  - REST API Session Store: no session will be persisted on server.
+21:09:25.131 INFO  - Micro Routing API
+21:09:25.134 INFO  -   default-encoding: UTF-8
+21:09:25.134 INFO  -   default-content-type: application/json
+21:09:25.134 INFO  -   content-type-priority: REQUEST
+21:09:26.050 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@60df60da[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5a2d131d[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:09:26.127 INFO  - Looking for modules...
+21:09:26.129 INFO  - Registering route: POST:/auth/callback
+21:09:26.134 INFO  - Registering route: GET:/api/carros/{id}
+21:09:26.134 INFO  - Registering route: POST:/api/carros
+21:09:26.137 INFO  - Registering route: GET:/users/{id}
+21:09:26.138 INFO  - Registering route: POST:/users
+21:09:26.138 INFO  - Registering route: GET:/users
+21:09:26.212 INFO  - XNIO version 3.3.8.Final
+21:09:26.234 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:09:26.259 INFO  - Configuring Undertow options...
+21:09:26.260 INFO  -   buffer-size: 1024
+21:09:26.267 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:09:26.272 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:09:26.272 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:09:26.273 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:09:26.304 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:09:26.385 INFO  - Unit test server started.
+21:10:43.718 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:10:43.772 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:10:43.779 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:10:43.780 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:10:43.782 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:10:43.784 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:10:43.995 INFO  - REST API Session Store: no session will be persisted on server.
+21:10:44.336 INFO  - Micro Routing API
+21:10:44.346 INFO  -   default-encoding: UTF-8
+21:10:44.346 INFO  -   default-content-type: application/json
+21:10:44.346 INFO  -   content-type-priority: REQUEST
+21:10:45.233 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@5a2d131d[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@14fc1f0[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:10:45.302 INFO  - Looking for modules...
+21:10:45.304 INFO  - Registering route: POST:/auth/callback
+21:10:45.308 INFO  - Registering route: GET:/api/carros/{id}
+21:10:45.308 INFO  - Registering route: POST:/api/carros
+21:10:45.311 INFO  - Registering route: GET:/users/{id}
+21:10:45.311 INFO  - Registering route: POST:/users
+21:10:45.311 INFO  - Registering route: GET:/api/carros/{id}
+21:10:45.312 INFO  - Registering route: GET:/users
+21:10:45.380 INFO  - XNIO version 3.3.8.Final
+21:10:45.401 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:10:45.423 INFO  - Configuring Undertow options...
+21:10:45.423 INFO  -   buffer-size: 1024
+21:10:45.429 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:10:45.430 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:10:45.430 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:10:45.431 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:10:45.448 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:10:45.527 INFO  - Unit test server started.
+21:11:49.117 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:11:49.168 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:11:49.170 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:11:49.172 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:11:49.174 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:11:49.175 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:11:49.395 INFO  - REST API Session Store: no session will be persisted on server.
+21:11:49.794 INFO  - Micro Routing API
+21:11:49.803 INFO  -   default-encoding: UTF-8
+21:11:49.803 INFO  -   default-content-type: application/json
+21:11:49.803 INFO  -   content-type-priority: REQUEST
+21:11:50.717 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@5a2d131d[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@14fc1f0[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:11:50.793 INFO  - Looking for modules...
+21:11:50.795 INFO  - Registering route: POST:/auth/callback
+21:11:50.799 INFO  - Registering route: GET:/api/carros/{id}
+21:11:50.799 INFO  - Registering route: POST:/api/carros
+21:11:50.802 INFO  - Registering route: GET:/users/{id}
+21:11:50.802 INFO  - Registering route: POST:/users
+21:11:50.802 INFO  - Registering route: GET:/api/carros/{id}
+21:11:50.802 INFO  - Registering route: GET:/users
+21:11:50.870 INFO  - XNIO version 3.3.8.Final
+21:11:50.890 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:11:50.913 INFO  - Configuring Undertow options...
+21:11:50.913 INFO  -   buffer-size: 1024
+21:11:50.919 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:11:50.920 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:11:50.920 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:11:50.920 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:11:50.938 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:11:51.008 INFO  - Unit test server started.
+21:12:11.755 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:12:11.812 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:12:11.814 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:12:11.815 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:12:11.818 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:12:11.820 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:12:11.911 INFO  - REST API Session Store: no session will be persisted on server.
+21:12:12.318 INFO  - Micro Routing API
+21:12:12.321 INFO  -   default-encoding: UTF-8
+21:12:12.321 INFO  -   default-content-type: application/json
+21:12:12.322 INFO  -   content-type-priority: REQUEST
+21:12:13.348 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@41d7b27f[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@49096b06[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:12:13.480 INFO  - Looking for modules...
+21:12:13.482 INFO  - Registering route: POST:/auth/callback
+21:12:13.487 INFO  - Registering route: GET:/api/carros/{id}
+21:12:13.488 INFO  - Registering route: POST:/api/carros
+21:12:13.491 INFO  - Registering route: GET:/users/{id}
+21:12:13.491 INFO  - Registering route: POST:/users
+21:12:13.491 INFO  - Registering route: GET:/api/carros/{id}
+21:12:13.491 INFO  - Registering route: GET:/users
+21:12:13.528 INFO  - XNIO version 3.3.8.Final
+21:12:13.564 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:12:13.594 INFO  - Configuring Undertow options...
+21:12:13.595 INFO  -   buffer-size: 1024
+21:12:13.601 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:12:13.601 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:12:13.602 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:12:13.602 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:12:13.620 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:12:13.709 INFO  - Unit test server started.
+21:14:14.599 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:14:14.664 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:14:14.665 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:14:14.666 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:14:14.671 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:14:14.675 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:14:14.773 INFO  - REST API Session Store: no session will be persisted on server.
+21:14:15.205 INFO  - Micro Routing API
+21:14:15.208 INFO  -   default-encoding: UTF-8
+21:14:15.208 INFO  -   default-content-type: application/json
+21:14:15.208 INFO  -   content-type-priority: REQUEST
+21:14:16.155 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@41d7b27f[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@49096b06[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:14:16.235 INFO  - Looking for modules...
+21:14:16.237 INFO  - Registering route: POST:/auth/callback
+21:14:16.289 INFO  - Registering route: GET:/api/carros/{id}
+21:14:16.290 INFO  - Registering route: POST:/api/carros
+21:14:16.293 INFO  - Registering route: GET:/users/{id}
+21:14:16.293 INFO  - Registering route: POST:/users
+21:14:16.294 INFO  - Registering route: GET:/api/carros/{id}
+21:14:16.294 INFO  - Registering route: GET:/users
+21:14:16.332 INFO  - XNIO version 3.3.8.Final
+21:14:16.360 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:14:16.393 INFO  - Configuring Undertow options...
+21:14:16.394 INFO  -   buffer-size: 1024
+21:14:16.421 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:14:16.422 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:14:16.422 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:14:16.422 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:14:16.442 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:14:16.522 INFO  - Unit test server started.
+21:16:12.620 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:16:12.678 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:16:12.679 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:16:12.679 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:16:12.681 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:16:12.683 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:16:12.866 INFO  - REST API Session Store: no session will be persisted on server.
+21:16:13.193 INFO  - Micro Routing API
+21:16:13.215 INFO  -   default-encoding: UTF-8
+21:16:13.215 INFO  -   default-content-type: application/json
+21:16:13.215 INFO  -   content-type-priority: REQUEST
+21:16:14.099 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@14fc1f0[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@4ae9cfc1[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:16:14.167 INFO  - Looking for modules...
+21:16:14.169 INFO  - Registering route: POST:/auth/callback
+21:16:14.173 INFO  - Registering route: GET:/api/carros/{id}
+21:16:14.173 INFO  - Registering route: POST:/api/carros
+21:16:14.176 INFO  - Registering route: GET:/users/{id}
+21:16:14.176 INFO  - Registering route: POST:/users
+21:16:14.176 INFO  - Registering route: GET:/api/carros/{id}
+21:16:14.176 INFO  - Registering route: GET:/api/carros/{id}
+21:16:14.176 INFO  - Registering route: GET:/users
+21:16:14.242 INFO  - XNIO version 3.3.8.Final
+21:16:14.264 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:16:14.288 INFO  - Configuring Undertow options...
+21:16:14.291 INFO  -   buffer-size: 1024
+21:16:14.295 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:16:14.295 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:16:14.296 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:16:14.296 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:16:14.313 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:16:14.387 INFO  - Unit test server started.
+21:16:20.641 ERROR - Unhandled exception
+java.lang.NoSuchMethodError: carros.CarrosResource.findById(Ljava/lang/Long;)Lkikaha/urouting/api/Response;
+	at carros.GeneratedCarrosResource781575205.runMethod(GeneratedCarrosResource781575205.java:46)
+	at carros.GeneratedCarrosResource781575205.lambda$runMethod$0(GeneratedCarrosResource781575205.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:16:26.942 ERROR - Unhandled exception
+java.lang.NoSuchMethodError: carros.CarrosResource.findById(Ljava/lang/Long;)Lkikaha/urouting/api/Response;
+	at carros.GeneratedCarrosResource781575205.runMethod(GeneratedCarrosResource781575205.java:46)
+	at carros.GeneratedCarrosResource781575205.lambda$runMethod$0(GeneratedCarrosResource781575205.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:17:02.704 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+21:17:02.771 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+21:17:02.772 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+21:17:02.772 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+21:17:02.778 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+21:17:02.784 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+21:17:02.967 INFO  - REST API Session Store: no session will be persisted on server.
+21:17:03.291 INFO  - Micro Routing API
+21:17:03.295 INFO  -   default-encoding: UTF-8
+21:17:03.295 INFO  -   default-content-type: application/json
+21:17:03.295 INFO  -   content-type-priority: REQUEST
+21:17:04.248 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@60df60da[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5a2d131d[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+21:17:04.317 INFO  - Looking for modules...
+21:17:04.319 INFO  - Registering route: POST:/auth/callback
+21:17:04.323 INFO  - Registering route: POST:/api/carros
+21:17:04.323 INFO  - Registering route: GET:/users/{id}
+21:17:04.327 INFO  - Registering route: POST:/users
+21:17:04.327 INFO  - Registering route: GET:/api/carros/{id}
+21:17:04.327 INFO  - Registering route: GET:/users
+21:17:04.398 INFO  - XNIO version 3.3.8.Final
+21:17:04.419 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+21:17:04.441 INFO  - Configuring Undertow options...
+21:17:04.441 INFO  -   buffer-size: 1024
+21:17:04.445 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+21:17:04.448 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+21:17:04.448 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+21:17:04.449 INFO  -   org.xnio.Options.BACKLOG: 20000
+21:17:04.466 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+21:17:04.539 INFO  - Unit test server started.

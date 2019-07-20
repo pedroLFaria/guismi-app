@@ -1,0 +1,7 @@
+test\GeneratedRoutingMethod2250169382.class
+META-INF\services\io.undertow.server.HttpHandler
+test\UserResource.class
+test\User.class
+test\GeneratedRoutingMethod3109016724.class
+test\GeneratedRoutingMethod1939344558.class
+META-INF\services\test.UserResource
