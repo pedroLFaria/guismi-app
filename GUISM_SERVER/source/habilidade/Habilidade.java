@@ -10,16 +10,16 @@ import lombok.Data;
 public class Habilidade {
 
     @Column
-    Long id;
+    Long idHabilidade;
 
     @Column
     String nome;
 
     @Column
-    String atributoAtaque;
+    String atributo_ataca;
 
     @Column
-    String passiva;
+    String tipo;
 
     @Column
     String gasto1;
@@ -34,12 +34,12 @@ public class Habilidade {
     String utilizacao;
 
     @Column
-    String descricao;
+    String desc_hab;
 
     @Column
-    String preRequisito;
+    String pre_req;
 
     @Column
-    Long nivelRequisito;
+    Long nivel_req;
 
 }

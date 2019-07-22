@@ -5,6 +5,7 @@ import kikaha.urouting.api.*;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.security.PublicKey;
+import java.util.Set;
 
 @Path("api/acao")
 @Singleton
@@ -28,6 +29,15 @@ public class AcaoResource {
         Acao acao = queries.findByID(id);
         if (acao == null)
             return DefaultResponse.notFound().entity("Ação não encontrada!");
+        return DefaultResponse.ok(acao);
+    }
+
+    @GET
+    @Path("acaoHabilidade/(id)")
+    public Response findByHabilidadeId(@PathParam("id") Long id){
+        Set<Acao> acao = queries.findByHabilidadeId(id);
+        if(acao == null)
+            return DefaultResponse.notFound().entity("Ações não encontradas!");
         return DefaultResponse.ok(acao);
     }
 }
