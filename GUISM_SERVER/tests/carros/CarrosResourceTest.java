@@ -17,6 +17,7 @@ public class CarrosResourceTest {
     @Test
     public void ensureCanInsertNewCar(){
         val carro = new Carro();
+
         carro.setNome( "Gol G6" );
         val insertResponse = carrosResource.insertNewCar( carro );
         val generatedId = insertResponse.header( "Generated-Id" );
