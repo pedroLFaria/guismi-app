@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Caminhho {
+public class Caminho {
 
     @Column
     Long id;
@@ -16,6 +16,7 @@ public class Caminhho {
     String nome;
 
     @Column
+
     String descricao;
 
 

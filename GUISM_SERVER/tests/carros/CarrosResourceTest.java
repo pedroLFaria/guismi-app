@@ -7,6 +7,9 @@ import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 import static org.junit.Assert.*;
 
 @RunWith(KikahaRunner.class)
@@ -29,4 +32,14 @@ public class CarrosResourceTest {
         assertEquals( "Gol G6", entityAsCarro.getNome() );
     }
 
+    @Test
+    public void setTeste(){
+        Set<Integer> teste = new LinkedHashSet<>();
+        teste.add(1);
+        System.out.println(teste);
+        teste.add(2);
+        System.out.println(teste);
+        teste.add(1);
+        System.out.println(teste);
+    }
 }

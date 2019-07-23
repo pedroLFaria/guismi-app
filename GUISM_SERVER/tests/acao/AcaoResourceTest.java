@@ -7,6 +7,12 @@ import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
 
+import java.util.List;
+import java.util.Set;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 @RunWith(KikahaRunner.class)
 public class AcaoResourceTest {
 
@@ -14,9 +20,17 @@ public class AcaoResourceTest {
 
     @Test
     public void getAcao(){
-        val getResponse = acaoResource.findById(Long.valueOf(1));
+        val getResponse = acaoResource.findById(1L);
         val entity = getResponse.entity();
+        System.out.println(entity);
         val entityAcao = (Acao) entity;
-        System.out.println(((Acao) entity).getNome());
+        assertEquals(entityAcao.nome, "Ação Hipotetica");
+    }
+
+    @Test
+    public void validaGetAcaoByHabilidadeId(){
+        val getResponse = acaoResource.findByHabilidadeId(1L);
+        val entityAcao = (Set<Acao>) getResponse.entity();
+        System.out.println( entityAcao);
     }
 }

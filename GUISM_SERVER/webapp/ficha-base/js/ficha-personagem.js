@@ -1,9 +1,14 @@
-armazenaSistema();
-armazenaFicha();
 function inicializa() {
-    setaSistema();
-    setaInfoFichas();
-    calculaAtributosFinais();
+}
+function teste(){
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            sessionStorage.setItem("acao", this.responseText);
+        }
+    };
+    xmlhttp.open("GET", "/api/acao/4", true);
+    xmlhttp.send();
 }
 function armazenaSistema() {
     xmlhttp = new XMLHttpRequest();

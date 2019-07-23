@@ -5,6 +5,7 @@ import kikaha.urouting.api.*;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.security.PublicKey;
+import java.util.List;
 import java.util.Set;
 
 @Path("api/acao")
@@ -24,7 +25,7 @@ public class AcaoResource {
     }
 
     @GET
-    @Path("(id)")
+    @Path("{id}")
     public Response findById(@PathParam("id") Long id) {
         Acao acao = queries.findByID(id);
         if (acao == null)

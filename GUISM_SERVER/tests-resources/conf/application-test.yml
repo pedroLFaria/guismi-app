@@ -12,3 +12,9 @@ server:
         log-query-execution-longer-than-ms: 500
         pool-max-size: 10
         driver-class-name: com.mysql.cj.jdbc.Driver
+
+  server:
+    http:
+      enabled: true
+      host: "0.0.0.0"
+      port: 9000

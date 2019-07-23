@@ -493,7 +493,6 @@ CREATE TABLE `habitos` (
 --
 
 INSERT INTO `habitos` (`idHabitos`, `nome`, `desc_hab`) VALUES
-(1, 'Hentai', 'Muito sesgso'),
 (2, 'Arcanismo', 'Conhecimento em artes arcanas, como rituais, forja de runas, entre outros...'),
 (3, 'Magia', 'Habilidade em manipulação dos adversos tipos de magia.'),
 (4, 'Corpo-a-Corpo', 'Habilidade em lutar próximo ao oponente.'),

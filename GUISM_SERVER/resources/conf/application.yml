@@ -1,7 +1,7 @@
 server:
   
   static:
-    enabled: false
+    enabled: true
 
   urouting:
     default-content-type: "application/json"
