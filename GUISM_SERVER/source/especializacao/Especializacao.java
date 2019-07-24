@@ -9,11 +9,11 @@ import lombok.Data;
 public class Especializacao {
 
     @Column
-    Long id;
+    Long idEspecializacao;
 
     @Column
-    String nome;
+    String nomeEspecializacao;
 
     @Column
-    String descricao;
+    String descEspecializacao;
 }

@@ -9,11 +9,11 @@ import lombok.Data;
 public class Situacao {
 
     @Column
-    Long id;
+    Long idSituacao;
 
     @Column
-    String nome;
+    String nomeSituacao;
 
     @Column
-    String descricao;
+    String descricaoSituacao;
 }

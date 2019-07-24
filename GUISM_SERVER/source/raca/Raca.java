@@ -1,61 +1,81 @@
 package raca;
 
+import descendencia.Descendencia;
+import especializacao.Especializacao;
+import habilidade.Habilidade;
+import habitos.Habito;
+import idiomas.Idioma;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
+import patrono.Patrono;
+
+import java.util.Set;
 
 @Data
 @Entity
 public class Raca{
 
     @Column
-    Long id;
+    Long idRaca;
 
     @Column
-    String nome;
+    String nomeRaca;
 
     @Column
-    String raridade;
+    String raridadeRaca;
 
     @Column
-    String descricao;
+    String descRaca;
 
     @Column
-    String longevidade;
+    String longevidadeRaca;
 
     @Column
-    String tracosFisicas;
+    String TRACOSFISIOLOGICOS;
 
     @Column
-    String cultura;
+    String culturaRaca;
 
     @Column
-    String historia;
+    String historiaRaca;
 
     @Column
-    Long forRaca;
+    Long racaForca;
 
     @Column
-    Long conRaca;
+    Long racaCon;
 
     @Column
-    Long agiRaca;
+    Long racaAgi;
 
     @Column
-    Long desRaca;
+    Long racaDes;
 
     @Column
-    Long intRaca;
+    Long racaInt;
 
     @Column
-    Long sabRaca;
+    Long racaSab;
 
     @Column
-    Long carRaca;
+    Long racaCar;
 
     @Column
     Long sangue;
 
     @Column
     Long vigor;
+
+    Set<Descendencia> descendencias;
+
+    Set<Especializacao> especializacoes;
+
+    Set<Habilidade> habilidades;
+
+    Set<Habito> habitos;
+
+    Set<Idioma> idiomas;
+
+    Set<Patrono> patronos;
 }

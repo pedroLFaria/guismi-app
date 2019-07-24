@@ -9,12 +9,12 @@ import lombok.Data;
 public class Sanidade {
 
     @Column
-    Long id;
+    Long idSanidade;
 
     @Column
-    String nome;
+    String nomeSanidade;
 
     @Column
-    String descricao;
+    String descSanidade;
 
 }

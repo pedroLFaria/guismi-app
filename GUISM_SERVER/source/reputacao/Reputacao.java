@@ -9,12 +9,8 @@ import lombok.Data;
 public class Reputacao {
 
     @Column
-    Long id;
+    Long idReputacao;
 
     @Column
-    String nome;
-
-    @Column
-    String efeito;
-
+    String nomeReputacao;
 }

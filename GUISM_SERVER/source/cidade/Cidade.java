@@ -10,15 +10,15 @@ import lombok.Data;
 public class Cidade {
 
     @Column
-    Long id;
+    Long idCidade;
 
     @Column
-    String nome;
+    String nomeCidade;
 
     @Column
-    String descricao;
+    String descricaoCidade;
 
     @Column
-    String populacao;
+    String populacaoCidade;
 
 }

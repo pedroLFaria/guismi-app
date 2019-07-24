@@ -9,22 +9,22 @@ import lombok.Data;
 public class Item {
 
     @Column
-    Long id;
+    Long idItem;
 
     @Column
-    String nome;
+    String nomeItem;
 
     @Column
-    String descricao;
+    String descItem;
 
     @Column
-    Long peso;
+    Long pesoItem;
 
     @Column
     Long valorMagica;
 
     @Column
-    Long valor;
+    Long valorItem;
 
     @Column
     Long moeda;

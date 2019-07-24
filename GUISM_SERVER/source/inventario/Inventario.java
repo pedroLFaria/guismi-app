@@ -1,17 +1,21 @@
 package inventario;
 
+import item.Item;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
 public class Inventario {
 
     @Column
-    Long id;
+    Long idInventario;
 
     @Column
-    String nome;
+    String nomeInventario;
 
+    Set<Item> items;
 }

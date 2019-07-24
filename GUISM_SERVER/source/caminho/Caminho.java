@@ -1,25 +1,31 @@
 package caminho;
 
+import especializacao.Especializacao;
 import habilidade.Habilidade;
+import habitos.Habito;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
 public class Caminho {
 
     @Column
-    Long id;
+    Long idCaminho;
 
     @Column
-    String nome;
+    String nomeCaminho;
 
     @Column
+    String descricaoCaminho;
 
-    String descricao;
 
+   Set<Habilidade> habilidades;
 
-    Habilidade[] habilidades;
+    Set<Especializacao> especializacoes;
 
+    Set<Habito> habitos;
 }

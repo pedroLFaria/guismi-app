@@ -1,8 +1,18 @@
 package ficha;
 
+import caminho.Caminho;
+import descendencia.Descendencia;
+import habilidade.Habilidade;
+import habitos.Habito;
+import idiomas.Idioma;
+import inventario.Inventario;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
+import patrono.Patrono;
+import situacao.Situacao;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -39,42 +49,58 @@ public class Ficha {
     Long sorteDoDia;
 
     @Column
-    Long forcaDistribuida;
+    Long distForca;
 
     @Column
-    Long conDistribuida;
+    Long distConstituicao;
 
     @Column
-    Long agiDistribuida;
+    Long distAgilidade;
 
     @Column
-    Long desDistribuida;
+    Long distDestreza;
 
     @Column
-    Long intDistribuida;
+    Long distInteligencia;
 
     @Column
-    Long sabDistribuida;
+    Long distSabedoria;
 
     @Column
-    Long carDistribuida;
+    Long distCarisma;
 
     @Column
     Long nivelPersonagem;
 
     @Column
-    Long experienciaPersonagem;
+    Long exPersonagem;
 
     @Column
-    String descricaoPersonagem;
+    String descPersonagem;
 
     @Column
-    String historiaPersonagem;
+    String histPersonagem;
 
     @Column
     String nota;
 
     @Column
     Long idSanidae;
+
+    Set<Caminho> caminhos;
+
+    Set<Descendencia> descendencias;
+
+    Set<Habilidade> habilidades;
+
+    Set<Habito> habitos;
+
+    Set<Idioma> idiomas;
+
+    Set<Inventario> inventarios;
+
+    Set<Patrono> patronos;
+
+    Set<Situacao> situacoes;
 }
 

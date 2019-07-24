@@ -9,9 +9,9 @@ import lombok.Data;
 public class Carro {
 
     @Column
-    Long id;
+    Long idCarro;
 
     @Column
-    String nome;
+    String nomeCarro;
 
 }

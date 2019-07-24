@@ -1,4 +1,4 @@
-package descendicia;
+package idiomas;
 
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
@@ -6,14 +6,15 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Descendicia {
+public class Idioma {
 
     @Column
-    Long id;
+    Long idIdioma;
 
     @Column
-    String nome;
+    String nomeIdioma;
 
     @Column
-    String descricao;
+    String descIdioma;
+
 }

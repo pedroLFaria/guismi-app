@@ -1,9 +1,13 @@
 package habilidade;
 
+import Gasto.Gasto;
 import acao.Acao;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
+import situacao.Situacao;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,33 +17,32 @@ public class Habilidade {
     Long idHabilidade;
 
     @Column
-    String nome;
+    String nomeHabilidade;
 
     @Column
-    String atributo_ataca;
+    String atrAtacante;
 
     @Column
-    String tipo;
+    String tipoHabilidade;
 
     @Column
-    String gasto1;
+    String utiHabilidade;
 
     @Column
-    String gasto2;
+    String descHabilidade;
 
     @Column
-    String gasto3;
+    String prerequisito;
 
     @Column
-    String utilizacao;
+    Long nivelRequerido;
 
     @Column
-    String desc_hab;
+    Set<Acao> acoes;
 
     @Column
-    String pre_req;
+    Set<Gasto> gasto;
 
     @Column
-    Long nivel_req;
-
+    Set<Situacao> situacoes;
 }

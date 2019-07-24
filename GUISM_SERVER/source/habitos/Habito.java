@@ -1,12 +1,15 @@
-package idiomas;
+package habitos;
 
+import especializacao.Especializacao;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
 
+import java.util.Set;
+
 @Data
 @Entity
-public class Idiomas {
+public class Habito {
 
     @Column
     Long id;
@@ -15,6 +18,7 @@ public class Idiomas {
     String nome;
 
     @Column
-    String descricaoIdiomas;
+    String descricaoHabitos;
 
+    Set<Especializacao> especializacoes;
 }
