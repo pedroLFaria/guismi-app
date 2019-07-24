@@ -1,5 +1,8 @@
 package ficha;
 
+import habilidade.Habilidade;
+import habilidade.HabilidadeQueries;
+import habilidade.HabilidadeResource;
 import kikaha.urouting.api.*;
 
 import javax.inject.Inject;
@@ -18,15 +21,10 @@ public class FichaResource {
     @Path("{id}")
     public Response findById(@PathParam("id") Long id){
         Ficha ficha = queries.findById(id);
-
+        if(ficha == null){
+            return DefaultResponse.notFound().entity("Ficha não encontrada!");
+        }
         return DefaultResponse.ok(ficha);
     }
 
-    /*@GET
-    @Path("{id}")
-    public Response findFichaBYJogadorId(@PathParam("id") Long id){
-        Ficha ficha = queries.findFichaBYJogadorId(id);
-
-        return DefaultResponse.ok(ficha);
-    }*/
 }

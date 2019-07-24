@@ -489,3 +489,844 @@ java.lang.NumberFormatException: For input string: "acao"
 22:09:42.312 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
 22:09:43.367 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@1a4927d6[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7a6d7e92[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
 22:09:43.643 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@1a4927d6[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7a6d7e92[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:17:30.631 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:17:30.704 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:17:30.705 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:17:30.706 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:17:30.708 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:17:30.710 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:17:32.277 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:17:33.060 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@5adb0db3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@3f270e0a[remainingCreated = 10], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:17:33.323 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@16c63f5[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@35229f85[remainingCreated = 10], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:17:33.601 INFO  - REST API Session Store: no session will be persisted on server.
+12:17:33.979 INFO  - Micro Routing API
+12:17:33.982 INFO  -   default-encoding: UTF-8
+12:17:33.984 INFO  -   default-content-type: application/json
+12:17:33.984 INFO  -   content-type-priority: REQUEST
+12:17:34.146 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@162be91c[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2488b073[remainingCreated = 10], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:17:34.192 INFO  - Looking for modules...
+12:17:34.222 INFO  - Enabling static routing at folder: webapp
+12:17:34.274 INFO  - Registering route: POST:/auth/callback
+12:17:34.279 INFO  - Registering route: GET:/api/habilidade/{id}
+12:17:34.279 INFO  - Registering route: POST:/api/carros
+12:17:34.282 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:17:34.282 INFO  - Registering route: POST:/api/acao
+12:17:34.282 INFO  - Registering route: GET:/api/carros/{id}
+12:17:34.283 INFO  - Registering route: GET:/api/acao/{id}
+12:17:34.285 INFO  - Registering route: GET:/buscaFicha/{id}
+12:17:34.313 INFO  - XNIO version 3.3.8.Final
+12:17:34.343 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:17:34.376 INFO  - Configuring Undertow options...
+12:17:34.376 INFO  -   buffer-size: 1024
+12:17:34.379 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:17:34.380 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:17:34.380 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:17:34.383 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:17:34.399 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:17:34.498 INFO  - Unit test server started.
+12:18:53.359 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:18:53.411 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:18:53.412 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:18:53.413 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:18:53.415 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:18:53.424 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:18:53.652 INFO  - REST API Session Store: no session will be persisted on server.
+12:18:54.058 INFO  - Micro Routing API
+12:18:54.061 INFO  -   default-encoding: UTF-8
+12:18:54.061 INFO  -   default-content-type: application/json
+12:18:54.061 INFO  -   content-type-priority: REQUEST
+12:18:54.906 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@c9d0d6[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@6ccdb29f[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:18:55.052 INFO  - Looking for modules...
+12:18:55.055 INFO  - Enabling static routing at folder: webapp
+12:18:55.113 INFO  - Registering route: POST:/auth/callback
+12:18:55.117 INFO  - Registering route: GET:/api/habilidade/{id}
+12:18:55.121 INFO  - Registering route: POST:/api/carros
+12:18:55.121 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:18:55.121 INFO  - Registering route: POST:/api/acao
+12:18:55.121 INFO  - Registering route: GET:/api/carros/{id}
+12:18:55.124 INFO  - Registering route: GET:/api/acao/{id}
+12:18:55.124 INFO  - Registering route: GET:/buscaFicha/{id}
+12:18:55.147 INFO  - XNIO version 3.3.8.Final
+12:18:55.169 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:18:55.194 INFO  - Configuring Undertow options...
+12:18:55.194 INFO  -   buffer-size: 1024
+12:18:55.197 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:18:55.198 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:18:55.198 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:18:55.198 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:18:55.213 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:18:55.309 ERROR - Could not start server
+java.lang.RuntimeException: java.net.BindException: Address already in use: bind
+	at io.undertow.Undertow.start(Undertow.java:249)
+	at kikaha.core.KikahaUndertowServer.start(KikahaUndertowServer.java:48)
+	at kikaha.core.KikahaUndertowServer.run(KikahaUndertowServer.java:32)
+	at kikaha.core.test.KikahaServerRunner.<clinit>(KikahaServerRunner.java:25)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.junit.internal.requests.FilterRequest.getRunner(FilterRequest.java:36)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:49)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:190)
+	at org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:243)
+	at io.undertow.Undertow.start(Undertow.java:192)
+	... 18 common frames omitted
+12:18:55.312 INFO  - Server stopped!
+12:18:55.324 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@c9d0d6[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@6ccdb29f[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:19:14.959 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:15.007 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:15.008 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:15.009 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:15.011 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:19:15.016 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:19:16.122 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:19:16.527 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:19:26.558 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:26.609 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:26.610 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:26.611 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:19:26.615 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:19:26.617 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:19:27.724 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:19:28.082 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:28:59.176 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:28:59.231 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:28:59.232 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:28:59.233 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:28:59.235 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:28:59.237 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:29:00.325 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:29:00.680 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:29:06.952 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:07.000 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:07.001 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:07.002 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:07.005 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:29:07.007 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:29:07.208 INFO  - REST API Session Store: no session will be persisted on server.
+12:29:07.551 INFO  - Micro Routing API
+12:29:07.565 INFO  -   default-encoding: UTF-8
+12:29:07.565 INFO  -   default-content-type: application/json
+12:29:07.565 INFO  -   content-type-priority: REQUEST
+12:29:08.435 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@26ceffa8[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@600b90df[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:29:08.528 INFO  - Looking for modules...
+12:29:08.531 INFO  - Enabling static routing at folder: webapp
+12:29:08.589 INFO  - Registering route: POST:/auth/callback
+12:29:08.592 INFO  - Registering route: GET:/api/habilidade/{id}
+12:29:08.595 INFO  - Registering route: POST:/api/carros
+12:29:08.595 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:29:08.595 INFO  - Registering route: POST:/api/acao
+12:29:08.595 INFO  - Registering route: GET:/api/carros/{id}
+12:29:08.597 INFO  - Registering route: GET:/api/acao/{id}
+12:29:08.597 INFO  - Registering route: GET:/buscaFicha/{id}
+12:29:08.618 INFO  - XNIO version 3.3.8.Final
+12:29:08.641 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:29:08.668 INFO  - Configuring Undertow options...
+12:29:08.668 INFO  -   buffer-size: 1024
+12:29:08.672 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:29:08.673 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:29:08.673 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:29:08.673 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:29:08.690 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:29:08.761 ERROR - Could not start server
+java.lang.RuntimeException: java.net.BindException: Address already in use: bind
+	at io.undertow.Undertow.start(Undertow.java:249)
+	at kikaha.core.KikahaUndertowServer.start(KikahaUndertowServer.java:48)
+	at kikaha.core.KikahaUndertowServer.run(KikahaUndertowServer.java:32)
+	at kikaha.core.test.KikahaServerRunner.<clinit>(KikahaServerRunner.java:25)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:49)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:190)
+	at org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:243)
+	at io.undertow.Undertow.start(Undertow.java:192)
+	... 17 common frames omitted
+12:29:08.764 INFO  - Server stopped!
+12:29:08.770 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@26ceffa8[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@600b90df[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:29:54.173 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:54.224 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:54.225 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:54.226 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:29:54.229 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:29:54.231 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:29:54.427 INFO  - REST API Session Store: no session will be persisted on server.
+12:29:54.801 INFO  - Micro Routing API
+12:29:54.804 INFO  -   default-encoding: UTF-8
+12:29:54.804 INFO  -   default-content-type: application/json
+12:29:54.804 INFO  -   content-type-priority: REQUEST
+12:29:55.614 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@26ceffa8[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@600b90df[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:29:55.706 INFO  - Looking for modules...
+12:29:55.710 INFO  - Enabling static routing at folder: webapp
+12:29:55.768 INFO  - Registering route: POST:/auth/callback
+12:29:55.771 INFO  - Registering route: GET:/api/habilidade/{id}
+12:29:55.774 INFO  - Registering route: POST:/api/carros
+12:29:55.775 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:29:55.775 INFO  - Registering route: POST:/api/acao
+12:29:55.775 INFO  - Registering route: GET:/api/carros/{id}
+12:29:55.777 INFO  - Registering route: GET:/api/acao/{id}
+12:29:55.777 INFO  - Registering route: GET:/buscaFicha/{id}
+12:29:55.798 INFO  - XNIO version 3.3.8.Final
+12:29:55.819 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:29:55.844 INFO  - Configuring Undertow options...
+12:29:55.844 INFO  -   buffer-size: 1024
+12:29:55.848 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:29:55.849 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:29:55.849 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:29:55.849 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:29:55.866 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:29:55.935 INFO  - Unit test server started.
+12:30:44.533 ERROR - Unhandled exception
+java.lang.NullPointerException: null
+	at ficha.FichaResource.findById(FichaResource.java:26)
+	at ficha.GeneratedFichaResource1613710580.runMethod(GeneratedFichaResource1613710580.java:46)
+	at ficha.GeneratedFichaResource1613710580.lambda$runMethod$0(GeneratedFichaResource1613710580.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:31:09.937 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:31:09.989 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:31:09.990 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:31:09.992 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:31:09.994 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:31:09.995 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:31:11.087 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:31:11.446 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:32:03.451 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:03.515 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:03.517 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:03.517 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:03.520 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:32:03.522 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:32:04.619 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:32:04.966 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:32:14.254 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:14.307 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:14.308 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:14.309 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:32:14.311 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:32:14.313 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:32:15.408 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:32:15.774 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:33:08.369 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:08.423 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:08.425 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:08.426 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:08.428 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:33:08.430 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:33:09.503 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:33:09.853 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:33:40.346 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:40.400 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:40.401 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:40.402 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:33:40.405 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:33:40.409 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:33:41.514 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:33:41.878 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:37:21.151 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:37:21.200 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:37:21.201 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:37:21.202 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:37:21.204 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:37:21.205 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:37:22.307 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:37:22.661 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:38:50.108 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:38:50.171 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:38:50.173 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:38:50.174 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:38:50.177 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:38:50.180 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:38:51.332 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:39:15.913 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:39:22.282 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:22.342 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:22.344 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:22.344 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:22.346 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:39:22.348 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:39:23.385 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:39:23.811 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:39:58.193 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:58.254 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:58.255 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:58.256 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:39:58.258 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:39:58.259 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:39:59.294 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:39:59.708 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:40:17.364 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:40:17.421 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:40:17.422 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:40:17.423 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:40:17.426 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:40:17.428 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:40:18.452 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2af616d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71f67a79[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:40:18.881 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@2af616d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71f67a79[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:08.873 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:08.930 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:08.931 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:08.932 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:08.934 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:41:08.937 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:41:09.986 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2af616d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71f67a79[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:10.420 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@2af616d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71f67a79[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:18.904 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:18.960 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:18.961 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:18.962 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:18.963 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:41:18.965 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:41:19.976 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:29.886 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:29.944 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:29.945 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:29.946 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:29.949 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:41:29.950 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:41:30.978 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@52350abb[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@681aad3b[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:34.972 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@52350abb[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@681aad3b[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:48.160 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:41:50.863 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:50.920 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:50.921 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:50.922 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:41:50.925 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:41:50.928 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:41:52.949 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@52350abb[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@681aad3b[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:42:17.004 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@52350abb[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@681aad3b[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:42:38.647 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:42:38.704 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:42:38.705 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:42:38.706 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:42:38.708 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:42:38.710 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:42:39.716 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@52350abb[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@681aad3b[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:44:52.976 WARN  - SQL query execution from pool p1@52350abb(1/9/10) took 740,077000 ms:
+-- SELECT * FROM ficha WHERE IDFICHA = ?
+-- Parameters:
+-- [[setLong, 1, 1]]
+12:45:25.251 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@52350abb[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@681aad3b[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:45:40.538 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:45:40.599 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:45:40.600 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:45:40.601 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:45:40.604 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:45:40.608 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:45:41.779 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:45:56.998 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:46:16.073 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:46:16.119 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:46:16.120 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:46:16.121 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:46:16.123 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:46:16.124 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:46:17.112 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@33ecda92[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@14fc5f04[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:46:17.555 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@33ecda92[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@14fc5f04[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:47:53.008 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:47:53.069 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:47:53.070 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:47:53.071 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:47:53.073 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:47:53.075 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:47:54.130 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:48:39.586 WARN  - SQL query execution from pool p1@34abdee4(1/9/10) took 762,488700 ms:
+-- SELECT * FROM ficha WHERE IDFICHA = ?
+-- Parameters:
+-- [[setLong, 1, 1]]
+12:48:56.163 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@34abdee4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@71a9b4c7[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:03.133 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:03.183 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:03.184 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:03.185 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:03.187 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:50:03.188 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:50:04.308 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:04.663 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:30.887 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:30.933 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:30.935 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:30.936 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:30.938 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:50:30.939 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:50:31.927 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:32.473 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@59b38691[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2e2ff723[remainingCreated = 10], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:32.615 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@130dca52[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2654635[remainingCreated = 10], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:32.690 INFO  - REST API Session Store: no session will be persisted on server.
+12:50:32.946 INFO  - Micro Routing API
+12:50:32.946 INFO  -   default-encoding: UTF-8
+12:50:32.948 INFO  -   default-content-type: application/json
+12:50:32.948 INFO  -   content-type-priority: REQUEST
+12:50:33.057 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@7c7d3c46[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@24fb6a80[remainingCreated = 10], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:33.092 INFO  - Looking for modules...
+12:50:33.098 INFO  - Enabling static routing at folder: webapp
+12:50:33.122 INFO  - Registering route: POST:/auth/callback
+12:50:33.126 INFO  - Registering route: GET:/api/habilidade/{id}
+12:50:33.126 INFO  - Registering route: POST:/api/carros
+12:50:33.129 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:50:33.129 INFO  - Registering route: POST:/api/acao
+12:50:33.130 INFO  - Registering route: GET:/api/carros/{id}
+12:50:33.130 INFO  - Registering route: GET:/api/acao/{id}
+12:50:33.132 INFO  - Registering route: GET:/buscaFicha/{id}
+12:50:33.158 INFO  - XNIO version 3.3.8.Final
+12:50:33.185 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:50:33.210 INFO  - Configuring Undertow options...
+12:50:33.211 INFO  -   buffer-size: 1024
+12:50:33.218 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:50:33.219 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:50:33.219 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:50:33.222 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:50:33.245 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:50:33.326 INFO  - Unit test server started.
+12:50:46.732 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:46.787 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:46.788 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:46.789 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:50:46.792 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:50:46.793 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:50:47.898 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:50:48.240 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:51:15.688 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:51:15.746 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:51:15.747 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:51:15.748 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:51:15.750 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:51:15.752 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:51:15.949 INFO  - REST API Session Store: no session will be persisted on server.
+12:51:16.302 INFO  - Micro Routing API
+12:51:16.308 INFO  -   default-encoding: UTF-8
+12:51:16.308 INFO  -   default-content-type: application/json
+12:51:16.308 INFO  -   content-type-priority: REQUEST
+12:51:17.174 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@26ceffa8[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@600b90df[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:51:17.265 INFO  - Looking for modules...
+12:51:17.268 INFO  - Enabling static routing at folder: webapp
+12:51:17.328 INFO  - Registering route: POST:/auth/callback
+12:51:17.331 INFO  - Registering route: GET:/api/habilidade/{id}
+12:51:17.334 INFO  - Registering route: POST:/api/carros
+12:51:17.334 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:51:17.334 INFO  - Registering route: POST:/api/acao
+12:51:17.335 INFO  - Registering route: GET:/api/carros/{id}
+12:51:17.337 INFO  - Registering route: GET:/api/acao/{id}
+12:51:17.337 INFO  - Registering route: GET:/buscaFicha/{id}
+12:51:17.371 INFO  - XNIO version 3.3.8.Final
+12:51:17.393 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:51:17.457 INFO  - Configuring Undertow options...
+12:51:17.458 INFO  -   buffer-size: 1024
+12:51:17.468 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:51:17.469 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:51:17.469 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:51:17.469 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:51:17.494 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:51:17.565 ERROR - Could not start server
+java.lang.RuntimeException: java.net.BindException: Address already in use: bind
+	at io.undertow.Undertow.start(Undertow.java:249)
+	at kikaha.core.KikahaUndertowServer.start(KikahaUndertowServer.java:48)
+	at kikaha.core.KikahaUndertowServer.run(KikahaUndertowServer.java:32)
+	at kikaha.core.test.KikahaServerRunner.<clinit>(KikahaServerRunner.java:25)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:49)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:190)
+	at org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:243)
+	at io.undertow.Undertow.start(Undertow.java:192)
+	... 17 common frames omitted
+12:51:17.568 INFO  - Server stopped!
+12:51:17.573 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@26ceffa8[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@600b90df[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:52:52.224 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:52:52.278 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:52:52.279 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:52:52.280 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:52:52.282 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:52:52.284 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:52:52.488 INFO  - REST API Session Store: no session will be persisted on server.
+12:52:52.831 INFO  - Micro Routing API
+12:52:52.834 INFO  -   default-encoding: UTF-8
+12:52:52.834 INFO  -   default-content-type: application/json
+12:52:52.834 INFO  -   content-type-priority: REQUEST
+12:52:53.647 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@26ceffa8[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@600b90df[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:52:53.728 INFO  - Looking for modules...
+12:52:53.731 INFO  - Enabling static routing at folder: webapp
+12:52:53.791 INFO  - Registering route: POST:/auth/callback
+12:52:53.794 INFO  - Registering route: GET:/api/habilidade/{id}
+12:52:53.797 INFO  - Registering route: POST:/api/carros
+12:52:53.797 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+12:52:53.797 INFO  - Registering route: POST:/api/acao
+12:52:53.797 INFO  - Registering route: GET:/api/carros/{id}
+12:52:53.800 INFO  - Registering route: GET:/api/acao/{id}
+12:52:53.800 INFO  - Registering route: GET:/buscaFicha/{id}
+12:52:53.821 INFO  - XNIO version 3.3.8.Final
+12:52:53.842 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+12:52:53.867 INFO  - Configuring Undertow options...
+12:52:53.867 INFO  -   buffer-size: 1024
+12:52:53.871 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:52:53.871 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:52:53.871 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:52:53.872 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:52:53.890 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:52:53.969 INFO  - Unit test server started.
+12:53:11.019 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:53:11.074 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:53:11.076 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:53:11.077 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:53:11.080 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:53:11.082 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:53:12.143 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:53:12.471 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:54:27.598 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+12:54:27.651 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+12:54:27.652 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+12:54:27.653 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+12:54:27.658 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+12:54:27.662 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+12:54:28.766 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+12:54:29.121 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:27:28.960 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:27:29.026 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:27:29.027 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:27:29.028 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:27:29.036 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:27:29.038 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:27:31.293 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@65f8f5ae[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@431cd9b2[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:27:31.916 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@65f8f5ae[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@431cd9b2[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:29:08.407 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:08.459 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:08.460 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:08.461 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:08.463 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:29:08.465 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:29:09.512 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:29:09.856 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:29:49.813 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:49.867 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:49.868 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:49.869 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:29:49.871 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:29:49.874 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:29:51.016 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:29:51.372 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:30:10.115 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:10.165 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:10.166 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:10.167 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:10.169 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:30:10.171 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:30:11.264 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:30:11.615 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:30:57.650 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:57.698 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:57.699 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:57.700 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:30:57.702 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:30:57.704 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:30:58.663 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:30:59.372 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@59b38691[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2e2ff723[remainingCreated = 10], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:30:59.508 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@130dca52[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2654635[remainingCreated = 10], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:30:59.663 INFO  - REST API Session Store: no session will be persisted on server.
+18:30:59.914 INFO  - Micro Routing API
+18:30:59.914 INFO  -   default-encoding: UTF-8
+18:30:59.918 INFO  -   default-content-type: application/json
+18:30:59.918 INFO  -   content-type-priority: REQUEST
+18:31:00.022 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@b40bb6e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@3a94964[remainingCreated = 10], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:31:00.047 INFO  - Looking for modules...
+18:31:00.052 INFO  - Enabling static routing at folder: webapp
+18:31:00.074 INFO  - Registering route: POST:/auth/callback
+18:31:00.077 INFO  - Registering route: GET:/api/habilidade/{id}
+18:31:00.078 INFO  - Registering route: POST:/api/carros
+18:31:00.081 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+18:31:00.081 INFO  - Registering route: POST:/api/acao
+18:31:00.081 INFO  - Registering route: GET:/api/carros/{id}
+18:31:00.081 INFO  - Registering route: GET:/api/acao/{id}
+18:31:00.084 INFO  - Registering route: GET:/buscaFicha/{id}
+18:31:00.105 INFO  - XNIO version 3.3.8.Final
+18:31:00.128 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+18:31:00.153 INFO  - Configuring Undertow options...
+18:31:00.153 INFO  -   buffer-size: 1024
+18:31:00.158 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+18:31:00.158 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+18:31:00.159 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+18:31:00.162 INFO  -   org.xnio.Options.BACKLOG: 20000
+18:31:00.183 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+18:31:00.267 INFO  - Unit test server started.
+18:31:25.283 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:25.336 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:25.337 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:25.338 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:25.340 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:31:25.342 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:31:26.408 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:31:26.753 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:31:43.326 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:43.380 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:43.382 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:43.383 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:43.385 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:31:43.387 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:31:44.459 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:31:44.816 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:31:54.109 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:54.163 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:54.164 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:54.165 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:31:54.167 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:31:54.170 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:31:55.258 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:31:55.606 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:14.498 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:14.550 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:14.551 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:14.553 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:14.557 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:32:14.559 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:32:15.674 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:16.021 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:42.260 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:42.305 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:42.307 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:42.307 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:42.310 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:32:42.311 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:32:43.291 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:43.841 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@59b38691[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2e2ff723[remainingCreated = 10], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:43.976 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@130dca52[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2654635[remainingCreated = 10], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:44.042 INFO  - REST API Session Store: no session will be persisted on server.
+18:32:44.284 INFO  - Micro Routing API
+18:32:44.284 INFO  -   default-encoding: UTF-8
+18:32:44.287 INFO  -   default-content-type: application/json
+18:32:44.287 INFO  -   content-type-priority: REQUEST
+18:32:44.398 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@72a85671[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@6722db6e[remainingCreated = 10], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:44.425 INFO  - Looking for modules...
+18:32:44.430 INFO  - Enabling static routing at folder: webapp
+18:32:44.453 INFO  - Registering route: POST:/auth/callback
+18:32:44.457 INFO  - Registering route: GET:/api/habilidade/{id}
+18:32:44.457 INFO  - Registering route: POST:/api/carros
+18:32:44.460 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+18:32:44.460 INFO  - Registering route: POST:/api/acao
+18:32:44.460 INFO  - Registering route: GET:/api/carros/{id}
+18:32:44.460 INFO  - Registering route: GET:/api/acao/{id}
+18:32:44.463 INFO  - Registering route: GET:/buscaFicha/{id}
+18:32:44.485 INFO  - XNIO version 3.3.8.Final
+18:32:44.522 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+18:32:44.546 INFO  - Configuring Undertow options...
+18:32:44.546 INFO  -   buffer-size: 1024
+18:32:44.552 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+18:32:44.553 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+18:32:44.554 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+18:32:44.557 INFO  -   org.xnio.Options.BACKLOG: 20000
+18:32:44.579 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+18:32:44.651 INFO  - Unit test server started.
+18:32:44.681 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@59b38691[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2e2ff723[terminated], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:44.681 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:44.681 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@72a85671[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@6722db6e[terminated], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:44.684 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@130dca52[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2654635[terminated], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:44.696 INFO  - Server stopped!
+18:32:55.675 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:55.724 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:55.725 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:55.726 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:32:55.729 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:32:55.731 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:32:56.807 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:32:57.147 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:33:08.283 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:33:08.336 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:33:08.337 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:33:08.338 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:33:08.340 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:33:08.342 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:33:09.421 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:33:09.752 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:35:46.529 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:35:46.582 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:35:46.584 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:35:46.585 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:35:46.587 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:35:46.589 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:35:47.655 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:35:47.996 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:17.027 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:17.072 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:17.073 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:17.074 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:17.076 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:36:17.078 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:36:18.051 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:18.558 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@59b38691[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2e2ff723[remainingCreated = 10], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:18.738 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@130dca52[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2654635[remainingCreated = 10], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:18.841 INFO  - REST API Session Store: no session will be persisted on server.
+18:36:19.081 INFO  - Micro Routing API
+18:36:19.082 INFO  -   default-encoding: UTF-8
+18:36:19.084 INFO  -   default-content-type: application/json
+18:36:19.084 INFO  -   content-type-priority: REQUEST
+18:36:19.194 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@b40bb6e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@3a94964[remainingCreated = 10], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:19.219 INFO  - Looking for modules...
+18:36:19.225 INFO  - Enabling static routing at folder: webapp
+18:36:19.248 INFO  - Registering route: POST:/auth/callback
+18:36:19.251 INFO  - Registering route: GET:/api/habilidade/{id}
+18:36:19.251 INFO  - Registering route: POST:/api/carros
+18:36:19.254 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+18:36:19.254 INFO  - Registering route: POST:/api/acao
+18:36:19.254 INFO  - Registering route: GET:/api/carros/{id}
+18:36:19.255 INFO  - Registering route: GET:/api/acao/{id}
+18:36:19.257 INFO  - Registering route: GET:/buscaFicha/{id}
+18:36:19.278 INFO  - XNIO version 3.3.8.Final
+18:36:19.302 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+18:36:19.328 INFO  - Configuring Undertow options...
+18:36:19.328 INFO  -   buffer-size: 1024
+18:36:19.335 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+18:36:19.335 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+18:36:19.335 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+18:36:19.338 INFO  -   org.xnio.Options.BACKLOG: 20000
+18:36:19.361 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+18:36:19.447 INFO  - Unit test server started.
+18:36:19.462 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@b40bb6e[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@3a94964[terminated], name = p4, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:19.463 INFO  - Server stopped!
+18:36:19.464 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@2f67a4d3[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e3f861[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:19.467 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@130dca52[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2654635[terminated], name = p3, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:19.469 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@59b38691[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@2e2ff723[terminated], name = p2, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:48.018 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:48.070 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:48.071 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:48.072 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:36:48.075 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:36:48.076 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:36:49.209 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:36:49.589 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:37:11.626 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:37:11.684 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:37:11.685 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:37:11.685 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:37:11.688 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:37:11.690 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:37:12.744 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:37:13.094 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@15a34df2[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5b38c1ec[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:39:45.619 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:45.670 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:45.671 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:45.672 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:45.674 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:39:45.679 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:39:46.766 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:39:47.124 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@790da477[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5c7933ad[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:39:57.158 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:57.219 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:57.220 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:57.221 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:39:57.224 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:39:57.226 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:39:58.331 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:39:58.670 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:42:51.390 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:42:51.439 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:42:51.441 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:42:51.442 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:42:51.453 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:42:51.460 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:42:51.668 INFO  - REST API Session Store: no session will be persisted on server.
+18:42:51.996 INFO  - Micro Routing API
+18:42:51.999 INFO  -   default-encoding: UTF-8
+18:42:51.999 INFO  -   default-content-type: application/json
+18:42:51.999 INFO  -   content-type-priority: REQUEST
+18:42:52.834 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@7b420819[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7a1a14a4[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:42:52.915 INFO  - Looking for modules...
+18:42:52.918 INFO  - Enabling static routing at folder: webapp
+18:42:52.977 INFO  - Registering route: POST:/auth/callback
+18:42:52.980 INFO  - Registering route: GET:/api/habilidade/{id}
+18:42:52.983 INFO  - Registering route: POST:/api/carros
+18:42:52.983 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+18:42:52.983 INFO  - Registering route: POST:/api/acao
+18:42:52.983 INFO  - Registering route: GET:/api/carros/{id}
+18:42:52.985 INFO  - Registering route: GET:/api/acao/{id}
+18:42:52.985 INFO  - Registering route: GET:/buscaFicha/{id}
+18:42:53.006 INFO  - XNIO version 3.3.8.Final
+18:42:53.026 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+18:42:53.051 INFO  - Configuring Undertow options...
+18:42:53.051 INFO  -   buffer-size: 1024
+18:42:53.055 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+18:42:53.056 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+18:42:53.056 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+18:42:53.056 INFO  -   org.xnio.Options.BACKLOG: 20000
+18:42:53.073 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+18:42:53.142 INFO  - Unit test server started.
+18:42:53.187 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@7b420819[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@7a1a14a4[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:42:53.194 INFO  - Server stopped!
+18:43:03.721 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:03.774 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:03.775 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:03.776 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:03.778 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:43:03.779 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:43:04.855 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:43:05.218 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:43:16.341 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:16.393 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:16.395 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:16.395 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:43:16.398 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:43:16.399 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:43:17.494 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:43:17.834 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:44:54.502 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:44:54.553 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:44:54.554 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:44:54.555 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:44:54.557 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:44:54.560 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:44:55.637 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:44:55.993 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:45:43.710 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+18:45:43.761 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+18:45:43.762 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+18:45:43.763 INFO  - Loading configurations from: file:/C:/Users/pedro.luz/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+18:45:43.766 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+18:45:43.767 INFO  - Loading configurations from: /C:/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+18:45:44.847 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+18:45:45.187 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@4b8d604b[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@5e7cd6cc[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]

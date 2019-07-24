@@ -1,15 +1,12 @@
 package acao;
 
 import kikaha.urouting.api.*;
-import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.security.PublicKey;
-import java.util.List;
 import java.util.Set;
 
-@Path("api/acao")
+@Path("api/acao/")
 @Singleton
 @Produces(Mimes.JSON)
 @Consumes(Mimes.JSON)

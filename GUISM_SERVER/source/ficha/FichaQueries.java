@@ -9,7 +9,4 @@ public interface FichaQueries {
 
     @SqlQuery("SELECT * FROM ficha WHERE IDFICHA = :id")
     Ficha findById(@Bind("id") Long id);
-/*
-    @SqlQuery("")
-    Ficha findFichaBYJogadorId(@Bind("id") Long id);*/
 }

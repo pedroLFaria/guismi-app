@@ -2,6 +2,7 @@ package ficha;
 
 import kikaha.core.test.KikahaRunner;
 import lombok.val;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -15,7 +16,7 @@ public class fichaResourceTest {
     @Test
     public void getFichaByID(){
         val getResponse = fichaResource.findById(1l);
-        val entity = getResponse.entity();
-        System.out.println(entity);
+        val entityFicha = (Ficha) getResponse.entity();
+        System.out.println(entityFicha);
     }
 }
