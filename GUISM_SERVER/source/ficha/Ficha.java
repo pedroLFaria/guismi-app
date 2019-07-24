@@ -19,7 +19,7 @@ import java.util.Set;
 public class Ficha {
 
     @Column
-    Long id;
+    Long idFicha;
 
     @Column
     Long idRaca;
@@ -31,7 +31,7 @@ public class Ficha {
     Long idJogador;
 
     @Column
-    String nomePersongagem;
+    String nomePersonagem;
 
     @Column
     String img;
@@ -46,7 +46,7 @@ public class Ficha {
     String cla;
 
     @Column
-    Long sorteDoDia;
+    Long sorteDia;
 
     @Column
     Long distForca;
@@ -73,7 +73,7 @@ public class Ficha {
     Long nivelPersonagem;
 
     @Column
-    Long exPersonagem;
+    Long expPersonagem;
 
     @Column
     String descPersonagem;
@@ -85,7 +85,7 @@ public class Ficha {
     String nota;
 
     @Column
-    Long idSanidae;
+    Long idSanidade;
 
     Set<Caminho> caminhos;
 

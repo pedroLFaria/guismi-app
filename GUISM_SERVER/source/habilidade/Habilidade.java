@@ -37,12 +37,12 @@ public class Habilidade {
     @Column
     Long nivelRequerido;
 
-    @Column
+
     Set<Acao> acoes;
 
-    @Column
+
     Set<Gasto> gasto;
 
-    @Column
+
     Set<Situacao> situacoes;
 }
