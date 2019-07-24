@@ -24,7 +24,7 @@ public class AcaoResourceTest {
         val entity = getResponse.entity();
         System.out.println(entity);
         val entityAcao = (Acao) entity;
-        assertEquals(entityAcao.nome, "Ação Hipotetica");
+        assertEquals(entityAcao.nomeacao, "AÇÃO HIPOTETICA");
     }
 
     @Test

@@ -1,1 +1,3 @@
 /GUISM_SERVER/output
+/GUISM_SERVER/*.log
+/GUISM_SERVER/.idea
