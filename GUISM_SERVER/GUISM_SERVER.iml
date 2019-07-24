@@ -4,12 +4,10 @@
     <output url="file://$MODULE_DIR$/output/classes" />
     <output-test url="file://$MODULE_DIR$/output/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/output/generated-sources/annotations" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests-resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/output/generated-test-sources/annotations" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/output" />
     </content>
     <orderEntry type="inheritedJdk" />

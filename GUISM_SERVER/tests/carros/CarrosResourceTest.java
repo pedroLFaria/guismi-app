@@ -20,8 +20,7 @@ public class CarrosResourceTest {
     @Test
     public void ensureCanInsertNewCar(){
         val carro = new Carro();
-
-        carro.setNome( "Gol G6" );
+        carro.setNomeCarro( "Gol G6" );
         val insertResponse = carrosResource.insertNewCar( carro );
         val generatedId = insertResponse.header( "Generated-Id" );
         assertNotNull( generatedId );
@@ -29,7 +28,7 @@ public class CarrosResourceTest {
         val entity = getResponse.entity();
         assertTrue( entity instanceof Carro );
         val entityAsCarro = (Carro) entity;
-        assertEquals( "Gol G6", entityAsCarro.getNome() );
+        assertEquals( "Gol G6", entityAsCarro.getNomeCarro() );
     }
 
     @Test
