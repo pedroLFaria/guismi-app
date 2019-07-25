@@ -1,4 +1,4 @@
-package carros;
+package gasto;
 
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
@@ -6,12 +6,11 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Carro {
+public class Gasto {
 
     @Column
-    Long idCarro;
+    Long idGasto;
 
     @Column
-    String nomeCarro;
-
+    String nomeGasto;
 }

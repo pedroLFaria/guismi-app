@@ -1,5 +1,6 @@
 package caminho;
 
+import ficha.Ficha;
 import kikaha.jdbi.JDBI;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
@@ -21,6 +22,9 @@ public interface CaminhoQueries {
 
     @SqlQuery("SELECT caminho.* FROM ficha LEFT JOIN ficha_has_caminho ON ficha.idficha = ficha_has_caminho.idficha " +
             "LEFT JOIN caminho ON ficha_has_caminho.idcaminho = caminho.idcaminho WHERE ficha.idficha = :idFicha")
-    Set<Caminho> findByFichaId(@Bind ("idFicha") long idFicha);
+    Set<Caminho> findByIdFicha(@Bind ("idFicha") long idFicha);
 
+    @GetGeneratedKeys
+    @SqlUpdate("INSERT INTO FICHA_HAS_CAMINHO(IDFICHA,IDCAMINHO) VALUES(:idFicha,idCaminho)")
+    Long insertFichaHasCaminho(@BindBean Ficha ficha, @BindBean Caminho caminho);
 }

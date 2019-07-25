@@ -11,6 +11,7 @@ import javax.inject.Singleton;
 @Consumes(Mimes.JSON)
 public class CaminhoResource {
 
-    @Inject CaminhoQueries queries;
+    @Inject
+    CaminhoQueries queries;
 
 }

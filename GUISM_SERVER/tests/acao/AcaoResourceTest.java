@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
 
-import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
@@ -29,7 +28,7 @@ public class AcaoResourceTest {
 
     @Test
     public void validaGetAcaoByHabilidadeId(){
-        val getResponse = acaoResource.findByHabilidadeId(1L);
+        val getResponse = acaoResource.findByIdHabilidade(1L);
         val entityAcao = (Set<Acao>) getResponse.entity();
         System.out.println( entityAcao);
     }

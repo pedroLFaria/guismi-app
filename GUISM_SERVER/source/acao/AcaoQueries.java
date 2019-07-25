@@ -13,11 +13,11 @@ import java.util.Set;
 public interface AcaoQueries {
 
     @SqlQuery("SELECT * FROM acao WHERE idAcao = :id")
-    Acao findByID(@Bind("id")Long id);
+    Acao findById(@Bind("id")Long id);
 
     @SqlQuery("SELECT ACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_ACAO ON HABILIDADE_HAS_ACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE " +
             "LEFT JOIN ACAO ON HABILIDADE_HAS_ACAO.IDACAO = ACAO.IDACAO WHERE HABILIDADE.IDHABILIDADE =   :idHabilidade")
-    Set<Acao> findByHabilidadeId(@Bind("idHabilidade")Long idHabilidade);
+    Set<Acao> findByIdHabilidade(@Bind("idHabilidade")Long idHabilidade);
 
     @GetGeneratedKeys
     @SqlUpdate("INSERT INTO acao(nome) VALUES(:nome)")

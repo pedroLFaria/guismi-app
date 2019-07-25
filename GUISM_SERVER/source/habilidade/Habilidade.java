@@ -1,6 +1,6 @@
 package habilidade;
 
-import Gasto.Gasto;
+import gasto.Gasto;
 import acao.Acao;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;

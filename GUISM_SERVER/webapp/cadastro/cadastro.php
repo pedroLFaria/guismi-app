@@ -431,9 +431,9 @@
 				<option value="Car">Car</option>
 			</select><br>
 			Tipo: <input type=text name="tipo_habilidade"><br>
-			Gasto 1: <input type=text name="gasto1_hab"><br>
-			Gasto 2: <input type=text name="gasto2_hab"><br>
-			Gasto 3: <input type=text name="gasto3_hab"><br>
+			gasto 1: <input type=text name="gasto1_hab"><br>
+			gasto 2: <input type=text name="gasto2_hab"><br>
+			gasto 3: <input type=text name="gasto3_hab"><br>
 			Utilização: <input type=text name="utilizacao_hab"><br>
 			Descrição: <textarea name="desc_hab"></textarea><br>
 			Pré-Requisito: <input type=text name="pre_req"><br>
