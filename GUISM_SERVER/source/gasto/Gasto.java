@@ -12,5 +12,5 @@ public class Gasto {
     Long idGasto;
 
     @Column
-    String nomeGasto;
+    String nome;
 }

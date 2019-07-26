@@ -13,4 +13,8 @@ public interface GastoQueries {
             "LEFT JOIN HABILIDADE_HAS_GASTO ON HABILIDADE_HAS_GASTO.IDHABILIDADE = HABILIDADE.IDHABILIDADE \n" +
             "LEFT JOIN GASTO ON HABILIDADE_HAS_GASTO.IDGASTO = GASTO.IDGASTO WHERE HABILIDADE.IDHABILIDADE = :id")
     Set<Gasto> findByHabilidadeId(@Bind("id")Long id);
+
+    @SqlQuery("SELECT GASTO * WHERE IDGASTO = :id")
+    Gasto findById(@Bind("id")Long id);
+
 }

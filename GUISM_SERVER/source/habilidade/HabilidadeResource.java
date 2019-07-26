@@ -2,7 +2,10 @@ package habilidade;
 
 import acao.Acao;
 import acao.AcaoQueries;
+import gasto.Gasto;
+import gasto.GastoQueries;
 import kikaha.urouting.api.*;
+import situacao.Situacao;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -19,16 +22,23 @@ public class HabilidadeResource {
 
     @Inject
     AcaoQueries acaoQueries;
+
+    @Inject
+    GastoQueries gastoQueries;
+
+
     @GET
     @Path("{id}")
     public Response findById(@PathParam("id") Long id){
         Habilidade habilidade = queries.findById(id);
         if(habilidade == null)
             DefaultResponse.notFound().entity("Habilidade não encontrada!");
-        Set<Acao> acoes = new LinkedHashSet<>(
-                acaoQueries.findByIdHabilidade(id)
-        );
-        habilidade.acoes = acoes;
+        Set<Acao> acoes = new LinkedHashSet<>(acaoQueries.findByIdHabilidade(id));
+        Set<Gasto> gastos = new LinkedHashSet<>(gastoQueries.findByHabilidadeId(id));
+        Set<Situacao> situacoes = new LinkedHashSet<>();
+        habilidade.setSituacoes(situacoes);
+        habilidade.setAcoes(acoes);
+        habilidade.setGasto(gastos);
         return DefaultResponse.ok(habilidade);
     }
 }
