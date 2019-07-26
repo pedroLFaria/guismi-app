@@ -252,3 +252,309 @@
 21:46:14.716 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
 21:46:15.603 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
 21:46:15.843 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:38:19.213 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:19.256 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:19.257 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:19.258 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:19.259 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+22:38:19.261 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+22:38:19.597 INFO  - REST API Session Store: no session will be persisted on server.
+22:38:20.023 INFO  - Micro Routing API
+22:38:20.025 INFO  -   default-encoding: UTF-8
+22:38:20.025 INFO  -   default-content-type: application/json
+22:38:20.025 INFO  -   content-type-priority: REQUEST
+22:38:20.742 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@512baff6[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@632ceb35[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:38:20.822 INFO  - Looking for modules...
+22:38:20.824 INFO  - Enabling static routing at folder: webapp
+22:38:20.872 INFO  - Registering route: POST:/auth/callback
+22:38:20.874 INFO  - Registering route: GET:/especializacao/raca/{id}
+22:38:20.875 INFO  - Registering route: GET:/especializacao/habito/{id}
+22:38:20.875 INFO  - Registering route: GET:/Ficha/{id}
+22:38:20.875 INFO  - Registering route: GET:/api/acao/{id}
+22:38:20.875 INFO  - Registering route: GET:/Situacao/habilidade/{idHabilidade}
+22:38:20.876 INFO  - Registering route: GET:/especializacao/sistema
+22:38:20.876 INFO  - Registering route: GET:/api/habilidade/{id}
+22:38:20.876 INFO  - Registering route: GET:/especializacao/ficha/{id}
+22:38:20.876 INFO  - Registering route: GET:/descendencia/sistema
+22:38:20.876 INFO  - Registering route: POST:/api/acao
+22:38:20.876 INFO  - Registering route: GET:/gasto/{id}
+22:38:20.876 INFO  - Registering route: GET:/buscaFicha/{id}
+22:38:20.876 INFO  - Registering route: GET:/Situacao/ficha/{idFicha}
+22:38:20.877 INFO  - Registering route: GET:/cidade/sistema
+22:38:20.877 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+22:38:20.877 INFO  - Registering route: GET:/Situacao/{id}
+22:38:20.891 INFO  - XNIO version 3.3.8.Final
+22:38:20.906 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+22:38:20.919 INFO  - Configuring Undertow options...
+22:38:20.920 INFO  -   buffer-size: 1024
+22:38:20.922 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+22:38:20.922 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+22:38:20.922 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+22:38:20.922 INFO  -   org.xnio.Options.BACKLOG: 20000
+22:38:20.933 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+22:38:20.981 INFO  - Unit test server started.
+22:38:23.367 ERROR - Unhandled exception
+org.jdbi.v3.core.statement.UnableToExecuteStatementException: Unable to execute, no named parameter matches 'idHabilidade'. [statement:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", rewritten:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", parsed:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = ?", arguments:{ positional:{0:1}, named:{idHabidalide:1}, finder:[]}]
+	at org.jdbi.v3.core.statement.ArgumentBinder.lambda$bindNamed$0(ArgumentBinder.java:52)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bindNamed(ArgumentBinder.java:51)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bind(ArgumentBinder.java:26)
+	at org.jdbi.v3.core.statement.SqlStatement.internalExecute(SqlStatement.java:1392)
+	at org.jdbi.v3.core.result.ResultProducers.lambda$getResultSet$2(ResultProducers.java:59)
+	at org.jdbi.v3.core.result.ResultIterable.lambda$of$0(ResultIterable.java:53)
+	at org.jdbi.v3.core.result.ResultIterable.stream(ResultIterable.java:141)
+	at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:197)
+	at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.result(ResultReturner.java:138)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:42)
+	at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:139)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:25)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$null$12(SqlObjectFactory.java:157)
+	at org.jdbi.v3.core.ConstantHandleSupplier.invokeInContext(ConstantHandleSupplier.java:52)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$createInvocationHandler$13(SqlObjectFactory.java:156)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at kikaha.jdbi.QueryInterfaceInvocationHandler.invoke(QueryInterfaceInvocationHandler.java:21)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at habilidade.HabilidadeResource.findById(HabilidadeResource.java:41)
+	at ficha.FichaResource.findById(FichaResource.java:30)
+	at ficha.GeneratedFichaResource572069780.runMethod(GeneratedFichaResource572069780.java:46)
+	at ficha.GeneratedFichaResource572069780.lambda$runMethod$0(GeneratedFichaResource572069780.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+22:38:25.995 ERROR - Unhandled exception
+org.jdbi.v3.core.statement.UnableToExecuteStatementException: Unable to execute, no named parameter matches 'idHabilidade'. [statement:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", rewritten:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", parsed:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = ?", arguments:{ positional:{0:1}, named:{idHabidalide:1}, finder:[]}]
+	at org.jdbi.v3.core.statement.ArgumentBinder.lambda$bindNamed$0(ArgumentBinder.java:52)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bindNamed(ArgumentBinder.java:51)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bind(ArgumentBinder.java:26)
+	at org.jdbi.v3.core.statement.SqlStatement.internalExecute(SqlStatement.java:1392)
+	at org.jdbi.v3.core.result.ResultProducers.lambda$getResultSet$2(ResultProducers.java:59)
+	at org.jdbi.v3.core.result.ResultIterable.lambda$of$0(ResultIterable.java:53)
+	at org.jdbi.v3.core.result.ResultIterable.stream(ResultIterable.java:141)
+	at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:197)
+	at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.result(ResultReturner.java:138)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:42)
+	at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:139)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:25)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$null$12(SqlObjectFactory.java:157)
+	at org.jdbi.v3.core.ConstantHandleSupplier.invokeInContext(ConstantHandleSupplier.java:52)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$createInvocationHandler$13(SqlObjectFactory.java:156)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at kikaha.jdbi.QueryInterfaceInvocationHandler.invoke(QueryInterfaceInvocationHandler.java:21)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at habilidade.HabilidadeResource.findById(HabilidadeResource.java:41)
+	at ficha.FichaResource.findById(FichaResource.java:30)
+	at ficha.GeneratedFichaResource572069780.runMethod(GeneratedFichaResource572069780.java:46)
+	at ficha.GeneratedFichaResource572069780.lambda$runMethod$0(GeneratedFichaResource572069780.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+22:38:27.287 ERROR - Unhandled exception
+org.jdbi.v3.core.statement.UnableToExecuteStatementException: Unable to execute, no named parameter matches 'idHabilidade'. [statement:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", rewritten:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", parsed:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = ?", arguments:{ positional:{0:1}, named:{idHabidalide:1}, finder:[]}]
+	at org.jdbi.v3.core.statement.ArgumentBinder.lambda$bindNamed$0(ArgumentBinder.java:52)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bindNamed(ArgumentBinder.java:51)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bind(ArgumentBinder.java:26)
+	at org.jdbi.v3.core.statement.SqlStatement.internalExecute(SqlStatement.java:1392)
+	at org.jdbi.v3.core.result.ResultProducers.lambda$getResultSet$2(ResultProducers.java:59)
+	at org.jdbi.v3.core.result.ResultIterable.lambda$of$0(ResultIterable.java:53)
+	at org.jdbi.v3.core.result.ResultIterable.stream(ResultIterable.java:141)
+	at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:197)
+	at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.result(ResultReturner.java:138)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:42)
+	at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:139)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:25)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$null$12(SqlObjectFactory.java:157)
+	at org.jdbi.v3.core.ConstantHandleSupplier.invokeInContext(ConstantHandleSupplier.java:52)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$createInvocationHandler$13(SqlObjectFactory.java:156)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at kikaha.jdbi.QueryInterfaceInvocationHandler.invoke(QueryInterfaceInvocationHandler.java:21)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at habilidade.HabilidadeResource.findById(HabilidadeResource.java:41)
+	at ficha.FichaResource.findById(FichaResource.java:30)
+	at ficha.GeneratedFichaResource572069780.runMethod(GeneratedFichaResource572069780.java:46)
+	at ficha.GeneratedFichaResource572069780.lambda$runMethod$0(GeneratedFichaResource572069780.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+22:38:28.081 ERROR - Unhandled exception
+org.jdbi.v3.core.statement.UnableToExecuteStatementException: Unable to execute, no named parameter matches 'idHabilidade'. [statement:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", rewritten:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", parsed:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = ?", arguments:{ positional:{0:1}, named:{idHabidalide:1}, finder:[]}]
+	at org.jdbi.v3.core.statement.ArgumentBinder.lambda$bindNamed$0(ArgumentBinder.java:52)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bindNamed(ArgumentBinder.java:51)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bind(ArgumentBinder.java:26)
+	at org.jdbi.v3.core.statement.SqlStatement.internalExecute(SqlStatement.java:1392)
+	at org.jdbi.v3.core.result.ResultProducers.lambda$getResultSet$2(ResultProducers.java:59)
+	at org.jdbi.v3.core.result.ResultIterable.lambda$of$0(ResultIterable.java:53)
+	at org.jdbi.v3.core.result.ResultIterable.stream(ResultIterable.java:141)
+	at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:197)
+	at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.result(ResultReturner.java:138)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:42)
+	at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:139)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:25)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$null$12(SqlObjectFactory.java:157)
+	at org.jdbi.v3.core.ConstantHandleSupplier.invokeInContext(ConstantHandleSupplier.java:52)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$createInvocationHandler$13(SqlObjectFactory.java:156)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at kikaha.jdbi.QueryInterfaceInvocationHandler.invoke(QueryInterfaceInvocationHandler.java:21)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at habilidade.HabilidadeResource.findById(HabilidadeResource.java:41)
+	at ficha.FichaResource.findById(FichaResource.java:30)
+	at ficha.GeneratedFichaResource572069780.runMethod(GeneratedFichaResource572069780.java:46)
+	at ficha.GeneratedFichaResource572069780.lambda$runMethod$0(GeneratedFichaResource572069780.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+22:38:28.697 ERROR - Unhandled exception
+org.jdbi.v3.core.statement.UnableToExecuteStatementException: Unable to execute, no named parameter matches 'idHabilidade'. [statement:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", rewritten:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", parsed:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = ?", arguments:{ positional:{0:1}, named:{idHabidalide:1}, finder:[]}]
+	at org.jdbi.v3.core.statement.ArgumentBinder.lambda$bindNamed$0(ArgumentBinder.java:52)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bindNamed(ArgumentBinder.java:51)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bind(ArgumentBinder.java:26)
+	at org.jdbi.v3.core.statement.SqlStatement.internalExecute(SqlStatement.java:1392)
+	at org.jdbi.v3.core.result.ResultProducers.lambda$getResultSet$2(ResultProducers.java:59)
+	at org.jdbi.v3.core.result.ResultIterable.lambda$of$0(ResultIterable.java:53)
+	at org.jdbi.v3.core.result.ResultIterable.stream(ResultIterable.java:141)
+	at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:197)
+	at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.result(ResultReturner.java:138)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:42)
+	at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:139)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:25)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$null$12(SqlObjectFactory.java:157)
+	at org.jdbi.v3.core.ConstantHandleSupplier.invokeInContext(ConstantHandleSupplier.java:52)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$createInvocationHandler$13(SqlObjectFactory.java:156)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at kikaha.jdbi.QueryInterfaceInvocationHandler.invoke(QueryInterfaceInvocationHandler.java:21)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at habilidade.HabilidadeResource.findById(HabilidadeResource.java:41)
+	at ficha.FichaResource.findById(FichaResource.java:30)
+	at ficha.GeneratedFichaResource572069780.runMethod(GeneratedFichaResource572069780.java:46)
+	at ficha.GeneratedFichaResource572069780.lambda$runMethod$0(GeneratedFichaResource572069780.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+22:38:29.112 ERROR - Unhandled exception
+org.jdbi.v3.core.statement.UnableToExecuteStatementException: Unable to execute, no named parameter matches 'idHabilidade'. [statement:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", rewritten:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = :idHabilidade", parsed:"SELECT SITUACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE LEFT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO WHERE HABILIDADE.IDHABILIDADE = ?", arguments:{ positional:{0:1}, named:{idHabidalide:1}, finder:[]}]
+	at org.jdbi.v3.core.statement.ArgumentBinder.lambda$bindNamed$0(ArgumentBinder.java:52)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bindNamed(ArgumentBinder.java:51)
+	at org.jdbi.v3.core.statement.ArgumentBinder.bind(ArgumentBinder.java:26)
+	at org.jdbi.v3.core.statement.SqlStatement.internalExecute(SqlStatement.java:1392)
+	at org.jdbi.v3.core.result.ResultProducers.lambda$getResultSet$2(ResultProducers.java:59)
+	at org.jdbi.v3.core.result.ResultIterable.lambda$of$0(ResultIterable.java:53)
+	at org.jdbi.v3.core.result.ResultIterable.stream(ResultIterable.java:141)
+	at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:197)
+	at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.result(ResultReturner.java:138)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:42)
+	at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:139)
+	at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:25)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$null$12(SqlObjectFactory.java:157)
+	at org.jdbi.v3.core.ConstantHandleSupplier.invokeInContext(ConstantHandleSupplier.java:52)
+	at org.jdbi.v3.sqlobject.SqlObjectFactory.lambda$createInvocationHandler$13(SqlObjectFactory.java:156)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at kikaha.jdbi.QueryInterfaceInvocationHandler.invoke(QueryInterfaceInvocationHandler.java:21)
+	at com.sun.proxy.$Proxy25.findByIdHabilidade(Unknown Source)
+	at habilidade.HabilidadeResource.findById(HabilidadeResource.java:41)
+	at ficha.FichaResource.findById(FichaResource.java:30)
+	at ficha.GeneratedFichaResource572069780.runMethod(GeneratedFichaResource572069780.java:46)
+	at ficha.GeneratedFichaResource572069780.lambda$runMethod$0(GeneratedFichaResource572069780.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+22:38:40.061 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:40.107 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:40.109 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:40.109 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+22:38:40.111 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+22:38:40.112 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+22:38:41.123 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:38:41.430 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:39:03.501 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:03.535 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:03.536 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:03.536 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:03.538 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+22:39:03.539 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+22:39:04.517 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:39:04.811 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:39:56.049 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:56.090 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:56.091 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:56.091 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+22:39:56.093 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+22:39:56.094 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+22:39:57.090 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:39:57.388 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:40:32.189 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:32.225 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:32.226 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:32.226 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:32.228 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+22:40:32.229 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+22:40:33.192 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:40:33.494 INFO  - Terminated org.vibur.dbcp.ViburDBCPDataSource@50378a4[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@60f00693[terminated], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:40:39.425 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-core/2.1.8.Final/kikaha-core-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:39.460 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.1.8.Final/kikaha-urouting-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:39.461 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-jackson/2.1.8.Final/kikaha-jackson-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:39.462 INFO  - Loading configurations from: file:/C:/Users/Docal/.m2/repository/io/skullabs/kikaha/kikaha-db/2.1.8.Final/kikaha-db-2.1.8.Final.jar!/META-INF/defaults.yml
+22:40:39.464 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/classes/conf/application.yml
+22:40:39.465 INFO  - Loading configurations from: /C:/Users/Docal/Documents/GUISMI/GUISM_SERVER/output/test-classes/conf/application-test.yml
+22:40:39.690 INFO  - REST API Session Store: no session will be persisted on server.
+22:40:39.967 INFO  - Micro Routing API
+22:40:39.967 INFO  -   default-encoding: UTF-8
+22:40:39.967 INFO  -   default-content-type: application/json
+22:40:39.967 INFO  -   content-type-priority: REQUEST
+22:40:40.697 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@512baff6[driverClassName = com.mysql.cj.jdbc.Driver, jdbcUrl = jdbc:mysql://localhost/guism?serverTimezone=UTC, username = root, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 10, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@632ceb35[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+22:40:40.779 INFO  - Looking for modules...
+22:40:40.781 INFO  - Enabling static routing at folder: webapp
+22:40:40.832 INFO  - Registering route: POST:/auth/callback
+22:40:40.835 INFO  - Registering route: GET:/especializacao/raca/{id}
+22:40:40.836 INFO  - Registering route: GET:/especializacao/habito/{id}
+22:40:40.836 INFO  - Registering route: GET:/Ficha/{id}
+22:40:40.837 INFO  - Registering route: GET:/api/acao/{id}
+22:40:40.837 INFO  - Registering route: GET:/Situacao/habilidade/{idHabilidade}
+22:40:40.837 INFO  - Registering route: GET:/especializacao/sistema
+22:40:40.837 INFO  - Registering route: GET:/api/habilidade/{id}
+22:40:40.837 INFO  - Registering route: GET:/especializacao/ficha/{id}
+22:40:40.837 INFO  - Registering route: GET:/descendencia/sistema
+22:40:40.838 INFO  - Registering route: POST:/api/acao
+22:40:40.838 INFO  - Registering route: GET:/gasto/{id}
+22:40:40.838 INFO  - Registering route: GET:/buscaFicha/{id}
+22:40:40.838 INFO  - Registering route: GET:/Situacao/ficha/{idFicha}
+22:40:40.838 INFO  - Registering route: GET:/cidade/sistema
+22:40:40.838 INFO  - Registering route: GET:/api/acao/acaoHabilidade/(id)
+22:40:40.838 INFO  - Registering route: GET:/Situacao/{id}
+22:40:40.853 INFO  - XNIO version 3.3.8.Final
+22:40:40.868 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+22:40:40.881 INFO  - Configuring Undertow options...
+22:40:40.882 INFO  -   buffer-size: 1024
+22:40:40.884 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+22:40:40.884 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+22:40:40.884 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+22:40:40.884 INFO  -   org.xnio.Options.BACKLOG: 20000
+22:40:40.896 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+22:40:40.947 INFO  - Unit test server started.

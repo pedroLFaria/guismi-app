@@ -15,5 +15,5 @@ public class Situacao {
     String nomeSituacao;
 
     @Column
-    String descricaoSituacao;
+    String descSituacao;
 }

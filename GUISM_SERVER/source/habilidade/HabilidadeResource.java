@@ -6,6 +6,7 @@ import gasto.Gasto;
 import gasto.GastoQueries;
 import kikaha.urouting.api.*;
 import situacao.Situacao;
+import situacao.SituacaoQueries;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -26,6 +27,8 @@ public class HabilidadeResource {
     @Inject
     GastoQueries gastoQueries;
 
+    @Inject
+    SituacaoQueries situacaoQueries;
 
     @GET
     @Path("{id}")
@@ -35,7 +38,7 @@ public class HabilidadeResource {
             DefaultResponse.notFound().entity("Habilidade não encontrada!");
         Set<Acao> acoes = new LinkedHashSet<>(acaoQueries.findByIdHabilidade(id));
         Set<Gasto> gastos = new LinkedHashSet<>(gastoQueries.findByHabilidadeId(id));
-        Set<Situacao> situacoes = new LinkedHashSet<>();
+        Set<Situacao> situacoes = new LinkedHashSet<>(situacaoQueries.findByIdHabilidade(id));
         habilidade.setSituacoes(situacoes);
         habilidade.setAcoes(acoes);
         habilidade.setGasto(gastos);
