@@ -6,7 +6,7 @@ import lombok.val;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Path("Situacao/")
+@Path("api/Situacao/")
 @Singleton
 @Produces(Mimes.JSON)
 @Consumes(Mimes.JSON)

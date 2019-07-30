@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.Set;
 
-@Path("idioma/")
+@Path("api/idioma/")
 @Singleton
 @Consumes(Mimes.JSON)
 @Produces(Mimes.JSON)

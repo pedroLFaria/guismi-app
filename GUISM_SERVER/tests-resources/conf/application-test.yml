@@ -1,7 +1,19 @@
 server:
 
+  static: { enabled: true, webjar-enabled: true }
+
   urouting:
     default-content-type: "application/json"
+
+  websocket:
+    default-serializer: "application/json"
+    default-unserializer: "application/json"
+
+  smart-routes:
+    auth:
+      login-form-enabled: false
+      logout-url-enabled: true
+      logout-http-method: "POST"
 
   db:
     datasources:
@@ -13,8 +25,27 @@ server:
         pool-max-size: 10
         driver-class-name: com.mysql.cj.jdbc.Driver
 
-  server:
-    http:
-      enabled: true
-      host: "0.0.0.0"
-      port: 9000
+  auth:
+
+    session-store: kikaha.core.modules.security.InMemorySessionStore
+
+    endpoints:
+      permission-denied-page: "/forbidden.html"
+      callback-url: "/api/auth/callback"
+      logout-url: "/api/auth/logout"
+      login-page: "/index.html"
+
+    db-auth:
+      select-user-password: "SELECT password FROM jogador where username = ?"
+      select-user-roles: "SELECT role FROM jogador WHERE username = ?"
+    rules:
+      - { pattern: "/api/*", auth-mechanisms: [ "json" ], identity-managers: [ "db-auth" ] }
+      - { pattern: "/*", auth-mechanisms: [ "form" ], identity-managers: [ "db-auth" ] }
+
+    default-excluded-patterns: [ "/assets/*" ]
+
+
+  http:
+    enabled: true
+    host: "0.0.0.0"
+    port: 9000

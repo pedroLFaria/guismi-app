@@ -6,7 +6,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.Set;
 
-@Path("patrono/")
+@Path("api/patrono/")
 @Singleton
 @Consumes(Mimes.JSON)
 @Produces(Mimes.JSON)

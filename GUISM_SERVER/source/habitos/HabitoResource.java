@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.Set;
 
-@Path("habito/")
+@Path("api/habito/")
 @Singleton
 @Produces(Mimes.JSON)
 @Consumes(Mimes.JSON)
