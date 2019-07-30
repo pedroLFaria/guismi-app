@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import java.util.Set;
 
 @RunWith(KikahaRunner.class)
-public class habilidadeResourceTest {
+public class HabilidadeResourceTest {
 
     @Inject HabilidadeResource habilidadeResource;
 

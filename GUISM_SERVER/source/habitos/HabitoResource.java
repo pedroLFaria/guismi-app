@@ -30,7 +30,7 @@ public class HabitoResource {
 
     private Set<Habito> preencheHabitos(Set<Habito> habitos){
         for(Habito habito : habitos){
-            Set<Especializacao> especializacaos = especializacaoQueries.findByIdHabito(habito.getId());
+            Set<Especializacao> especializacaos = especializacaoQueries.findByIdHabito(habito.getIdHabito());
             habito.setEspecializacoes(especializacaos);
         }
         return habitos;

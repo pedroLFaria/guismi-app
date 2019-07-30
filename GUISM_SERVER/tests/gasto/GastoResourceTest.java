@@ -16,7 +16,7 @@ public class GastoResourceTest {
 
     @Test
     public void findGastoByHabilidadeId(){
-        val getResponse = gastoResource.findByHabilidadeId(1L);
+        val getResponse = gastoResource.findByIdHabilidade(1L);
         val entityGasto = (Set<Gasto>) getResponse.entity();
         System.out.println(entityGasto);
     }

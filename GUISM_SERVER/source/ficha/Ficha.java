@@ -10,6 +10,7 @@ import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
 import patrono.Patrono;
+import raca.Raca;
 import situacao.Situacao;
 
 import java.util.Set;
@@ -86,6 +87,8 @@ public class Ficha {
 
     @Column
     Long idSanidade;
+
+    Raca raca;
 
     Set<Caminho> caminhos;
 

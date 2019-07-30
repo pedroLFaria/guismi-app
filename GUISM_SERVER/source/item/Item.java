@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Item {
+public class    Item {
 
     @Column
     Long idItem;

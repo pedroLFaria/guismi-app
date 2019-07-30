@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import javax.inject.Inject;
 
 @RunWith(KikahaRunner.class)
-public class fichaResourceTest {
+public class FichaResourceTest {
 
     @Inject FichaResource fichaResource;
 

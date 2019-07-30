@@ -1,12 +1,12 @@
 package habilidade;
 
 import acao.Acao;
-import acao.AcaoQueries;
+import acao.AcaoResource;
 import gasto.Gasto;
-import gasto.GastoQueries;
+import gasto.GastoResource;
 import kikaha.urouting.api.*;
 import situacao.Situacao;
-import situacao.SituacaoQueries;
+import situacao.SituacaoResource;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -22,13 +22,13 @@ public class HabilidadeResource {
     HabilidadeQueries queries;
 
     @Inject
-    AcaoQueries acaoQueries;
+    AcaoResource acaoResource;
 
     @Inject
-    GastoQueries gastoQueries;
+    GastoResource gastoResource;
 
     @Inject
-    SituacaoQueries situacaoQueries;
+    SituacaoResource situacaoResource;
 
     @GET
     @Path("sistema")
@@ -45,9 +45,9 @@ public class HabilidadeResource {
         Habilidade habilidade = queries.findById(id);
         if(habilidade == null)
             DefaultResponse.notFound().entity("Habilidade não encontrada!");
-        Set<Acao> acoes = new LinkedHashSet<>(acaoQueries.findByIdHabilidade(id));
-        Set<Gasto> gastos = new LinkedHashSet<>(gastoQueries.findByHabilidadeId(id));
-        Set<Situacao> situacoes = new LinkedHashSet<>(situacaoQueries.findByIdHabilidade(id));
+        Set<Acao> acoes = new LinkedHashSet<>((Set<Acao>) acaoResource.findByIdHabilidade(id).entity());
+        Set<Gasto> gastos = new LinkedHashSet<>((Set<Gasto>)  gastoResource.findByIdHabilidade(id).entity());
+        Set<Situacao> situacoes = new LinkedHashSet<>((Set<Situacao>)situacaoResource.findByIdHabilidade(id).entity());
         habilidade.setSituacoes(situacoes);
         habilidade.setAcoes(acoes);
         habilidade.setGasto(gastos);
@@ -81,11 +81,20 @@ public class HabilidadeResource {
         return DefaultResponse.ok(preencheHabilidade(habilidades));
     }
 
+    @GET
+    @Path("ficha/{id}")
+    public Response findByIdFicha(@PathParam("id")Long id){
+        Set<Habilidade> habilidades = queries.findByIdFicha(id);
+        if(habilidades.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
+        return DefaultResponse.ok(preencheHabilidade(habilidades));
+    }
+
     private Set<Habilidade> preencheHabilidade(Set<Habilidade> habilidades){
         for(Habilidade habilidade : habilidades){
-            Set<Acao> acoes = new LinkedHashSet<>(acaoQueries.findByIdHabilidade(habilidade.getIdHabilidade()));
-            Set<Gasto> gastos = new LinkedHashSet<>(gastoQueries.findByHabilidadeId(habilidade.getIdHabilidade()));
-            Set<Situacao> situacoes = new LinkedHashSet<>(situacaoQueries.findByIdHabilidade(habilidade.getIdHabilidade()));
+            Set<Acao> acoes = new LinkedHashSet<>((Set<Acao>) acaoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
+            Set<Gasto> gastos = new LinkedHashSet<>((Set<Gasto>)  gastoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
+            Set<Situacao> situacoes = new LinkedHashSet<>((Set<Situacao>)situacaoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
             habilidade.setSituacoes(situacoes);
             habilidade.setAcoes(acoes);
             habilidade.setGasto(gastos);

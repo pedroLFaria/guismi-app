@@ -37,7 +37,7 @@ public class SituacaoResource {
 
     @GET
     @Path("habilidade/{idHabilidade}")
-    public Response findByHabilidade(@PathParam("idHabilidade")Long id){
+    public Response findByIdHabilidade(@PathParam("idHabilidade")Long id){
         val situacoes = queries.findByIdHabilidade(id);
         if(situacoes == null)
             return DefaultResponse.notFound().entity(mensagemPadrao);

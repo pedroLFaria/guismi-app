@@ -17,7 +17,7 @@ public class GastoResource {
 
     @GET
     @Path("{id}")
-    public Response findByHabilidadeId(@PathParam("id")Long id){
+    public Response findByIdHabilidade(@PathParam("id")Long id){
         Set<Gasto> gastos = new LinkedHashSet<>(queries.findByHabilidadeId(id));
         if(gastos == null)
             return DefaultResponse.notFound().entity("Ações não encontradas!");

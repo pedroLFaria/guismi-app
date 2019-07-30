@@ -1,12 +1,10 @@
 package caminho;
 
 import especializacao.Especializacao;
-import especializacao.EspecializacaoQueries;
 import especializacao.EspecializacaoResource;
 import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
 import habitos.Habito;
-import habitos.HabitoQueries;
 import habitos.HabitoResource;
 import kikaha.urouting.api.*;
 import lombok.val;
@@ -41,17 +39,18 @@ public class CaminhoResource {
         val caminhos = queries.findByIdFicha(idFicha);
         if(caminhos.isEmpty())
             return DefaultResponse.notFound().entity(mensagemPadrao);
-        return DefaultResponse.ok(caminhos);
+        return DefaultResponse.ok(preenche(caminhos));
     }
 
     private Set<Caminho> preenche(Set<Caminho> caminhos){
         for(Caminho caminho : caminhos){
             Set<Especializacao> especializacaos = new LinkedHashSet<>();
-            Set<Habito> habitos = new LinkedHashSet<>(habitoQueries.findByIdCaminho(caminho.idCaminho));
-            Set<Habilidade> habilidades = new LinkedHashSet<>(habilidadeResource);
-            caminho.setEspecializacoes();
-            caminho.setHabilidades();
-            caminho.setHabitos();
+            Set<Habito> habitos = new LinkedHashSet<>((Set<Habito>)habitoResource.findByIdCaminho(caminho.getIdCaminho()).entity());
+            Set<Habilidade> habilidades = new LinkedHashSet<>((Set<Habilidade>)habilidadeResource.findByIdCaminho(caminho.getIdCaminho()).entity());
+            caminho.setEspecializacoes(especializacaos);
+            caminho.setHabilidades(habilidades);
+            caminho.setHabitos(habitos);
         }
+        return caminhos;
     }
 }

@@ -12,13 +12,13 @@ import java.util.Set;
 public class Habito {
 
     @Column
-    Long id;
+    Long idHabito;
 
     @Column
-    String nome;
+    String nomeHabito;
 
     @Column
-    String descricaoHabitos;
+    String descHabito;
 
     Set<Especializacao> especializacoes;
 }

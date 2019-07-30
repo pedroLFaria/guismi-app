@@ -20,8 +20,7 @@ public class Caminho {
     String nomeCaminho;
 
     @Column
-    String descricaoCaminho;
-
+    String descCaminho;
 
    Set<Habilidade> habilidades;
 
