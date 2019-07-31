@@ -16,9 +16,9 @@ public class Cidade {
     String nomeCidade;
 
     @Column
-    String descricaoCidade;
+    String descCidade;
 
     @Column
-    String populacaoCidade;
+    String popCidade;
 
 }

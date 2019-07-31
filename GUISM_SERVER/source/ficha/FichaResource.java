@@ -23,7 +23,7 @@ import javax.inject.Singleton;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Path("Ficha/")
+@Path("api/ficha/")
 @Singleton
 @Produces(Mimes.JSON)
 @Consumes(Mimes.JSON)

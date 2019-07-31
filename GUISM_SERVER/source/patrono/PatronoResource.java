@@ -23,4 +23,13 @@ public class PatronoResource {
             return DefaultResponse.notFound().entity("Nenhum patrono encontrado");
         return DefaultResponse.ok(patronos);
     }
+
+    @GET
+    @Path("sistema")
+    public Response findAll(){
+        Set<Patrono> patronos = queries.findAll();
+        if (patronos.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum patrono encontrado!");
+        return DefaultResponse.ok(patronos);
+    }
 }

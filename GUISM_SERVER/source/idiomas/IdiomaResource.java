@@ -21,7 +21,16 @@ public class IdiomaResource {
     public Response findByIdFicha(@PathParam("id")Long idFicha){
         Set<Idioma> idiomas = queries.findByIdFicha(idFicha);
         if(idiomas.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum idiomas encontrado!");
+            return DefaultResponse.notFound().entity("Nenhum idioma encontrado!");
+        return DefaultResponse.ok(idiomas);
+    }
+
+    @GET
+    @Path("sistema")
+    public Response findAll(){
+        Set<Idioma> idiomas = queries.findAll();
+        if(idiomas.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum idioma encontrado!");
         return DefaultResponse.ok(idiomas);
     }
 

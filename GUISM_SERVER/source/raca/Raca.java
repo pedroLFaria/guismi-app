@@ -44,22 +44,22 @@ public class Raca{
     Long racaForca;
 
     @Column
-    Long racaCon;
+    Long racaConstituicao;
 
     @Column
-    Long racaAgi;
+    Long racaAgilidade;
 
     @Column
-    Long racaDes;
+    Long racaDestreza;
 
     @Column
-    Long racaInt;
+    Long racaInteligencia;
 
     @Column
-    Long racaSab;
+    Long racaSabedoria;
 
     @Column
-    Long racaCar;
+    Long racaCarisma;
 
     @Column
     Long sangue;

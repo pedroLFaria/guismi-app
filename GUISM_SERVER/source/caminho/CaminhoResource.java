@@ -42,6 +42,15 @@ public class CaminhoResource {
         return DefaultResponse.ok(preenche(caminhos));
     }
 
+    @GET
+    @Path("sistema")
+    public Response findAll(){
+        Set<Caminho> caminhos = queries.findAll();
+        if(caminhos.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum caminho encontrado!");
+        return DefaultResponse.ok(preenche(caminhos));
+    }
+
     private Set<Caminho> preenche(Set<Caminho> caminhos){
         for(Caminho caminho : caminhos){
             Set<Especializacao> especializacaos = new LinkedHashSet<>();

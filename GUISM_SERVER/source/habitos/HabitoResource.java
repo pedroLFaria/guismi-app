@@ -25,10 +25,19 @@ public class HabitoResource {
         Set<Habito> habitos = queries.findByIdCaminho(id);
         if(habitos.isEmpty())
             return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
-        return DefaultResponse.ok(preencheHabitos(habitos));
+        return DefaultResponse.ok(preenche(habitos));
     }
 
-    private Set<Habito> preencheHabitos(Set<Habito> habitos){
+    @GET
+    @Path("sistema")
+    public Response findAll(){
+        Set<Habito> habitos = queries.findAll();
+        if(habitos.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
+        return DefaultResponse.ok(preenche(habitos));
+    }
+
+    private Set<Habito> preenche(Set<Habito> habitos){
         for(Habito habito : habitos){
             Set<Especializacao> especializacaos = especializacaoQueries.findByIdHabito(habito.getIdHabito());
             habito.setEspecializacoes(especializacaos);

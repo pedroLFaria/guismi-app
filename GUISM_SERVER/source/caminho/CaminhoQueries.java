@@ -27,4 +27,7 @@ public interface CaminhoQueries {
     @GetGeneratedKeys
     @SqlUpdate("INSERT INTO FICHA_HAS_CAMINHO(IDFICHA,IDCAMINHO) VALUES(:idFicha,idCaminho)")
     Long insertFichaHasCaminho(@BindBean Ficha ficha, @BindBean Caminho caminho);
+
+    @SqlQuery("SELECT * FROM CAMINHO")
+    Set<Caminho> findAll();
 }

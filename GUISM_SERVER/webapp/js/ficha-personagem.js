@@ -1,4 +1,8 @@
 function inicializa() {
+    armazenaSistema()
+    armazenaFicha()
+    setaSistema()
+    setaInfoFichas()
 }
 function teste(){
     xmlhttp = new XMLHttpRequest();
@@ -7,7 +11,7 @@ function teste(){
             sessionStorage.setItem("acao", this.responseText);
         }
     };
-    xmlhttp.open("GET", "/api/acao/4", true);
+    xmlhttp.open("GET", "api/acao/1", true);
     xmlhttp.send();
 }
 function armazenaSistema() {
@@ -17,7 +21,7 @@ function armazenaSistema() {
             sessionStorage.setItem("sistema", this.responseText);
         }
     };
-    xmlhttp.open("GET", "php/sistemaAjax.php", false);
+    xmlhttp.open("GET", "api/sistema", false);
     xmlhttp.send();
 }
 function armazenaFicha() {
@@ -27,7 +31,7 @@ function armazenaFicha() {
             sessionStorage.setItem("ficha", this.responseText);
         }
     };
-    xmlhttp.open("GET", "php/fichaAjax.php", false);
+    xmlhttp.open("GET", "api/ficha/1", false);
     xmlhttp.send();
 }
 function setaSistema() {
@@ -102,7 +106,7 @@ function setaEscolhaRacas(){
 }
 function criaOption(objeto){
     var opt = document.createElement('option');
-    opt.innerHTML = objeto.nome;
+    opt.innerHTML = objeto.nomeRaca;
     //opt.value = objeto.id;
     return opt;
 }
