@@ -52,6 +52,15 @@ public class DescendenciaResource {
         return DefaultResponse.ok(descendencias);
     }
 
+    @GET
+    @Path("raca/{id}")
+    public Response findByIdRaca(@PathParam("id")Long id){
+        Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findByIdFicha(id));
+        if(descendencias.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhuma descendencia encontrada!");
+        return DefaultResponse.ok(preencher(descendencias));
+    }
+
     private Set<Descendencia> preencher(Set<Descendencia> descendencias){
         for(Descendencia descendencia : descendencias){
             descendencia.setHabilidades((Set<Habilidade>) habilidadeResource.findByIdDescendencia(descendencia.idDescendencia).entity());

@@ -37,6 +37,24 @@ public class HabitoResource {
         return DefaultResponse.ok(preenche(habitos));
     }
 
+    @GET
+    @Path("raca/{id}")
+    public Response findByIdRaca(@PathParam("id")Long id){
+        Set<Habito> habitos = queries.findByIdRaca(id);
+        if(habitos.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
+        return DefaultResponse.ok(preenche(habitos));
+    }
+
+    @GET
+    @Path("ficha/{id}")
+    public Response findByIdFicha(@PathParam("id")Long id){
+        Set<Habito> habitos = queries.findByIdFicha(id);
+        if(habitos.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
+        return DefaultResponse.ok(preenche(habitos));
+    }
+
     private Set<Habito> preenche(Set<Habito> habitos){
         for(Habito habito : habitos){
             Set<Especializacao> especializacaos = especializacaoQueries.findByIdHabito(habito.getIdHabito());

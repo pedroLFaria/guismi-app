@@ -15,4 +15,7 @@ public interface IdiomaQueries {
 
     @SqlQuery("SELECT * FROM IDIOMA")
     Set<Idioma> findAll();
+
+    @SqlQuery("SELECT IDIOMA.* FROM RACA LEFT JOIN RACA_HAS_IDIOMA ON RACA_HAS_IDIOMA.IDRACA = RACA.IDRACA LEFT JOIN IDIOMA ON IDIOMA.IDIDIOMA = RACA_HAS_IDIOMA.IDIDIOMA WHERE RACA.IDRACA = :idRaca")
+    Set<Idioma> findByIdRaca(@Bind("idRaca")Long id);
 }

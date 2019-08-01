@@ -34,4 +34,14 @@ public class IdiomaResource {
         return DefaultResponse.ok(idiomas);
     }
 
+    @GET
+    @Path("raca/{id}")
+    public Response findByIdRaca(@PathParam("id")Long id){
+        Set<Idioma> idiomas = queries.findByIdRaca(id);
+        if(idiomas.isEmpty())
+            return DefaultResponse.notFound().entity("Nenhum idioma encontrado!");
+        return DefaultResponse.ok(idiomas);
+    }
+
+
 }

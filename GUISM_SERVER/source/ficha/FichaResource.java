@@ -2,10 +2,12 @@ package ficha;
 
 import caminho.Caminho;
 import caminho.CaminhoResource;
+import descendencia.Descendencia;
 import descendencia.DescendenciaResource;
 import habilidade.Habilidade;
 import habilidade.HabilidadeQueries;
 import habilidade.HabilidadeResource;
+import habitos.Habito;
 import habitos.HabitoResource;
 import idiomas.Idioma;
 import idiomas.IdiomaResource;
@@ -71,11 +73,14 @@ public class FichaResource {
     }
 
     private Ficha preenche(Ficha ficha){
+        ficha.setRaca((Raca)racaResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setHabilidades((Set<Habilidade>) habilidadeResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setCaminhos((Set<Caminho>) caminhoResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setIdiomas((Set<Idioma>) idiomaResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setPatronos((Set<Patrono>) patronoResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setSituacoes((Set<Situacao>)situacaoResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setDescendencias((Set<Descendencia>) descendenciaResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setHabitos((Set<Habito>) habitoResource.findByIdFicha(ficha.getIdFicha()).entity());
         return ficha;
     }
 }

@@ -15,4 +15,7 @@ public interface PatronoQueries {
 
     @SqlQuery("SELECT * FROM PATRONO")
     Set<Patrono> findAll();
+
+    @SqlQuery("SELECT PATRONO.* FROM RACA LEFT JOIN RACA_HAS_PATRONO ON RACA_HAS_PATRONO.IDRACA = RACA.IDRACA LEFT JOIN PATRONO ON PATRONO.IDPATRONO = RACA_HAS_PATRONO.IDPATRONO WHERE RACA.IDRACA = :idRaca")
+    Set<Patrono> findByIdRaca(@Bind("idRaca")Long id);
 }
