@@ -7,7 +7,7 @@ import javax.inject.Singleton;
 import java.util.Set;
 
 @Singleton
-@Path("api/raca")
+@Path("api/raca/")
 @Produces(Mimes.JSON)
 @Consumes(Mimes.JSON)
 public class RacaResource {
@@ -22,5 +22,11 @@ public class RacaResource {
         if(racas.isEmpty())
             return DefaultResponse.notFound().entity("Nenhuma raça encontrada!");
         return DefaultResponse.ok(racas);
+    }
+
+    @GET
+    @Path("ficha/{id}")
+    public Response findByIdFicha(@PathParam("id")Long id){
+        Raca
     }
 }

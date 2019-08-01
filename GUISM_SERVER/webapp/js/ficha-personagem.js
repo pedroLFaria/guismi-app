@@ -1,18 +1,8 @@
+armazenaSistema()
+armazenaFicha()
 function inicializa() {
-    armazenaSistema()
-    armazenaFicha()
     setaSistema()
     setaInfoFichas()
-}
-function teste(){
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            sessionStorage.setItem("acao", this.responseText);
-        }
-    };
-    xmlhttp.open("GET", "api/acao/1", true);
-    xmlhttp.send();
 }
 function armazenaSistema() {
     xmlhttp = new XMLHttpRequest();
@@ -41,90 +31,82 @@ function setaSistema() {
 }
 function setaEscolhaCaminhos() {
     var selectCaminhos = document.getElementById("caminhos_pers_input");
-    for (i in caminhos)
-        selectCaminhos.appendChild(criaOption(caminhos[i]));
+    for (i in caminhos){
+        var opt = document.createElement('option');
+        opt.innerHTML = caminhos[i].nomeCaminho
+        opt.id = caminhos[i].idCaminho
+        selectCaminhos.appendChild(opt);
+    }
 }
-function setaEscolhaIdiomas() {
-    raca_pers = racas.filter(function (raca) { return raca.nome == this; }, ficha.raca.nome)[0];
-    document.getElementById("raca_pers").innerHTML = raca_pers.nome;
-    document.getElementById("raca_pers_input").selectedIndex = raca_pers.idRaca;
-    setaAtributosRaca(raca_pers);
+function setaEscolhaIdiomas(){
+    var selectIdiomas = document.getElementById("idiomas_pers_input");
+    for (i in idiomas){
+        var opt = document.createElement('option');
+        opt.innerHTML = idiomas[i].nomeIdioma
+        opt.id = idiomas[i].idIdioma;
+        selectIdiomas.appendChild(opt);
+    }
 }
-
+function setaEscolhaRacas(){
+    var selectRacas = document.getElementById("raca_pers_input");
+       for (i in racas){
+           var opt = document.createElement('option');
+           opt.innerHTML = racas[i].nomeRaca
+           opt.id = racas[i].idRaca;
+           selectRacas.appendChild(opt);
+       }
+}
 function setaInfoFichas() {
     if(ficha==null)
         return;
-    document.getElementById('nome_pers').innerHTML = ficha.nome_pers;
-    document.getElementById('nome_pers_input').value = ficha.nome_pers;
+    document.getElementById('nome_pers').innerHTML = ficha.nomePersonagem;
+    document.getElementById('nome_pers_input').value = ficha.nomePersonagem;
     setaAtributosFicha(ficha);
     setaRacaFicha(ficha);
     setaLevelFicha(ficha);
 }
 function setaAtributosFicha(ficha){
-    document.getElementById('dist_for').innerHTML = ficha.dist_for;
-    document.getElementById('dist_con').innerHTML = ficha.dist_con;
-    document.getElementById('dist_agi').innerHTML = ficha.dist_agi;
-    document.getElementById('dist_des').innerHTML = ficha.dist_des;
-    document.getElementById('dist_int').innerHTML = ficha.dist_int;
-    document.getElementById('dist_sab').innerHTML = ficha.dist_sab;
-    document.getElementById('dist_car').innerHTML = ficha.dist_car;
-    document.getElementById('input_dist_for').value = ficha.dist_for;
-    document.getElementById('input_dist_con').value = ficha.dist_con;
-    document.getElementById('input_dist_agi').value = ficha.dist_agi;
-    document.getElementById('input_dist_des').value = ficha.dist_des;
-    document.getElementById('input_dist_int').value = ficha.dist_int;
-    document.getElementById('input_dist_sab').value = ficha.dist_sab;
-    document.getElementById('input_dist_car').value = ficha.dist_car;
+    document.getElementById('dist_for').innerHTML = ficha.distForca;
+    document.getElementById('dist_con').innerHTML = ficha.distConstituicao;
+    document.getElementById('dist_agi').innerHTML = ficha.distAgilidade;
+    document.getElementById('dist_des').innerHTML = ficha.distDestreza;
+    document.getElementById('dist_int').innerHTML = ficha.distInteligencia;
+    document.getElementById('dist_sab').innerHTML = ficha.distSabedoria;
+    document.getElementById('dist_car').innerHTML = ficha.distCarisma;
+    document.getElementById('input_dist_for').value = ficha.distForca;
+    document.getElementById('input_dist_con').value = ficha.distConstituicao;
+    document.getElementById('input_dist_agi').value = ficha.distAgilidade;
+    document.getElementById('input_dist_des').value = ficha.distDestreza;
+    document.getElementById('input_dist_int').value = ficha.distInteligencia;
+    document.getElementById('input_dist_sab').value = ficha.distSabedoria;
+    document.getElementById('input_dist_car').value = ficha.distCarisma;
 }
 function setaRacaFicha(ficha) {
-    raca_pers = racas.filter(function (raca) { return raca.nome == this; }, ficha.raca.nome)[0];
+    raca_pers = racas.filter(function (raca) { return raca.nomeRaca == this; }, ficha.raca.nomeRaca)[0];
     document.getElementById("raca_pers").innerHTML = raca_pers.nome;
     document.getElementById("raca_pers_input").selectedIndex  = raca_pers.idRaca;
     setaAtributosRaca(raca_pers);
 }
 function setaLevelFicha(ficha) {
-    document.getElementById('nivel_pers_input').value = ficha.nivel_pers;
-    setaXP(ficha.nivel_pers);
+    document.getElementById('nivel_pers_input').value = ficha.nivelPersonagem;
+    setaXP(ficha.nivelPersonagem);
 }
 function setaXP(nivel) {
-    document.getElementById('exp_pers_input').value = Number(ficha.exp_pers);
+    document.getElementById('exp_pers_input').value = Number(ficha.expPersonagem);
 }
-function armazenaRacas() {
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            sessionStorage.setItem("racas", this.responseText);
-        }
-    };
-    xmlhttp.open("GET", "php/racaAjax.php", true);
-    xmlhttp.send();
-}
-function setaEscolhaRacas(){
-    var selectRacas = document.getElementById("raca_pers_input");
-    for(i in racas)
-        selectRacas.appendChild(criaOption(racas[i]));
-}
-function criaOption(objeto){
-    var opt = document.createElement('option');
-    opt.innerHTML = objeto.nomeRaca;
-    //opt.value = objeto.id;
-    return opt;
-}
-
 function onChangeRaca(idRaca){
     setaAtributosRaca(racas[idRaca - 1]);
     calculaAtributosFinais();
-     console.log('tete');
 }
 
 function setaAtributosRaca(raca){
-    document.getElementById("raca_for").innerHTML = raca.raca_for;
-    document.getElementById("raca_con").innerHTML = raca.raca_con;
-    document.getElementById("raca_agi").innerHTML = raca.raca_agi;
-    document.getElementById("raca_des").innerHTML = raca.raca_des;
-    document.getElementById("raca_int").innerHTML = raca.raca_int;
-    document.getElementById("raca_sab").innerHTML = raca.raca_sab;
-    document.getElementById("raca_car").innerHTML = raca.raca_car;
+    document.getElementById("raca_for").innerHTML = raca.racaForca;
+    document.getElementById("raca_con").innerHTML = raca.racaConstituicao;
+    document.getElementById("raca_agi").innerHTML = raca.racaAgilidade;
+    document.getElementById("raca_des").innerHTML = raca.racaDestreza;
+    document.getElementById("raca_int").innerHTML = raca.racaInteligencia;
+    document.getElementById("raca_sab").innerHTML = raca.racaSabedoria;
+    document.getElementById("raca_car").innerHTML = raca.racaCarisma;
 }
 
 function calculaAtributosFinais() {
@@ -272,6 +254,7 @@ var progressao = [
     { xp: 744150, habito: 145, atributo: 105, criacaoHabilidade: 5, habilidade: 5 },
     { xp: 894150, habito: 150, atributo: 110, criacaoHabilidade: 6, habilidade: 6 }
 ]
+
 var ficha = JSON.parse(sessionStorage.getItem("ficha"));
 var racas = JSON.parse(sessionStorage.getItem("sistema")).racas;
 var idiomas = JSON.parse(sessionStorage.getItem("sistema")).idiomas;
