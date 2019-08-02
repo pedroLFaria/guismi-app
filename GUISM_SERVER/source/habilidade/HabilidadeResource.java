@@ -55,8 +55,8 @@ public class HabilidadeResource {
     }
 
     @GET
-    @Path("raca/{idRaca}")
-    public Response findByIdRacas(@PathParam("idRaca")Long idRaca){
+    @Path("raca/{id}")
+    public Response findByIdRacas(@PathParam("id")Long idRaca){
         Set<Habilidade> habilidades = queries.findByIdRacas(idRaca);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
@@ -64,8 +64,8 @@ public class HabilidadeResource {
     }
 
     @GET
-    @Path("caminho/{idCaminho}")
-    public Response findByIdCaminho(@PathParam("idCaminho")Long idCaminho){
+    @Path("caminho/{id}")
+    public Response findByIdCaminho(@PathParam("id")Long idCaminho){
         Set<Habilidade> habilidades = queries.findByIdCaminho(idCaminho);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
@@ -73,8 +73,8 @@ public class HabilidadeResource {
     }
 
     @GET
-    @Path("descendencia/{idDescendencia}")
-    public Response findByIdDescendencia(@PathParam("idDescendencia")Long idDescendencia){
+    @Path("descendencia/{id}")
+    public Response findByIdDescendencia(@PathParam("id")Long idDescendencia){
         Set<Habilidade> habilidades = queries.findByIdDescendencia(idDescendencia);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");

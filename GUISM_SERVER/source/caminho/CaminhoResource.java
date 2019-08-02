@@ -34,8 +34,8 @@ public class CaminhoResource {
 
     private String mensagemPadrao = "Caminho não encontrado!";
     @GET
-    @Path("ficha/{idFicha}")
-    public Response findByIdFicha(@PathParam("idFicha")Long idFicha){
+    @Path("ficha/{id}")
+    public Response findByIdFicha(@PathParam("id")Long idFicha){
         val caminhos = queries.findByIdFicha(idFicha);
         if(caminhos.isEmpty())
             return DefaultResponse.notFound().entity(mensagemPadrao);
