@@ -39,7 +39,7 @@ public class DescendenciaResource {
     public Response findAll(){
         Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findAll());
         if(descendencias== null)
-            return DefaultResponse.notFound().entity("Descendencias não encontradas!");
+            return DefaultResponse.notFound().entity(descendencias);
         return DefaultResponse.ok(descendencias);
     }
 
@@ -48,7 +48,7 @@ public class DescendenciaResource {
     public Response findByIdFicha(@PathParam("id")Long idFicha){
         Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findAll());
         if(descendencias.isEmpty())
-            return DefaultResponse.notFound().entity("Descendencias não encontradas!");
+            return DefaultResponse.notFound().entity(descendencias);
         return DefaultResponse.ok(descendencias);
     }
 
@@ -57,7 +57,7 @@ public class DescendenciaResource {
     public Response findByIdRaca(@PathParam("id")Long id){
         Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findByIdFicha(id));
         if(descendencias.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma descendencia encontrada!");
+            return DefaultResponse.notFound().entity(descendencias);
         return DefaultResponse.ok(preencher(descendencias));
     }
 

@@ -77,7 +77,7 @@ public class HabilidadeResource {
     public Response findByIdDescendencia(@PathParam("id")Long idDescendencia){
         Set<Habilidade> habilidades = queries.findByIdDescendencia(idDescendencia);
         if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
+            return DefaultResponse.notFound().entity(habilidades);
         return DefaultResponse.ok(preencheHabilidade(habilidades));
     }
 
