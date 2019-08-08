@@ -31,7 +31,6 @@ import java.util.Set;
 @Consumes(Mimes.JSON)
 public class FichaResource {
 
-
     @Inject
     FichaQueries queries;
 

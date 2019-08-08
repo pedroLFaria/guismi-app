@@ -15,4 +15,5 @@ public class Acao {
     @Column
     String nomeacao;
 
+
 }

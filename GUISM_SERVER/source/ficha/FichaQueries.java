@@ -1,12 +1,24 @@
 package ficha;
 
+import caminho.Caminho;
 import kikaha.jdbi.JDBI;
 import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
 @JDBI
-public interface FichaQueries {
+public class FichaQueries {
 
     @SqlQuery("SELECT * FROM ficha WHERE IDFICHA = :id")
     Ficha findById(@Bind("id") Long id);
+
+    @SqlQuery("INSERT INTO FICHA(IDRACA,IDCIDADE,IDJOGADOR,NOMEPERSONAGEM,IMG,IDADE,AFILIACAO,CLA,SORTEDIA,DISTFORCA," +
+            "DISTCONSTITUICAO,DISTAGILIDADE,DISTDESTREZA,DISTINTELIGENCIA,DISTSABEDORIA,DISTCARISMA,NIVELPERSONAGEM," +
+            "EXPPERSONAGEM,DESCPERSONAGEM,HISTPERSONAGEM,NOTA,IDSANIDADE) VALUES(:IDRACA,:IDCIDADE,:IDJOGADOR,:NOMEPERSONAGEM," +
+            ":IMG,:IDADE,:AFILIACAO,:CLA,:SORTEDIA,:DISTFORCA,:DISTCONSTITUICAO,:DISTAGILIDADE,:DISTDESTREZA,:DISTINTELIGENCIA," +
+            ":DISTSABEDORIA,DISTCARISMA,NIVELPERSONAGEM,:EXPPERSONAGEM,:DESCPERSONAGEM,:HISTPERSONAGEM,:NOTA,:IDSANIDADE)")
+    Long insert(@BindBean Ficha ficha);
+
+    @SqlQuery("INSERT INTO FICHA_HAS_CAMINHO(IDFICHA,IDCAMINHO) VALUES(:IDFICHA,:IDCAMINHO)")
+    Long insertFichaHasCaminho(@BindBean Ficha ficha, @BindBean Caminho caminho);
 }
