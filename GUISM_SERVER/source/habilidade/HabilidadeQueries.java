@@ -1,14 +1,11 @@
 package habilidade;
 
-import acao.Acao;
 import gasto.Gasto;
 import kikaha.jdbi.JDBI;
 import lombok.val;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
-import situacao.Situacao;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @JDBI

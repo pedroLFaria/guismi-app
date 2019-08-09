@@ -7,7 +7,7 @@ import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
 @JDBI
-public class FichaQueries {
+public interface FichaQueries {
 
     @SqlQuery("SELECT * FROM ficha WHERE IDFICHA = :id")
     Ficha findById(@Bind("id") Long id);

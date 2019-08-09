@@ -11,6 +11,7 @@ import habitos.Habito;
 import habitos.HabitoResource;
 import idiomas.Idioma;
 import idiomas.IdiomaResource;
+import inventario.InventarioQueries;
 import inventario.InventarioResource;
 import kikaha.urouting.api.*;
 import patrono.Patrono;
@@ -53,7 +54,7 @@ public class FichaResource {
     IdiomaResource idiomaResource;
 
     @Inject
-    InventarioResource inventarioResource;
+    InventarioQueries inventarioQueries;
 
     @Inject
     PatronoResource patronoResource;
@@ -80,6 +81,9 @@ public class FichaResource {
         ficha.setSituacoes((Set<Situacao>)situacaoResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setDescendencias((Set<Descendencia>) descendenciaResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setHabitos((Set<Habito>) habitoResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setInventarios(inventarioQueries.findByIdFichaPreenchido(ficha.getIdFicha()));
         return ficha;
     }
+
+
 }
