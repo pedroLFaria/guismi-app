@@ -5,14 +5,12 @@ import caminho.CaminhoResource;
 import descendencia.Descendencia;
 import descendencia.DescendenciaResource;
 import habilidade.Habilidade;
-import habilidade.HabilidadeQueries;
 import habilidade.HabilidadeResource;
-import habitos.Habito;
-import habitos.HabitoResource;
-import idiomas.Idioma;
-import idiomas.IdiomaResource;
+import habito.Habito;
+import habito.HabitoResource;
+import idioma.Idioma;
+import idioma.IdiomaResource;
 import inventario.InventarioQueries;
-import inventario.InventarioResource;
 import kikaha.urouting.api.*;
 import patrono.Patrono;
 import patrono.PatronoResource;
@@ -23,7 +21,6 @@ import situacao.SituacaoResource;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Path("api/ficha/")
@@ -85,5 +82,15 @@ public class FichaResource {
         return ficha;
     }
 
+    @POST
+    @Path("update/{id}")
+    public Response update(Ficha ficha) {
+        try {
+            queries.cleanFichaJunctionTables(ficha);
 
+        } catch (Exception e) {
+            return DefaultResponse.notModified();
+        }
+        return DefaultResponse.accepted();
+    }
 }

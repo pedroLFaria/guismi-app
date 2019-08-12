@@ -2,7 +2,7 @@ package caminho;
 
 import especializacao.Especializacao;
 import habilidade.Habilidade;
-import habitos.Habito;
+import habito.Habito;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;

@@ -1,8 +1,9 @@
-package habitos;
+package habito;
 
 import especializacao.Especializacao;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
+import kikaha.jdbi.serializers.Optional;
 import lombok.Data;
 
 import java.util.Set;
@@ -19,6 +20,10 @@ public class Habito {
 
     @Column
     String descHabito;
+
+    @Column
+    @Optional
+    Long QTDFICHAHABITO;
 
     Set<Especializacao> especializacoes;
 }

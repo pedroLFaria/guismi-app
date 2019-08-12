@@ -15,6 +15,13 @@ public class SistemaResourceTest {
     public void testFindSistema(){
         val getResponse = resource.findSistema();
         val entitySistema = (Sistema)getResponse.entity();
-        System.out.println(entitySistema);
+        assert !entitySistema.getCaminhos().isEmpty();
+        assert !entitySistema.getCidades().isEmpty();
+        assert !entitySistema.getDescendencias().isEmpty();
+        assert !entitySistema.getHabilidades().isEmpty();
+        assert !entitySistema.getHabitos().isEmpty();
+        assert !entitySistema.getIdiomas().isEmpty();
+        assert !entitySistema.getRacas().isEmpty();
+        assert !entitySistema.getPatronos().isEmpty();
     }
 }

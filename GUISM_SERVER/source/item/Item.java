@@ -21,7 +21,7 @@ public class    Item {
     Long pesoItem;
 
     @Column
-    Long valorMagica;
+    Long valorMagico;
 
     @Column
     Long valorItem;

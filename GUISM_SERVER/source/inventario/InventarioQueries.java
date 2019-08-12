@@ -4,6 +4,7 @@ import item.Item;
 import kikaha.jdbi.JDBI;
 import lombok.val;
 import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
 import java.util.Set;
@@ -27,4 +28,7 @@ public interface InventarioQueries {
             "left join inventario_has_item on inventario_has_item.IDINVENTARIO " +
             "left join item on item.IDITEM = inventario_has_item.IDITEM where inventario.IDINVENTARIO = :idInventario")
     Set<Item> findItemByIdInventario(@Bind("idInventario")Long id);
+
+    @SqlQuery("INSERT INTO INVENTARIO(NOMEINVENTARIO) VALUES(:nomeInventario")
+    Long insert(@BindBean Inventario inventario);
 }

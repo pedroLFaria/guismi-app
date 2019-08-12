@@ -1,4 +1,4 @@
-package idiomas;
+package idioma;
 
 import kikaha.jdbi.JDBI;
 import org.jdbi.v3.sqlobject.customizer.Bind;

@@ -1,6 +1,5 @@
-package habitos;
+package habito;
 
-import descendencia.Descendencia;
 import kikaha.jdbi.JDBI;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;

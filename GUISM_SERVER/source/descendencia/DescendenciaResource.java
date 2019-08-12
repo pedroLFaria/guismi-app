@@ -2,11 +2,10 @@ package descendencia;
 
 import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
-import habitos.HabitoResource;
+import habito.HabitoResource;
 import kikaha.urouting.api.*;
 import sanidade.SanidadeResource;
 import situacao.SituacaoResource;
-import sun.security.krb5.internal.crypto.Des;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

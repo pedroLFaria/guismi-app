@@ -1,7 +1,6 @@
-package idiomas;
+package idioma;
 
 import kikaha.urouting.api.*;
-import lombok.val;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

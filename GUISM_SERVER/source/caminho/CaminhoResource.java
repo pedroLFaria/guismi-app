@@ -4,8 +4,8 @@ import especializacao.Especializacao;
 import especializacao.EspecializacaoResource;
 import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
-import habitos.Habito;
-import habitos.HabitoResource;
+import habito.Habito;
+import habito.HabitoResource;
 import kikaha.urouting.api.*;
 import lombok.val;
 

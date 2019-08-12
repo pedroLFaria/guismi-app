@@ -1,4 +1,4 @@
-package habitos;
+package habito;
 
 import especializacao.Especializacao;
 import especializacao.EspecializacaoQueries;

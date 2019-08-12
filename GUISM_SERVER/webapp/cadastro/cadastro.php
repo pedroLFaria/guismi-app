@@ -142,7 +142,7 @@
 			</select>
 			<select name="HabHabito">
 <?php
-	$query ="SELECT idhabitos,nome FROM habitos";
+	$query ="SELECT idhabitos,nome FROM habito";
 	$result = mysqli_query($con, $query);
 	while($coluna=mysqli_fetch_array($result)){
 ?>
@@ -207,7 +207,7 @@
 			</select>
 			<select name="DeDescendencia2">
 <?php
-	$query ="SELECT IdIdiomas,nome FROM idiomas";
+	$query ="SELECT IdIdiomas,nome FROM idioma";
 	$result = mysqli_query($con, $query);
 	while($coluna=mysqli_fetch_array($result)){
 ?>
@@ -354,7 +354,7 @@
 			</select>
 			<select name="HabHabito2">
 <?php
-	$query = "SELECT idHabitos,nome FROM habitos";
+	$query = "SELECT idHabitos,nome FROM habito";
 	$result = mysqli_query($con, $query);
 	while($coluna=mysqli_fetch_array($result)){
 ?>
@@ -587,8 +587,8 @@
 		</form>
 	</div><!-- Especialização termina -->
 	
-	<div class="idiomas"> <!-- Idiomas começa -->
-		<form action=#idiomas method=post>
+	<div class="idioma"> <!-- Idiomas começa -->
+		<form action=#idioma method=post>
 		<h1>&#10023 Idiomas</h1>
 <?php
 	if(@$_REQUEST['botao_idiomas']=='Gravar'){
@@ -709,7 +709,7 @@
 			</select>
 			<select name="HabHabito3">
 <?php
-	$query = "SELECT idHabitos,nome FROM habitos";
+	$query = "SELECT idHabitos,nome FROM habito";
 	$result = mysqli_query($con, $query);
 	while($coluna=mysqli_fetch_array($result)){
 ?>
@@ -777,15 +777,15 @@
 		</form>
 	</div>
 
-	<div class="habitos">
-		<form action=#habitos method=post>
+	<div class="habito">
+		<form action=#habito method=post>
 		<h1>&#10023 Habito</h1>
 <?php
 	if(@$_REQUEST['botao_habito']=='Gravar'){
 		$nome_hab = $_POST['nome_hab'];
 		$desc_hab = $_POST['desc_hab'];
 		
-		$query = "INSERT INTO habitos (nome,desc_hab) values ('$nome_hab','$desc_hab')";
+		$query = "INSERT INTO habito (nome,desc_hab) values ('$nome_hab','$desc_hab')";
 		$result = mysqli_query($con, $query);
 	}
 ?>
@@ -796,7 +796,7 @@
 	</div>
 	
 	<div class="itens">
-		<form action=#habitos method=post>
+		<form action=#habito method=post>
 		<h1>&#10023 Item</h1>
 <?php
 	if(@$_REQUEST['botao_item']=='Gravar'){
@@ -807,7 +807,7 @@
 		$valor_item = $_POST['valor_item'];
 		$moeda = $_POST['moeda'];
 		
-		$query = "INSERT INTO habitos (nome,desc_item,peso,valor_magico,valor,moeda) values ('$nome_item','$desc_item','$peso_item','$valor_magico','$valor_item','$moeda')";
+		$query = "INSERT INTO habito (nome,desc_item,peso,valor_magico,valor,moeda) values ('$nome_item','$desc_item','$peso_item','$valor_magico','$valor_item','$moeda')";
 		$result = mysqli_query($con, $query);
 	}
 ?>
@@ -836,7 +836,7 @@
 		<h2>Habito-Especializacao</h2>
 			<select name="HabHabito4">
 <?php
-	$query ="SELECT idHabitos,nome FROM habitos";
+	$query ="SELECT idHabitos,nome FROM habito";
 	$result = mysqli_query($con, $query);
 	while($coluna=mysqli_fetch_array($result)){
 ?>

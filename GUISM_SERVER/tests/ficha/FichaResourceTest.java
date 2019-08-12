@@ -17,6 +17,7 @@ public class FichaResourceTest {
     public void getFichaByID(){
         val getResponse = fichaResource.findById(1l);
         val entityFicha = (Ficha) getResponse.entity();
-        System.out.println(entityFicha);
+        assert entityFicha != null;
+        assert entityFicha.idJogador ==1L;
     }
 }
