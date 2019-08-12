@@ -20,8 +20,9 @@ public interface CaminhoQueries {
     @SqlUpdate("INSERT INTO caminho(nome,caminho_desc) VALUES(:nome,:descricao)")
     long insert(@BindBean Caminho caminhho);
 
-    @SqlQuery("SELECT caminho.* FROM ficha LEFT JOIN ficha_has_caminho ON ficha.idficha = ficha_has_caminho.idficha " +
-            "LEFT JOIN caminho ON ficha_has_caminho.idcaminho = caminho.idcaminho WHERE ficha.idficha = :idFicha")
+    @SqlQuery("SELECT caminho.* FROM ficha " +
+            "right JOIN ficha_has_caminho ON ficha.idficha = ficha_has_caminho.idficha " +
+            "right JOIN caminho ON ficha_has_caminho.idcaminho = caminho.idcaminho WHERE ficha.idficha = :idFicha")
     Set<Caminho> findByIdFicha(@Bind ("idFicha") long idFicha);
 
     @GetGeneratedKeys

@@ -5,11 +5,8 @@ import acao.Acao;
 import kikaha.jdbi.serializers.Column;
 import kikaha.jdbi.serializers.Entity;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import situacao.Situacao;
 
-import java.beans.ConstructorProperties;
 import java.util.Set;
 
 @Data

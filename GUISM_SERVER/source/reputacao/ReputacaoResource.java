@@ -1,7 +1,6 @@
 package reputacao;
 
 import kikaha.urouting.api.*;
-import sistema.Sistema;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

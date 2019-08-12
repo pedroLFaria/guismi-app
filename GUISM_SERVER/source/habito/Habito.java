@@ -23,7 +23,7 @@ public class Habito {
 
     @Column
     @Optional
-    Long QTDFICHAHABITO;
+    Long qtdFichaHabito;
 
     Set<Especializacao> especializacoes;
 }

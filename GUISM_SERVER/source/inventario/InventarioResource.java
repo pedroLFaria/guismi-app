@@ -7,7 +7,6 @@ import kikaha.urouting.api.Response;
 import lombok.val;
 
 import javax.inject.Inject;
-import java.util.Set;
 
 @Path("inventario/")
 public class InventarioResource {

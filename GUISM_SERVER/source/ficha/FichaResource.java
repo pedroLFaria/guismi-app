@@ -85,12 +85,36 @@ public class FichaResource {
     @POST
     @Path("update/{id}")
     public Response update(Ficha ficha) {
-        try {
-            queries.cleanFichaJunctionTables(ficha);
-
-        } catch (Exception e) {
-            return DefaultResponse.notModified();
-        }
+        queries.update(ficha);
+        queries.cleanFichaJunctionTables(ficha);
+        insertFichaJunctionTables(ficha);
         return DefaultResponse.accepted();
+    }
+
+    private void insertFichaJunctionTables(Ficha ficha){
+        for(Habito habito : ficha.getHabitos()){
+            queries.insertFichaHasHabito(ficha,habito);
+        }
+        for(Habilidade habilidade : ficha.getHabilidades()){
+            queries.insertFichaHasHabilidade(ficha,habilidade);
+        }
+        for(Caminho caminho : ficha.getCaminhos()){
+            queries.insertFichaHasCaminho(ficha,caminho);
+        }
+        for(Descendencia descendencia : ficha.getDescendencias()){
+            queries.insertFichaHasDescendencia(ficha,descendencia);
+        }
+        /*for(Idioma idioma : ficha.getIdiomas()){
+            queries.insertFichaHasIdidoma(ficha,idioma);
+        }
+        for(Inventario inventario : ficha.getInventarios()){
+            queries.insertFichaHasInventario(ficha,inventario);
+        }
+        for(Patrono patrono : ficha.getPatronos()){
+            queries.insertFichaHasPatrono(ficha,patrono);
+        }
+        for(Situacao situacao : ficha.getSituacoes()){
+            queries.insertFichaHasSituacao(ficha,situacao);
+        }*/
     }
 }

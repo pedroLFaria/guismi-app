@@ -1,11 +1,16 @@
 package habito;
 
+import caminho.Caminho;
 import especializacao.Especializacao;
 import especializacao.EspecializacaoQueries;
+import ficha.Ficha;
 import kikaha.urouting.api.*;
+import lombok.val;
+import raca.Raca;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.Objects;
 import java.util.Set;
 
 @Path("api/habito/")
@@ -20,21 +25,26 @@ public class HabitoResource {
     EspecializacaoQueries especializacaoQueries;
 
     @GET
-    @Path("caminho/{id}")
-    public Response findByIdCaminho(@PathParam("id")Long id){
-        Set<Habito> habitos = queries.findByIdCaminho(id);
-        if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
-        return DefaultResponse.ok(preenche(habitos));
-    }
-
-    @GET
     @Path("sistema")
     public Response findAll(){
         Set<Habito> habitos = queries.findAll();
         if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
+            return DefaultResponse.notFound().entity(habitos);
         return DefaultResponse.ok(preenche(habitos));
+    }
+
+    @GET
+    @Path("caminho/{id}")
+    public Response findByIdCaminho(@PathParam("id")Long id){
+        Set<Habito> habitos = queries.findByIdCaminho(id);
+        if(habitos.isEmpty())
+            return DefaultResponse.notFound().entity(habitos);
+        return DefaultResponse.ok(preenche(habitos));
+    }
+
+    public Set<Habito> findByIdCaminho(Caminho caminho){
+        Set<Habito> habitos = queries.findByIdFicha(caminho.getIdCaminho());
+        return preenche(habitos);
     }
 
     @GET
@@ -42,8 +52,13 @@ public class HabitoResource {
     public Response findByIdRaca(@PathParam("id")Long id){
         Set<Habito> habitos = queries.findByIdRaca(id);
         if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
+            return DefaultResponse.notFound().entity(habitos);
         return DefaultResponse.ok(preenche(habitos));
+    }
+
+    public Set<Habito> findByIdRaca(Raca raca){
+        Set<Habito> habitos = queries.findByIdFicha(raca.getIdRaca());
+        return preenche(habitos);
     }
 
     @GET
@@ -51,14 +66,18 @@ public class HabitoResource {
     public Response findByIdFicha(@PathParam("id")Long id){
         Set<Habito> habitos = queries.findByIdFicha(id);
         if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum habito encontrado!");
+            return DefaultResponse.notFound().entity(habitos);
         return DefaultResponse.ok(preenche(habitos));
+    }
+
+    public Set<Habito> findByIdFicha(Ficha ficha){
+        Set<Habito> habitos = queries.findByIdFicha(ficha.getIdFicha());
+        return preenche(habitos);
     }
 
     private Set<Habito> preenche(Set<Habito> habitos){
         for(Habito habito : habitos){
-            Set<Especializacao> especializacaos = especializacaoQueries.findByIdHabito(habito.getIdHabito());
-            habito.setEspecializacoes(especializacaos);
+            habito.setEspecializacoes(especializacaoQueries.findByIdHabito(habito.getIdHabito()));
         }
         return habitos;
     }

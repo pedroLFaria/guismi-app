@@ -37,7 +37,7 @@ public class DescendenciaResource {
     @Path("sistema")
     public Response findAll(){
         Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findAll());
-        if(descendencias== null)
+        if(descendencias.isEmpty())
             return DefaultResponse.notFound().entity(descendencias);
         return DefaultResponse.ok(descendencias);
     }

@@ -38,7 +38,7 @@ public class CaminhoResource {
     public Response findByIdFicha(@PathParam("id")Long idFicha){
         val caminhos = queries.findByIdFicha(idFicha);
         if(caminhos.isEmpty())
-            return DefaultResponse.notFound().entity(mensagemPadrao);
+            return DefaultResponse.notFound().entity(caminhos);
         return DefaultResponse.ok(preenche(caminhos));
     }
 

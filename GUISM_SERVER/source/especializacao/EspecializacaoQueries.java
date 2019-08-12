@@ -3,7 +3,6 @@ package especializacao;
 import kikaha.jdbi.JDBI;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
-import org.yaml.snakeyaml.external.com.google.gdata.util.common.base.Escaper;
 
 import java.util.Set;
 

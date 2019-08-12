@@ -35,7 +35,7 @@ public class HabilidadeResource {
     public  Response findAll(){
         Set<Habilidade> habilidades = queries.findAll();
         if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma habilidade registrada");
+            return DefaultResponse.notFound().entity(habilidades);
         return DefaultResponse.ok(preencheHabilidade(habilidades));
     }
 
@@ -44,7 +44,7 @@ public class HabilidadeResource {
     public Response findById(@PathParam("id") Long id){
         Habilidade habilidade = queries.findById(id);
         if(habilidade == null)
-            DefaultResponse.notFound().entity("Habilidade não encontrada!");
+           return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada!");
         Set<Acao> acoes = new LinkedHashSet<>((Set<Acao>) acaoResource.findByIdHabilidade(id).entity());
         Set<Gasto> gastos = new LinkedHashSet<>((Set<Gasto>)  gastoResource.findByIdHabilidade(id).entity());
         Set<Situacao> situacoes = new LinkedHashSet<>((Set<Situacao>)situacaoResource.findByIdHabilidade(id).entity());
@@ -59,7 +59,7 @@ public class HabilidadeResource {
     public Response findByIdRacas(@PathParam("id")Long idRaca){
         Set<Habilidade> habilidades = queries.findByIdRacas(idRaca);
         if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
+            return DefaultResponse.notFound().entity(habilidades);
         return DefaultResponse.ok(preencheHabilidade(habilidades));
     }
 
@@ -68,7 +68,7 @@ public class HabilidadeResource {
     public Response findByIdCaminho(@PathParam("id")Long idCaminho){
         Set<Habilidade> habilidades = queries.findByIdCaminho(idCaminho);
         if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
+            return DefaultResponse.notFound().entity(habilidades);
         return DefaultResponse.ok(preencheHabilidade(habilidades));
     }
 
@@ -86,7 +86,7 @@ public class HabilidadeResource {
     public Response findByIdFicha(@PathParam("id")Long id){
         Set<Habilidade> habilidades = queries.findByIdFicha(id);
         if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada");
+            return DefaultResponse.notFound().entity(habilidades);
         return DefaultResponse.ok(preencheHabilidade(habilidades));
     }
 
