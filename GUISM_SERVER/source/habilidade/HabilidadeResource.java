@@ -2,9 +2,13 @@ package habilidade;
 
 import acao.Acao;
 import acao.AcaoResource;
+import caminho.Caminho;
+import descendencia.Descendencia;
+import ficha.Ficha;
 import gasto.Gasto;
 import gasto.GastoResource;
 import kikaha.urouting.api.*;
+import raca.Raca;
 import situacao.Situacao;
 import situacao.SituacaoResource;
 
@@ -36,7 +40,7 @@ public class HabilidadeResource {
         Set<Habilidade> habilidades = queries.findAll();
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preencheHabilidade(habilidades));
+        return DefaultResponse.ok(preenche(habilidades));
     }
 
     @GET
@@ -60,7 +64,7 @@ public class HabilidadeResource {
         Set<Habilidade> habilidades = queries.findByIdRacas(idRaca);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preencheHabilidade(habilidades));
+        return DefaultResponse.ok(preenche(habilidades));
     }
 
     @GET
@@ -69,7 +73,7 @@ public class HabilidadeResource {
         Set<Habilidade> habilidades = queries.findByIdCaminho(idCaminho);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preencheHabilidade(habilidades));
+        return DefaultResponse.ok(preenche(habilidades));
     }
 
     @GET
@@ -78,7 +82,7 @@ public class HabilidadeResource {
         Set<Habilidade> habilidades = queries.findByIdDescendencia(idDescendencia);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preencheHabilidade(habilidades));
+        return DefaultResponse.ok(preenche(habilidades));
     }
 
     @GET
@@ -87,16 +91,34 @@ public class HabilidadeResource {
         Set<Habilidade> habilidades = queries.findByIdFicha(id);
         if(habilidades.isEmpty())
             return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preencheHabilidade(habilidades));
+        return DefaultResponse.ok(preenche(habilidades));
     }
 
-    private Set<Habilidade> preencheHabilidade(Set<Habilidade> habilidades){
+    public <T> Set<Habilidade> findByObject(T object){
+        Set<Habilidade> habilidades = new LinkedHashSet<>();
+        switch (object.getClass().getName()){
+            case "raca.Raca":
+                habilidades = queries.findByIdObject((Raca) object);
+                break;
+            case "caminho.Caminho":
+                habilidades = queries.findByIdObject((Caminho) object);
+                break;
+            case "descendencia.Descendencia":
+                habilidades = queries.findByIdObject((Descendencia) object);
+                break;
+            case"ficha.Ficha":
+                habilidades = queries.findByIdObject((Ficha) object);
+                break;
+        }
+        return preenche(habilidades);
+    }
+
+    private Set<Habilidade> preenche(Set<Habilidade> habilidades){
         for(Habilidade habilidade : habilidades){
-            Set<Acao> acoes = new LinkedHashSet<>((Set<Acao>) acaoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
             Set<Gasto> gastos = new LinkedHashSet<>((Set<Gasto>)  gastoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
             Set<Situacao> situacoes = new LinkedHashSet<>((Set<Situacao>)situacaoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
+            habilidade.setAcoes(acaoResource.findByObject(habilidade));
             habilidade.setSituacoes(situacoes);
-            habilidade.setAcoes(acoes);
             habilidade.setGasto(gastos);
         }
         return habilidades;

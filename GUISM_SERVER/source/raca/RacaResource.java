@@ -11,6 +11,7 @@ import habito.HabitoResource;
 import idioma.Idioma;
 import idioma.IdiomaResource;
 import kikaha.urouting.api.*;
+import lombok.val;
 import patrono.Patrono;
 import patrono.PatronoResource;
 
@@ -62,7 +63,10 @@ public class RacaResource {
             return DefaultResponse.notFound().entity("Nenhuma raça encontrada!");
         return DefaultResponse.ok(racas);
     }
-
+    public<T> Raca findByObject(T requestObject){
+        val raca = queries.findByIdFicha(requestObject);
+        return raca;
+    }
     private Raca preenche(Raca raca){
         raca.setDescendencias((Set<Descendencia>)descendenciaResource.findByIdRaca(raca.getIdRaca()).entity());
         raca.setEspecializacoes((Set<Especializacao>) especializacaoResource.findByIdRaca(raca.getIdRaca()).entity());
