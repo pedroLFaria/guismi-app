@@ -29,9 +29,6 @@ public class FichaResourceTest {
     public void updateFicha(){
         val ficha = (Ficha) fichaResource.findById(1L).entity();
         ficha.setNomePersonagem("Lincom");
-        /*System.out.println(ficha.getHabilidades());
-        System.out.println(ficha.getHabitos());
-        System.out.println(ficha.getCaminhos());*/
         System.out.println(ficha.getDescendencias());
         fichaResource.update(ficha);
     }

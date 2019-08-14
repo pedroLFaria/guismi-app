@@ -54,7 +54,7 @@ public class FichaResource {
     InventarioQueries inventarioQueries;
 
     @Inject
-    PatronoResource patronoResource;
+    private PatronoResource patronoResource;
 
     @Inject
     SituacaoResource situacaoResource;
@@ -71,9 +71,9 @@ public class FichaResource {
 
     private Ficha preenche(Ficha ficha){
         ficha.setRaca((Raca)racaResource.findByIdFicha(ficha.getIdFicha()).entity());
-        ficha.setHabilidades((Set<Habilidade>) habilidadeResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setHabilidades(habilidadeResource.findByObject(ficha));
         ficha.setCaminhos((Set<Caminho>) caminhoResource.findByIdFicha(ficha.getIdFicha()).entity());
-        ficha.setIdiomas((Set<Idioma>) idiomaResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setIdiomas(idiomaResource.findByObject(ficha));
         ficha.setPatronos((Set<Patrono>) patronoResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setSituacoes((Set<Situacao>)situacaoResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setDescendencias((Set<Descendencia>) descendenciaResource.findByIdFicha(ficha.getIdFicha()).entity());

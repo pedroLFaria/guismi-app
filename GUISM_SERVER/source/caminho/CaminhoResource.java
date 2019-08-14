@@ -2,6 +2,7 @@ package caminho;
 
 import especializacao.Especializacao;
 import especializacao.EspecializacaoResource;
+import ficha.Ficha;
 import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
 import habito.Habito;
@@ -11,6 +12,7 @@ import lombok.val;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.lang.invoke.SwitchPoint;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -32,7 +34,6 @@ public class CaminhoResource {
     @Inject
     HabitoResource habitoResource;
 
-    private String mensagemPadrao = "Caminho não encontrado!";
     @GET
     @Path("ficha/{id}")
     public Response findByIdFicha(@PathParam("id")Long idFicha){
@@ -51,13 +52,23 @@ public class CaminhoResource {
         return DefaultResponse.ok(preenche(caminhos));
     }
 
+    public <T> Set<Caminho> findByObject(T object){
+        Set<Caminho> caminhos = new LinkedHashSet<>();
+        switch (object.getClass().getName()){
+            case "fica.Ficha":
+                caminhos = queries.findByObject((Ficha) object);
+                break;
+        }
+        return preenche(caminhos);
+    }
+
+
     private Set<Caminho> preenche(Set<Caminho> caminhos){
         for(Caminho caminho : caminhos){
             Set<Especializacao> especializacaos = new LinkedHashSet<>();
             Set<Habito> habitos = new LinkedHashSet<>((Set<Habito>)habitoResource.findByIdCaminho(caminho.getIdCaminho()).entity());
-            Set<Habilidade> habilidades = new LinkedHashSet<>((Set<Habilidade>)habilidadeResource.findByIdCaminho(caminho.getIdCaminho()).entity());
             caminho.setEspecializacoes(especializacaos);
-            caminho.setHabilidades(habilidades);
+            caminho.setHabilidades(habilidadeResource.findByObject(caminho));
             caminho.setHabitos(habitos);
         }
         return caminhos;

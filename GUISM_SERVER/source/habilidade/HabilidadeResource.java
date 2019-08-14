@@ -8,6 +8,7 @@ import ficha.Ficha;
 import gasto.Gasto;
 import gasto.GastoResource;
 import kikaha.urouting.api.*;
+import lombok.val;
 import raca.Raca;
 import situacao.Situacao;
 import situacao.SituacaoResource;
@@ -98,28 +99,29 @@ public class HabilidadeResource {
         Set<Habilidade> habilidades = new LinkedHashSet<>();
         switch (object.getClass().getName()){
             case "raca.Raca":
-                habilidades = queries.findByIdObject((Raca) object);
+                habilidades = queries.findByObject((Raca) object);
                 break;
             case "caminho.Caminho":
-                habilidades = queries.findByIdObject((Caminho) object);
+                habilidades = queries.findByObject((Caminho) object);
                 break;
             case "descendencia.Descendencia":
-                habilidades = queries.findByIdObject((Descendencia) object);
+                habilidades = queries.findByObject((Descendencia) object);
                 break;
             case"ficha.Ficha":
-                habilidades = queries.findByIdObject((Ficha) object);
+                habilidades = queries.findByObject((Ficha) object);
                 break;
         }
         return preenche(habilidades);
     }
+    public Set<Habilidade> findByObject(){
+        return preenche(queries.findByObject());
+    }
 
     private Set<Habilidade> preenche(Set<Habilidade> habilidades){
         for(Habilidade habilidade : habilidades){
-            Set<Gasto> gastos = new LinkedHashSet<>((Set<Gasto>)  gastoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
-            Set<Situacao> situacoes = new LinkedHashSet<>((Set<Situacao>)situacaoResource.findByIdHabilidade(habilidade.getIdHabilidade()).entity());
             habilidade.setAcoes(acaoResource.findByObject(habilidade));
-            habilidade.setSituacoes(situacoes);
-            habilidade.setGasto(gastos);
+            habilidade.setSituacoes(situacaoResource.findByObject(habilidade));
+            habilidade.setGasto(gastoResource.findByObject(habilidade));
         }
         return habilidades;
     }

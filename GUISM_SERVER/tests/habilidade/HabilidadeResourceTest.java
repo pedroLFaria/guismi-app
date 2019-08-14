@@ -33,20 +33,4 @@ public class HabilidadeResourceTest {
         val entityHabilidade = (Habilidade)getResponse.entity();
         System.out.println(entityHabilidade);
     }
-
-    @Test
-    public void random() {
-        Ficha ficha = new Ficha();
-        ficha.setIdFicha(1L);
-        System.out.println(habilidadeResource.findByObject(ficha));
-        Raca raca = new Raca();
-        raca.setIdRaca(1L);
-        System.out.println(habilidadeResource.findByObject(raca));
-        Caminho caminho = new Caminho();
-        caminho.setIdCaminho(1L);
-        System.out.println(habilidadeResource.findByObject(caminho));
-        Descendencia descendencia = new Descendencia();
-        descendencia.setIdDescendencia(1L);
-        System.out.println(habilidadeResource.findByObject(descendencia));
-    }
 }

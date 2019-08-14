@@ -46,27 +46,30 @@ public interface HabilidadeQueries {
             "WHERE FICHA.IDFICHA =:idFicha")
     Set<Habilidade> findByIdFicha(@Bind("idFicha")Long idFicha);
 
+    @SqlQuery("SELECT * FROM HABILIDADE")
+    Set<Habilidade> findByObject();
+
     @SqlQuery("SELECT HABILIDADE.* FROM RACA " +
             "RIGHT JOIN RACA_HAS_HABILIDADE ON RACA_HAS_HABILIDADE.IDRACA = RACA.IDRACA " +
             "RIGHT JOIN HABILIDADE ON HABILIDADE.IDHABILIDADE = RACA_HAS_HABILIDADE.IDHABILIDADE " +
             "WHERE RACA.IDRACA = :idRaca")
-    Set<Habilidade> findByIdObject(@BindBean Raca raca);
+    Set<Habilidade> findByObject(@BindBean Raca raca);
 
     @SqlQuery("SELECT HABILIDADE.* FROM CAMINHO " +
             "RIGHT JOIN CAMINHO_HAS_HABILIDADE ON CAMINHO_HAS_HABILIDADE.IDCAMINHO = CAMINHO.IDCAMINHO " +
             "RIGHT JOIN HABILIDADE ON HABILIDADE.IDHABILIDADE = CAMINHO_HAS_HABILIDADE.IDHABILIDADE " +
             "WHERE CAMINHO.IDCAMINHO = :idCaminho")
-    Set<Habilidade> findByIdObject(@BindBean Caminho caminho);
+    Set<Habilidade> findByObject(@BindBean Caminho caminho);
 
     @SqlQuery("SELECT HABILIDADE.* FROM DESCENDENCIA " +
             "RIGHT JOIN DESCENDENCIA_HAS_HABILIDADE ON DESCENDENCIA_HAS_HABILIDADE.IDDESCENDENCIA = DESCENDENCIA.IDDESCENDENCIA " +
             "RIGHT JOIN HABILIDADE ON HABILIDADE.IDHABILIDADE = DESCENDENCIA_HAS_HABILIDADE.IDHABILIDADE " +
             "WHERE DESCENDENCIA.IDDESCENDENCIA = :idDescendencia")
-    Set<Habilidade> findByIdObject(@BindBean Descendencia descendencia);
+    Set<Habilidade> findByObject(@BindBean Descendencia descendencia);
 
     @SqlQuery("SELECT HABILIDADE.* FROM FICHA " +
             "RIGHT JOIN FICHA_HAS_HABILIDADE ON FICHA.IDFICHA = FICHA_HAS_HABILIDADE.IDFICHA " +
             "RIGHT JOIN HABILIDADE ON ficha_has_habilidade.IDHABILIDADE = HABILIDADE.IDHABILIDADE " +
             "WHERE FICHA.IDFICHA =:idFicha")
-    Set<Habilidade> findByIdObject(@BindBean Ficha ficha);
+    Set<Habilidade> findByObject(@BindBean Ficha ficha);
 }
