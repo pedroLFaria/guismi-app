@@ -6,6 +6,7 @@ import cidade.Cidade;
 import cidade.CidadeResource;
 import descendencia.Descendencia;
 import descendencia.DescendenciaResource;
+import especializacao.EspecializacaoResource;
 import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
 import habito.Habito;
@@ -52,6 +53,9 @@ public class SistemaResource {
     @Inject
     PatronoResource patronoResource;
 
+    @Inject
+    EspecializacaoResource especializacaoResource;
+
     @GET
     @Path("")
     public Response findSistema(){
@@ -64,6 +68,7 @@ public class SistemaResource {
         sistema.setIdiomas((Set<Idioma>) idiomaResource.findAll().entity());
         sistema.setPatronos((Set<Patrono>) patronoResource.findAll().entity());
         sistema.setRacas((Set<Raca>) racaResource.findAll().entity());
+        sistema.setEspecializacoes(especializacaoResource.findByOject());
         return DefaultResponse.ok(sistema);
     }
 

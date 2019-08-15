@@ -62,7 +62,7 @@ public class DescendenciaResource {
 
     private Set<Descendencia> preencher(Set<Descendencia> descendencias){
         for(Descendencia descendencia : descendencias){
-            descendencia.setHabilidades((Set<Habilidade>) habilidadeResource.findByIdDescendencia(descendencia.idDescendencia).entity());
+            descendencia.setHabilidades(habilidadeResource.findByObject(descendencia));
         }
         return descendencias;
     }

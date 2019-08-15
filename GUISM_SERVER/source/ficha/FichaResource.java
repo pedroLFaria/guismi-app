@@ -70,12 +70,12 @@ public class FichaResource {
     }
 
     private Ficha preenche(Ficha ficha){
-        ficha.setRaca((Raca)racaResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setRaca(racaResource.findByObject(ficha));
         ficha.setHabilidades(habilidadeResource.findByObject(ficha));
-        ficha.setCaminhos((Set<Caminho>) caminhoResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setCaminhos(caminhoResource.findByObject(ficha));
         ficha.setIdiomas(idiomaResource.findByObject(ficha));
-        ficha.setPatronos((Set<Patrono>) patronoResource.findByIdFicha(ficha.getIdFicha()).entity());
-        ficha.setSituacoes((Set<Situacao>)situacaoResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setPatronos(patronoResource.findByObject(ficha));
+        ficha.setSituacoes(situacaoResource.findByObject(ficha));
         ficha.setDescendencias((Set<Descendencia>) descendenciaResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setHabitos((Set<Habito>) habitoResource.findByIdFicha(ficha.getIdFicha()).entity());
         ficha.setInventarios(inventarioQueries.findByIdFichaPreenchido(ficha.getIdFicha()));

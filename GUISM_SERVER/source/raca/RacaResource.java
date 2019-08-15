@@ -70,9 +70,9 @@ public class RacaResource {
     private Raca preenche(Raca raca){
         raca.setDescendencias((Set<Descendencia>)descendenciaResource.findByIdRaca(raca.getIdRaca()).entity());
         raca.setEspecializacoes((Set<Especializacao>) especializacaoResource.findByIdRaca(raca.getIdRaca()).entity());
-        raca.setHabilidades((Set<Habilidade>) habilidadeResource.findByIdRacas(raca.getIdRaca()).entity());
+        raca.setHabilidades(habilidadeResource.findByObject(raca));
         raca.setHabitos((Set<Habito>) habitoResource.findByIdRaca(raca.getIdRaca()).entity());
-        raca.setIdiomas((Set<Idioma>) idiomaResource.findByIdRaca(raca.getIdRaca()).entity());
+        raca.setIdiomas(idiomaResource.findByObject(raca));
         raca.setPatronos((Set<Patrono>) patronoResource.findByIdRaca(raca.getIdRaca()).entity());
         return raca;
     }

@@ -50,12 +50,9 @@ public class HabilidadeResource {
         Habilidade habilidade = queries.findById(id);
         if(habilidade == null)
            return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada!");
-        Set<Acao> acoes = new LinkedHashSet<>((Set<Acao>) acaoResource.findByIdHabilidade(id).entity());
-        Set<Gasto> gastos = new LinkedHashSet<>((Set<Gasto>)  gastoResource.findByIdHabilidade(id).entity());
-        Set<Situacao> situacoes = new LinkedHashSet<>((Set<Situacao>)situacaoResource.findByIdHabilidade(id).entity());
-        habilidade.setSituacoes(situacoes);
-        habilidade.setAcoes(acoes);
-        habilidade.setGasto(gastos);
+        habilidade.setAcoes(acaoResource.findByObject(habilidade));
+        habilidade.setSituacoes(situacaoResource.findByObject(habilidade));
+        habilidade.setGasto(gastoResource.findByObject(habilidade));
         return DefaultResponse.ok(habilidade);
     }
 

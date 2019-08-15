@@ -53,23 +53,18 @@ public class CaminhoResource {
     }
 
     public <T> Set<Caminho> findByObject(T object){
-        Set<Caminho> caminhos = new LinkedHashSet<>();
-        switch (object.getClass().getName()){
-            case "fica.Ficha":
-                caminhos = queries.findByObject((Ficha) object);
-                break;
-        }
-        return preenche(caminhos);
+        return preenche(queries.findByObject((Ficha) object));
     }
 
+    public Set<Caminho> findByObject(){
+        return preenche(queries.findByObject());
+    }
 
     private Set<Caminho> preenche(Set<Caminho> caminhos){
         for(Caminho caminho : caminhos){
-            Set<Especializacao> especializacaos = new LinkedHashSet<>();
-            Set<Habito> habitos = new LinkedHashSet<>((Set<Habito>)habitoResource.findByIdCaminho(caminho.getIdCaminho()).entity());
-            caminho.setEspecializacoes(especializacaos);
+            caminho.setEspecializacoes(especializacaoResource.findByObject(caminho));
             caminho.setHabilidades(habilidadeResource.findByObject(caminho));
-            caminho.setHabitos(habitos);
+            caminho.setHabitos(habitoResource.findByObject(caminho));
         }
         return caminhos;
     }

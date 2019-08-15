@@ -1,8 +1,10 @@
 package habito;
 
 import caminho.Caminho;
+import descendencia.Descendencia;
 import especializacao.Especializacao;
 import especializacao.EspecializacaoQueries;
+import especializacao.EspecializacaoResource;
 import ficha.Ficha;
 import kikaha.urouting.api.*;
 import lombok.val;
@@ -10,6 +12,8 @@ import raca.Raca;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -19,10 +23,10 @@ import java.util.Set;
 @Consumes(Mimes.JSON)
 public class HabitoResource {
     @Inject
-    HabitoQueries queries;
+    private HabitoQueries queries;
 
     @Inject
-    EspecializacaoQueries especializacaoQueries;
+    private EspecializacaoResource especializacaoResource;
 
     @GET
     @Path("sistema")
@@ -40,11 +44,6 @@ public class HabitoResource {
         if(habitos.isEmpty())
             return DefaultResponse.notFound().entity(habitos);
         return DefaultResponse.ok(preenche(habitos));
-    }
-
-    public Set<Habito> findByIdCaminho(Caminho caminho){
-        Set<Habito> habitos = queries.findByIdFicha(caminho.getIdCaminho());
-        return preenche(habitos);
     }
 
     @GET
@@ -70,14 +69,26 @@ public class HabitoResource {
         return DefaultResponse.ok(preenche(habitos));
     }
 
-    public Set<Habito> findByIdFicha(Ficha ficha){
-        Set<Habito> habitos = queries.findByIdFicha(ficha.getIdFicha());
-        return preenche(habitos);
+    public <T>Set<Habito> findByObject(T object) throws NoClassDefFoundError{
+        switch (object.getClass().getName()) {
+            case "descendencia.Descendencia":
+                return preenche(queries.findByObject((Descendencia) object));
+            case "caminho.Caminho":
+                return preenche(queries.findByObject((Caminho) object));
+            case "raca.Raca":
+                return preenche(queries.findByObject((Raca) object));
+            case "ficha.Ficha":
+                return preenche(queries.findByObject((Ficha) object));
+            default:
+                throw new NoClassDefFoundError("Classe não definida no método.");
+        }
     }
-
+    public Set<Habito> findByObject(){
+        return preenche(queries.findByObject());
+    }
     private Set<Habito> preenche(Set<Habito> habitos){
         for(Habito habito : habitos){
-            habito.setEspecializacoes(especializacaoQueries.findByIdHabito(habito.getIdHabito()));
+            habito.setEspecializacoes(especializacaoResource.findByObject(habito));
         }
         return habitos;
     }

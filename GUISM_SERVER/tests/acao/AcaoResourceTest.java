@@ -1,6 +1,7 @@
 package acao;
 
 import kikaha.core.test.KikahaRunner;
+import kikaha.urouting.api.Response;
 import lombok.val;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +19,10 @@ public class AcaoResourceTest {
 
     @Test
     public void getAcao(){
-        val getResponse = acaoResource.findById(1L);
+        Response getResponse = acaoResource.findById(1L);
+        for (double i = 0; i <10000000; i++) {
+            getResponse = acaoResource.findById(1L);
+        }
         val entity = getResponse.entity();
         System.out.println(entity);
         val entityAcao = (Acao) entity;

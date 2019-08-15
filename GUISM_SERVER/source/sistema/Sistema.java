@@ -3,6 +3,7 @@ package sistema;
 import caminho.Caminho;
 import cidade.Cidade;
 import descendencia.Descendencia;
+import especializacao.Especializacao;
 import habilidade.Habilidade;
 import habito.Habito;
 import idioma.Idioma;
@@ -30,4 +31,6 @@ public class Sistema {
     Set<Idioma> idiomas;
 
     Set<Patrono> patronos;
+
+    Set<Especializacao> especializacoes;
 }
