@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 @RunWith(KikahaRunner.class)
 public class AcaoResourceTest {
@@ -23,7 +22,7 @@ public class AcaoResourceTest {
         val entity = getResponse.entity();
         System.out.println(entity);
         val entityAcao = (Acao) entity;
-        assertEquals(entityAcao.nomeacao, "AÇÃO HIPOTETICA");
+        assertEquals(entityAcao.nomeacao, "Golpear");
     }
 
     @Test

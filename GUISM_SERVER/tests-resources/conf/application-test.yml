@@ -18,12 +18,12 @@ server:
   db:
     datasources:
       default:
-        jdbc-url: "jdbc:mysql://localhost/guism?serverTimezone=UTC"
-        username: "root"
-        password: "admin"
-        log-query-execution-longer-than-ms: 500
-        pool-max-size: 10
-        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: "jdbc:mysql://myguism2.mysql.database.azure.com/guism?serverTimezone=UTC"
+        username: "guismiADM@myguism2"
+        password: "karen#GOD"
+        useSSL: "true"
+        verifyServerCertificate: "true"
+        requireSSL: "false"
 
   auth:
 
