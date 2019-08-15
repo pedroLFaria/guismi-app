@@ -60,14 +60,14 @@ public class SistemaResource {
     @Path("")
     public Response findSistema(){
         Sistema sistema = new Sistema();
-        sistema.setCaminhos((Set<Caminho>) caminhoResource.findAll().entity());
-        sistema.setCidades((Set<Cidade>) cidadeResource.findAll().entity());
-        sistema.setDescendencias((Set<Descendencia>) descendenciaResource.findAll().entity());
-        sistema.setHabilidades((Set<Habilidade>) habilidadeResource.findAll().entity());
-        sistema.setHabitos((Set<Habito>) habitoResource.findAll().entity());
-        sistema.setIdiomas((Set<Idioma>) idiomaResource.findAll().entity());
-        sistema.setPatronos((Set<Patrono>) patronoResource.findAll().entity());
-        sistema.setRacas((Set<Raca>) racaResource.findAll().entity());
+        sistema.setCaminhos(caminhoResource.findByObject());
+        sistema.setCidades(cidadeResource.findByObject());
+        sistema.setDescendencias(descendenciaResource.findByObject());
+        sistema.setHabilidades(habilidadeResource.findByObject());
+        sistema.setHabitos(habitoResource.findByObject());
+        sistema.setIdiomas(idiomaResource.findByObject());
+        sistema.setPatronos(patronoResource.findByObject());
+        sistema.setRacas(racaResource.findByObject());
         sistema.setEspecializacoes(especializacaoResource.findByOject());
         return DefaultResponse.ok(sistema);
     }

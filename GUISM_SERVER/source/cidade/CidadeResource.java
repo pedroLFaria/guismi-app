@@ -21,4 +21,8 @@ public class CidadeResource {
             return DefaultResponse.notFound().entity("Cidades não encontradas");
         return DefaultResponse.ok(cidades);
     }
+
+    public Set<Cidade> findByObject(){
+        return queries.findByObject();
+    }
 }

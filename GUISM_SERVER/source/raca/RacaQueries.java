@@ -15,12 +15,18 @@ import java.util.Set;
 @JDBI
 public interface RacaQueries {
 
+    @SqlQuery("SELECT * FROM RACA")
+    Set<Raca> findAll();
+
     @SqlQuery("SELECT RACA.* FROM FICHA LEFT JOIN RACA ON FICHA.IDRACA = RACA.IDRACA WHERE FICHA.IDFICHA = :idFicha")
     Raca findByIdFicha(@Bind("idFicha")Long id);
 
-    @SqlQuery("SELECT RACA.* FROM FICHA LEFT JOIN RACA ON FICHA.IDRACA = RACA.IDRACA WHERE FICHA.IDFICHA = :idFicha")
-    <T> Raca findByIdFicha(@BindBean T raca);
+    @SqlQuery("SELECT RACA.* FROM FICHA " +
+            "RIGHT JOIN RACA ON FICHA.IDRACA = RACA.IDRACA " +
+            "WHERE FICHA.IDFICHA = :idFicha")
+    Raca findByObject(@BindBean Ficha ficha);
+
 
     @SqlQuery("SELECT * FROM RACA")
-    Set<Raca> findAll();
+    Set<Raca> findByObject();
 }

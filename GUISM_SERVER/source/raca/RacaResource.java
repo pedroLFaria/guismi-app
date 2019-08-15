@@ -1,18 +1,12 @@
 package raca;
 
-import descendencia.Descendencia;
 import descendencia.DescendenciaResource;
-import especializacao.Especializacao;
 import especializacao.EspecializacaoResource;
-import habilidade.Habilidade;
+import ficha.Ficha;
 import habilidade.HabilidadeResource;
-import habito.Habito;
 import habito.HabitoResource;
-import idioma.Idioma;
 import idioma.IdiomaResource;
 import kikaha.urouting.api.*;
-import lombok.val;
-import patrono.Patrono;
 import patrono.PatronoResource;
 
 import javax.inject.Inject;
@@ -63,17 +57,21 @@ public class RacaResource {
             return DefaultResponse.notFound().entity("Nenhuma raça encontrada!");
         return DefaultResponse.ok(racas);
     }
-    public<T> Raca findByObject(T requestObject){
-        val raca = queries.findByIdFicha(requestObject);
-        return raca;
+
+    public<T> Raca findByObject(T object){
+        return queries.findByObject((Ficha) object);
+    }
+
+    public Set<Raca> findByObject(){
+        return queries.findByObject();
     }
     private Raca preenche(Raca raca){
-        raca.setDescendencias((Set<Descendencia>)descendenciaResource.findByIdRaca(raca.getIdRaca()).entity());
-        raca.setEspecializacoes((Set<Especializacao>) especializacaoResource.findByIdRaca(raca.getIdRaca()).entity());
+        raca.setDescendencias(descendenciaResource.findByObject(raca));
+        raca.setEspecializacoes(especializacaoResource.findByObject(raca));
         raca.setHabilidades(habilidadeResource.findByObject(raca));
-        raca.setHabitos((Set<Habito>) habitoResource.findByIdRaca(raca.getIdRaca()).entity());
+        raca.setHabitos(habitoResource.findByObject(raca));
         raca.setIdiomas(idiomaResource.findByObject(raca));
-        raca.setPatronos((Set<Patrono>) patronoResource.findByIdRaca(raca.getIdRaca()).entity());
+        raca.setPatronos(patronoResource.findByObject(raca));
         return raca;
     }
 }

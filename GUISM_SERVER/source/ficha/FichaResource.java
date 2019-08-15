@@ -76,8 +76,8 @@ public class FichaResource {
         ficha.setIdiomas(idiomaResource.findByObject(ficha));
         ficha.setPatronos(patronoResource.findByObject(ficha));
         ficha.setSituacoes(situacaoResource.findByObject(ficha));
-        ficha.setDescendencias((Set<Descendencia>) descendenciaResource.findByIdFicha(ficha.getIdFicha()).entity());
-        ficha.setHabitos((Set<Habito>) habitoResource.findByIdFicha(ficha.getIdFicha()).entity());
+        ficha.setDescendencias(descendenciaResource.findByObject(ficha));
+        ficha.setHabitos(habitoResource.findByObject(ficha));
         ficha.setInventarios(inventarioQueries.findByIdFichaPreenchido(ficha.getIdFicha()));
         return ficha;
     }
