@@ -10,6 +10,7 @@ import habito.Habito;
 import habito.HabitoResource;
 import idioma.Idioma;
 import idioma.IdiomaResource;
+import inventario.Inventario;
 import inventario.InventarioQueries;
 import kikaha.urouting.api.*;
 import patrono.Patrono;
@@ -82,13 +83,21 @@ public class FichaResource {
         return ficha;
     }
 
-    @POST
+    @PUT
     @Path("update/{id}")
     public Response update(Ficha ficha) {
         queries.update(ficha);
         queries.cleanFichaJunctionTables(ficha);
         insertFichaJunctionTables(ficha);
         return DefaultResponse.accepted();
+    }
+
+    @POST
+    @Path("insert/{id}")
+    public Response insert(Ficha ficha){
+        queries.insert(ficha);
+        insertFichaJunctionTables(ficha);
+        return DefaultResponse.created();
     }
 
     private void insertFichaJunctionTables(Ficha ficha){
@@ -104,7 +113,7 @@ public class FichaResource {
         for(Descendencia descendencia : ficha.getDescendencias()){
             queries.insertFichaHasDescendencia(ficha,descendencia);
         }
-        /*for(Idioma idioma : ficha.getIdiomas()){
+        for(Idioma idioma : ficha.getIdiomas()){
             queries.insertFichaHasIdidoma(ficha,idioma);
         }
         for(Inventario inventario : ficha.getInventarios()){
@@ -115,6 +124,6 @@ public class FichaResource {
         }
         for(Situacao situacao : ficha.getSituacoes()){
             queries.insertFichaHasSituacao(ficha,situacao);
-        }*/
+        }
     }
 }

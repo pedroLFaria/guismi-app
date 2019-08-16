@@ -10,6 +10,7 @@ import kikaha.jdbi.JDBI;
 import lombok.val;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
+import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import patrono.Patrono;
@@ -21,11 +22,12 @@ public interface FichaQueries {
     @SqlQuery("SELECT * FROM ficha WHERE IDFICHA = :id")
     Ficha findById(@Bind("id") Long id);
 
+    @GetGeneratedKeys
     @SqlUpdate("INSERT INTO FICHA(IDRACA,IDCIDADE,IDJOGADOR,NOMEPERSONAGEM,IMG,IDADE,AFILIACAO,CLA,SORTEDIA,DISTFORCA," +
             "DISTCONSTITUICAO,DISTAGILIDADE,DISTDESTREZA,DISTINTELIGENCIA,DISTSABEDORIA,DISTCARISMA,NIVELPERSONAGEM," +
-            "EXPPERSONAGEM,DESCPERSONAGEM,HISTPERSONAGEM,NOTA,IDSANIDADE) VALUES(:IDRACA,:IDCIDADE,:IDJOGADOR,:NOMEPERSONAGEM," +
-            ":IMG,:IDADE,:AFILIACAO,:CLA,:SORTEDIA,:DISTFORCA,:DISTCONSTITUICAO,:DISTAGILIDADE,:DISTDESTREZA,:DISTINTELIGENCIA," +
-            ":DISTSABEDORIA,DISTCARISMA,NIVELPERSONAGEM,:EXPPERSONAGEM,:DESCPERSONAGEM,:HISTPERSONAGEM,:NOTA,:IDSANIDADE)")
+            "EXPPERSONAGEM,DESCPERSONAGEM,HISTPERSONAGEM,NOTA,IDSANIDADE) VALUES(:idRaca,:idCidade,:idJogador,:nomePersonagem," +
+            ":img,:idade,:afiliacao,:cla,:sorteDia,:distForca,:distConstituicao,:distAgilidade,:distDestreza,:distInteligencia," +
+            ":distSabedoria,:distCarisma,nivelpersonagem,:expPersonagem,:descPersonagem,:histPersonagem,:nota,:idSanidade)")
     Long insert(@BindBean Ficha ficha);
 
     @SqlUpdate("UPDATE FICHA SET IDRACA = :idRaca, IDCIDADE = :idCidade, IDJOGADOR = :idJogador, NOMEPERSONAGEM = :nomePersonagem, " +
