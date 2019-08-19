@@ -5,7 +5,9 @@ import habilidade.Habilidade;
 import kikaha.jdbi.JDBI;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
+import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 import java.util.Set;
 
@@ -23,4 +25,14 @@ public interface SituacaoQueries {
             "RIGHT JOIN SITUACAO ON FICHA_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO " +
             "WHERE FICHA.IDFICHA = :idFicha")
     Set<Situacao> findByObject(@BindBean Ficha ficha);
+
+    @GetGeneratedKeys
+    @SqlUpdate("INSERT INTO situacao (IDSITUACAO, NOMESITUACAO, DESCSITUACAO) VALUES(:idSituacao, :nomeSituacao, :descSituacao)")
+    Long insert(@BindBean Situacao situacao);
+
+    @SqlUpdate("UPDATE situacao SET  NOMESITUACAO = :nomeSituacao, DESCSITUACAO = :descSituacao WHERE IDSITUACAO = :idSituacao")
+    Boolean update(@BindBean Situacao situacao);
+
+    @SqlUpdate("DELETE situacao WHERE IDSITUACAO = :idSituacao")
+    Boolean delete(@Bind("idSituacao") Long idSituacao);
 }

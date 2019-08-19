@@ -16,10 +16,30 @@ import java.util.Set;
 @Consumes(Mimes.JSON)
 public class SituacaoResource {
 
-    private String mensagemPadrao = "Situação não encontrada!";
-
     @Inject
     SituacaoQueries queries;
+
+    @POST
+    public Response insert(Situacao situacao) {
+        long id = queries.insert(situacao);
+        return DefaultResponse
+                .created("api/situacao/" + id)
+                .header("Generated-Id", String.valueOf(id));
+    }
+
+    @PUT
+    public Response update(Situacao situacao) {
+        queries.insert(situacao);
+        return DefaultResponse
+                .accepted();
+    }
+
+    @DELETE
+    @Path("delete/{id}")
+    public Response delete(@PathParam("id")Long id){
+        queries.delete(id);
+        return DefaultResponse.accepted();
+    }
 
     public <T> Set<Situacao> findByObject(T object){
         Set<Situacao> situacaos = new LinkedHashSet<>();
