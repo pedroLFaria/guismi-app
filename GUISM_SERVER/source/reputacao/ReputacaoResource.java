@@ -15,12 +15,8 @@ public class ReputacaoResource {
     @Inject
     ReputacaoQueries queries;
 
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Reputacao> reputacaos = queries.findAll();
-        if(reputacaos.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma reputação encontrada!");
-        return DefaultResponse.ok(reputacaos);
+    public Set<Reputacao> findByObject(){
+        Set<Reputacao> reputacaos = queries.findByObject();
+        return reputacaos;
     }
 }

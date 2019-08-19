@@ -34,24 +34,6 @@ public class CaminhoResource {
     @Inject
     HabitoResource habitoResource;
 
-    @GET
-    @Path("ficha/{id}")
-    public Response findByIdFicha(@PathParam("id")Long idFicha){
-        val caminhos = queries.findByIdFicha(idFicha);
-        if(caminhos.isEmpty())
-            return DefaultResponse.notFound().entity(caminhos);
-        return DefaultResponse.ok(preenche(caminhos));
-    }
-
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Caminho> caminhos = queries.findAll();
-        if(caminhos.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum caminho encontrado!");
-        return DefaultResponse.ok(preenche(caminhos));
-    }
-
     public <T> Set<Caminho> findByObject(T object){
         return preenche(queries.findByObject((Ficha) object));
     }

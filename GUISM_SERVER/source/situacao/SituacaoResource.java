@@ -21,33 +21,6 @@ public class SituacaoResource {
     @Inject
     SituacaoQueries queries;
 
-    @GET
-    @Path("{id}")
-    public Response findById(@PathParam("id")Long id){
-        val situacao = queries.findById(id);
-        if(situacao==null)
-            return DefaultResponse.notFound().entity(mensagemPadrao);
-        return DefaultResponse.ok(situacao);
-    }
-
-    @GET
-    @Path("ficha/{idFicha}")
-    public Response findByIdFicha(@PathParam("idFicha")Long id){
-        val situacoes = queries.findByIdFicha(id);
-        if(situacoes == null)
-            return DefaultResponse.notFound().entity(mensagemPadrao);
-        return DefaultResponse.ok(situacoes);
-    }
-
-    @GET
-    @Path("habilidade/{idHabilidade}")
-    public Response findByIdHabilidade(@PathParam("idHabilidade")Long id){
-        val situacoes = queries.findByIdHabilidade(id);
-        if(situacoes == null)
-            return DefaultResponse.notFound().entity(mensagemPadrao);
-        return DefaultResponse.ok(situacoes);
-    }
-
     public <T> Set<Situacao> findByObject(T object){
         Set<Situacao> situacaos = new LinkedHashSet<>();
         switch (object.getClass().getName()){

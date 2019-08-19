@@ -40,30 +40,18 @@ public class RacaResource {
     @Inject
     PatronoResource patronoResource;
 
-    @GET
-    @Path("ficha/{id}")
-    public Response findByIdFicha(@PathParam("id")Long id){
-        Raca raca = queries.findByIdFicha(id);
-        if(raca == null)
-            return DefaultResponse.notFound().entity("Raça não encontrada!");
-        return DefaultResponse.ok(preenche(raca));
-    }
 
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Raca> racas = queries.findAll();
-        if(racas.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma raça encontrada!");
-        return DefaultResponse.ok(racas);
-    }
 
     public<T> Raca findByObject(T object){
-        return queries.findByObject((Ficha) object);
+        return preenche(queries.findByObject((Ficha) object));
     }
 
+
     public Set<Raca> findByObject(){
-        return queries.findByObject();
+        Set<Raca> racas = queries.findByObject();
+        for(Raca raca : racas)
+            preenche(raca);
+        return racas;
     }
     private Raca preenche(Raca raca){
         raca.setDescendencias(descendenciaResource.findByObject(raca));

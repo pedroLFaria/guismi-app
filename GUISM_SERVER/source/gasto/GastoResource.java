@@ -16,15 +16,6 @@ public class GastoResource {
     @Inject
     GastoQueries queries;
 
-    @GET
-    @Path("{id}")
-    public Response findByIdHabilidade(@PathParam("id")Long id){
-        Set<Gasto> gastos = queries.findByHabilidadeId(id);
-        if(gastos.isEmpty())
-            return DefaultResponse.notFound().entity(gastos);
-        return DefaultResponse.ok(gastos);
-    }
-
     public <T> Set<Gasto> findByObject(T object){
         Set<Gasto> gastos = queries.findByObject((Habilidade) object);
         return gastos;

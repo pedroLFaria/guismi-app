@@ -17,11 +17,9 @@ public class SanidadeResource {
 
     @GET
     @Path("sistema")
-    public Response findAll(){
-        Set<Sanidade> sanidades = queries.findAll();
-        if(sanidades.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhuma sanidade encontrada!");
-        return DefaultResponse.ok(sanidades);
+    public Set<Sanidade> findByObject(){
+        Set<Sanidade> sanidades = queries.findByObject();
+        return sanidades;
     }
 
 }

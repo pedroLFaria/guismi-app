@@ -28,47 +28,6 @@ public class HabitoResource {
     @Inject
     private EspecializacaoResource especializacaoResource;
 
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Habito> habitos = queries.findAll();
-        if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity(habitos);
-        return DefaultResponse.ok(preenche(habitos));
-    }
-
-    @GET
-    @Path("caminho/{id}")
-    public Response findByIdCaminho(@PathParam("id")Long id){
-        Set<Habito> habitos = queries.findByIdCaminho(id);
-        if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity(habitos);
-        return DefaultResponse.ok(preenche(habitos));
-    }
-
-    @GET
-    @Path("raca/{id}")
-    public Response findByIdRaca(@PathParam("id")Long id){
-        Set<Habito> habitos = queries.findByIdRaca(id);
-        if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity(habitos);
-        return DefaultResponse.ok(preenche(habitos));
-    }
-
-    public Set<Habito> findByIdRaca(Raca raca){
-        Set<Habito> habitos = queries.findByIdFicha(raca.getIdRaca());
-        return preenche(habitos);
-    }
-
-    @GET
-    @Path("ficha/{id}")
-    public Response findByIdFicha(@PathParam("id")Long id){
-        Set<Habito> habitos = queries.findByIdFicha(id);
-        if(habitos.isEmpty())
-            return DefaultResponse.notFound().entity(habitos);
-        return DefaultResponse.ok(preenche(habitos));
-    }
-
     public <T>Set<Habito> findByObject(T object) throws NoClassDefFoundError{
         switch (object.getClass().getName()) {
             case "descendencia.Descendencia":

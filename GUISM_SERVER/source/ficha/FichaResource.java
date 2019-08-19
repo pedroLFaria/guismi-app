@@ -12,6 +12,7 @@ import idioma.Idioma;
 import idioma.IdiomaResource;
 import inventario.Inventario;
 import inventario.InventarioQueries;
+import inventario.InventarioResource;
 import kikaha.urouting.api.*;
 import patrono.Patrono;
 import patrono.PatronoResource;
@@ -52,10 +53,10 @@ public class FichaResource {
     IdiomaResource idiomaResource;
 
     @Inject
-    InventarioQueries inventarioQueries;
+    InventarioResource inventarioResource;
 
     @Inject
-    private PatronoResource patronoResource;
+    PatronoResource patronoResource;
 
     @Inject
     SituacaoResource situacaoResource;
@@ -79,7 +80,7 @@ public class FichaResource {
         ficha.setSituacoes(situacaoResource.findByObject(ficha));
         ficha.setDescendencias(descendenciaResource.findByObject(ficha));
         ficha.setHabitos(habitoResource.findByObject(ficha));
-        ficha.setInventarios(inventarioQueries.findByIdFichaPreenchido(ficha.getIdFicha()));
+        ficha.setInventarios(inventarioResource.findByObject(ficha));
         return ficha;
     }
 
@@ -101,29 +102,29 @@ public class FichaResource {
     }
 
     private void insertFichaJunctionTables(Ficha ficha){
-        for(Habito habito : ficha.getHabitos()){
-            queries.insertFichaHasHabito(ficha,habito);
-        }
-        for(Habilidade habilidade : ficha.getHabilidades()){
-            queries.insertFichaHasHabilidade(ficha,habilidade);
-        }
-        for(Caminho caminho : ficha.getCaminhos()){
-            queries.insertFichaHasCaminho(ficha,caminho);
-        }
-        for(Descendencia descendencia : ficha.getDescendencias()){
-            queries.insertFichaHasDescendencia(ficha,descendencia);
-        }
-        for(Idioma idioma : ficha.getIdiomas()){
-            queries.insertFichaHasIdidoma(ficha,idioma);
-        }
-        for(Inventario inventario : ficha.getInventarios()){
-            queries.insertFichaHasInventario(ficha,inventario);
-        }
-        for(Patrono patrono : ficha.getPatronos()){
-            queries.insertFichaHasPatrono(ficha,patrono);
-        }
-        for(Situacao situacao : ficha.getSituacoes()){
-            queries.insertFichaHasSituacao(ficha,situacao);
-        }
+        if(ficha.getHabitos() != null)
+            for(Habito habito : ficha.getHabitos())
+                queries.insertFichaHasHabito(ficha,habito);
+        if(ficha.getHabilidades() != null)
+            for(Habilidade habilidade : ficha.getHabilidades())
+                queries.insertFichaHasHabilidade(ficha,habilidade);
+        if(ficha.getCaminhos() != null)
+            for(Caminho caminho : ficha.getCaminhos())
+                queries.insertFichaHasCaminho(ficha,caminho);
+        if(ficha.getDescendencias() != null)
+            for(Descendencia descendencia : ficha.getDescendencias())
+                queries.insertFichaHasDescendencia(ficha,descendencia);
+        if(ficha.getIdiomas() != null)
+            for(Idioma idioma : ficha.getIdiomas())
+                queries.insertFichaHasIdidoma(ficha,idioma);
+        if(ficha.getInventarios() != null)
+            for(Inventario inventario : ficha.getInventarios())
+                queries.insertFichaHasInventario(ficha,inventario);
+        if(ficha.getPatronos() != null)
+            for(Patrono patrono : ficha.getPatronos())
+                queries.insertFichaHasPatrono(ficha,patrono);
+        if(ficha.getSituacoes() != null)
+            for(Situacao situacao : ficha.getSituacoes())
+                queries.insertFichaHasSituacao(ficha,situacao);
     }
 }

@@ -9,5 +9,5 @@ import java.util.Set;
 public interface ReputacaoQueries {
 
     @SqlQuery("SELECT * FROM REPUTACAO")
-    Set<Reputacao> findAll();
+    Set<Reputacao> findByObject();
 }

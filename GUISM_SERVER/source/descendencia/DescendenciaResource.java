@@ -36,33 +36,6 @@ public class DescendenciaResource {
     @Inject
     SituacaoResource situacaoResource;
 
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findAll());
-        if(descendencias.isEmpty())
-            return DefaultResponse.notFound().entity(descendencias);
-        return DefaultResponse.ok(descendencias);
-    }
-
-    @GET
-    @Path("ficha/{id}")
-    public Response findByIdFicha(@PathParam("id")Long idFicha){
-        Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findAll());
-        if(descendencias.isEmpty())
-            return DefaultResponse.notFound().entity(descendencias);
-        return DefaultResponse.ok(descendencias);
-    }
-
-    @GET
-    @Path("raca/{id}")
-    public Response findByIdRaca(@PathParam("id")Long id){
-        Set<Descendencia> descendencias = new LinkedHashSet<>(queries.findByIdFicha(id));
-        if(descendencias.isEmpty())
-            return DefaultResponse.notFound().entity(descendencias);
-        return DefaultResponse.ok(preencher(descendencias));
-    }
-
     public <T> Set<Descendencia> findByObject(T object) throws ClassCastException{
         switch (object.getClass().getName()){
             case "raca.Raca":

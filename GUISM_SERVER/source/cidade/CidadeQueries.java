@@ -9,8 +9,5 @@ import java.util.Set;
 public interface CidadeQueries {
 
     @SqlQuery("SELECT * FROM CIDADE")
-    Set<Cidade> findAll();
-
-    @SqlQuery("SELECT * FROM CIDADE")
     Set<Cidade> findByObject();
 }

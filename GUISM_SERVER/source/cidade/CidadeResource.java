@@ -13,14 +13,6 @@ public class CidadeResource {
     @Inject
     CidadeQueries queries;
 
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Cidade> cidades = queries.findAll();
-        if(cidades == null)
-            return DefaultResponse.notFound().entity("Cidades não encontradas");
-        return DefaultResponse.ok(cidades);
-    }
 
     public Set<Cidade> findByObject(){
         return queries.findByObject();

@@ -12,10 +12,4 @@ public class RacaResourceTest {
     @Inject
     RacaResource racaResource;
 
-    @Test
-    public void testa(){
-        Ficha ficha = new Ficha();
-        ficha.setIdFicha(1L);
-        System.out.println(racaResource.findByObject(ficha));
-    }
 }

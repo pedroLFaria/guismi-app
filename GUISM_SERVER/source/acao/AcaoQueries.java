@@ -13,13 +13,6 @@ import java.util.Set;
 @JDBI
 public interface AcaoQueries {
 
-    @SqlQuery("SELECT * FROM acao WHERE idAcao = :id")
-    Acao findById(@Bind("id")Long id);
-
-    @SqlQuery("SELECT ACAO.* FROM HABILIDADE LEFT JOIN HABILIDADE_HAS_ACAO ON HABILIDADE_HAS_ACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE " +
-            "LEFT JOIN ACAO ON HABILIDADE_HAS_ACAO.IDACAO = ACAO.IDACAO WHERE HABILIDADE.IDHABILIDADE =   :idHabilidade")
-    Set<Acao> findByIdHabilidade(@Bind("idHabilidade")Long idHabilidade);
-
     @SqlQuery("SELECT ACAO.* FROM HABILIDADE " +
             "RIGHT JOIN HABILIDADE_HAS_ACAO ON HABILIDADE_HAS_ACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE " +
             "RIGHT JOIN ACAO ON HABILIDADE_HAS_ACAO.IDACAO = ACAO.IDACAO " +

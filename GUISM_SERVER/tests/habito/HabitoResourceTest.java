@@ -14,15 +14,4 @@ public class HabitoResourceTest {
     @Inject
     HabitoResource habitoResource;
 
-    @Test
-    public void testaFindAll(){
-        val entityHabito = (Set<Habito>) habitoResource.findAll().entity();
-        System.out.println(entityHabito);
-    }
-
-    @Test
-    public void testaFindByFichaId(){
-        val entityHabito = (Set<Habito>) habitoResource.findByIdFicha(1L).entity();
-        System.out.println(entityHabito);
-    }
 }

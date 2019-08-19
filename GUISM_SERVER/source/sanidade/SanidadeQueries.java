@@ -9,6 +9,6 @@ import java.util.Set;
 public interface SanidadeQueries {
 
     @SqlQuery("SELECT * FROM SANIDADE")
-    Set<Sanidade> findAll();
+    Set<Sanidade> findByObject();
 
 }

@@ -11,8 +11,4 @@ public class CaminhoResourceTest {
     @Inject
     CaminhoResource resource;
 
-    @Test
-    public void findByIdFicha(){
-
-    }
 }

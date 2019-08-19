@@ -1,5 +1,6 @@
 package item;
 
+import inventario.Inventario;
 import kikaha.urouting.api.*;
 
 import javax.inject.Inject;
@@ -15,12 +16,11 @@ public class ItemResource {
     @Inject
     ItemQueries queries;
 
-    @GET
-    @Path("sistema")
-    public Response findAll(){
-        Set<Item> itens = queries.findAll();
-        if (itens.isEmpty())
-            return DefaultResponse.notFound().entity("Nenhum item encontrado!");
-        return DefaultResponse.ok(itens);
+    public <T> Set<Item> findByObject(T object){
+        return queries.findByObject((Inventario) object);
+    }
+
+    public Set<Item> findByObject(){
+        return queries.findByObject();
     }
 }

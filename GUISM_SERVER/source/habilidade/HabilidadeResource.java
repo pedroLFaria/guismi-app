@@ -35,63 +35,6 @@ public class HabilidadeResource {
     @Inject
     SituacaoResource situacaoResource;
 
-    @GET
-    @Path("sistema")
-    public  Response findAll(){
-        Set<Habilidade> habilidades = queries.findAll();
-        if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preenche(habilidades));
-    }
-
-    @GET
-    @Path("{id}")
-    public Response findById(@PathParam("id") Long id){
-        Habilidade habilidade = queries.findById(id);
-        if(habilidade == null)
-           return DefaultResponse.notFound().entity("Nenhuma habilidade encontrada!");
-        habilidade.setAcoes(acaoResource.findByObject(habilidade));
-        habilidade.setSituacoes(situacaoResource.findByObject(habilidade));
-        habilidade.setGasto(gastoResource.findByObject(habilidade));
-        return DefaultResponse.ok(habilidade);
-    }
-
-    @GET
-    @Path("raca/{id}")
-    public Response findByIdRacas(@PathParam("id")Long idRaca){
-        Set<Habilidade> habilidades = queries.findByIdRacas(idRaca);
-        if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preenche(habilidades));
-    }
-
-    @GET
-    @Path("caminho/{id}")
-    public Response findByIdCaminho(@PathParam("id")Long idCaminho){
-        Set<Habilidade> habilidades = queries.findByIdCaminho(idCaminho);
-        if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preenche(habilidades));
-    }
-
-    @GET
-    @Path("descendencia/{id}")
-    public Response findByIdDescendencia(@PathParam("id")Long idDescendencia){
-        Set<Habilidade> habilidades = queries.findByIdDescendencia(idDescendencia);
-        if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preenche(habilidades));
-    }
-
-    @GET
-    @Path("ficha/{id}")
-    public Response findByIdFicha(@PathParam("id")Long id){
-        Set<Habilidade> habilidades = queries.findByIdFicha(id);
-        if(habilidades.isEmpty())
-            return DefaultResponse.notFound().entity(habilidades);
-        return DefaultResponse.ok(preenche(habilidades));
-    }
-
     public <T> Set<Habilidade> findByObject(T object){
         Set<Habilidade> habilidades = new LinkedHashSet<>();
         switch (object.getClass().getName()){
