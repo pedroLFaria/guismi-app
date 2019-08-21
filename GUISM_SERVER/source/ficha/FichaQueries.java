@@ -16,11 +16,17 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import patrono.Patrono;
 import situacao.Situacao;
 
+import java.util.Map;
+import java.util.Set;
+
 @JDBI
 public interface FichaQueries {
 
     @SqlQuery("SELECT * FROM ficha WHERE IDFICHA = :id")
     Ficha findById(@Bind("id") Long id);
+
+    @SqlQuery("SELECT IDFICHA, NOMEPERSONAGEM, NIVELPERSONAGEM, IMG FROM guism.ficha where IDJOGADOR = :idJogador")
+    Set<Ficha> findByIdJogador(@Bind("idJogador") Long id);
 
     @GetGeneratedKeys
     @SqlUpdate("INSERT INTO FICHA(IDRACA,IDCIDADE,IDJOGADOR,NOMEPERSONAGEM,IMG,IDADE,AFILIACAO,CLA,SORTEDIA,DISTFORCA," +

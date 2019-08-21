@@ -24,6 +24,7 @@ server:
         useSSL: "true"
         verifyServerCertificate: "true"
         requireSSL: "false"
+        log-query-execution-longer-than-ms: -1
 
   auth:
 

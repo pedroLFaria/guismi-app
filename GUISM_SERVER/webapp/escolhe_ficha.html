@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/teste.jsx" type="text/babel"></script>
     <meta charset="UTF-8">
     <title>escolheFicha</title>
     <link rel="stylesheet" type="text/css" href="css/estilo-geral.css" >
     <link rel="stylesheet" type="text/css" href="css/escolhe-ficha.css" >
     <link rel="stylesheet" href="css/escolhe-ficha.css">
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
-<body><form action="/ficha-personagem.html" method="post">
+<body onload="buscaFichas()">
+
+<form action="/ficha-personagem.html" method="post">
 <button class='ficha-sel' name='idFicha' value="2">
     <div class="corpo">
 
@@ -15,10 +21,9 @@
         <label>Nome: </label><h3>"PERSONAGEM HIPOTETICO 1"</h3>
     </label>
     <img src="https://i.imgur.com/frA5HIW.jpg"/>
-
-    </div>
 </button>
 </form><br>
+<div id="root"></div>
  <script>
 
  </script>

@@ -1,5 +1,6 @@
 package ficha;
 
+import auth.Session;
 import caminho.Caminho;
 import caminho.CaminhoResource;
 import descendencia.Descendencia;
@@ -14,6 +15,7 @@ import inventario.Inventario;
 import inventario.InventarioQueries;
 import inventario.InventarioResource;
 import kikaha.urouting.api.*;
+import lombok.val;
 import patrono.Patrono;
 import patrono.PatronoResource;
 import raca.Raca;
@@ -62,13 +64,23 @@ public class FichaResource {
     SituacaoResource situacaoResource;
 
     @GET
-    @Path("{id}")
+    @Path("id/{id}")
     public Response findById(@PathParam("id") Long id){
         Ficha ficha = queries.findById(id);
         if(ficha == null){
             return DefaultResponse.notFound().entity("Ficha não encontrada!");
         }
         return DefaultResponse.ok(preenche(ficha));
+    }
+
+    @GET
+    @Path("jogador")
+    public Response findByIdJogador(@Context Session session){
+        val ficha = queries.findByIdJogador(session.getId());
+        if(ficha == null){
+            return DefaultResponse.notFound().entity(ficha);
+        }
+        return DefaultResponse.ok((ficha));
     }
 
     private Ficha preenche(Ficha ficha){
