@@ -78,6 +78,11 @@
 			<artifactId>roboto-fontface</artifactId>
 			<version>0.7.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>react</artifactId>
+			<version>16.5.2</version>
+		</dependency>
 	</dependencies>
 
 </project>

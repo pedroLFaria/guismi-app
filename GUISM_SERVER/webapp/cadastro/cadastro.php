@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<?php include ('config.php'); ?>
 		<title>Cadastro</title>
-		<script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript" src="src/functions.js"></script>
 	</head>
 	<body>
 
