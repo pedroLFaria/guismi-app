@@ -1,7 +1,7 @@
 class Ficha extends React.Component{
     constructor(props) {
         super(props)
-        this.state = {ficha:[], sistema:JSON.parse(sessionStorage.getItem("sistema"))}
+        this.state = {ficha:{raca:{}, caminhos:[{}], descendencias:[{}], habilidades:[{}], habitos:[{}], idiomas:[{}], inventarios:[{}], patronos:[{}], situacoes:[{}]}, sistema:JSON.parse(sessionStorage.getItem("sistema"))}
     }
     componentDidMount(){
         this.timerID = setInterval(
@@ -23,6 +23,7 @@ class Ficha extends React.Component{
         return (
             <div>
                 <h1>nome: {this.state.ficha.nomePersonagem}</h1>
+                <h1>raca: {this.state.ficha.raca.nomeRaca}</h1>
             </div>)
     }
 }

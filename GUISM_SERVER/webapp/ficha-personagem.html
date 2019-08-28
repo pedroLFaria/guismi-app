@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+            .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+        .main {
+            margin-left: 160px; /* Same as the width of the sidenav */
+            font-size: 28px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+        fieldset.scheduler-border {
+            border: 1px groove #ddd;
+            padding: 0 1.4em 1.4em 1.4em;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+        legend.scheduler-border {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: left;
+            width: auto;
+            padding: 0 10px;
+            border-bottom: none;
+        }
+        input[type="number"] {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+        input[type="number"] {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+        .number-input {
+            border: 3px solid #ddd;
+            display: inline-flex;
+        }
+            .number-input,
+            .number-input * {
+                box-sizing: border-box;
+            }
+                .number-input button {
+                    outline: none;
+                    -webkit-appearance: none;
+                    background-color: transparent;
+                    border: none;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    margin: 0;
+                    position: relative;
+                }
+                    .number-input button:before,
+                    .number-input button:after {
+                        display: inline-block;
+                        position: absolute;
+                        content: '';
+                        width: 1rem;
+                        height: 2px;
+                        background-color: #212121;
+                        transform: translate(-50%, -50%);
+                    }
+                    .number-input button.plus:after {
+                        transform: translate(-50%, -50%) rotate(90deg);
+                    }
+                .number-input input[type=number] {
+                    font-family: sans-serif;
+                    max-width: 5rem;
+                    padding: .5rem;
+                    border: solid #ddd;
+                    border-width: 0 2px;
+                    font-size: 2rem;
+                    height: 3rem;
+                    font-weight: bold;
+                    text-align: center;
+                }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="src/ficha-personagem.js"></script>
     <script src="src/Ficha.jsx" type="text/babel" ></script>
     <title>Ficha do personagem</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
