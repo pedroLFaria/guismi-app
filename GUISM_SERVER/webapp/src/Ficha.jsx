@@ -22,6 +22,19 @@ class Habitos extends React.Component{
     }
 }
 
+class Raca extends React.Component{
+    handleChange(event) {
+        this.setProps({value: event.target.value});
+    }
+    render(){
+        return(
+            <select value={this.props.ficha.raca.idRaca} onChange={this.handleChange}>
+                {this.props.sistema.racas.map((raca) => <option value={raca.idRaca}>{raca.nomeRaca}</option>)}
+            </select>
+        )
+    }
+}
+
 class Ficha extends React.Component{
     constructor(props) {
         super(props)
@@ -39,6 +52,8 @@ class Ficha extends React.Component{
     }
 
     render() {
+        const ficha = this.state.ficha
+        const sistema = this.state.sistema
         const habitosConst = this.state.ficha.habitos
         return (
             <fieldset className="scheduler-border form-group row">
@@ -50,7 +65,12 @@ class Ficha extends React.Component{
                             <label for="nome_pers_input" onDblClick="modalTextBox(this)" id="nome_pers">{this.state.ficha.nomePersonagem}</label>
                             <input type="text" className="c form-control"  placeholder="" id="nome_pers_input"/>
                         </div>
-                        <h1>raca: {this.state.ficha.raca.nomeRaca}</h1>
+                        <div class="col-md-2">
+                             <span>Raça </span>
+                             <Raca
+                             ficha = {ficha}
+                             sistema = {sistema} />
+                         </div>
                     </div>
                     <Habitos
                     habitos = {habitosConst}
