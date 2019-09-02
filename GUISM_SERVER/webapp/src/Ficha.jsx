@@ -23,13 +23,24 @@ class Habitos extends React.Component{
 }
 
 class Raca extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+                    ficha : this.props.ficha,
+                    racas : this.props.sistema.racas,
+                    value : this.props.ficha.idRaca
+                    }
+    this.handleChange = this.handleChange.bind(this);
+    }
     handleChange(event) {
-        this.setProps({value: event.target.value});
+        this.setState({value: event.target.value});
+        this.state.ficha.idRaca = Number(this.state.value)
+        console.log(this.state.ficha)
     }
     render(){
         return(
-            <select value={this.props.ficha.raca.idRaca} onChange={this.handleChange}>
-                {this.props.sistema.racas.map((raca) => <option value={raca.idRaca}>{raca.nomeRaca}</option>)}
+            <select value={this.state.value } onChange={this.handleChange}>
+                {this.state.racas.map((raca) => <option value={raca.idRaca}>{raca.nomeRaca}</option>)}
             </select>
         )
     }
