@@ -2,7 +2,6 @@ package acao;
 
 import habilidade.Habilidade;
 import kikaha.jdbi.JDBI;
-import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;

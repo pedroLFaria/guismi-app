@@ -2,11 +2,9 @@ package acao;
 
 import habilidade.Habilidade;
 import kikaha.urouting.api.*;
-import lombok.val;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Path("api/acao/")

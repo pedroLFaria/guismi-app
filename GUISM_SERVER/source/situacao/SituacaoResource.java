@@ -3,7 +3,6 @@ package situacao;
 import ficha.Ficha;
 import habilidade.Habilidade;
 import kikaha.urouting.api.*;
-import lombok.val;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

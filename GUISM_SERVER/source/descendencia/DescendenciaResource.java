@@ -1,18 +1,18 @@
 package descendencia;
 
 import ficha.Ficha;
-import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
 import habito.HabitoResource;
-import kikaha.urouting.api.*;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 import raca.Raca;
 import sanidade.SanidadeResource;
 import situacao.SituacaoResource;
-import sun.security.krb5.internal.crypto.Des;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Path("descendencia/")

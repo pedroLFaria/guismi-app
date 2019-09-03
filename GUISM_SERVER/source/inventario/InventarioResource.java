@@ -2,10 +2,7 @@ package inventario;
 
 import ficha.Ficha;
 import item.ItemResource;
-import kikaha.urouting.api.DefaultResponse;
 import kikaha.urouting.api.Path;
-import kikaha.urouting.api.PathParam;
-import kikaha.urouting.api.Response;
 import lombok.val;
 
 import javax.inject.Inject;

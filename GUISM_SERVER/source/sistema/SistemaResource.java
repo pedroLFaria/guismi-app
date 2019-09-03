@@ -1,27 +1,18 @@
 package sistema;
 
-import caminho.Caminho;
 import caminho.CaminhoResource;
-import cidade.Cidade;
 import cidade.CidadeResource;
-import descendencia.Descendencia;
 import descendencia.DescendenciaResource;
 import especializacao.EspecializacaoResource;
-import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
-import habito.Habito;
 import habito.HabitoResource;
-import idioma.Idioma;
 import idioma.IdiomaResource;
 import kikaha.urouting.api.*;
-import patrono.Patrono;
 import patrono.PatronoResource;
-import raca.Raca;
 import raca.RacaResource;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.Set;
 
 @Singleton
 @Path("api/sistema")

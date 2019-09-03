@@ -1,7 +1,7 @@
 class Habitos extends React.Component{
     render(){
-        return (<table class="table">
-                    <thead class="thead-dark">
+        return (<table className="table">
+                    <thead className="thead-dark">
                         <tr>
                             <th>HABITOS</th>
                             <th>Quantidade</th>
@@ -29,12 +29,12 @@ class Raca extends React.Component{
                     ficha : this.props.ficha,
                     racas : this.props.sistema.racas,
                     value : this.props.ficha.idRaca
-                    }
+                    };
     this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
-        this.state.ficha.idRaca = Number(this.state.value)
+        this.state.ficha.idRaca = Number(this.state.value);
         console.log(this.state.ficha)
     }
     render(){
@@ -76,7 +76,7 @@ class Ficha extends React.Component{
                             <label for="nome_pers_input" onDblClick="modalTextBox(this)" id="nome_pers">{this.state.ficha.nomePersonagem}</label>
                             <input type="text" className="c form-control"  placeholder="" id="nome_pers_input"/>
                         </div>
-                        <div class="col-md-2">
+                        <div className="col-md-2">
                              <span>Raça </span>
                              <Raca
                              ficha = {ficha}

@@ -12,20 +12,17 @@ import habito.HabitoResource;
 import idioma.Idioma;
 import idioma.IdiomaResource;
 import inventario.Inventario;
-import inventario.InventarioQueries;
 import inventario.InventarioResource;
 import kikaha.urouting.api.*;
 import lombok.val;
 import patrono.Patrono;
 import patrono.PatronoResource;
-import raca.Raca;
 import raca.RacaResource;
 import situacao.Situacao;
 import situacao.SituacaoResource;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.Set;
 
 @Path("api/ficha/")
 @Singleton

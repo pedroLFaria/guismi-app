@@ -2,19 +2,16 @@ package habito;
 
 import caminho.Caminho;
 import descendencia.Descendencia;
-import especializacao.Especializacao;
-import especializacao.EspecializacaoQueries;
 import especializacao.EspecializacaoResource;
 import ficha.Ficha;
-import kikaha.urouting.api.*;
-import lombok.val;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 import raca.Raca;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Path("api/habito/")

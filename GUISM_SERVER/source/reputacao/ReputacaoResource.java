@@ -1,6 +1,9 @@
 package reputacao;
 
-import kikaha.urouting.api.*;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
