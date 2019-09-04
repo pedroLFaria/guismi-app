@@ -94,7 +94,6 @@ public class FichaResource {
     }
 
     @PUT
-    @Path("update/{id}")
     public Response update(Ficha ficha) {
         queries.update(ficha);
         queries.cleanFichaJunctionTables(ficha);
@@ -103,9 +102,9 @@ public class FichaResource {
     }
 
     @POST
-    @Path("insert/{id}")
     public Response insert(Ficha ficha){
-        queries.insert(ficha);
+        Long id = queries.insert(ficha);
+        ficha.setIdFicha(id);
         insertFichaJunctionTables(ficha);
         return DefaultResponse.created();
     }

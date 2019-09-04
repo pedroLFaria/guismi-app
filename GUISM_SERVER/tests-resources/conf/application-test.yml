@@ -2,6 +2,8 @@ server:
 
   static: { enabled: true, webjar-enabled: true }
 
+  Access-Control-Allow-Credentials: true
+
   urouting:
     default-content-type: "application/json"
 
@@ -27,7 +29,6 @@ server:
         log-query-execution-longer-than-ms: -1
 
   auth:
-
     session-store: kikaha.core.modules.security.InMemorySessionStore
 
     endpoints:
