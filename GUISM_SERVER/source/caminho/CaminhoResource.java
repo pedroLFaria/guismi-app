@@ -1,19 +1,16 @@
 package caminho;
 
-import especializacao.Especializacao;
 import especializacao.EspecializacaoResource;
 import ficha.Ficha;
-import habilidade.Habilidade;
 import habilidade.HabilidadeResource;
-import habito.Habito;
 import habito.HabitoResource;
-import kikaha.urouting.api.*;
-import lombok.val;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.lang.invoke.SwitchPoint;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Path("caminho/")

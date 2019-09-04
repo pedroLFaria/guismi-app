@@ -4,7 +4,6 @@ import habilidade.Habilidade;
 import habito.Habito;
 import kikaha.core.test.KikahaRunner;
 import lombok.val;
-import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,8 +11,6 @@ import org.junit.runner.RunWith;
 import javax.inject.Inject;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @RunWith(KikahaRunner.class)
 public class FichaResourceTest {

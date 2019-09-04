@@ -1,7 +1,10 @@
 package idioma;
 
 import ficha.Ficha;
-import kikaha.urouting.api.*;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 import raca.Raca;
 
 import javax.inject.Inject;

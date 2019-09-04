@@ -7,7 +7,6 @@ import habito.Habito;
 import idioma.Idioma;
 import inventario.Inventario;
 import kikaha.jdbi.JDBI;
-import lombok.val;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
@@ -16,7 +15,6 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import patrono.Patrono;
 import situacao.Situacao;
 
-import java.util.Map;
 import java.util.Set;
 
 @JDBI

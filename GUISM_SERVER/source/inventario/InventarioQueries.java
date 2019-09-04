@@ -1,10 +1,7 @@
 package inventario;
 
 import ficha.Ficha;
-import item.Item;
 import kikaha.jdbi.JDBI;
-import lombok.val;
-import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 

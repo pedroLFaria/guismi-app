@@ -6,7 +6,10 @@ import ficha.Ficha;
 import habilidade.HabilidadeResource;
 import habito.HabitoResource;
 import idioma.IdiomaResource;
-import kikaha.urouting.api.*;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 import patrono.PatronoResource;
 
 import javax.inject.Inject;

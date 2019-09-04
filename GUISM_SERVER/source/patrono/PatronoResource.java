@@ -1,8 +1,10 @@
 package patrono;
 
 import ficha.Ficha;
-import kikaha.urouting.api.*;
-import org.jdbi.v3.sqlobject.customizer.Bind;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 import raca.Raca;
 
 import javax.inject.Inject;

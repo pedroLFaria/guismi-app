@@ -1,16 +1,15 @@
 package habilidade;
 
-import acao.Acao;
 import acao.AcaoResource;
 import caminho.Caminho;
 import descendencia.Descendencia;
 import ficha.Ficha;
-import gasto.Gasto;
 import gasto.GastoResource;
-import kikaha.urouting.api.*;
-import lombok.val;
+import kikaha.urouting.api.Consumes;
+import kikaha.urouting.api.Mimes;
+import kikaha.urouting.api.Path;
+import kikaha.urouting.api.Produces;
 import raca.Raca;
-import situacao.Situacao;
 import situacao.SituacaoResource;
 
 import javax.inject.Inject;
