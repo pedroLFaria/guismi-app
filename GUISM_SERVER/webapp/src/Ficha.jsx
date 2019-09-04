@@ -93,7 +93,7 @@ class Ficha extends React.Component{
 }
 
 fetch("api/ficha/id/1", { method: "GET", Header: new Headers })
-        .then(status)
-        .then(response => response.json())
-        .then(data => {sessionStorage.setItem("ficha", JSON.stringify(data))})
-        .then(ReactDOM.render(<Ficha />, document.getElementById('telaPersonagem')))
+.then(status)
+.then(response => response.json())
+.then(data => {sessionStorage.setItem("ficha", JSON.stringify(data))})
+.then(ReactDOM.render(<Ficha />, document.getElementById('telaPersonagem')))

@@ -27,7 +27,6 @@ server:
         log-query-execution-longer-than-ms: -1
 
   auth:
-
     session-store: kikaha.core.modules.security.InMemorySessionStore
 
     endpoints:
@@ -39,12 +38,6 @@ server:
     db-auth:
       select-user-password: "SELECT SENHA as password  FROM jogador where LOGIN = ?"
       select-user-roles: "SELECT role FROM jogador WHERE LOGIN = ?"
-    rules:
-      - { pattern: "/api/*", auth-mechanisms: [ "json" ], identity-managers: [ "db-auth" ] }
-      - { pattern: "/*", auth-mechanisms: [ "form" ], identity-managers: [ "db-auth" ] }
-
-    default-excluded-patterns: [ "/assets/*" ]
-
 
   http:
     enabled: true
