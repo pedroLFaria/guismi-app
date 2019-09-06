@@ -38,9 +38,13 @@ server:
       login-page: "/index.html"
 
     db-auth:
-      select-user-password: "SELECT SENHA as password  FROM jogador where LOGIN = ?"
-      select-user-roles: "SELECT role FROM jogador WHERE LOGIN = ?"
+      select-user-password: "select senha as password  from jogador where login = ?"
+      select-user-roles: "select role from jogador where login = ?"
 
+    rules:
+      - { pattern: "/api/*", auth-mechanisms: [ "json" ], identity-managers: [ "db-auth" ] }
+      - { pattern: "/*", auth-mechanisms: [ "form" ], identity-managers: [ "db-auth" ] }
+    default-excluded-patterns: [ "/assets/*" ]
   http:
     enabled: true
     host: "0.0.0.0"

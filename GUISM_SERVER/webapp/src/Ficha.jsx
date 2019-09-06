@@ -1,12 +1,13 @@
 class Habitos extends React.Component {
     render() {
+        console.log("render Habito");
         return (<table className="table">
             <thead className="thead-dark">
             <tr>
                 <th>HABITOS</th>
                 <th>Quantidade</th>
-                <th>Dividido Por 5</th>
-                <th>Dividido Por 10</th>
+                <th>Mod5</th>
+                <th>Mod10</th>
             </tr>
             </thead>
             <tbody>
@@ -22,15 +23,32 @@ class Habitos extends React.Component {
     }
 }
 
-class Caminho extends React.Component{
-    constructor(props){
+class Caminho extends React.Component {
+    constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             ficha: this.props.ficha,
-            caminhos: this.props.caminhos,
-            value: this.props.ficha.caminhos
-        }
-        //ficha.caminhos.forEach(v=> k+= v.idCaminho)
+            caminhos: this.props.sistema.caminhos,
+        };
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event){
+
+    }
+
+    render() {
+        console.log("render caminho " + this.state.ficha.caminhos[1]);
+        return (
+            this.props.caminhos.map(caminho =>
+                <div>
+                    <select value={caminho.idCaminho} className={"form-control"} onChange={this.handleChange}>
+                        {this.state.caminhos.map(caminho => <option
+                            value={caminho.idCaminho}>{caminho.nomeCaminho}</option>)}
+                    </select>< br/>
+                </div>
+            )
+        )
     }
 }
 
@@ -94,6 +112,7 @@ class Ficha extends React.Component {
         const ficha = this.state.ficha
         const sistema = this.state.sistema
         const habitosConst = this.state.ficha.habitos
+        const caminhosConst = this.state.ficha.caminhos
         return (
             <fieldset className="scheduler-border form-group row">
                 <legend className="scheduler-border">Personagem</legend>
@@ -101,9 +120,8 @@ class Ficha extends React.Component {
                     <div className="row col-md-12">
                         <div className="col-md-2 inline">
                             <span>Nome</span>
-                            <label for="nome_pers_input" onDblClick="modalTextBox(this)"
-                                   id="nome_pers">{this.state.ficha.nomePersonagem}</label>
-                            <input type="text" className="c form-control" placeholder="" id="nome_pers_input"/>
+                            <input type="text" value={this.state.ficha.nomePersonagem} className="c form-control"
+                                   placeholder="" id="nome_pers_input"/>
                         </div>
                         <div className="col-md-2">
                             <span>Raça</span>
@@ -113,7 +131,11 @@ class Ficha extends React.Component {
                         </div>
                         <div className="col-md-2">
                             <span>Caminho</span>
-
+                            <Caminho
+                                ficha={ficha}
+                                sistema={sistema}
+                                caminhos = {caminhosConst}
+                            />
                         </div>
                     </div>
                     <Habitos
