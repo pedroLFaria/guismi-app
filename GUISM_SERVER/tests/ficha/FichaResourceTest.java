@@ -17,7 +17,6 @@ public class FichaResourceTest {
 
     @Inject FichaQueries fichaQueries;
     @Inject FichaResource fichaResource;
-    private Object Collector;
 
     @Test
     public void getFichaByID(){
@@ -30,12 +29,12 @@ public class FichaResourceTest {
     @Test
     public void updateFicha(){
         val ficha = (Ficha) fichaResource.findById(1L).entity();
-        ficha.setNomePersonagem("JOJO");
+        ficha.setNomePersonagem("Dio");
         fichaResource.update(retornaFichaModificada(ficha));
     }
 
     @Test
-    @Ignore
+    //@Ignore
     public void insertFicha(){
         val ficha = fichaQueries.findById(1L);
         ficha.setNomePersonagem("Novo jojo");

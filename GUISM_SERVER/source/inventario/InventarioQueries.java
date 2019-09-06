@@ -10,11 +10,11 @@ import java.util.Set;
 @JDBI
 public interface InventarioQueries {
 
-    @SqlQuery("SELECT INVENTARIO.* FROM FICHA " +
-            "right JOIN FICHA_HAS_INVENTARIO ON FICHA.IDFICHA = FICHA_HAS_INVENTARIO.IDFICHA " +
-            "right JOIN INVENTARIO ON FICHA_HAS_INVENTARIO.IDINVENTARIO = INVENTARIO.IDINVENTARIO WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select inventario.* from ficha " +
+            "right join ficha_has_inventario on ficha.idficha = ficha_has_inventario.idficha " +
+            "right join inventario on ficha_has_inventario.idinventario = inventario.idinventario where ficha.idficha = :idFicha")
     Set<Inventario> findByObject(@BindBean Ficha ficha);
 
-    @SqlQuery("INSERT INTO INVENTARIO(NOMEINVENTARIO) VALUES(:nomeInventario")
+    @SqlQuery("insert into inventario(nomeinventario) values(:nomeInventario")
     Long insert(@BindBean Inventario inventario);
 }

@@ -12,24 +12,24 @@ import java.util.Set;
 @JDBI
 public interface EspecializacaoQueries {
 
-    @SqlQuery("SELECT ESPECIALIZACAO.* FROM FICHA " +
-            "RIGHT JOIN FICHA_HAS_ESPECIALIZACAO ON FICHA_HAS_ESPECIALIZACAO.IDFICHA = FICHA.IDFICHA " +
-            "RIGHT JOIN ESPECIALIZACAO ON FICHA_HAS_ESPECIALIZACAO.IDESPECIALIZACAO = ESPECIALIZACAO.IDESPECIALIZACAO " +
-            "WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select especializacao.* from ficha " +
+            "right join ficha_has_especializacao on ficha_has_especializacao.idficha = ficha.idficha " +
+            "right join especializacao on ficha_has_especializacao.idespecializacao = especializacao.idespecializacao " +
+            "where ficha.idficha = :idFicha")
     Set<Especializacao> findByObject(@BindBean Ficha ficha);
 
-    @SqlQuery("SELECT ESPECIALIZACAO.* FROM RACA " +
-            "RIGHT JOIN RACA_HAS_ESPECIALIZACAO ON RACA_HAS_ESPECIALIZACAO.IDRACA = RACA.IDRACA " +
-            "RIGHT JOIN ESPECIALIZACAO ON ESPECIALIZACAO.IDESPECIALIZACAO = RACA_HAS_ESPECIALIZACAO.IDESPECIALIZACAO " +
-            "WHERE RACA.IDRACA = :idRaca")
+    @SqlQuery("select especializacao.* from raca " +
+            "right join raca_has_especializacao on raca_has_especializacao.idraca = raca.idraca " +
+            "right join especializacao on especializacao.idespecializacao = raca_has_especializacao.idespecializacao " +
+            "where raca.idraca = :idRaca")
     Set<Especializacao> findByObject(@BindBean Raca raca);
 
-    @SqlQuery("SELECT ESPECIALIZACAO.* FROM HABITO " +
-            "RIGHT JOIN HABITO_HAS_ESPECIALIZACAO ON HABITO_HAS_ESPECIALIZACAO.IDHABITO = HABITO.IDHABITO " +
-            "RIGHT JOIN ESPECIALIZACAO ON ESPECIALIZACAO.IDESPECIALIZACAO = HABITO_HAS_ESPECIALIZACAO.IDESPECIALIZACAO " +
-            "WHERE HABITO.IDHABITO = :idHabito")
+    @SqlQuery("select especializacao.* from habito " +
+            "right join habito_has_especializacao on habito_has_especializacao.idhabito = habito.idhabito " +
+            "right join especializacao on especializacao.idespecializacao = habito_has_especializacao.idespecializacao " +
+            "where habito.idhabito = :idHabito")
     Set<Especializacao> findByObject(@BindBean Habito habito);
 
-    @SqlQuery("SELECT * FROM ESPECIALIZACAO")
+    @SqlQuery("select * from especializacao")
     Set<Especializacao> findByObject();
 }

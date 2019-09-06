@@ -1,17 +1,47 @@
 server:
-  
-  static:
-    enabled: true
+
+  static: { enabled: true, webjar-enabled: true }
+
+  Access-Control-Allow-Credentials: true
 
   urouting:
     default-content-type: "application/json"
 
+  websocket:
+    default-serializer: "application/json"
+    default-unserializer: "application/json"
+
+  smart-routes:
+    auth:
+      login-form-enabled: false
+      logout-url-enabled: true
+      logout-http-method: "POST"
+
+  db:
+    datasources:
+      default:
+        jdbc-url: "jdbc:mysql://guismi.ctebgduzcfr5.sa-east-1.rds.amazonaws.com/guism?serverTimezone=UTC"
+        username: "guismiADM"
+        password: "karen#GOD"
+        useSSL: "true"
+        verifyServerCertificate: "true"
+        requireSSL: "false"
+        log-query-execution-longer-than-ms: -1
+
   auth:
-    # security-context-factory: kikaha.hazelcast.HazelcastSecurityContextFactory
-    # security-context-factory: kikaha.core.modules.security.RESTAPISecurityContextFactory
+    session-store: kikaha.core.modules.security.InMemorySessionStore
 
-    # Configuration for fixed-user-and-pass Identity Manager
-    fixed-auth:
-      username: "admin"
-      password: "admin"
+    endpoints:
+      permission-denied-page: "/forbidden.html"
+      callback-url: "/api/auth/callback"
+      logout-url: "/api/auth/logout"
+      login-page: "/index.html"
 
+    db-auth:
+      select-user-password: "SELECT SENHA as password  FROM jogador where LOGIN = ?"
+      select-user-roles: "SELECT role FROM jogador WHERE LOGIN = ?"
+
+  http:
+    enabled: true
+    host: "0.0.0.0"
+    port: 9000

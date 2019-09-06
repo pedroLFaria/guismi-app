@@ -13,30 +13,30 @@ import java.util.Set;
 @JDBI
 public interface HabilidadeQueries {
 
-    @SqlQuery("SELECT * FROM HABILIDADE")
+    @SqlQuery("select * from habilidade")
     Set<Habilidade> findByObject();
 
-    @SqlQuery("SELECT HABILIDADE.* FROM RACA " +
-            "RIGHT JOIN RACA_HAS_HABILIDADE ON RACA_HAS_HABILIDADE.IDRACA = RACA.IDRACA " +
-            "RIGHT JOIN HABILIDADE ON HABILIDADE.IDHABILIDADE = RACA_HAS_HABILIDADE.IDHABILIDADE " +
-            "WHERE RACA.IDRACA = :idRaca")
+    @SqlQuery("select habilidade.* from raca " +
+            "right join raca_has_habilidade on raca_has_habilidade.idraca = raca.idraca " +
+            "right join habilidade on habilidade.idhabilidade = raca_has_habilidade.idhabilidade " +
+            "where raca.idraca = :idRaca")
     Set<Habilidade> findByObject(@BindBean Raca raca);
 
-    @SqlQuery("SELECT HABILIDADE.* FROM CAMINHO " +
-            "RIGHT JOIN CAMINHO_HAS_HABILIDADE ON CAMINHO_HAS_HABILIDADE.IDCAMINHO = CAMINHO.IDCAMINHO " +
-            "RIGHT JOIN HABILIDADE ON HABILIDADE.IDHABILIDADE = CAMINHO_HAS_HABILIDADE.IDHABILIDADE " +
-            "WHERE CAMINHO.IDCAMINHO = :idCaminho")
+    @SqlQuery("select habilidade.* from caminho " +
+            "right join caminho_has_habilidade on caminho_has_habilidade.idcaminho = caminho.idcaminho " +
+            "right join habilidade on habilidade.idhabilidade = caminho_has_habilidade.idhabilidade " +
+            "where caminho.idcaminho = :idCaminho")
     Set<Habilidade> findByObject(@BindBean Caminho caminho);
 
-    @SqlQuery("SELECT HABILIDADE.* FROM DESCENDENCIA " +
-            "RIGHT JOIN DESCENDENCIA_HAS_HABILIDADE ON DESCENDENCIA_HAS_HABILIDADE.IDDESCENDENCIA = DESCENDENCIA.IDDESCENDENCIA " +
-            "RIGHT JOIN HABILIDADE ON HABILIDADE.IDHABILIDADE = DESCENDENCIA_HAS_HABILIDADE.IDHABILIDADE " +
-            "WHERE DESCENDENCIA.IDDESCENDENCIA = :idDescendencia")
+    @SqlQuery("select habilidade.* from descendencia " +
+            "right join descendencia_has_habilidade on descendencia_has_habilidade.iddescendencia = descendencia.iddescendencia " +
+            "right join habilidade on habilidade.idhabilidade = descendencia_has_habilidade.idhabilidade " +
+            "where descendencia.iddescendencia = :idDescendencia")
     Set<Habilidade> findByObject(@BindBean Descendencia descendencia);
 
-    @SqlQuery("SELECT HABILIDADE.* FROM FICHA " +
-            "RIGHT JOIN FICHA_HAS_HABILIDADE ON FICHA.IDFICHA = FICHA_HAS_HABILIDADE.IDFICHA " +
-            "RIGHT JOIN HABILIDADE ON ficha_has_habilidade.IDHABILIDADE = HABILIDADE.IDHABILIDADE " +
-            "WHERE FICHA.IDFICHA =:idFicha")
+    @SqlQuery("select habilidade.* from ficha " +
+            "right join ficha_has_habilidade on ficha.idficha = ficha_has_habilidade.idficha " +
+            "right join habilidade on ficha_has_habilidade.idhabilidade = habilidade.idhabilidade " +
+            "where ficha.idficha =:idFicha")
     Set<Habilidade> findByObject(@BindBean Ficha ficha);
 }

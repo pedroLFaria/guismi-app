@@ -14,25 +14,25 @@ import java.util.Set;
 @JDBI
 public interface SituacaoQueries {
 
-    @SqlQuery("SELECT SITUACAO.* FROM HABILIDADE " +
-            "RIGHT JOIN HABILIDADE_HAS_SITUACAO ON HABILIDADE_HAS_SITUACAO.IDHABILIDADE = HABILIDADE.IDHABILIDADE " +
-            "RIGHT JOIN SITUACAO ON HABILIDADE_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO " +
-            "WHERE HABILIDADE.IDHABILIDADE = :idHabilidade")
+    @SqlQuery("select situacao.* from habilidade " +
+            "right join habilidade_has_situacao on habilidade_has_situacao.idhabilidade = habilidade.idhabilidade " +
+            "right join situacao on habilidade_has_situacao.idsituacao = situacao.idsituacao " +
+            "where habilidade.idhabilidade = :idHabilidade")
     Set<Situacao> findByObject(@BindBean Habilidade habilidade);
 
-    @SqlQuery("SELECT SITUACAO.* FROM FICHA " +
-            "RIGHT JOIN FICHA_HAS_SITUACAO ON FICHA.IDFICHA = FICHA_HAS_SITUACAO.IDFICHA " +
-            "RIGHT JOIN SITUACAO ON FICHA_HAS_SITUACAO.IDSITUACAO = SITUACAO.IDSITUACAO " +
-            "WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select situacao.* from ficha " +
+            "right join ficha_has_situacao on ficha.idficha = ficha_has_situacao.idficha " +
+            "right join situacao on ficha_has_situacao.idsituacao = situacao.idsituacao " +
+            "where ficha.idficha = :idFicha")
     Set<Situacao> findByObject(@BindBean Ficha ficha);
 
     @GetGeneratedKeys
-    @SqlUpdate("INSERT INTO situacao (IDSITUACAO, NOMESITUACAO, DESCSITUACAO) VALUES(:idSituacao, :nomeSituacao, :descSituacao)")
+    @SqlUpdate("insert into situacao (idsituacao, nomesituacao, descsituacao) values(:idSituacao, :nomeSituacao, :descSituacao)")
     Long insert(@BindBean Situacao situacao);
 
-    @SqlUpdate("UPDATE situacao SET  NOMESITUACAO = :nomeSituacao, DESCSITUACAO = :descSituacao WHERE IDSITUACAO = :idSituacao")
+    @SqlUpdate("update situacao set  nomesituacao = :nomeSituacao, descsituacao = :descSituacao where idsituacao = :idSituacao")
     Boolean update(@BindBean Situacao situacao);
 
-    @SqlUpdate("DELETE situacao WHERE IDSITUACAO = :idSituacao")
+    @SqlUpdate("delete situacao where idsituacao = :idSituacao")
     Boolean delete(@Bind("idSituacao") Long idSituacao);
 }

@@ -10,11 +10,11 @@ import java.util.Set;
 @JDBI
 public interface RacaQueries {
 
-    @SqlQuery("SELECT RACA.* FROM FICHA " +
-            "RIGHT JOIN RACA ON FICHA.IDRACA = RACA.IDRACA " +
-            "WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select raca.* from ficha " +
+            "right join raca on ficha.idraca = raca.idraca " +
+            "where ficha.idficha = :idFicha")
     Raca findByObject(@BindBean Ficha ficha);
 
-    @SqlQuery("SELECT * FROM RACA")
+    @SqlQuery("select * from raca")
     Set<Raca> findByObject();
 }
