@@ -20,9 +20,9 @@ server:
   db:
     datasources:
       default:
-        jdbc-url: "jdbc:mysql://myguism2.mysql.database.azure.com/guism?serverTimezone=UTC"
-        username: "guismiADM@myguism2"
-        password: "karen#GOD"
+        jdbc-url: "jdbc:mysql://localhost/guism?serverTimezone=UTC"
+        username: "root"
+        password: "admin"
         useSSL: "true"
         verifyServerCertificate: "true"
         requireSSL: "false"
