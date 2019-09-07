@@ -8,6 +8,6 @@ import java.util.Set;
 @JDBI
 public interface CidadeQueries {
 
-    @SqlQuery("SELECT * FROM CIDADE")
+    @SqlQuery("select * from cidade")
     Set<Cidade> findByObject();
 }

@@ -12,18 +12,18 @@ import java.util.Set;
 public interface DescendenciaQueries {
 
 
-    @SqlQuery("SELECT * FROM DESCENDENCIA")
+    @SqlQuery("select * from descendencia")
     Set<Descendencia> findByObject();
 
-    @SqlQuery("SELECT DESCENDENCIA.* FROM FICHA " +
-            "RIGHT JOIN FICHA_HAS_DESCENDENCIA ON FICHA_HAS_DESCENDENCIA.IDFICHA = FICHA.IDFICHA " +
-            "RIGHT JOIN DESCENDENCIA ON FICHA_HAS_DESCENDENCIA.IDDESCENDENCIA = DESCENDENCIA.IDDESCENDENCIA " +
-            "WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select descendencia.* from ficha " +
+            "right join ficha_has_descendencia on ficha_has_descendencia.idficha = ficha.idficha " +
+            "right join descendencia on ficha_has_descendencia.iddescendencia = descendencia.iddescendencia " +
+            "where ficha.idficha = :idFicha")
     Set<Descendencia> findByObject(@BindBean Ficha ficha);
 
-    @SqlQuery("SELECT DESCENDENCIA.* FROM RACA " +
-            "RIGHT JOIN RACA_HAS_DESCENDENCIA ON RACA_HAS_DESCENDENCIA.IDRACA = RACA.IDRACA " +
-            "RIGHT JOIN DESCENDENCIA ON DESCENDENCIA.IDDESCENDENCIA = RACA_HAS_DESCENDENCIA.IDDESCENDENCIA " +
-            "WHERE RACA.IDRACA = :idRaca")
+    @SqlQuery("select descendencia.* from raca " +
+            "right join raca_has_descendencia on raca_has_descendencia.idraca = raca.idraca " +
+            "right join descendencia on descendencia.iddescendencia = raca_has_descendencia.iddescendencia " +
+            "where raca.idraca = :idRaca")
     Set<Descendencia> findByObject(@BindBean Raca raca);
 }

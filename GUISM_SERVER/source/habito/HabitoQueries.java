@@ -13,27 +13,27 @@ import java.util.Set;
 @JDBI
 public interface HabitoQueries {
 
-    @SqlQuery("SELECT * FROM HABITO")
+    @SqlQuery("select * from habito")
     Set<Habito> findByObject();
 
-    @SqlQuery("SELECT HABITO.*,QTDDESCENDENCIAHABITO FROM DESCENDENCIA " +
-            "RIGHT JOIN DESCENDENCIA_HAS_HABITO ON DESCENDENCIA_HAS_HABITO.IDDESCENDENCIA = DESCENDENCIA.IDDESCENDENCIA " +
-            "RIGHT JOIN HABITO ON HABITO.IDHABITO = DESCENDENCIA_HAS_HABITO.IDHABITO WHERE DESCENDENCIA.IDDESCENDENCIA = :idDescendencia")
+    @SqlQuery("select habito.*,qtddescendenciahabito from descendencia " +
+            "right join descendencia_has_habito on descendencia_has_habito.iddescendencia = descendencia.iddescendencia " +
+            "right join habito on habito.idhabito = descendencia_has_habito.idhabito where descendencia.iddescendencia = :idDescendencia")
     Set<Habito> findByObject(@BindBean Descendencia descendencia);
 
-    @SqlQuery("SELECT HABITO.*,CAMINHO_HAS_HABITO.QTDCAMINHOHABITO FROM CAMINHO " +
-            "RIGHT JOIN CAMINHO_HAS_HABITO ON CAMINHO_HAS_HABITO.IDCAMINHO = CAMINHO.IDCAMINHO " +
-            "RIGHT JOIN HABITO ON HABITO.IDHABITO = CAMINHO_HAS_HABITO.IDHABITO WHERE CAMINHO.IDCAMINHO = :idCaminho")
+    @SqlQuery("select habito.*,caminho_has_habito.qtdcaminhohabito from caminho " +
+            "right join caminho_has_habito on caminho_has_habito.idcaminho = caminho.idcaminho " +
+            "right join habito on habito.idhabito = caminho_has_habito.idhabito where caminho.idcaminho = :idCaminho")
     Set<Habito> findByObject(@BindBean Caminho Caminho);
 
 
-    @SqlQuery("SELECT HABITO.*,RACA_HAS_HABITO.QTDRACAHABITO FROM RACA " +
-            "RIGHT JOIN RACA_HAS_HABITO ON RACA_HAS_HABITO.IDRACA = RACA.IDRACA " +
-            "RIGHT JOIN HABITO ON HABITO.IDHABITO = RACA_HAS_HABITO.IDHABITO WHERE RACA.IDRACA = :idRaca")
+    @SqlQuery("select habito.*,raca_has_habito.qtdracahabito from raca " +
+            "right join raca_has_habito on raca_has_habito.idraca = raca.idraca " +
+            "right join habito on habito.idhabito = raca_has_habito.idhabito where raca.idraca = :idRaca")
     Set<Habito> findByObject(@BindBean Raca Raca);
 
-    @SqlQuery("SELECT HABITO.*,FICHA_HAS_HABITO.QTDFICHAHABITO FROM FICHA " +
-            "RIGHT JOIN FICHA_HAS_HABITO ON FICHA_HAS_HABITO.IDFICHA = FICHA.IDFICHA " +
-            "RIGHT JOIN HABITO ON HABITO.IDHABITO = FICHA_HAS_HABITO.IDHABITO WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select habito.*,ficha_has_habito.qtdfichahabito from ficha " +
+            "right join ficha_has_habito on ficha_has_habito.idficha = ficha.idficha " +
+            "right join habito on habito.idhabito = ficha_has_habito.idhabito where ficha.idficha = :idFicha")
     Set<Habito> findByObject(@BindBean Ficha ficha);
 }

@@ -20,50 +20,50 @@ import java.util.Set;
 @JDBI
 public interface FichaQueries {
 
-    @SqlQuery("SELECT * FROM ficha WHERE IDFICHA = :id")
+    @SqlQuery("select * from ficha where idficha = :id")
     Ficha findById(@Bind("id") Long id);
 
-    @SqlQuery("SELECT IDFICHA, NOMEPERSONAGEM, NIVELPERSONAGEM, IMG FROM guism.ficha where IDJOGADOR = :idJogador")
+    @SqlQuery("select idficha, nomepersonagem, nivelpersonagem, img from guism.ficha where idjogador = :idJogador")
     Set<Ficha> findByIdJogador(@Bind("idJogador") Long id);
 
     @GetGeneratedKeys
-    @SqlUpdate("INSERT INTO FICHA(IDRACA,IDCIDADE,IDJOGADOR,NOMEPERSONAGEM,IMG,IDADE,AFILIACAO,CLA,SORTEDIA,DISTFORCA," +
-            "DISTCONSTITUICAO,DISTAGILIDADE,DISTDESTREZA,DISTINTELIGENCIA,DISTSABEDORIA,DISTCARISMA,NIVELPERSONAGEM," +
-            "EXPPERSONAGEM,DESCPERSONAGEM,HISTPERSONAGEM,NOTA,IDSANIDADE) VALUES(:idRaca,:idCidade,:idJogador,:nomePersonagem," +
+    @SqlUpdate("insert into ficha(idraca,idcidade,idjogador,nomepersonagem,img,idade,afiliacao,cla,sortedia,distforca," +
+            "distconstituicao,distagilidade,distdestreza,distinteligencia,distsabedoria,distcarisma,nivelpersonagem," +
+            "exppersonagem,descpersonagem,histpersonagem,nota,idsanidade) values(:idRaca,:idCidade,:idJogador,:nomePersonagem," +
             ":img,:idade,:afiliacao,:cla,:sorteDia,:distForca,:distConstituicao,:distAgilidade,:distDestreza,:distInteligencia," +
             ":distSabedoria,:distCarisma,nivelpersonagem,:expPersonagem,:descPersonagem,:histPersonagem,:nota,:idSanidade)")
     Long insert(@BindBean Ficha ficha);
 
-    @SqlUpdate("UPDATE FICHA SET IDRACA = :idRaca, IDCIDADE = :idCidade, IDJOGADOR = :idJogador, NOMEPERSONAGEM = :nomePersonagem, " +
-            "IMG = :img, IDADE = :idade, AFILIACAO = :afiliacao, CLA = :cla, SORTEDIA = :sorteDia, DISTFORCA = :distForca," +
-            " DISTCONSTITUICAO = :distConstituicao, DISTAGILIDADE = :distAgilidade, DISTDESTREZA = :distDestreza, " +
-            "DISTINTELIGENCIA = :distInteligencia, DISTSABEDORIA = :distSabedoria, DISTCARISMA = :distCarisma, " +
-            "NIVELPERSONAGEM = :nivelPersonagem, EXPPERSONAGEM = :expPersonagem, DESCPERSONAGEM = descPersonagem, " +
-            "HISTPERSONAGEM = :histPersonagem, NOTA = :nota, IDSANIDADE = :idSanidade  WHERE IDFICHA = :idFicha")
+    @SqlUpdate("update ficha set idraca = :idRaca, idcidade = :idCidade, idjogador = :idJogador, nomepersonagem = :nomePersonagem, " +
+            "img = :img, idade = :idade, afiliacao = :afiliacao, cla = :cla, sortedia = :sorteDia, distforca = :distForca," +
+            " distconstituicao = :distConstituicao, distagilidade = :distAgilidade, distdestreza = :distDestreza, " +
+            "distinteligencia = :distInteligencia, distsabedoria = :distSabedoria, distcarisma = :distCarisma, " +
+            "nivelpersonagem = :nivelPersonagem, exppersonagem = :expPersonagem, descpersonagem = descPersonagem, " +
+            "histpersonagem = :histPersonagem, nota = :nota, idsanidade = :idSanidade  where idficha = :idFicha")
     Boolean update(@BindBean Ficha ficha);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_CAMINHO(IDFICHA,IDCAMINHO) VALUES(:idFicha,:idCaminho)")
+    @SqlUpdate("insert into ficha_has_caminho(idficha,idcaminho) values(:idFicha,:idCaminho)")
     Boolean insertFichaHasCaminho(@BindBean Ficha ficha, @BindBean Caminho caminho);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_DESCENDENCIA(IDFICHA,IDDESCENDENCIA) VALUES(:idFicha,:idDescendencia)")
+    @SqlUpdate("insert into ficha_has_descendencia(idficha,iddescendencia) values(:idFicha,:idDescendencia)")
     Boolean insertFichaHasDescendencia(@BindBean Ficha ficha, @BindBean Descendencia descendencia);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_HABILIDADE(IDFICHA,IDHABILIDADE) VALUES(:idFicha,:idHabilidade)")
+    @SqlUpdate("insert into ficha_has_habilidade(idficha,idhabilidade) values(:idFicha,:idHabilidade)")
     Boolean insertFichaHasHabilidade(@BindBean Ficha ficha, @BindBean Habilidade habilidade);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_HABITO(IDFICHA,IDHABITO,QTDFICHAHABITO) VALUES(:idFicha,:idHabito,:qtdFichaHabito)")
+    @SqlUpdate("insert into ficha_has_habito(idficha,idhabito,qtdfichahabito) values(:idFicha,:idHabito,:qtdFichaHabito)")
     Boolean insertFichaHasHabito(@BindBean Ficha ficha, @ BindBean Habito habito);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_IDIOMA(IDFICHA,IDIDIOMA) VALUES(:idFicha,:idIdioma)")
+    @SqlUpdate("insert into ficha_has_idioma(idficha,ididioma) values(:idFicha,:idIdioma)")
     Boolean insertFichaHasIdidoma(@BindBean Ficha ficha, @BindBean Idioma idioma);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_INVENTARIO(IDFICHA,IDINVENTARIO) VALUES(:idFicha, :idInventario)")
+    @SqlUpdate("insert into ficha_has_inventario(idficha,idinventario) values(:idFicha, :idInventario)")
     Boolean insertFichaHasInventario(@BindBean Ficha ficha, @BindBean Inventario inventario);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_PATRONO(IDFICHA,IDPATRONO) VALUES(:idFicha, :idPatrono)")
+    @SqlUpdate("insert into ficha_has_patrono(idficha,idpatrono) values(:idFicha, :idPatrono)")
     Boolean insertFichaHasPatrono(@BindBean Ficha ficha, @BindBean Patrono patrono);
 
-    @SqlUpdate("INSERT INTO FICHA_HAS_SITUACAO(IDFICHA,IDSITUACAO) VALUES(:idFicha, :idSituacao)")
+    @SqlUpdate("insert into ficha_has_situacao(idficha,idsituacao) values(:idFicha, :idSituacao)")
     Boolean insertFichaHasSituacao(@BindBean Ficha ficha, @BindBean Situacao situacao);
 
     default void cleanFichaJunctionTables(Ficha ficha){
@@ -77,28 +77,28 @@ public interface FichaQueries {
         deleteFichaHasSituacao(ficha);
     }
 
-    @SqlUpdate("delete from ficha_has_caminho where IDFICHA = :idFicha")
+    @SqlUpdate("delete from ficha_has_caminho where idficha = :idFicha")
     Boolean deleteFichaHasCaminho(@BindBean Ficha ficha);
 
-    @SqlUpdate("delete from ficha_has_descendencia where IDFICHA = :idFicha")
+    @SqlUpdate("delete from ficha_has_descendencia where idficha = :idFicha")
     Boolean deleteFichaHasDescendencia(@BindBean Ficha ficha);
 
-    @SqlUpdate("delete from  ficha_has_habilidade where IDFICHA = :idFicha")
+    @SqlUpdate("delete from  ficha_has_habilidade where idficha = :idFicha")
     Boolean deleteFichaHasHabilidade(@BindBean Ficha ficha);
 
-    @SqlUpdate("delete from  ficha_has_habito where IDFICHA = :idFicha")
+    @SqlUpdate("delete from  ficha_has_habito where idficha = :idFicha")
     Boolean deleteFichaHasHabito(@BindBean Ficha ficha);
 
-    @SqlUpdate("delete from  ficha_has_idioma where IDFICHA = :idFicha")
+    @SqlUpdate("delete from  ficha_has_idioma where idficha = :idFicha")
     Boolean deleteFichaHasIdidoma(@BindBean Ficha ficha);
 
-    @SqlUpdate("delete from  ficha_has_inventario where IDFICHA = :idFicha")
+    @SqlUpdate("delete from  ficha_has_inventario where idficha = :idFicha")
     Boolean deleteFichaHasInventario(@BindBean Ficha ficha);
 
-    @SqlUpdate("delete from  ficha_has_patrono where IDFICHA = :idFicha")
+    @SqlUpdate("delete from  ficha_has_patrono where idficha = :idFicha")
     Boolean deleteFichaHasPatrono(@BindBean Ficha fichao);
 
-    @SqlUpdate("delete from  ficha_has_situacao where IDFICHA = :idFicha")
+    @SqlUpdate("delete from  ficha_has_situacao where idficha = :idFicha")
     Boolean deleteFichaHasSituacao(@BindBean Ficha ficha);
 
 }

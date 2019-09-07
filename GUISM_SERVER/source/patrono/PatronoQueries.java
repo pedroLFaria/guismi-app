@@ -11,18 +11,18 @@ import java.util.Set;
 @JDBI
 public interface PatronoQueries {
 
-    @SqlQuery("SELECT * FROM PATRONO")
+    @SqlQuery("select * from patrono")
     Set<Patrono> findByObject();
 
-    @SqlQuery("SELECT patrono.* FROM FICHA " +
-            "RIGHT JOIN ficha_has_patrono ON FICHA.IDFICHA = ficha_has_patrono.IDFICHA " +
-            "RIGHT JOIN patrono ON ficha_has_patrono.IDpatrono = patrono.IDpatrono " +
-            "WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select patrono.* from ficha " +
+            "right join ficha_has_patrono on ficha.idficha = ficha_has_patrono.idficha " +
+            "right join patrono on ficha_has_patrono.IDpatrono = patrono.IDpatrono " +
+            "where ficha.idficha = :idFicha")
     Set<Patrono> findByObject(@BindBean Ficha ficha);
 
-    @SqlQuery("SELECT PATRONO.* FROM RACA " +
-            "RIGHT JOIN RACA_HAS_PATRONO ON RACA_HAS_PATRONO.IDRACA = RACA.IDRACA " +
-            "RIGHT JOIN PATRONO ON PATRONO.IDPATRONO = RACA_HAS_PATRONO.IDPATRONO " +
-            "WHERE RACA.IDRACA = :idRaca")
+    @SqlQuery("select patrono.* from raca " +
+            "right join raca_has_patrono on raca_has_patrono.idraca = raca.idraca " +
+            "right join patrono on patrono.idpatrono = raca_has_patrono.idpatrono " +
+            "where raca.idraca = :idRaca")
     Set<Patrono> findByObject(@BindBean Raca raca);
 }

@@ -10,12 +10,12 @@ import java.util.Set;
 @JDBI
 public interface CaminhoQueries {
 
-    @SqlQuery("SELECT caminho.* FROM ficha " +
-            "RIGHT JOIN ficha_has_caminho ON ficha.idficha = ficha_has_caminho.idficha " +
-            "RIGHT JOIN caminho ON ficha_has_caminho.idcaminho = caminho.idcaminho " +
-            "WHERE ficha.idficha = :idFicha")
+    @SqlQuery("select caminho.* from ficha " +
+            "right join ficha_has_caminho on ficha.idficha = ficha_has_caminho.idficha " +
+            "right join caminho on ficha_has_caminho.idcaminho = caminho.idcaminho " +
+            "where ficha.idficha = :idFicha")
     Set<Caminho> findByObject(@BindBean Ficha ficha);
 
-    @SqlQuery("SELECT * FROM CAMINHO")
+    @SqlQuery("select * from caminho")
     Set<Caminho> findByObject();
 }

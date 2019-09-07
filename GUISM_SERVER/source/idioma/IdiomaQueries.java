@@ -11,18 +11,18 @@ import java.util.Set;
 @JDBI
 public interface IdiomaQueries {
 
-    @SqlQuery("SELECT idioma.* FROM FICHA " +
-            "RIGHT JOIN ficha_has_idioma ON FICHA.IDFICHA = ficha_has_idioma.IDFICHA " +
-            "RIGHT JOIN idioma ON ficha_has_idioma.IDIDIOMA = idioma.IDIDIOMA " +
-            "WHERE FICHA.IDFICHA = :idFicha")
+    @SqlQuery("select idioma.* from ficha " +
+            "right join ficha_has_idioma on ficha.idficha = ficha_has_idioma.idficha " +
+            "right join idioma on ficha_has_idioma.ididioma = idioma.ididioma " +
+            "where ficha.idficha = :idFicha")
     Set<Idioma> findByObject(@BindBean Ficha Ficha);
 
-    @SqlQuery("SELECT IDIOMA.* FROM RACA " +
-            "RIGHT JOIN RACA_HAS_IDIOMA ON RACA_HAS_IDIOMA.IDRACA = RACA.IDRACA " +
-            "RIGHT JOIN IDIOMA ON IDIOMA.IDIDIOMA = RACA_HAS_IDIOMA.IDIDIOMA " +
-            "WHERE RACA.IDRACA = :idRaca")
+    @SqlQuery("select idioma.* from raca " +
+            "right join raca_has_idioma on raca_has_idioma.idraca = raca.idraca " +
+            "right join idioma on idioma.ididioma = raca_has_idioma.ididioma " +
+            "where raca.idraca = :idRaca")
     Set<Idioma> findByObject(@BindBean Raca raca);
 
-    @SqlQuery("SELECT * FROM IDIOMA")
+    @SqlQuery("select * from idioma")
     Set<Idioma> findByObject();
 }
