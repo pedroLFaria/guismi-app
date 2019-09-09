@@ -1,6 +1,5 @@
 class Habitos extends React.Component {
     render() {
-        console.log("render Habito");
         return (<table className="table">
             <thead className="thead-dark">
             <tr>
@@ -34,15 +33,14 @@ class Caminho extends React.Component {
     }
 
     handleChange(event){
-
+        console.log(event.target)
     }
 
     render() {
-        console.log("render caminho " + this.state.ficha.caminhos[1]);
         return (
-            this.props.caminhos.map(caminho =>
+            this.state.caminhos.map(caminho =>
                 <div>
-                    <select value={caminho.idCaminho} className={"form-control"} onChange={this.handleChange}>
+                    <select value={caminho.idCaminho} id={caminho.} className={"form-control"} onChange={this.handleChange}>
                         {this.state.caminhos.map(caminho => <option
                             value={caminho.idCaminho}>{caminho.nomeCaminho}</option>)}
                     </select>< br/>
@@ -65,15 +63,18 @@ class Raca extends React.Component {
 
     handleChange(event) {
         this.setState({value: event.target.value});
-        this.state.ficha.idRaca = Number(event.target.value);
-        console.log(this.state.ficha);
+        this.state.ficha.idRaca = Number(event.target.value)
         const xhr = new XMLHttpRequest();
         xhr.addEventListener('load', () => {
-            console.log(xhr.responseText)
         });
         xhr.open('PUT', 'api/ficha/');
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify(this.state.ficha));
+    }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.ficha.idRaca !== this.props.ficha.idRaca)
+            this.setState({value:this.props.ficha.idRaca})
     }
 
     render() {
@@ -99,7 +100,7 @@ class Ficha extends React.Component {
     };
 
     tick() {
-        fetch("api/ficha/id/1", {method: "GET", Header: new Headers})
+        fetch("api/ficha/id/" + new URL(window.location.href).searchParams.get("idFicha"), {method: "GET", Header: new Headers})
             .then(status)
             .then(response => response.json())
             .then(data => {
@@ -147,7 +148,7 @@ class Ficha extends React.Component {
     }
 }
 
-fetch("api/ficha/id/1", {method: "GET", Header: new Headers})
+fetch("api/ficha/id/" + new URL(window.location.href).searchParams.get("idFicha"), {method: "GET", Header: new Headers})
     .then(status)
     .then(response => response.json())
     .then(data => {

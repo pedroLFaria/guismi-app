@@ -18,8 +18,8 @@ class ResumoFicha extends React.Component {
           let resumoFichas = data.map((ficha) =>{
             return(
                 <div>
-                  <form action="ficha-personagem.html" method="post">
-                    <button className='ficha-sel' name='idFicha' value="2">
+                  <form action="ficha-personagem.html" method="GET">
+                    <button className='ficha-sel' name='idFicha' value={ficha.idFicha}>
                       <div className="corpo">
                         <label className='botao-texto' type="submit" id={ficha.idFicha}>
                           <label>Nome:
