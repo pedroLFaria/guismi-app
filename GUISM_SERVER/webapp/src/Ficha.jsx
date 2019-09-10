@@ -23,26 +23,36 @@ class Habitos extends React.Component {
 }
 
 class Caminho extends React.Component {
+    iterator = 0;
     constructor(props) {
         super(props);
         this.state = {
             ficha: this.props.ficha,
-            caminhos: this.props.sistema.caminhos,
+            sistema: this.props.sistema,
         };
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(event){
-        console.log(event.target)
+        this.state.ficha.caminhos[event.target.id].idCaminho = Number(event.target.value);
+        this.setState({ficha:this.state.ficha});
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', () => {
+           console.log("uploaded")
+        });
+        xhr.open('PUT', 'api/ficha/');
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify(this.state.ficha));
     }
 
     render() {
+        this.iterator = 0;
         return (
-            this.state.caminhos.map(caminho =>
+            this.state.ficha.caminhos.map(caminho =>
                 <div>
-                    <select value={caminho.idCaminho} id={caminho.} className={"form-control"} onChange={this.handleChange}>
-                        {this.state.caminhos.map(caminho => <option
-                            value={caminho.idCaminho}>{caminho.nomeCaminho}</option>)}
+                    <select value={caminho.idCaminho} id={this.iterator++} className={"form-control"} onChange={this.handleChange}>
+                        {this.state.sistema.caminhos.map(caminho =>
+                            <option value={caminho.idCaminho}> {caminho.nomeCaminho} </option>)}
                     </select>< br/>
                 </div>
             )
@@ -55,15 +65,15 @@ class Raca extends React.Component {
         super(props);
         this.state = {
             ficha: this.props.ficha,
-            racas: this.props.sistema.racas,
-            value: this.props.ficha.idRaca
+            sistema: this.props.sistema
         };
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
-        this.state.ficha.idRaca = Number(event.target.value)
+        this.state.ficha.idRaca = Number(event.target.value);
+        this.setState({ficha:this.state.ficha});
+        this.render();
         const xhr = new XMLHttpRequest();
         xhr.addEventListener('load', () => {
         });
@@ -79,8 +89,8 @@ class Raca extends React.Component {
 
     render() {
         return (
-            <select value={this.state.value} onChange={this.handleChange} className="form-control">
-                {this.state.racas.map((raca) => <option value={raca.idRaca}>{raca.nomeRaca}</option>)}
+            <select value={this.props.ficha.idRaca} onChange={this.handleChange} className="form-control">
+                {this.state.sistema.racas.map((raca) => <option value={raca.idRaca}>{raca.nomeRaca}</option>)}
             </select>
         )
     }
