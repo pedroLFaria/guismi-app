@@ -13,7 +13,7 @@ class EscolheFicha extends React.Component {
         this.fetchResumoFichas();
     }
     fetchResumoFichas(){
-        fetch("http://localhost:9000/api/ficha/jogador", { method:"GET", Header : new Headers() })
+        fetch("/api/ficha/jogador", { method:"GET", Header : new Headers() })
             .then(response => response.json())
             .then(data=>{
                 let resumoFichas = data.map((ficha) =>{

@@ -24,8 +24,7 @@ class LoginPage extends React.Component{
         this.setState({submitted:true});
         const {username, password} = this.state;
         userService.login(username, password).then(user => {
-                const { from } = this.props.location.state || { from: { pathname: "/escolhe_ficha.html" } };
-                this.props.history.push(from);
+                this.props.history.push("#/escolhe_ficha");
             },
             error => this.setState({ error, loading: false })
         )
