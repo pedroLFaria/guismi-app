@@ -16,7 +16,6 @@ function login (username, password){
                 user.authdata = window.btoa(username + ':' + password);
                 localStorage.setItem('user', JSON.stringify(user));
             }
-
             return user;
         });
 }
@@ -35,7 +34,6 @@ function handleResponse(response) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }
-
         return data;
     });
 }

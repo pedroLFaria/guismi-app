@@ -15,19 +15,22 @@ class LoginPage extends React.Component{
         this.handleSumit = this.handleSumit.bind(this);
     }
     handleChange(e){
-        const{name, value} = e.target;
-        this.setState({[name]:value})
+        const{id, value} = e.target;
+        this.setState({[id]:value});
     }
 
     handleSumit(e){
         e.preventDefault();
         this.setState({submitted:true});
         const {username, password} = this.state;
-        userService.login(username, password).then(user => {
-                this.props.history.push("#/escolhe_ficha");
+        userService.login(username, password).then(
+            user => {
+                console.log(user)
+                window.location.hash = ("#/escolhe_ficha");
             },
             error => this.setState({ error, loading: false })
-        )
+        );
+        window.location.hash = ("#/escolhe_ficha");
     }
 
     render() {
