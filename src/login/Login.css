@@ -1,0 +1,297 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+body {
+}
+
+html {
+    font-family: "Roboto";
+}
+
+/* BOX LOGIN */
+.box-login {
+    position: relative;
+    height: 450px;
+    top: 40px;
+    left: 0;
+    z-index: 200;
+    right: 0;
+    width: 400px;
+    color: #666;
+    border-radius: 3px;
+    background: #FFF;
+    margin: 5% auto 100px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+    border-top: 3px solid #3c8dbc;
+}
+
+#header {
+    background: #3c8dbc;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#cont-lock {
+    width: 100%;
+    height: 65px;
+    position: relative;
+}
+
+#header-label {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 65px;
+    color: white;
+}
+
+.lock {
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 65px;
+    font-size: 28px;
+}
+
+#bottom-head {
+    position: relative;
+    background: #20455a;
+    height: 35px;
+}
+
+#bottom-head::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 7px solid white;
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    border-top: 7px solid rgba(0, 0, 0, 0);
+}
+
+.box-login h1 {
+    margin-left: 20px;
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #cfd8dc;
+    line-height: 35px;
+}
+
+.box-login button {
+    background: #cfd8dc;
+    border: 0;
+    color: #337ab7;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    width: 330px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    border-radius: 2px;
+}
+
+.box-login button:active {
+    background: #337ab7;
+    color: #263238;
+}
+
+.box-login button:hover {
+    background: #337ab7;
+    color: #FFF;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.box-login p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.inputMaterial {
+    font-size: 20px;
+    padding: 5px 0px 5px 0px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+.inputMaterial:focus {
+    outline: none;
+}
+
+/* LABEL ======================================= */
+
+.label-login {
+    color: #999;
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+.inputMaterial:focus ~ .label-login, .inputMaterial:valid ~ .label-login {
+    top: -20px;
+    font-size: 16px;
+    color: #337ab7;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 315px;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #337ab7;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+.inputMaterial:focus ~ .bar:before, .inputMaterial:focus ~ .bar:after {
+    width: 50%;
+}
+
+
+/* active state */
+.inputMaterial:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+#footer-box {
+    width: 100%;
+    height: 50px;
+    background: #00695c;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-text {
+    color: #cfd8dc;
+
+}
+
+.sign-up {
+    color: white;
+    cursor: pointer;
+}
+
+.sign-up:hover {
+    color: #b2dfdb;
+}
+
+@keyframes bounce-nds {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce-out-nds {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+.profile-name {
+    line-height: 60px;
+    left: -70px;
+    position: absolute;
+    font-family: 'Roboto';
+    color: #455a64;
+}
+
+.profile-name:hover {
+    text-decoration: underline;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}

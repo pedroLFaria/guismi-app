@@ -1,5 +1,6 @@
 import React from 'react'
 import queryString from 'query-string'
+import Habitos from '../ficha/Habitos'
 
 class FichaPersonagem extends React.Component {
     constructor(props) {
@@ -57,6 +58,10 @@ class FichaPersonagem extends React.Component {
                         sistema={sistema}
                     />*/}
                 </div>
+                <Habitos
+                    ficha:ficha
+                    sistema:sistema
+                />
             </fieldset>
         </div>)
 

@@ -1,12 +1,13 @@
 import React from 'react'
 
-class Habitos extends React.Components {
+class Habitos extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.setState({
             ficha: this.props.ficha,
             sistema: this.props.sistema
         })
+
     }
     render() {
         return (
@@ -20,7 +21,7 @@ class Habitos extends React.Components {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.sate.ficha.habitos.map ((habito) =>
+                    {this.state.ficha.habitos.map ((habito) =>
                         <tr>
                             <td>{habito.nomeHabito}</td>
                             <td>{habito.qtdFichaHabito}</td>
@@ -32,4 +33,5 @@ class Habitos extends React.Components {
         )
     }
 }
+export {Habitos}
 

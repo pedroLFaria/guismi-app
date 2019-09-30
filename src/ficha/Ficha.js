@@ -2,6 +2,8 @@
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
+import queryString from "query-string";
+
 function toFicha(json) {
     return cast(JSON.parse(json), r("Ficha"));
 }
@@ -244,7 +246,17 @@ const typeMap = {
     ], false),
 };
 
+function findById(id){
+    fetch("api/ficha/id/" + id, { method: "GET", Header: new Headers() })
+        .then(response => toFicha(response.text()))
+        .then(data => {
+            sessionStorage.setItem("ficha", JSON.stringify(data));
+
+        })
+}
+
 module.exports = {
+    "findById":findById,
     "fichaToJson": fichaToJson,
     "toFicha": toFicha,
 };
