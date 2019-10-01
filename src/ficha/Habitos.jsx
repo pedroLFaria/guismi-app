@@ -1,17 +1,29 @@
 import React from 'react'
+import Table from "react-bootstrap/Table";
 
 class Habitos extends React.Component {
     constructor(props) {
         super(props);
-        this.setState({
+        this.state = {
             ficha: this.props.ficha,
             sistema: this.props.sistema
-        })
-
+        }
     }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.ficha.habitos.length !== this.props.ficha.habitos.length) {
+            this.setState({ficha: this.props.ficha})
+        }else {
+            for(let habitoCont in this.props.ficha.habitos){
+                if(prevProps.ficha.habitos.every(prevHabito => prevHabito.idHabito !== this.props.ficha.habitos[habitoCont].idHabito))
+                    this.setState({ficha:this.props.ficha})
+            }
+        }
+    }
+
     render() {
         return (
-            <table className="table">
+            <Table hover={true}>
                 <thead className="thead-dark">
                     <tr>
                         <th>HABITOS</th>
@@ -21,7 +33,7 @@ class Habitos extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.ficha.habitos.map ((habito) =>
+                    {this.props.ficha.habitos.map ((habito) =>
                         <tr>
                             <td>{habito.nomeHabito}</td>
                             <td>{habito.qtdFichaHabito}</td>
@@ -29,7 +41,7 @@ class Habitos extends React.Component {
                             <td>{habito.qtdFichaHabito / 10}</td>
                         </tr>)}
                 </tbody>
-            </table>
+            </Table>
         )
     }
 }

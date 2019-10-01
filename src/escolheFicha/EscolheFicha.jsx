@@ -1,4 +1,10 @@
 import React from 'react'
+import './EscolheFicha.css'
+import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
 class EscolheFicha extends React.Component {
     constructor(props) {
@@ -16,7 +22,7 @@ class EscolheFicha extends React.Component {
 
     handleAction(e) {
         console.log(e.target);
-        window.location.hash =  "#/ficha?idFicha="+e.target.id
+        window.location.hash = "#/ficha?idFicha=" + e.target.id
     }
 
     fetchResumoFichas() {
@@ -24,18 +30,20 @@ class EscolheFicha extends React.Component {
             .then(response => response.json())
             .then(data => {
                 let resumoFichas = data.map((ficha) => {
-                    return (<div>
-                        <button className='ficha-sel' name='idFicha' id={ficha.idFicha} onClick={this.handleAction}>
-                            <div className="corpo">
-                                <label className='botao-texto' type="submit" id={ficha.idFicha}>
+                    return (
+                        <Button className='ficha-sel' name='idFicha' id={ficha.idFicha} onClick={this.handleAction}
+                                variant={"outline-dark"}>
+                            <Row>
+                                <Col className="corpo">
                                     <label>Nome: </label>
                                     <h3>{ficha.nomePersonagem}</h3>
-                                </label>
-                                <img src={ficha.img} alt={"fail to load"}/>
-                            </div>
-                        </button>
-                        <br/>
-                    </div>)
+                                </Col>
+                                <Col>
+                                    <Image src={ficha.img} alt={"fail to load"} roundedCircle/>
+                                </Col>
+                            </Row>
+                        </Button>
+                    )
                 });
                 this.setState({resumoFichas: resumoFichas})
             })
@@ -52,9 +60,9 @@ class EscolheFicha extends React.Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 {this.state.resumoFichas}
-            </div>
+            </Container>
         )
     }
 }

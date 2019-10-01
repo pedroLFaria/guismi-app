@@ -1,13 +1,27 @@
 import React from 'react'
 import queryString from 'query-string'
-import Habitos from '../ficha/Habitos'
+import Container from "react-bootstrap/Container";
+import {Habitos} from "../ficha";
+import Row from "react-bootstrap/Row";
+import {Sidebar} from "../components/Sidebar";
+import Col from "react-bootstrap/Col";
 
 class FichaPersonagem extends React.Component {
     constructor(props) {
         super(props);
         this.tick()
         this.state = {
-            ficha: { caminhos: [], descendencias: [], habilidades: [], habitos: [], idiomas: [], inventarios: [], patronos: [], raca: {}, situacoes: [] },
+            ficha: {
+                caminhos: [],
+                descendencias: [],
+                habilidades: [],
+                habitos: [],
+                idiomas: [],
+                inventarios: [],
+                patronos: [],
+                raca: {},
+                situacoes: []
+            },
             sistema: JSON.parse(sessionStorage.getItem("sistema"))
         };
     }
@@ -17,21 +31,34 @@ class FichaPersonagem extends React.Component {
     };
 
     tick() {
-        fetch("api/ficha/id/" + queryString.parse(window.location.href.split("?")[1]).idFicha, { method: "GET", Header: new Headers })
+        fetch("api/ficha/id/" + queryString.parse(window.location.href.split("?")[1]).idFicha, {
+            method: "GET",
+            Header: new Headers()
+        })
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 sessionStorage.setItem("ficha", JSON.stringify(data));
-                this.setState({ ficha: data })
+                this.setState({ficha: data})
             })
     }
+
     render() {
         const ficha = this.state.ficha;
         const sistema = this.state.sistema;
-        return (<div>
-            <fieldset className="scheduler-border form-group row">
-                <legend className="scheduler-border">Personagem</legend>
-                <div className="row">
-                    { /* <div className="row col-md-12">
+        return (
+            <Container>
+                <Row>
+                    <Col md={"auto"}>
+                        <Sidebar/>
+                    </Col>
+                    <Col>
+                        <Container>
+                            <Row>
+                                <legend>Personagem</legend>
+                            </Row>
+                            <Row>
+                                { /* <div className="row col-md-12">
                         <div className="col-md-2 inline">
                             <span>Nome</span>
                             <Nome
@@ -57,14 +84,17 @@ class FichaPersonagem extends React.Component {
                         ficha={ficha}
                         sistema={sistema}
                     />*/}
-                </div>
-                <Habitos
-                    ficha:ficha
-                    sistema:sistema
-                />
-            </fieldset>
-        </div>)
+                                <Habitos
+                                    ficha={ficha}
+                                    sistema={sistema}
+                                />
+                            </Row>
+                        </Container>
+                    </Col>
+                </Row>
+            </Container>)
 
     }
 }
-export { FichaPersonagem }
+
+export {FichaPersonagem}
