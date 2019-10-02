@@ -3,11 +3,11 @@ export const userService = {
     logout
 };
 
-function login (username, password){
+function login(username, password) {
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
     };
     return fetch(`/api/auth/callback`, requestOptions)
         .then(handleResponse)
@@ -18,6 +18,26 @@ function login (username, password){
             }
             return user;
         });
+}
+
+function findFichaById(id) {
+
+}
+
+function findFichasByJogador(id) {
+
+}
+
+function updateFicha(ficha) {
+
+}
+
+function insertFicha(ficha) {
+
+}
+
+function findSistema() {
+
 }
 
 function logout() {

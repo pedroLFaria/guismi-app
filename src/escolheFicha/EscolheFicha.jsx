@@ -19,31 +19,32 @@ class EscolheFicha extends React.Component {
         this.fetchResumoFichas();
     }
 
-    handleAction(id)  {
+    handleAction(id) {
         window.location.hash = "#/ficha?idFicha=" + id
     }
 
     fetchResumoFichas() {
-        fetch("/api/ficha/jogador", { method: "GET", Header: new Headers() })
+        fetch("/api/ficha/jogador", {method: "GET", Header: new Headers()})
             .then(response => response.json())
             .then(data => {
                 let resumoFichas = data.map((ficha) => {
                     return (
-                        <Button className='ficha-sel' name='idFicha' id={ficha.idFicha} onClick={this.handleAction.bind(this,ficha.idFicha)}
-                            variant={"outline-dark"}>
+                        <Button className='ficha-sel' name='idFicha' id={ficha.idFicha}
+                                onClick={this.handleAction.bind(this, ficha.idFicha)}
+                                variant={"outline-dark"}>
                             <Row>
                                 <Col className="corpo">
                                     <label>Nome: </label>
                                     <h3>{ficha.nomePersonagem}</h3>
                                 </Col>
                                 <Col>
-                                    <Image src={ficha.img} alt={"fail to load"} roundedCircle />
+                                    <Image src={ficha.img} alt={"fail to load"} roundedCircle/>
                                 </Col>
                             </Row>
                         </Button>
                     )
                 });
-                this.setState({ resumoFichas: resumoFichas })
+                this.setState({resumoFichas: resumoFichas})
             })
     }
 
@@ -65,4 +66,4 @@ class EscolheFicha extends React.Component {
     }
 }
 
-export { EscolheFicha }
+export {EscolheFicha}

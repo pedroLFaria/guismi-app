@@ -1,0 +1,5 @@
+class FichaApp {
+
+}
+
+export {FichaApp}

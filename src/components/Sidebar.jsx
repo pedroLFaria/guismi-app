@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
-class Sidebar extends React.Component{
+class Sidebar extends React.Component {
     render() {
         return (
             <ButtonGroup vertical>
@@ -28,4 +28,5 @@ class Sidebar extends React.Component{
         )
     }
 }
+
 export {Sidebar}

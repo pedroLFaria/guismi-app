@@ -1,345 +1,345 @@
 {
-    "idFicha": 1,
+  "idFicha": 1,
+  "idRaca": 3,
+  "idCidade": 1,
+  "idJogador": 1,
+  "nomePersonagem": "Dio",
+  "img": "https://vignette.wikia.nocookie.net/fiction-battlefield/images/5/5d/PATOLINO_O_MAGO.jpg/revision/latest?cb=20190419021820&path-prefix=pt-br",
+  "idade": 123,
+  "afiliacao": "NAO TEM",
+  "cla": "NAO TEM2",
+  "sorteDia": 4,
+  "distForca": 1,
+  "distConstituicao": 2,
+  "distAgilidade": 3,
+  "distDestreza": 4,
+  "distInteligencia": 5,
+  "distSabedoria": 6,
+  "distCarisma": 7,
+  "nivelPersonagem": 0,
+  "expPersonagem": 0,
+  "descPersonagem": "GRANDES OLHOS PEQUENOS",
+  "histPersonagem": "NASCEU UM DIA",
+  "nota": "100",
+  "idSanidade": 1,
+  "raca": {
     "idRaca": 3,
-    "idCidade": 1,
-    "idJogador": 1,
-    "nomePersonagem": "Dio",
-    "img": "https://vignette.wikia.nocookie.net/fiction-battlefield/images/5/5d/PATOLINO_O_MAGO.jpg/revision/latest?cb=20190419021820&path-prefix=pt-br",
-    "idade": 123,
-    "afiliacao": "NAO TEM",
-    "cla": "NAO TEM2",
-    "sorteDia": 4,
-    "distForca": 1,
-    "distConstituicao": 2,
-    "distAgilidade": 3,
-    "distDestreza": 4,
-    "distInteligencia": 5,
-    "distSabedoria": 6,
-    "distCarisma": 7,
-    "nivelPersonagem": 0,
-    "expPersonagem": 0,
-    "descPersonagem": "GRANDES OLHOS PEQUENOS",
-    "histPersonagem": "NASCEU UM DIA",
-    "nota": "100",
-    "idSanidade": 1,
-    "raca": {
-        "idRaca": 3,
-        "nomeRaca": "ETHEREOS (NIERGAUS)",
-        "raridadeRaca": "MUITO RARO (50 PONTOS)",
-        "descRaca": " SERES QUE VEM DA ANTIGUIDADE ATÉ O PRESENTE, RAÇAS ESQUECIDAS E EXCEPCIONAIS, QUE FORAM CRIADAS PELAS ALTAS-DIVINDADES.",
-        "longevidadeRaca": "200",
-        "culturaRaca": " SÃO UM POVO NÔMADE QUE VIAJA ENTRE PLANOS VENDENDO ESPECIARIAS, ARTEFATOS E EQUIPAMENTOS, GERALMENTE SÃO ENCONTRADOS EM GRUPOS PEQUENOS FORMADOS POR NO MÁXIMO 3 MEMBROS. ",
-        "historiaRaca": " VINDOS DO PLANO ETÉREO OS VORAUCHEIN, NOME DADO PELOS MAGOS QUE LHES DESCOBRIRAM, ELES VIVIAM EM UMA COMUNIDADE, PORÉM RARAMENTE TINHAM ITERAÇÕES UNS COM OS OUTROS. A DESCOBERTA DE NOVOS MUNDOS E PLANOS FEZ COM QUE ELES SE TRANSFORMASSEM EM EXÍMIOS COMERCIANTES E ADERISSEM À VIDA NÔMADE.",
-        "racaForca": 4,
-        "racaConstituicao": 3,
-        "racaAgilidade": 6,
-        "racaDestreza": 6,
-        "racaInteligencia": 7,
-        "racaSabedoria": 7,
-        "racaCarisma": 10,
-        "sangue": 15,
-        "vigor": 9,
-        "descendencias": [
-            {
-                "idDescendencia": 3,
-                "nomeDescendencia": "AMPLIADOR DE MANA ETHEREA ",
-                "descDescendencia": "SEU CORPO É UMA GRANDE FONTE DE MANA, O POTENCIAL DE MANA É AUMENTADO PARA 7 VEZES E PODE USAR SUA VIDA COMO MANA, PORÉM DEVIDO A ISTO NÃO PODEM CONJURAR MAGIA DE SANGUE.",
-                "habilidades": [],
-                "habitos": [],
-                "sanidade": null,
-                "situacoes": []
-            },
-            {
-                "idDescendencia": 2,
-                "nomeDescendencia": "CORPO ARCANO",
-                "descDescendencia": "SEU CORPO É FORMADO DE ENERGIA MAGICA MUTÁVEL, PODENDO ALTERAR SUA FORMA E GARANTINDO RESISTÊNCIA MAGICA +2.",
-                "habilidades": [],
-                "habitos": [],
-                "sanidade": null,
-                "situacoes": []
-            },
-            {
-                "idDescendencia": 4,
-                "nomeDescendencia": "TOQUE ARCANO",
-                "descDescendencia": "POR SER DE MANA, SEU TOQUE PODE CONCEDER MANA EXTRA PARA UMA CRIATURA, GASTANDO SANGUE NA QUANTIA DOADA.",
-                "habilidades": [],
-                "habitos": [],
-                "sanidade": null,
-                "situacoes": []
-            }
-        ],
-        "especializacoes": [
-            {
-                "idEspecializacao": 3,
-                "nomeEspecializacao": "RUNAS",
-                "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RUNAS."
-            },
-            {
-                "idEspecializacao": 5,
-                "nomeEspecializacao": "MAGIA ARCANA",
-                "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM MAGIA ARCANA."
-            },
-            {
-                "idEspecializacao": 6,
-                "nomeEspecializacao": "RITUAIS",
-                "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RITUAIS."
-            },
-            {
-                "idEspecializacao": 4,
-                "nomeEspecializacao": "NEGOCIAR",
-                "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM NEGOCIAÇÃO."
-            }
-        ],
-        "habilidades": [],
-        "habitos": [
-            {
-                "idHabito": 24,
-                "nomeHabito": "DIPLOMACIA",
-                "descHabito": "CONHECIMENTO EM DIPLOMACIA.",
-                "qtdFichaHabito": null,
-                "especializacoes": [
-                    {
-                        "idEspecializacao": 4,
-                        "nomeEspecializacao": "NEGOCIAR",
-                        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM NEGOCIAÇÃO."
-                    }
-                ]
-            },
-            {
-                "idHabito": 3,
-                "nomeHabito": "MAGIA",
-                "descHabito": "HABILIDADE EM MANIPULAÇÃO DOS ADVERSOS TIPOS DE MAGIA.",
-                "qtdFichaHabito": null,
-                "especializacoes": [
-                    {
-                        "idEspecializacao": 5,
-                        "nomeEspecializacao": "MAGIA ARCANA",
-                        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM MAGIA ARCANA."
-                    }
-                ]
-            },
-            {
-                "idHabito": 2,
-                "nomeHabito": "ARCANISMO",
-                "descHabito": "CONHECIMENTO EM ARTES ARCANAS, COMO RITUAIS, FORJA DE RUNAS, ENTRE OUTROS...",
-                "qtdFichaHabito": null,
-                "especializacoes": [
-                    {
-                        "idEspecializacao": 3,
-                        "nomeEspecializacao": "RUNAS",
-                        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RUNAS."
-                    },
-                    {
-                        "idEspecializacao": 6,
-                        "nomeEspecializacao": "RITUAIS",
-                        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RITUAIS."
-                    }
-                ]
-            }
-        ],
-        "idiomas": [],
-        "patronos": [
-            {
-                "idPatrono": 2,
-                "nomePatrono": "AZUTH",
-                "descPatrono": "HTTPS://FORGOTTENREALMS.FANDOM.COM/WIKI/AZUTH"
-            }
-        ],
-        "tracosfisiologicos": " SEU CORPO É VOLÁTIL E FEITO DE UMA NUVEM DE MANA, OS GOLPES QUE O ACERTAM FAZEM COM QUE PARTE DESSA MANA SE PERCA. SUA COLORAÇÃO PODE VARIAR DENTRE AS CORES BÁSICAS, VERMELHO, AZUL, VERDE E OUTRAS."
-    },
-    "caminhos": [
-        {
-            "idCaminho": 1,
-            "nomeCaminho": "Guerreiro",
-            "descCaminho": "GUERREIRO SÃO BATALHADORES ASTUTOS QUE USAM CORPO-A-CORPO COMO MAIOR ARMA, É ESSENCIAL UM BOM ATAQUE E GRANDE MOBILIDADE, ESTES POR SUA VEZ UTILIZAM ARMADURA, TANTO LEVE QUANTO INTERMEDIARIA, OS ATRIBUTOS PRINCIPAIS DESTE CAMINHO SÃO FORÇA, DESTREZA E CONSTITUIÇÃO, TRABALHAR COM VÁRIAS ARMAS DIFERENTES É UM BÔNUS, DEVIDO Á ISTO PODE ESCOLHER TRÊS ESPECIALIZAÇÕES ENTRE: ESPADA UMA MÃO, ESPADA DUAS MÃOS, MACHADO UMA MÃO, MARTELO UMA MÃO, ARMADURA LEVE E ESCUDO LEVE.",
-            "habilidades": [
-                {
-                    "idHabilidade": 1,
-                    "nomeHabilidade": "SHORIU QUEM?",
-                    "atrAtacante": "FOR",
-                    "tipoHabilidade": "PASSIVA",
-                    "utiHabilidade": "1 VEZ POR ANO",
-                    "descHabilidade": "CHUTA PRA BAIXO",
-                    "prerequisito": "PERGAMINHO",
-                    "nivelRequerido": 52,
-                    "acoes": [
-                        {
-                            "idAcao": 1,
-                            "nomeacao": "AÇÃO HIPOTETICA"
-                        }
-                    ],
-                    "gasto": [],
-                    "situacoes": [
-                        {
-                            "idSituacao": 1,
-                            "nomeSituacao": "DESEMPREGADO",
-                            "descSituacao": "PROCURANDO EMPREGO? ACHO..."
-                        }
-                    ]
-                }
-            ],
-            "especializacoes": [],
-            "habitos": [
-                {
-                    "idHabito": 1,
-                    "nomeHabito": "EXPLORAR",
-                    "descHabito": "CONHECIMENTO EM EXPLORAÇÃO.",
-                    "qtdFichaHabito": null,
-                    "especializacoes": [
-                        {
-                            "idEspecializacao": 1,
-                            "nomeEspecializacao": "ESPADA LONGA",
-                            "descEspecializacao": "TECNICA APRIMORADA COM ESPADAS LONGAS."
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "idCaminho": 3,
-            "nomeCaminho": "Ladino",
-            "descCaminho": "Cleptomaniaco profissional",
-            "habilidades": [],
-            "especializacoes": [],
-            "habitos": []
-        }
-    ],
+    "nomeRaca": "ETHEREOS (NIERGAUS)",
+    "raridadeRaca": "MUITO RARO (50 PONTOS)",
+    "descRaca": " SERES QUE VEM DA ANTIGUIDADE ATÉ O PRESENTE, RAÇAS ESQUECIDAS E EXCEPCIONAIS, QUE FORAM CRIADAS PELAS ALTAS-DIVINDADES.",
+    "longevidadeRaca": "200",
+    "culturaRaca": " SÃO UM POVO NÔMADE QUE VIAJA ENTRE PLANOS VENDENDO ESPECIARIAS, ARTEFATOS E EQUIPAMENTOS, GERALMENTE SÃO ENCONTRADOS EM GRUPOS PEQUENOS FORMADOS POR NO MÁXIMO 3 MEMBROS. ",
+    "historiaRaca": " VINDOS DO PLANO ETÉREO OS VORAUCHEIN, NOME DADO PELOS MAGOS QUE LHES DESCOBRIRAM, ELES VIVIAM EM UMA COMUNIDADE, PORÉM RARAMENTE TINHAM ITERAÇÕES UNS COM OS OUTROS. A DESCOBERTA DE NOVOS MUNDOS E PLANOS FEZ COM QUE ELES SE TRANSFORMASSEM EM EXÍMIOS COMERCIANTES E ADERISSEM À VIDA NÔMADE.",
+    "racaForca": 4,
+    "racaConstituicao": 3,
+    "racaAgilidade": 6,
+    "racaDestreza": 6,
+    "racaInteligencia": 7,
+    "racaSabedoria": 7,
+    "racaCarisma": 10,
+    "sangue": 15,
+    "vigor": 9,
     "descendencias": [
-        {
-            "idDescendencia": 1,
-            "nomeDescendencia": "TRAPEZIO DESCENDENTE",
-            "descDescendencia": "DESCRIÇÃO DESCENTE",
-            "habilidades": [
-                {
-                    "idHabilidade": 1,
-                    "nomeHabilidade": "SHORIU QUEM?",
-                    "atrAtacante": "FOR",
-                    "tipoHabilidade": "PASSIVA",
-                    "utiHabilidade": "1 VEZ POR ANO",
-                    "descHabilidade": "CHUTA PRA BAIXO",
-                    "prerequisito": "PERGAMINHO",
-                    "nivelRequerido": 52,
-                    "acoes": [
-                        {
-                            "idAcao": 1,
-                            "nomeacao": "AÇÃO HIPOTETICA"
-                        }
-                    ],
-                    "gasto": [],
-                    "situacoes": [
-                        {
-                            "idSituacao": 1,
-                            "nomeSituacao": "DESEMPREGADO",
-                            "descSituacao": "PROCURANDO EMPREGO? ACHO..."
-                        }
-                    ]
-                }
-            ],
-            "habitos": [
-                {
-                    "idHabito": 1,
-                    "nomeHabito": "EXPLORAR",
-                    "descHabito": "CONHECIMENTO EM EXPLORAÇÃO.",
-                    "qtdFichaHabito": null,
-                    "especializacoes": [
-                        {
-                            "idEspecializacao": 1,
-                            "nomeEspecializacao": "ESPADA LONGA",
-                            "descEspecializacao": "TECNICA APRIMORADA COM ESPADAS LONGAS."
-                        }
-                    ]
-                }
-            ],
-            "sanidade": null,
-            "situacoes": []
-        }
+      {
+        "idDescendencia": 3,
+        "nomeDescendencia": "AMPLIADOR DE MANA ETHEREA ",
+        "descDescendencia": "SEU CORPO É UMA GRANDE FONTE DE MANA, O POTENCIAL DE MANA É AUMENTADO PARA 7 VEZES E PODE USAR SUA VIDA COMO MANA, PORÉM DEVIDO A ISTO NÃO PODEM CONJURAR MAGIA DE SANGUE.",
+        "habilidades": [],
+        "habitos": [],
+        "sanidade": null,
+        "situacoes": []
+      },
+      {
+        "idDescendencia": 2,
+        "nomeDescendencia": "CORPO ARCANO",
+        "descDescendencia": "SEU CORPO É FORMADO DE ENERGIA MAGICA MUTÁVEL, PODENDO ALTERAR SUA FORMA E GARANTINDO RESISTÊNCIA MAGICA +2.",
+        "habilidades": [],
+        "habitos": [],
+        "sanidade": null,
+        "situacoes": []
+      },
+      {
+        "idDescendencia": 4,
+        "nomeDescendencia": "TOQUE ARCANO",
+        "descDescendencia": "POR SER DE MANA, SEU TOQUE PODE CONCEDER MANA EXTRA PARA UMA CRIATURA, GASTANDO SANGUE NA QUANTIA DOADA.",
+        "habilidades": [],
+        "habitos": [],
+        "sanidade": null,
+        "situacoes": []
+      }
     ],
-    "habilidades": [
-        {
-            "idHabilidade": 2,
-            "nomeHabilidade": "Hado quem?",
-            "atrAtacante": "int",
-            "tipoHabilidade": "Ativa",
-            "utiHabilidade": "ilimitado",
-            "descHabilidade": "bola de energia",
-            "prerequisito": "meia lua",
-            "nivelRequerido": 2,
-            "acoes": [],
-            "gasto": [],
-            "situacoes": []
-        },
-        {
-            "idHabilidade": 1,
-            "nomeHabilidade": "SHORIU QUEM?",
-            "atrAtacante": "FOR",
-            "tipoHabilidade": "PASSIVA",
-            "utiHabilidade": "1 VEZ POR ANO",
-            "descHabilidade": "CHUTA PRA BAIXO",
-            "prerequisito": "PERGAMINHO",
-            "nivelRequerido": 52,
-            "acoes": [
-                {
-                    "idAcao": 1,
-                    "nomeacao": "AÇÃO HIPOTETICA"
-                }
-            ],
-            "gasto": [],
-            "situacoes": [
-                {
-                    "idSituacao": 1,
-                    "nomeSituacao": "DESEMPREGADO",
-                    "descSituacao": "PROCURANDO EMPREGO? ACHO..."
-                }
-            ]
-        }
+    "especializacoes": [
+      {
+        "idEspecializacao": 3,
+        "nomeEspecializacao": "RUNAS",
+        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RUNAS."
+      },
+      {
+        "idEspecializacao": 5,
+        "nomeEspecializacao": "MAGIA ARCANA",
+        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM MAGIA ARCANA."
+      },
+      {
+        "idEspecializacao": 6,
+        "nomeEspecializacao": "RITUAIS",
+        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RITUAIS."
+      },
+      {
+        "idEspecializacao": 4,
+        "nomeEspecializacao": "NEGOCIAR",
+        "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM NEGOCIAÇÃO."
+      }
     ],
+    "habilidades": [],
     "habitos": [
-        {
-            "idHabito": 3,
-            "nomeHabito": "MAGIA",
-            "descHabito": "HABILIDADE EM MANIPULAÇÃO DOS ADVERSOS TIPOS DE MAGIA.",
-            "qtdFichaHabito": 20,
-            "especializacoes": [
-                {
-                    "idEspecializacao": 5,
-                    "nomeEspecializacao": "MAGIA ARCANA",
-                    "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM MAGIA ARCANA."
-                }
-            ]
-        },
-        {
-            "idHabito": 2,
-            "nomeHabito": "ARCANISMO",
-            "descHabito": "CONHECIMENTO EM ARTES ARCANAS, COMO RITUAIS, FORJA DE RUNAS, ENTRE OUTROS...",
-            "qtdFichaHabito": 30,
-            "especializacoes": [
-                {
-                    "idEspecializacao": 3,
-                    "nomeEspecializacao": "RUNAS",
-                    "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RUNAS."
-                },
-                {
-                    "idEspecializacao": 6,
-                    "nomeEspecializacao": "RITUAIS",
-                    "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RITUAIS."
-                }
-            ]
-        }
+      {
+        "idHabito": 24,
+        "nomeHabito": "DIPLOMACIA",
+        "descHabito": "CONHECIMENTO EM DIPLOMACIA.",
+        "qtdFichaHabito": null,
+        "especializacoes": [
+          {
+            "idEspecializacao": 4,
+            "nomeEspecializacao": "NEGOCIAR",
+            "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM NEGOCIAÇÃO."
+          }
+        ]
+      },
+      {
+        "idHabito": 3,
+        "nomeHabito": "MAGIA",
+        "descHabito": "HABILIDADE EM MANIPULAÇÃO DOS ADVERSOS TIPOS DE MAGIA.",
+        "qtdFichaHabito": null,
+        "especializacoes": [
+          {
+            "idEspecializacao": 5,
+            "nomeEspecializacao": "MAGIA ARCANA",
+            "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM MAGIA ARCANA."
+          }
+        ]
+      },
+      {
+        "idHabito": 2,
+        "nomeHabito": "ARCANISMO",
+        "descHabito": "CONHECIMENTO EM ARTES ARCANAS, COMO RITUAIS, FORJA DE RUNAS, ENTRE OUTROS...",
+        "qtdFichaHabito": null,
+        "especializacoes": [
+          {
+            "idEspecializacao": 3,
+            "nomeEspecializacao": "RUNAS",
+            "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RUNAS."
+          },
+          {
+            "idEspecializacao": 6,
+            "nomeEspecializacao": "RITUAIS",
+            "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RITUAIS."
+          }
+        ]
+      }
     ],
     "idiomas": [],
-    "inventarios": [],
     "patronos": [
-        {
-            "idPatrono": 2,
-            "nomePatrono": "AZUTH",
-            "descPatrono": "HTTPS://FORGOTTENREALMS.FANDOM.COM/WIKI/AZUTH"
-        }
+      {
+        "idPatrono": 2,
+        "nomePatrono": "AZUTH",
+        "descPatrono": "HTTPS://FORGOTTENREALMS.FANDOM.COM/WIKI/AZUTH"
+      }
     ],
-    "situacoes": [
+    "tracosfisiologicos": " SEU CORPO É VOLÁTIL E FEITO DE UMA NUVEM DE MANA, OS GOLPES QUE O ACERTAM FAZEM COM QUE PARTE DESSA MANA SE PERCA. SUA COLORAÇÃO PODE VARIAR DENTRE AS CORES BÁSICAS, VERMELHO, AZUL, VERDE E OUTRAS."
+  },
+  "caminhos": [
+    {
+      "idCaminho": 1,
+      "nomeCaminho": "Guerreiro",
+      "descCaminho": "GUERREIRO SÃO BATALHADORES ASTUTOS QUE USAM CORPO-A-CORPO COMO MAIOR ARMA, É ESSENCIAL UM BOM ATAQUE E GRANDE MOBILIDADE, ESTES POR SUA VEZ UTILIZAM ARMADURA, TANTO LEVE QUANTO INTERMEDIARIA, OS ATRIBUTOS PRINCIPAIS DESTE CAMINHO SÃO FORÇA, DESTREZA E CONSTITUIÇÃO, TRABALHAR COM VÁRIAS ARMAS DIFERENTES É UM BÔNUS, DEVIDO Á ISTO PODE ESCOLHER TRÊS ESPECIALIZAÇÕES ENTRE: ESPADA UMA MÃO, ESPADA DUAS MÃOS, MACHADO UMA MÃO, MARTELO UMA MÃO, ARMADURA LEVE E ESCUDO LEVE.",
+      "habilidades": [
         {
-            "idSituacao": 1,
-            "nomeSituacao": "DESEMPREGADO",
-            "descSituacao": "PROCURANDO EMPREGO? ACHO..."
+          "idHabilidade": 1,
+          "nomeHabilidade": "SHORIU QUEM?",
+          "atrAtacante": "FOR",
+          "tipoHabilidade": "PASSIVA",
+          "utiHabilidade": "1 VEZ POR ANO",
+          "descHabilidade": "CHUTA PRA BAIXO",
+          "prerequisito": "PERGAMINHO",
+          "nivelRequerido": 52,
+          "acoes": [
+            {
+              "idAcao": 1,
+              "nomeacao": "AÇÃO HIPOTETICA"
+            }
+          ],
+          "gasto": [],
+          "situacoes": [
+            {
+              "idSituacao": 1,
+              "nomeSituacao": "DESEMPREGADO",
+              "descSituacao": "PROCURANDO EMPREGO? ACHO..."
+            }
+          ]
         }
-    ]
+      ],
+      "especializacoes": [],
+      "habitos": [
+        {
+          "idHabito": 1,
+          "nomeHabito": "EXPLORAR",
+          "descHabito": "CONHECIMENTO EM EXPLORAÇÃO.",
+          "qtdFichaHabito": null,
+          "especializacoes": [
+            {
+              "idEspecializacao": 1,
+              "nomeEspecializacao": "ESPADA LONGA",
+              "descEspecializacao": "TECNICA APRIMORADA COM ESPADAS LONGAS."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idCaminho": 3,
+      "nomeCaminho": "Ladino",
+      "descCaminho": "Cleptomaniaco profissional",
+      "habilidades": [],
+      "especializacoes": [],
+      "habitos": []
+    }
+  ],
+  "descendencias": [
+    {
+      "idDescendencia": 1,
+      "nomeDescendencia": "TRAPEZIO DESCENDENTE",
+      "descDescendencia": "DESCRIÇÃO DESCENTE",
+      "habilidades": [
+        {
+          "idHabilidade": 1,
+          "nomeHabilidade": "SHORIU QUEM?",
+          "atrAtacante": "FOR",
+          "tipoHabilidade": "PASSIVA",
+          "utiHabilidade": "1 VEZ POR ANO",
+          "descHabilidade": "CHUTA PRA BAIXO",
+          "prerequisito": "PERGAMINHO",
+          "nivelRequerido": 52,
+          "acoes": [
+            {
+              "idAcao": 1,
+              "nomeacao": "AÇÃO HIPOTETICA"
+            }
+          ],
+          "gasto": [],
+          "situacoes": [
+            {
+              "idSituacao": 1,
+              "nomeSituacao": "DESEMPREGADO",
+              "descSituacao": "PROCURANDO EMPREGO? ACHO..."
+            }
+          ]
+        }
+      ],
+      "habitos": [
+        {
+          "idHabito": 1,
+          "nomeHabito": "EXPLORAR",
+          "descHabito": "CONHECIMENTO EM EXPLORAÇÃO.",
+          "qtdFichaHabito": null,
+          "especializacoes": [
+            {
+              "idEspecializacao": 1,
+              "nomeEspecializacao": "ESPADA LONGA",
+              "descEspecializacao": "TECNICA APRIMORADA COM ESPADAS LONGAS."
+            }
+          ]
+        }
+      ],
+      "sanidade": null,
+      "situacoes": []
+    }
+  ],
+  "habilidades": [
+    {
+      "idHabilidade": 2,
+      "nomeHabilidade": "Hado quem?",
+      "atrAtacante": "int",
+      "tipoHabilidade": "Ativa",
+      "utiHabilidade": "ilimitado",
+      "descHabilidade": "bola de energia",
+      "prerequisito": "meia lua",
+      "nivelRequerido": 2,
+      "acoes": [],
+      "gasto": [],
+      "situacoes": []
+    },
+    {
+      "idHabilidade": 1,
+      "nomeHabilidade": "SHORIU QUEM?",
+      "atrAtacante": "FOR",
+      "tipoHabilidade": "PASSIVA",
+      "utiHabilidade": "1 VEZ POR ANO",
+      "descHabilidade": "CHUTA PRA BAIXO",
+      "prerequisito": "PERGAMINHO",
+      "nivelRequerido": 52,
+      "acoes": [
+        {
+          "idAcao": 1,
+          "nomeacao": "AÇÃO HIPOTETICA"
+        }
+      ],
+      "gasto": [],
+      "situacoes": [
+        {
+          "idSituacao": 1,
+          "nomeSituacao": "DESEMPREGADO",
+          "descSituacao": "PROCURANDO EMPREGO? ACHO..."
+        }
+      ]
+    }
+  ],
+  "habitos": [
+    {
+      "idHabito": 3,
+      "nomeHabito": "MAGIA",
+      "descHabito": "HABILIDADE EM MANIPULAÇÃO DOS ADVERSOS TIPOS DE MAGIA.",
+      "qtdFichaHabito": 20,
+      "especializacoes": [
+        {
+          "idEspecializacao": 5,
+          "nomeEspecializacao": "MAGIA ARCANA",
+          "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM MAGIA ARCANA."
+        }
+      ]
+    },
+    {
+      "idHabito": 2,
+      "nomeHabito": "ARCANISMO",
+      "descHabito": "CONHECIMENTO EM ARTES ARCANAS, COMO RITUAIS, FORJA DE RUNAS, ENTRE OUTROS...",
+      "qtdFichaHabito": 30,
+      "especializacoes": [
+        {
+          "idEspecializacao": 3,
+          "nomeEspecializacao": "RUNAS",
+          "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RUNAS."
+        },
+        {
+          "idEspecializacao": 6,
+          "nomeEspecializacao": "RITUAIS",
+          "descEspecializacao": "CONHECIMENTO ESPECIALIZADO EM RITUAIS."
+        }
+      ]
+    }
+  ],
+  "idiomas": [],
+  "inventarios": [],
+  "patronos": [
+    {
+      "idPatrono": 2,
+      "nomePatrono": "AZUTH",
+      "descPatrono": "HTTPS://FORGOTTENREALMS.FANDOM.COM/WIKI/AZUTH"
+    }
+  ],
+  "situacoes": [
+    {
+      "idSituacao": 1,
+      "nomeSituacao": "DESEMPREGADO",
+      "descSituacao": "PROCURANDO EMPREGO? ACHO..."
+    }
+  ]
 }
