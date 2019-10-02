@@ -1,10 +1,12 @@
 import React from 'react'
 import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
-import {Habitos} from "../ficha";
+import { Habitos } from "../ficha";
 import Row from "react-bootstrap/Row";
-import {Sidebar} from "../components/Sidebar";
+import { Sidebar } from "../components/Sidebar";
 import Col from "react-bootstrap/Col";
+import Form from 'react-bootstrap/Form';
+import { Nome } from '../ficha/Nome';
 
 class FichaPersonagem extends React.Component {
     constructor(props) {
@@ -39,7 +41,7 @@ class FichaPersonagem extends React.Component {
             .then(data => {
                 console.log(data);
                 sessionStorage.setItem("ficha", JSON.stringify(data));
-                this.setState({ficha: data})
+                this.setState({ ficha: data })
             })
     }
 
@@ -50,13 +52,18 @@ class FichaPersonagem extends React.Component {
             <Container>
                 <Row>
                     <Col md={"auto"}>
-                        <Sidebar/>
+                        <Sidebar />
                     </Col>
                     <Col>
                         <Container>
                             <Row>
                                 <legend>Personagem</legend>
                             </Row>
+                            <Form>
+                                <Nome
+                                    ficha={ficha}
+                                />
+                            </Form>
                             <Row>
                                 { /* <div className="row col-md-12">
                         <div className="col-md-2 inline">
@@ -97,4 +104,4 @@ class FichaPersonagem extends React.Component {
     }
 }
 
-export {FichaPersonagem}
+export { FichaPersonagem }
