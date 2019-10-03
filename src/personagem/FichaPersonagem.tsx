@@ -1,29 +1,26 @@
 import React from 'react'
 import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
-import {HabitoApp} from "../ficha";
+import {HabitoApp} from "../components/habito/HabitoApp";
 import Row from "react-bootstrap/Row";
 import {Sidebar} from "../components/Sidebar";
 import Col from "react-bootstrap/Col";
-import {Nome} from '../ficha/Nome';
-import {CaminhosApp} from "../caminho/CaminhoApp";
+import { Ficha } from '../components/ficha/Ficha';
+import Sistema from '../components/sistema/sistema';
 
-class FichaPersonagem extends React.Component {
-    constructor(props) {
+interface Guism{
+    ficha:Ficha,
+    sistema:Sistema
+}
+
+class FichaPersonagem extends React.Component<Guism, Guism> {
+    constructor(props:Guism) {
         super(props);
         this.tick();
         this.state = {
-            ficha: {
-                caminhos: [],
-                descendencias: [],
-                habilidades: [],
-                habitos: [],
-                idiomas: [],
-                inventarios: [],
-                patronos: [],
-                raca: {},
-                situacoes: []
-            },
+            ficha : {
+
+            } ,
             sistema: JSON.parse(sessionStorage.getItem("sistema"))
         };
     }
