@@ -1,20 +1,23 @@
-import React from 'react'
+import * as React from 'react'
 import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
-import {HabitoApp} from "../components/habito/HabitoApp";
 import Row from "react-bootstrap/Row";
-import {Sidebar} from "../components/Sidebar";
 import Col from "react-bootstrap/Col";
-import { Ficha } from '../components/ficha/Ficha';
-import Sistema from '../components/sistema/sistema';
+import {Sidebar} from "../components/Sidebar";
+import {Nome} from "../components/ficha/Nome";
+import {RacaApp} from "../components/raca/RacaApp";
+import {CaminhosApp} from "../components/caminho/CaminhoApp";
+import {HabitoApp} from "../components/habito/HabitoApp";
+import Ficha from "../components/ficha/Ficha";
+import Sistema from "../components/sistema/Sistema";
 
-interface Guism{
-    ficha:Ficha,
-    sistema:Sistema
+interface State {
+    ficha: Ficha;
+    sistema: Sistema
 }
 
-class FichaPersonagem extends React.Component<Guism, Guism> {
-    constructor(props:Guism) {
+class FichaPersonagem extends React.Component<State, State> {
+    constructor(props:undefined) {
         super(props);
         this.tick();
         this.state = {
@@ -67,7 +70,7 @@ class FichaPersonagem extends React.Component<Guism, Guism> {
                                     />
                                 </Col>
                                 <Col md={3}>
-                                    <Raca
+                                    <RacaApp
                                         ficha={ficha}
                                         sistema={sistema}
                                     />

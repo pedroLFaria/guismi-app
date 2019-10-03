@@ -4,7 +4,7 @@ import Habito from "../habito/Habito";
 import Sanidade from "../sanidade/Sanidade";
 
 
-export interface Descendencia {
+export default interface Descendencia {
     idDescendencia: number;
     nomeDescendencia: string;
     descDescendencia: string;

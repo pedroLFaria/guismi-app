@@ -1,8 +1,19 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
+import Ficha from "./Ficha";
 
-class Nome extends React.Component {
-    constructor(props) {
+interface Props{
+    ficha:Ficha
+}
+
+interface State{
+    ficha:Ficha
+    plaintext : boolean
+    readOnly  : boolean
+}
+
+class Nome extends React.Component<Props,State> {
+    constructor(props:Props) {
         super(props);
         this.state = {
             ficha: this.props.ficha,
@@ -12,16 +23,16 @@ class Nome extends React.Component {
         this.onClick = this.onClick.bind(this)
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps:Props) {
         if (prevProps.ficha.nomePersonagem !== this.props.ficha.nomePersonagem)
             this.setState({ficha: this.props.ficha})
     }
 
-    onClick(e) {
+    onClick() {
         this.setState({plaintext: false, readOnly: false})
     }
 
-    onBlur(e) {
+    onBlur() {
         this.setState({plaintext: true, readOnly: true})
     }
 

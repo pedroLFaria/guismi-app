@@ -1,4 +1,4 @@
-import Especializacao from "../sistema/sistema";
+import Especializacao from "../sistema/Sistema";
 
 export default interface Habito {
     idHabito: number;

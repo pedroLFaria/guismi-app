@@ -2,7 +2,7 @@ import Habilidade from "../habilidade/Habilidade";
 import Especializacao from "../especializacao/Especializacao";
 import Habito from "../habito/Habito";
 
-export interface Caminho {
+export default  interface Caminho {
     idCaminho: number;
     nomeCaminho?: string;
     descCaminho?: string;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Form from "react-bootstrap/Form";
-import Sistema from "../sistema/sistema";
-import Ficha from "../ficha/Ficha"
+import Ficha from "../ficha/Ficha";
+import Sistema from "../sistema/Sistema";
 
 interface Guism {
     ficha: Ficha,
