@@ -17,36 +17,32 @@ interface State {
 }
 
 class FichaPersonagem extends React.Component<State, State> {
-    constructor(props:undefined) {
+    constructor(props:any) {
         super(props);
-        this.tick();
         this.state = {
-            ficha : {
-
-            } ,
-            sistema: JSON.parse(sessionStorage.getItem("sistema"))
+            ficha : new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)).getById(),
+            sistema: Sistema.sistema
         };
+        this.tick = this.tick.bind(this);
     }
 
     componentDidMount() {
-        this.timerID = setInterval(() => this.tick(), 3000);
+        console.log("idFicha " + this.state.ficha.idFicha)
+        /*this.state.ficha.getById().then(ficha=>{
+            this.setState({ficha:ficha})
+        })*/
+        setInterval(() => this.tick(), 3000);
     };
 
+
     tick() {
-        fetch("api/ficha/id/" + queryString.parse(window.location.href.split("?")[1]).idFicha, {
-            method: "GET",
-            Header: new Headers()
+        this.setState({
+            ficha:this.state.ficha.getById()
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                sessionStorage.setItem("ficha", JSON.stringify(data));
-                this.setState({ficha: data})
-            })
     }
 
     onSubmit() {
-        console.log(JSON.parse(sessionStorage.getItem("ficha")))
+
     }
 
     render() {
@@ -72,7 +68,6 @@ class FichaPersonagem extends React.Component<State, State> {
                                 <Col md={3}>
                                     <RacaApp
                                         ficha={ficha}
-                                        sistema={sistema}
                                     />
                                 </Col>
                                 <Col>
@@ -97,7 +92,6 @@ class FichaPersonagem extends React.Component<State, State> {
                     />*/}
                                 <HabitoApp
                                     ficha={ficha}
-                                    sistema={sistema}
                                 />
                             </Row>
                         </Container>

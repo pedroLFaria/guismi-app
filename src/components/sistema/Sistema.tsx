@@ -11,7 +11,7 @@ import Cidade from "../cidade/Cidade";
 export default class Sistema {
     private static _sistema: Sistema;
     private _racas?: Raca[];
-    private _caminhos?: Caminho[];
+    private _caminhos?: Caminho[] = [];
     private _cidades?: Cidade[];
     private _descendencias?: Descendencia[];
     private _habilidades?: Habilidade[];
@@ -43,21 +43,21 @@ export default class Sistema {
     }
 
     static get sistema() {
-        if (this._sistema == null) {
+        if (this._sistema === undefined) {
             this._sistema = new Sistema()
         }
         return this._sistema
     }
 
     get racas(): Raca[] {
-        if (this._racas !== null)
+        if (this._racas !== undefined)
             return this._racas!;
         else
             return []
     }
 
     get caminhos(): Caminho[] {
-        if (this._caminhos !== null)
+        if (this._caminhos !== undefined)
             return this._caminhos!;
         else
             return []
@@ -65,49 +65,49 @@ export default class Sistema {
 
 
     get cidades(): Cidade[] {
-        if (this._cidades !== null)
+        if (this._cidades !== undefined)
             return this._cidades!;
         else
             return []
     }
 
     get descendencias(): Descendencia[] {
-        if (this._descendencias !== null)
+        if (this._descendencias !== undefined)
             return this._descendencias!;
         else
             return []
     }
 
     get especializacoes(): Especializacao[] {
-        if (this._especializacoes !== null)
+        if (this._especializacoes !== undefined)
             return this._especializacoes!;
         else
             return []
     }
 
     get habilidades(): Habilidade[] {
-        if (this._habilidades !== null)
+        if (this._habilidades !== undefined)
             return this._habilidades!;
         else
             return []
     }
 
     get habitos(): Habito[] {
-        if (this._habitos !== null)
+        if (this._habitos !== undefined)
             return this._habitos!;
         else
             return []
     }
 
     get idiomas(): Idioma[] {
-        if (this._idiomas !== null)
+        if (this._idiomas !== undefined)
             return this._idiomas!;
         else
             return []
     }
 
     get patronos(): Patrono[] {
-        if (this._patronos !== null)
+        if (this._patronos !== undefined)
             return this._patronos!;
         else
             return []

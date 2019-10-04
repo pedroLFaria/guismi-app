@@ -55,6 +55,7 @@ export default class Ficha {
             .then(data => {
                 this.setFichaFromObject(data);
             });
+        
         return this
     }
 
@@ -103,10 +104,12 @@ export default class Ficha {
     }
 
     public update() : void {
+        let myHeaders = new Headers;
+        myHeaders.append("Content-Type", "application/json;charset=UTF-8")
         fetch('api/ficha/',
             {
                 method:'PUT',
-                headers: new Headers(),
+                headers: myHeaders,
                 body: JSON.stringify(this)
             }).then(response=> {
                 if(response.ok){
@@ -114,7 +117,6 @@ export default class Ficha {
                 }else{
                     console.log("Status "+ response.statusText)
                 }
-
         });
     }
 

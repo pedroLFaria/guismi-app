@@ -1,18 +1,25 @@
 import * as React from 'react'
 import Table from "react-bootstrap/Table";
+import Ficha from '../ficha/Ficha';
+import Sistema from '../sistema/Sistema';
 
 interface props {
-    ficha: any;
-    sistema: any
+    ficha: Ficha;
 }
 
-class HabitoApp extends React.Component<props, any> {
+interface State{
+    ficha:Ficha;
+    sistema:Sistema;
+}
+
+class HabitoApp extends React.Component<props, State> {
     constructor(props: props) {
         super(props);
         this.state = {
             ficha: this.props.ficha,
-            sistema: this.props.sistema
+            sistema: Sistema.sistema
         }
+        console.log(this.state.ficha.habitos)
     }
 
     componentDidUpdate(prevProps: any, prevState: any) {

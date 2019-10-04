@@ -5,7 +5,6 @@ import Sistema from "../sistema/Sistema";
 
 interface Props {
     ficha : Ficha
-    sistema : Sistema
 }
 
 interface State {
@@ -18,9 +17,10 @@ class RacaApp extends React.Component<Props, State> {
         super(props);
         this.state = {
             ficha: this.props.ficha,
-            sistema: this.props.sistema
+            sistema: Sistema.sistema
         };
         this.handleChange = this.handleChange.bind(this)
+        console.log("RacaApp " + this.state.sistema.caminhos.length)
     }
 
     handleChange(event:any) {
@@ -29,7 +29,7 @@ class RacaApp extends React.Component<Props, State> {
         this.render();
     }
 
-    componentDidUpdate(prevProps:Props, prevState:Props) {
+    componentDidUpdate(prevProps:Props) {
         if (prevProps.ficha.idRaca !== this.props.ficha.idRaca)
             this.setState({ficha: this.props.ficha})
     }

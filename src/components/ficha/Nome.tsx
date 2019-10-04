@@ -34,6 +34,7 @@ class Nome extends React.Component<Props,State> {
 
     onBlur() {
         this.setState({plaintext: true, readOnly: true})
+        this.state.ficha.update()
     }
 
     render() {
