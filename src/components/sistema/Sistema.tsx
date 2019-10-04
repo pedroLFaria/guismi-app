@@ -7,6 +7,7 @@ import Especializacao from "../especializacao/Especializacao";
 import Habito from "../habito/Habito";
 import Raca from "../raca/Raca";
 import Cidade from "../cidade/Cidade";
+import MyHeaders from "../../_services/MyHeaders";
 
 export default class Sistema {
     private static _sistema: Sistema;
@@ -25,7 +26,11 @@ export default class Sistema {
     }
 
      private sistemaGetRequest() {
-        fetch('api/sistema')
+        fetch('api/sistema',{
+            method:'GET',
+            headers:MyHeaders.getMyHeaders(),
+            credentials: 'include'
+        })
             .then(response => response.json())
             .then(data => this.setSistemaFromObject(data));
     }

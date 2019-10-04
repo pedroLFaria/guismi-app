@@ -1,3 +1,5 @@
+import MyHeaders from "./MyHeaders";
+
 export const userService = {
     login,
     logout
@@ -7,9 +9,14 @@ function login(username, password) {
     const requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username, password})
+        body: JSON.stringify({username, password}),
+        credentials: 'include'
     };
     return fetch(`/api/auth/callback`, requestOptions)
+        .then(response=>{
+            console.log(response);
+            return response
+        })
         .then(handleResponse)
         .then(user => {
             if (user) {
@@ -45,7 +52,11 @@ function logout() {
 }
 
 function handleResponse(response) {
-    return response.text().then(text => {
+    return response.then(response => {
+        MyHeaders.getMyHeaders();
+        console.log("testfeqwteqw");
+        return response
+    }).text().then(text => {
         const data = text && JSON.parse(text);
         if (!response.ok) {
             if (response.status === 401) {

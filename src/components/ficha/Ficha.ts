@@ -7,6 +7,7 @@ import Descendencia from "../descendencia/Descendencia";
 import Caminho from "../caminho/Caminho";
 import Raca from "../raca/Raca";
 import Inventario from "../inventario/Inventario";
+import MyHeaders from "../../_services/MyHeaders";
 
 export default class Ficha {
     idFicha: number;
@@ -49,7 +50,7 @@ export default class Ficha {
     public getById(): Ficha {
         fetch("api/ficha/id/" + this.idFicha, {
             method: "GET",
-            headers: new Headers()
+            headers: MyHeaders.getMyHeaders()
         })
             .then(response => response.json())
             .then(data => {
@@ -62,13 +63,28 @@ export default class Ficha {
     public static findByIdJogador() : Promise<Ficha[]> {
         return fetch("api/ficha/jogador", {
             method: "GET",
-            headers: new Headers()
+            headers: MyHeaders.getMyHeaders(),
+            credentials: 'include'
         })
             .then(response => response.json())
             .then(data => data as Ficha[])
 
     }
 
+    public update() : void {
+        fetch('api/ficha/',
+            {
+                method:'PUT',
+                headers: MyHeaders.getMyHeaders(),
+                body: JSON.stringify(this)
+            }).then(response=> {
+                if(response.ok){
+                    console.log("Ficha " + this.idFicha + "atualizada")
+                }else{
+                    console.log("Status "+ response.statusText)
+                }
+        });
+    }
     private setFichaFromObject(obj: Ficha) {
         this.idRaca = obj.idRaca;
         this.idCidade = obj.idCidade;
@@ -101,23 +117,6 @@ export default class Ficha {
         this.inventarios = obj.inventarios;
         this.patronos = obj.patronos;
         this.situacoes = obj.situacoes;
-    }
-
-    public update() : void {
-        let myHeaders = new Headers;
-        myHeaders.append("Content-Type", "application/json;charset=UTF-8")
-        fetch('api/ficha/',
-            {
-                method:'PUT',
-                headers: myHeaders,
-                body: JSON.stringify(this)
-            }).then(response=> {
-                if(response.ok){
-                    console.log("Ficha " + this.idFicha + "atualizada")
-                }else{
-                    console.log("Status "+ response.statusText)
-                }
-        });
     }
 
 /*    get idFicha(): number {

@@ -19,8 +19,8 @@ class LoginPage extends React.Component {
     }
 
     handleChange(e) {
-        const {id, value} = e.target;
-        this.setState({[id]: value});
+        const {name, value} = e.target;
+        this.setState({[name]: value});
     }
 
     handleSumit(e) {
@@ -43,14 +43,14 @@ class LoginPage extends React.Component {
                 <Form onSubmit={this.handleSumit}>
                     <Form.Group controlId="formBasicUsername">
                         <Form.Label column={false}>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Enter username" id={"username"}
+                        <Form.Control type="text" placeholder="Enter username" name={"username"}
                                       onChange={this.handleChange}/>
                         <Form.Text className="text-muted">
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label column={false}>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" id={"password"}
+                        <Form.Control type="password" placeholder="Password" name={"password"}
                                       onChange={this.handleChange}/>
                     </Form.Group>
                     <Button variant="primary" type="submit">

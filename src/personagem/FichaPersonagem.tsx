@@ -17,7 +17,7 @@ interface State {
 }
 
 class FichaPersonagem extends React.Component<State, State> {
-    constructor(props:any) {
+        constructor(props:any) {
         super(props);
         this.state = {
             ficha : new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)).getById(),
