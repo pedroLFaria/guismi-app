@@ -12,7 +12,7 @@ interface State{
     readOnly  : boolean
 }
 
-class Nome extends React.Component<Props,State> {
+class NomeApp extends React.Component<Props,State> {
     constructor(props:Props) {
         super(props);
         this.state = {
@@ -51,4 +51,4 @@ class Nome extends React.Component<Props,State> {
     }
 }
 
-export {Nome}
+export {NomeApp}

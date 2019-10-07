@@ -1,24 +1,50 @@
 import * as React from "react";
+import Caminho from "./Caminho";
 import Form from "react-bootstrap/Form";
-import Ficha from "../ficha/Ficha";
 import Sistema from "../sistema/Sistema";
+import Ficha from "../ficha/Ficha";
+import {FormControlProps} from "react-bootstrap";
 
-interface Guism {
-    ficha: Ficha,
-    sistema: Sistema
+interface Props {
+    caminho: Caminho,
+    ficha:Ficha
 }
 
-class CaminhosApp extends React.Component<Guism, Guism> {
+interface State {
+    caminho: Caminho,
+    caminhosSistema: Caminho[]
+
+}
+
+export default class CaminhosApp extends React.Component<Props, State> {
+    constructor(props: Props) {
+        super(props);
+        this.state = {
+            caminho: this.props.caminho,
+            caminhosSistema: Sistema.sistema.caminhos
+        };
+    }
+
+    handleChange(event:any) {
+        const value = event.target.value
+        this.setState(state => {
+            state.caminho.idCaminho = Number(value);
+            return {caminho: state.caminho}
+        });
+        console.log(this.props.ficha.caminhos)
+    }
 
     render() {
-        const ficha: Ficha = this.props.ficha
         return (
-            <Form.Group>
-                <Form.Label column={false}>Raca</Form.Label>
-                <Form.Control/>
-            </Form.Group>
+            <Form.Control as={"select"} value={this.state.caminho.idCaminho.toString()} onChange={this.handleChange.bind(this)}>
+                {this.state.caminhosSistema.map((caminhoSistema, index) => {
+                    return (
+                        <option key={index} value={caminhoSistema.idCaminho}>
+                            {caminhoSistema.nomeCaminho}
+                        </option>
+                    )
+                })}
+            </Form.Control>
         )
     }
 }
-
-export {CaminhosApp}

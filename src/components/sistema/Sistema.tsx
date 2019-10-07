@@ -22,7 +22,11 @@ export default class Sistema {
     private _especializacoes?: Especializacao[];
 
     private constructor() {
-        this.sistemaGetRequest()
+        const localStorageSistema = localStorage.getItem("sistema");
+        if(localStorageSistema)
+            this.setSistemaFromObject(JSON.parse(localStorageSistema));
+        else
+            this.sistemaGetRequest()
     }
 
      private sistemaGetRequest() {
@@ -32,7 +36,10 @@ export default class Sistema {
             credentials: 'include'
         })
             .then(response => response.json())
-            .then(data => this.setSistemaFromObject(data));
+            .then(data => {
+                localStorage.setItem("sistema", JSON.stringify(data));
+                this.setSistemaFromObject(data)
+            });
     }
 
     private setSistemaFromObject(json: Sistema){

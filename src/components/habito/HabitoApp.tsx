@@ -2,6 +2,7 @@ import * as React from 'react'
 import Table from "react-bootstrap/Table";
 import Ficha from '../ficha/Ficha';
 import Sistema from '../sistema/Sistema';
+import Habito from "./Habito";
 
 interface props {
     ficha: Ficha;
@@ -18,7 +19,7 @@ class HabitoApp extends React.Component<props, State> {
         this.state = {
             ficha: this.props.ficha,
             sistema: Sistema.sistema
-        }
+        };
         console.log(this.state.ficha.habitos)
     }
 
@@ -46,12 +47,12 @@ class HabitoApp extends React.Component<props, State> {
                 </tr>
                 </thead>
                 <tbody>
-                {this.props.ficha.habitos.map((habito: any) =>
-                    <tr>
+                {this.props.ficha.habitos.map((habito) =>
+                    <tr key={habito.idHabito}>
                         <td>{habito.nomeHabito}</td>
                         <td>{habito.qtdFichaHabito}</td>
-                        <td>{habito.qtdFichaHabito / 5}</td>
-                        <td>{habito.qtdFichaHabito / 10}</td>
+                        <td>{habito.qtdFichaHabito! / 5}</td>
+                        <td>{habito.qtdFichaHabito! / 10}</td>
                     </tr>)}
                 </tbody>
             </Table>

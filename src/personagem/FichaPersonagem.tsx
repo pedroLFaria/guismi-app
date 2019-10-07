@@ -4,9 +4,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Sidebar} from "../components/Sidebar";
-import {Nome} from "../components/ficha/Nome";
+import {NomeApp} from "../components/ficha/NomeApp";
 import {RacaApp} from "../components/raca/RacaApp";
-import {CaminhosApp} from "../components/caminho/CaminhoApp";
+import {CaminhosApp} from "../components/caminho/CaminhosApp";
 import {HabitoApp} from "../components/habito/HabitoApp";
 import Ficha from "../components/ficha/Ficha";
 import Sistema from "../components/sistema/Sistema";
@@ -17,37 +17,32 @@ interface State {
 }
 
 class FichaPersonagem extends React.Component<State, State> {
-        constructor(props:any) {
+    constructor(props: any) {
         super(props);
         this.state = {
-            ficha : new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)).getById(),
+            ficha: new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)).getById(),
             sistema: Sistema.sistema
         };
         this.tick = this.tick.bind(this);
+        this.tick()
     }
 
     componentDidMount() {
-        console.log("idFicha " + this.state.ficha.idFicha)
-        /*this.state.ficha.getById().then(ficha=>{
-            this.setState({ficha:ficha})
-        })*/
-        setInterval(() => this.tick(), 3000);
+        console.log("idFicha " + this.state.ficha.idFicha);
+        setInterval(() => this.tick(), 1113000);
+        this.tick()
     };
-
 
     tick() {
         this.setState({
             ficha:this.state.ficha.getById()
-        })
-    }
 
-    onSubmit() {
+        })
 
     }
 
     render() {
         const ficha = this.state.ficha;
-        const sistema = this.state.sistema;
         return (
             <Container>
                 <Row>
@@ -61,7 +56,7 @@ class FichaPersonagem extends React.Component<State, State> {
                             </Row>
                             <Row>
                                 <Col md={3}>
-                                    <Nome
+                                    <NomeApp
                                         ficha={ficha}
                                     />
                                 </Col>
@@ -73,7 +68,6 @@ class FichaPersonagem extends React.Component<State, State> {
                                 <Col>
                                     <CaminhosApp
                                         ficha={ficha}
-                                        sistema={sistema}
                                     />
                                 </Col>
                             </Row>

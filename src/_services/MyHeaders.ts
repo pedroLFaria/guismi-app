@@ -4,7 +4,7 @@ export default class MyHeaders{
 
     private constructor(){
         this.headers = new Headers();
-        this.headers.append("Content-Type", "Content-Type")
+        this.headers.append("Content-Type", "application/json")
     }
 
     public static getMyHeaders(): Headers{

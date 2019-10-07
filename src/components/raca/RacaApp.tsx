@@ -20,17 +20,16 @@ class RacaApp extends React.Component<Props, State> {
             sistema: Sistema.sistema
         };
         this.handleChange = this.handleChange.bind(this)
-        console.log("RacaApp " + this.state.sistema.caminhos.length)
     }
 
     handleChange(event:any) {
-        this.state.ficha.idRaca = Number(event.target.value)
+        this.state.ficha.idRaca = Number(event.target.value);
         this.setState({ficha: this.state.ficha});
         this.render();
     }
 
-    componentDidUpdate(prevProps:Props) {
-        if (prevProps.ficha.idRaca !== this.props.ficha.idRaca)
+    componentDidUpdate(prevProps:Props, prevState : State) {
+        if (prevProps.ficha.raca !== this.props.ficha.raca)
             this.setState({ficha: this.props.ficha})
     }
 
@@ -40,8 +39,8 @@ class RacaApp extends React.Component<Props, State> {
                 <Form.Label column={false}>Raca</Form.Label>
                 <Form.Control value={this.state.ficha.idRaca!.toString()} as={"select"} onChange={this.handleChange}>
                     {this.state.sistema.racas.map(
-                        (raca) => <option value={raca.idRaca}>{raca.nomeRaca}</option>)
-                    }
+                        (raca) => <option key={raca.idRaca} value={raca.idRaca}>{raca.nomeRaca}</option>
+                    )}
                 </Form.Control>
             </Form.Group>
         )

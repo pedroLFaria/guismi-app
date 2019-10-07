@@ -56,11 +56,10 @@ export default class Ficha {
             .then(data => {
                 this.setFichaFromObject(data);
             });
-        
         return this
     }
 
-    public static findByIdJogador() : Promise<Ficha[]> {
+    public static findByIdJogador(): Promise<Ficha[]> {
         return fetch("api/ficha/jogador", {
             method: "GET",
             headers: MyHeaders.getMyHeaders(),
@@ -71,20 +70,21 @@ export default class Ficha {
 
     }
 
-    public update() : void {
+    public update(): void {
         fetch('api/ficha/',
             {
-                method:'PUT',
+                method: 'PUT',
                 headers: MyHeaders.getMyHeaders(),
                 body: JSON.stringify(this)
-            }).then(response=> {
-                if(response.ok){
-                    console.log("Ficha " + this.idFicha + "atualizada")
-                }else{
-                    console.log("Status "+ response.statusText)
-                }
+            }).then(response => {
+            if (response.ok) {
+                console.log("Ficha " + this.idFicha + " atualizada com sucesso.")
+            } else {
+                console.log("Status " + response.statusText)
+            }
         });
     }
+
     private setFichaFromObject(obj: Ficha) {
         this.idRaca = obj.idRaca;
         this.idCidade = obj.idCidade;
@@ -119,260 +119,261 @@ export default class Ficha {
         this.situacoes = obj.situacoes;
     }
 
-/*    get idFicha(): number {
-        return this._idFicha;
-    }
+    /*    get idFicha(): number {
+            return this._idFicha;
+        }
 
-    set idFicha(value: number) {
-        this._idFicha = value;
-    }
+        set idFicha(value: number) {
+            this._idFicha = value;
+        }
 
-    get idRaca(): number {
-        return this._idRaca;
-    }
+        get idRaca(): number {
+            return this._idRaca;
+        }
 
-    set idRaca(value: number) {
-        this._idRaca = value;
-    }
+        set idRaca(value: number) {
+            this._idRaca = value;
+        }
 
-    get idCidade(): number {
-        return this._idCidade;
-    }
+        get idCidade(): number {
+            return this._idCidade;
+        }
 
-    set idCidade(value: number) {
-        this._idCidade = value;
-    }
+        set idCidade(value: number) {
+            this._idCidade = value;
+        }
 
-    get idJogador(): number {
-        return this._idJogador;
-    }
+        get idJogador(): number {
+            return this._idJogador;
+        }
 
-    set idJogador(value: number) {
-        this._idJogador = value;
-    }
+        set idJogador(value: number) {
+            this._idJogador = value;
+        }
 
-    get nomePersonagem(): string {
-        return this._nomePersonagem;
-    }
+        get nomePersonagem(): string {
+            return this._nomePersonagem;
+        }
 
-    set nomePersonagem(value: string) {
-        this._nomePersonagem = value;
-    }
+        set nomePersonagem(value: string) {
+            this._nomePersonagem = value;
+        }
 
-    get img(): string {
-        return this._img;
-    }
+        get img(): string {
+            return this._img;
+        }
 
-    set img(value: string) {
-        this._img = value;
-    }
+        set img(value: string) {
+            this._img = value;
+        }
 
-    get idade(): number {
-        return this._idade;
-    }
+        get idade(): number {
+            return this._idade;
+        }
 
-    set idade(value: number) {
-        this._idade = value;
-    }
+        set idade(value: number) {
+            this._idade = value;
+        }
 
-    get afiliacao(): string {
-        return this._afiliacao;
-    }
+        get afiliacao(): string {
+            return this._afiliacao;
+        }
 
-    set afiliacao(value: string) {
-        this._afiliacao = value;
-    }
+        set afiliacao(value: string) {
+            this._afiliacao = value;
+        }
 
-    get cla(): string {
-        return this._cla;
-    }
+        get cla(): string {
+            return this._cla;
+        }
 
-    set cla(value: string) {
-        this._cla = value;
-    }
+        set cla(value: string) {
+            this._cla = value;
+        }
 
-    get sorteDia(): number {
-        return this._sorteDia;
-    }
+        get sorteDia(): number {
+            return this._sorteDia;
+        }
 
-    set sorteDia(value: number) {
-        this._sorteDia = value;
-    }
+        set sorteDia(value: number) {
+            this._sorteDia = value;
+        }
 
-    get distForca(): number {
-        return this._distForca;
-    }
+        get distForca(): number {
+            return this._distForca;
+        }
 
-    set distForca(value: number) {
-        this._distForca = value;
-    }
+        set distForca(value: number) {
+            this._distForca = value;
+        }
 
-    get distConstituicao(): number {
-        return this._distConstituicao;
-    }
+        get distConstituicao(): number {
+            return this._distConstituicao;
+        }
 
-    set distConstituicao(value: number) {
-        this._distConstituicao = value;
-    }
+        set distConstituicao(value: number) {
+            this._distConstituicao = value;
+        }
 
-    get distAgilidade(): number {
-        return this._distAgilidade;
-    }
+        get distAgilidade(): number {
+            return this._distAgilidade;
+        }
 
-    set distAgilidade(value: number) {
-        this._distAgilidade = value;
-    }
+        set distAgilidade(value: number) {
+            this._distAgilidade = value;
+        }
 
-    get distDestreza(): number {
-        return this._distDestreza;
-    }
+        get distDestreza(): number {
+            return this._distDestreza;
+        }
 
-    set distDestreza(value: number) {
-        this._distDestreza = value;
-    }
+        set distDestreza(value: number) {
+            this._distDestreza = value;
+        }
 
-    get distInteligencia(): number {
-        return this._distInteligencia;
-    }
+        get distInteligencia(): number {
+            return this._distInteligencia;
+        }
 
-    set distInteligencia(value: number) {
-        this._distInteligencia = value;
-    }
+        set distInteligencia(value: number) {
+            this._distInteligencia = value;
+        }
 
-    get distSabedoria(): number {
-        return this._distSabedoria;
-    }
+        get distSabedoria(): number {
+            return this._distSabedoria;
+        }
 
-    set distSabedoria(value: number) {
-        this._distSabedoria = value;
-    }
+        set distSabedoria(value: number) {
+            this._distSabedoria = value;
+        }
 
-    get distCarisma(): number {
-        return this._distCarisma;
-    }
+        get distCarisma(): number {
+            return this._distCarisma;
+        }
 
-    set distCarisma(value: number) {
-        this._distCarisma = value;
-    }
+        set distCarisma(value: number) {
+            this._distCarisma = value;
+        }
 
-    get nivelPersonagem(): number {
-        return this._nivelPersonagem;
-    }
+        get nivelPersonagem(): number {
+            return this._nivelPersonagem;
+        }
 
-    set nivelPersonagem(value: number) {
-        this._nivelPersonagem = value;
-    }
+        set nivelPersonagem(value: number) {
+            this._nivelPersonagem = value;
+        }
 
-    get expPersonagem(): number {
-        return this._expPersonagem;
-    }
+        get expPersonagem(): number {
+            return this._expPersonagem;
+        }
 
-    set expPersonagem(value: number) {
-        this._expPersonagem = value;
-    }
+        set expPersonagem(value: number) {
+            this._expPersonagem = value;
+        }
 
-    get descPersonagem(): string {
-        return this._descPersonagem;
-    }
+        get descPersonagem(): string {
+            return this._descPersonagem;
+        }
 
-    set descPersonagem(value: string) {
-        this._descPersonagem = value;
-    }
+        set descPersonagem(value: string) {
+            this._descPersonagem = value;
+        }
 
-    get histPersonagem(): string {
-        return this._histPersonagem;
-    }
+        get histPersonagem(): string {
+            return this._histPersonagem;
+        }
 
-    set histPersonagem(value: string) {
-        this._histPersonagem = value;
-    }
+        set histPersonagem(value: string) {
+            this._histPersonagem = value;
+        }
 
-    get nota(): string {
-        return this._nota;
-    }
+        get nota(): string {
+            return this._nota;
+        }
 
-    set nota(value: string) {
-        this._nota = value;
-    }
+        set nota(value: string) {
+            this._nota = value;
+        }
 
-    get idSanidade(): number {
-        return this._idSanidade;
-    }
+        get idSanidade(): number {
+            return this._idSanidade;
+        }
 
-    set idSanidade(value: number) {
-        this._idSanidade = value;
-    }
+        set idSanidade(value: number) {
+            this._idSanidade = value;
+        }
 
-    get raca(): Raca {
-        return this._raca;
-    }
+        get raca(): Raca {
+            return this._raca;
+        }
 
-    set raca(value: Raca) {
-        this._raca = value;
-    }
+        set raca(value: Raca) {
+            this._raca = value;
+        }
 
-    get caminhos(): Caminho[] {
-        return this._caminhos;
-    }
+        get caminhos(): Caminho[] {
+            return this._caminhos;
+        }
 
-    set caminhos(value: Caminho[]) {
-        this._caminhos = value;
-    }
+        set caminhos(value: Caminho[]) {
+            this._caminhos = value;
+        }
 
-    get descendencias(): Descendencia[] {
-        return this._descendencias;
-    }
+        get descendencias(): Descendencia[] {
+            return this._descendencias;
+        }
 
-    set descendencias(value: Descendencia[]) {
-        this._descendencias = value;
-    }
+        set descendencias(value: Descendencia[]) {
+            this._descendencias = value;
+        }
 
-    get habilidades(): Habilidade[] {
-        return this._habilidades;
-    }
+        get habilidades(): Habilidade[] {
+            return this._habilidades;
+        }
 
-    set habilidades(value: Habilidade[]) {
-        this._habilidades = value;
-    }
+        set habilidades(value: Habilidade[]) {
+            this._habilidades = value;
+        }
 
-    get habitos(): Habito[] {
-        return this._habitos;
-    }
+        get habitos(): Habito[] {
+            return this._habitos;
+        }
 
-    set habitos(value: Habito[]) {
-        this._habitos = value;
-    }
+        set habitos(value: Habito[]) {
+            this._habitos = value;
+        }
 
-    get idiomas(): Idioma[] {
-        return this._idiomas;
-    }
+        get idiomas(): Idioma[] {
+            return this._idiomas;
+        }
 
-    set idiomas(value: Idioma[]) {
-        this._idiomas = value;
-    }
+        set idiomas(value: Idioma[]) {
+            this._idiomas = value;
+        }
 
-    get inventarios(): Inventario[] {
-        return this._inventarios;
-    }
+        get inventarios(): Inventario[] {
+            return this._inventarios;
+        }
 
-    set inventarios(value: Inventario[]) {
-        this._inventarios = value;
-    }
+        set inventarios(value: Inventario[]) {
+            this._inventarios = value;
+        }
 
-    get patronos(): Patrono[] {
-        return this._patronos;
-    }
+        get patronos(): Patrono[] {
+            return this._patronos;
+        }
 
-    set patronos(value: Patrono[]) {
-        this._patronos = value;
-    }
+        set patronos(value: Patrono[]) {
+            this._patronos = value;
+        }
 
-    get situacoes(): Situacao[] {
-        return this._situacoes;
-    }
+        get situacoes(): Situacao[] {
+            return this._situacoes;
+        }
 
-    set situacoes(value: Situacao[]) {
-        this._situacoes = value;
-    }
-*/}
+        set situacoes(value: Situacao[]) {
+            this._situacoes = value;
+        }
+    */
+}
 
