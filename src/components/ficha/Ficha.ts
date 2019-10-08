@@ -67,7 +67,6 @@ export default class Ficha {
         })
             .then(response => response.json())
             .then(data => data as Ficha[])
-
     }
 
     public update(): void {

@@ -10,6 +10,10 @@ import {CaminhosApp} from "../components/caminho/CaminhosApp";
 import {HabitoApp} from "../components/habito/HabitoApp";
 import Ficha from "../components/ficha/Ficha";
 import Sistema from "../components/sistema/Sistema";
+import MyHeaders from "../_services/MyHeaders";
+import TabelaDeAtributosApp from "../components/ficha/TabelaDeAtributosApp";
+import IdadeApp from "../components/ficha/IdadeApp";
+import NivelPersonagem from "../components/ficha/NivelPersonagem";
 
 interface State {
     ficha: Ficha;
@@ -20,26 +24,22 @@ class FichaPersonagem extends React.Component<State, State> {
     constructor(props: any) {
         super(props);
         this.state = {
-            ficha: new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)).getById(),
+            ficha: new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)),
             sistema: Sistema.sistema
         };
-        this.tick = this.tick.bind(this);
-        this.tick()
     }
 
     componentDidMount() {
-        console.log("idFicha " + this.state.ficha.idFicha);
-        setInterval(() => this.tick(), 1113000);
-        this.tick()
-    };
-
-    tick() {
-        this.setState({
-            ficha:this.state.ficha.getById()
-
+        console.log("Ficha " + this.state.ficha.idFicha);
+        fetch("api/ficha/id/" + this.state.ficha.idFicha, {
+            method: "GET",
+            headers: MyHeaders.getMyHeaders()
         })
-
-    }
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ficha: data as Ficha})
+            });
+    };
 
     render() {
         const ficha = this.state.ficha;
@@ -59,6 +59,9 @@ class FichaPersonagem extends React.Component<State, State> {
                                     <NomeApp
                                         ficha={ficha}
                                     />
+                                    <IdadeApp
+                                        ficha={ficha}
+                                    />
                                 </Col>
                                 <Col md={3}>
                                     <RacaApp
@@ -70,23 +73,23 @@ class FichaPersonagem extends React.Component<State, State> {
                                         ficha={ficha}
                                     />
                                 </Col>
+                                <Col>
+                                    <NivelPersonagem
+                                        ficha={ficha}
+                                    />
+                                </Col>
                             </Row>
                             <Row>
-                                { /*
-                            <span>Caminho</span>
-                            <Caminho
-                                ficha={ficha}
-                                sistema={sistema}
-                            />
-        </div>
-                    </div>
-                    <Habitos
-                        ficha={ficha}
-                        sistema={sistema}
-                    />*/}
-                                <HabitoApp
-                                    ficha={ficha}
-                                />
+                                <Col>
+                                    <TabelaDeAtributosApp
+                                        ficha={ficha}
+                                    />
+                                </Col>
+                                <Col>
+                                    <HabitoApp
+                                        ficha={ficha}
+                                    />
+                                </Col>
                             </Row>
                         </Container>
                     </Col>
