@@ -37,7 +37,7 @@ class HabitoApp extends React.Component<props, State> {
 
     render() {
         return (
-            <Table hover={true}>
+            <Table hover={true} size={"sm"}>
                 <thead className="thead-dark">
                 <tr>
                     <th>HABITOS</th>

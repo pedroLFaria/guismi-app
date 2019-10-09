@@ -39,6 +39,12 @@ class CaminhosApp extends React.Component<Props, State> {
         this.handleChange = this.handleChange.bind(this)
     }
 
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+        if(JSON.stringify(prevProps.ficha.caminhos) !== JSON.stringify(this.props.ficha.caminhos))
+            this.setState({
+                ficha:this.props.ficha
+            })
+    }
 
     handleChange(event: any, caminho: Caminho, index: number) {
         if (this.state.ficha.caminhos.find(caminho => caminho.idCaminho === Number(event.target.value))) {
@@ -62,6 +68,7 @@ class CaminhosApp extends React.Component<Props, State> {
             <Form.Group>
                 <Form.Label column={false}>Caminhos</Form.Label>
                 {this.state.ficha.caminhos.map((caminho, index) => {
+                    console.log(caminho);
                     return (<CaminhoApp
                         key={index}
                         caminho={caminho}

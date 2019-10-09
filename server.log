@@ -1,0 +1,50 @@
+11:15:01.122 INFO  - Loading configurations from: file:/C:/GUISM/guismi-api/output/guismi-api-1.0.0-SNAPSHOT-runnable.jar!/META-INF/defaults.yml
+11:15:01.162 INFO  - Loading configurations from: file:/C:/GUISM/guismi-api/output/guismi-api-1.0.0-SNAPSHOT-runnable.jar!/conf/application.yml
+11:15:01.214 INFO  - The InMemorySessionStore isn't designed for production proposes. Please consider using the HazelcastSecuritySessionStore.
+11:15:04.600 INFO  - Started org.vibur.dbcp.ViburDBCPDataSource@1bae316d[driverClassName = null, jdbcUrl = jdbc:mysql://guismi.ctebgduzcfr5.sa-east-1.rds.amazonaws.com/guism?serverTimezone=UTC, username = guismiADM, externalDataSource = null, poolInitialSize = 10, poolMaxSize = 100, poolFair = true, pool = org.vibur.objectpool.ConcurrentPool@147a5d08[remainingCreated = 10], name = p1, connectionTimeoutInMs = 30000, loginTimeoutInSeconds = 10, acquireRetryDelayInMs = 1000, acquireRetryAttempts = 3, statementCacheMaxSize = 0]
+11:15:04.766 INFO  - Micro Routing API
+11:15:04.766 INFO  -   default-encoding: UTF-8
+11:15:04.766 INFO  -   default-content-type: application/json
+11:15:04.767 INFO  -   content-type-priority: REQUEST
+11:15:04.940 INFO  - Looking for modules...
+11:15:04.950 INFO  - Enabling static routing at folder: webapp
+11:15:05.015 INFO  - Enabling static routing for webjars at '/assets'
+11:15:05.019 INFO  - Registering route: POST:/api/auth/logout
+11:15:05.020 INFO  - Registering route: POST:/api/auth/callback
+11:15:05.020 INFO  - Registering route: GET:/api/ficha/id/{id}
+11:15:05.020 INFO  - Registering route: PUT:/api/Situacao
+11:15:05.020 INFO  - Registering route: GET:/api/sanidade/sistema
+11:15:05.020 INFO  - Registering route: POST:/api/ficha
+11:15:05.020 INFO  - Registering route: PUT:/api/ficha
+11:15:05.020 INFO  - Registering route: DELETE:/api/Situacao/delete/{id}
+11:15:05.021 INFO  - Registering route: POST:/api/acao
+11:15:05.021 INFO  - Registering route: GET:/api/ficha/jogador
+11:15:05.021 INFO  - Registering route: POST:/api/Situacao
+11:15:05.021 INFO  - Registering route: GET:/api/sistema
+11:15:05.101 INFO  - Registering route: GET:/chat/{room-id}
+11:15:05.194 INFO  - XNIO version 3.3.8.Final
+11:15:05.217 INFO  - XNIO NIO Implementation Version 3.3.8.Final
+11:15:05.315 INFO  - Configuring Undertow options...
+11:15:05.315 INFO  -   buffer-size: 1024
+11:15:05.318 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+11:15:05.318 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+11:15:05.318 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+11:15:05.318 INFO  -   org.xnio.Options.BACKLOG: 20000
+11:15:05.375 INFO  - Database IdentityManager configured and started.
+11:15:05.377 INFO  - Configuring authentication rules...
+11:15:05.379 INFO  - Defined authentication endpoints (depending on the modules you've loaded, not all endpoints are actually in use):
+11:15:05.379 INFO  -   login-page: /index.html
+11:15:05.379 INFO  -   error-page: /auth/error/
+11:15:05.379 INFO  -   success-page: /
+11:15:05.379 INFO  -   callback-url: /api/auth/callback
+11:15:05.379 INFO  -   logout-url: /api/auth/logout
+11:15:05.379 INFO  - Defined security parameters (depending on the modules you've loaded, not all onFinish are actually in use):
+11:15:05.379 INFO  -   security-context-factory: kikaha.core.modules.security.DefaultSecurityContextFactory
+11:15:05.380 INFO  -   session-id-manager: kikaha.core.modules.security.SessionCookie
+11:15:05.380 INFO  -   session-store: kikaha.core.modules.security.InMemorySessionStore
+11:15:05.380 INFO  -   password-encoder: kikaha.core.modules.security.PlainTextPasswordEncoder
+11:15:05.380 INFO  -   authentication-request-matcher: kikaha.core.modules.security.FormAuthenticationRequestMatcher
+11:15:05.380 INFO  -   authentication-success-listener: kikaha.core.modules.security.DefaultAuthenticationSuccessListener
+11:15:05.380 INFO  -   authentication-failure-listener: kikaha.core.modules.security.SendChallengeFailureListener
+11:15:05.381 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+11:15:05.633 INFO  - Application started in 4691ms.

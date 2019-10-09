@@ -1,7 +1,7 @@
 import React from "react";
 import Ficha from "./Ficha";
 import FormControl from "react-bootstrap/FormControl";
-import {Form, FormGroup} from "react-bootstrap";
+import {Col, Form, FormGroup, Row} from "react-bootstrap";
 
 interface Props {
     ficha: Ficha
@@ -28,16 +28,18 @@ export default class NivelPersonagem extends React.Component<Props, State> {
             })
     }
 
-    render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
+    render(){
         return (
-            <FormGroup>
-                <Form.Label>Nivel</Form.Label>
-                <FormControl
-                    as={'input'}
-                    type={'number'}
-                    value={this.state.ficha.nivelPersonagem.toString()}
-                    readOnly={this.state.readonly} plaintext={this.state.readonly}
-                />
+            <FormGroup as={Row} >
+                <Form.Label column={true} sm={2}>Nivel</Form.Label>
+                <Col>
+                    <FormControl
+                        as={'input'}
+                        type={'number'}
+                        value={this.state.ficha.nivelPersonagem.toString()}
+                        readOnly={this.state.readonly} plaintext={this.state.readonly}
+                    />
+                </Col>
             </FormGroup>
         )
     }

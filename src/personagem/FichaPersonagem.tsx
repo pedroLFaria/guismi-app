@@ -14,6 +14,8 @@ import MyHeaders from "../_services/MyHeaders";
 import TabelaDeAtributosApp from "../components/ficha/TabelaDeAtributosApp";
 import IdadeApp from "../components/ficha/IdadeApp";
 import NivelPersonagem from "../components/ficha/NivelPersonagem";
+import ExperienciaApp from "../components/ficha/ExperienciaApp";
+import DescendenciasApp from "../components/descendencia/DescendenciasApp";
 
 interface State {
     ficha: Ficha;
@@ -74,7 +76,21 @@ class FichaPersonagem extends React.Component<State, State> {
                                     />
                                 </Col>
                                 <Col>
+                                    <Row>
                                     <NivelPersonagem
+                                        ficha={ficha}
+                                    />
+                                    </Row>
+                                    <Row>
+                                        <ExperienciaApp
+                                            ficha={ficha}
+                                        />
+                                    </Row>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <DescendenciasApp
                                         ficha={ficha}
                                     />
                                 </Col>
@@ -94,8 +110,8 @@ class FichaPersonagem extends React.Component<State, State> {
                         </Container>
                     </Col>
                 </Row>
-            </Container>)
-
+            </Container>
+        )
     }
 }
 
