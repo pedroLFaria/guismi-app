@@ -94,6 +94,9 @@ class FichaPersonagem extends React.Component<State, State> {
                                         ficha={ficha}
                                     />
                                 </Col>
+                                <Col>
+                                    espaço vazio
+                                </Col>
                             </Row>
                             <Row>
                                 <Col>
