@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Col, Form, FormControl, FormGroup, Modal, ModalBody, ModalTitle, Row} from "react-bootstrap";
+import { Button, Col, Form, FormControl, FormGroup, Modal, ModalBody, ModalTitle, Row } from "react-bootstrap";
 import Ficha from "../ficha/Ficha";
 import Sistema from "../sistema/Sistema";
 import Descendencia from "./Descendencia";
@@ -13,6 +13,7 @@ interface State {
     sistema: Sistema,
     modalDescShow: boolean[],
     modalCriacShow: boolean,
+    descendenciaSelecionada?: Descendencia
 }
 
 export default class DescendenciasApp extends React.Component<Props, State> {
@@ -38,7 +39,7 @@ export default class DescendenciasApp extends React.Component<Props, State> {
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
         if (JSON.stringify(prevProps.ficha.descendencias) !== JSON.stringify(this.props.ficha.descendencias))
-            this.setState({ficha: this.props.ficha})
+            this.setState({ ficha: this.props.ficha })
     }
 
     handleChange() {
@@ -46,7 +47,7 @@ export default class DescendenciasApp extends React.Component<Props, State> {
     }
 
     render() {
-        let descendenciaSelecionada:Descendencia = this.state.sistema.descendencias[3];
+        let descendenciaSelecionada: Descendencia = this.state.sistema.descendencias[3];
         return (
             <FormGroup>
                 <Row>
@@ -56,32 +57,46 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                         </Form.Label>
                     </Col>
                     <Col lg={"auto"}>
-                        <Button size={"sm"} variant="outline-info" onClick={()=>this.setState({modalCriacShow:true})}>+</Button>
+                        <Button size={"sm"} variant="outline-info" onClick={() => this.setState({ modalCriacShow: true })}>+</Button>
                     </Col>
                     <Modal
                         size="lg"
                         show={this.state.modalCriacShow}
-                        onHide={() => this.setState( {modalCriacShow:false })}
+                        onHide={() => this.setState({ modalCriacShow: false })}
                     >
                         <Modal.Header>
-                            <ModalTitle>Nova descendência</ModalTitle>
+                            <ModalTitle>
+                                <FormControl
+                                    value={"0"}
+                                    as={"select"}
+                                    plaintext={true}
+                                    onChange={(e) => {
+                                        let value = (e.target as HTMLFormElement).value;
+                                        this.setState(state => {
+                                            let descendenciaSelecionada = this.state.sistema.descendencias.find(function (descendencia) {
+                                                return descendencia.idDescendencia == value
+                                            })
+                                            return {
+                                                descendenciaSelecionada: descendenciaSelecionada
+                                            }
+                                        })
+                                    }}
+                                >
+                                    <option value={"0"}> </option>
+                                    {this.state.sistema.descendencias.map((descendencia, index) => {
+                                        return (
+                                            <option value={descendencia.idDescendencia}
+                                                key={index}
+                                            >
+                                                {descendencia.nomeDescendencia}
+                                            </option>)
+                                    })}
+                                </FormControl>
+                            </ModalTitle>
                         </Modal.Header>
                         <ModalBody>
                             <Row>
-                            <FormControl
-                                as={"select"}
-                                plaintext={true}
-                                onChange={(e)=>console.log(e.target)}
-                            >
-                                {this.state.sistema.descendencias.map((descendencia, index) => {
-                                    return (
-                                        <option value={descendencia.idDescendencia}
-                                                key={index}
-                                        >
-                                            {descendencia.nomeDescendencia}
-                                        </option>)
-                                })}
-                            </FormControl>
+
                             </Row>
                             <Row>
                                 <Col>
@@ -89,66 +104,66 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                                         Descrição
                                     </Row>
                                     <Row>
-                                    {descendenciaSelecionada.descDescendencia}
+                                        {this.state.descendenciaSelecionada ? this.state.descendenciaSelecionada.descDescendencia : ""}
                                     </Row>
                                 </Col>
                                 <Col>Habilidades:
-                                    {descendenciaSelecionada.habilidades.map((habilidade,index)=>{
-                                    return(
+                                    {this.state.descendenciaSelecionada?this.state.descendenciaSelecionada.habilidades.map((habilidade, index) => {
+                                    return (
                                         <Row key={index}>{habilidade.nomeHabilidade}</Row>
                                     )
-                                })}</Col>
+                                }):""}</Col>
                                 <Col>
-                                    {descendenciaSelecionada.habitos.map((habito,index)=>{
-                                        return(
+                                    {this.state.descendenciaSelecionada?this.state.descendenciaSelecionada.habitos.map((habito, index) => {
+                                        return (
                                             <p>{habito.nomeHabito}</p>
                                         )
-                                    })}
+                                    }):""}
                                 </Col>
                             </Row>
                         </ModalBody>
                     </Modal>
                 </Row>
                 {this.state.ficha.descendencias.map((descendencia, index) => {
-                        return (
-                            <Row>
-                                <Col lg={10}>
-                                    <FormControl
-                                        as={"select"}
-                                        plaintext={true}
-                                        value={descendencia.idDescendencia.toString()}
-                                        key={index}
-                                    >
-                                        {this.state.sistema.descendencias.map((descendencia, index) => {
-                                            return (
-                                                <option value={descendencia.idDescendencia}
-                                                        key={index}
-                                                >
-                                                    {descendencia.nomeDescendencia}
-                                                </option>)
-                                        })}
-                                    </FormControl>
-                                </Col>
-                                <Col lg={"auto"} md={"auto"}>
-                                    <Button size={"sm"} variant="outline-info"
-                                            onClick={() => this.setState(state => {
-                                                state.modalDescShow[index] = true;
-                                                return {modalDescShow: state.modalDescShow}
-                                            })}>#</Button>
-                                </Col>
-                                <Modal show={this.state.modalDescShow[index]} onHide={() => this.setState(state => {
-                                    state.modalDescShow[index] = false;
-                                    return {modalDescShow: state.modalDescShow}
-                                })}
-                                       key={index}>
-                                    <Modal.Header closeButton>
-                                        <ModalTitle>{descendencia.nomeDescendencia}</ModalTitle>
-                                    </Modal.Header>
-                                    <ModalBody>{descendencia.descDescendencia}</ModalBody>
-                                </Modal>
-                            </Row>
-                        )
-                    }
+                    return (
+                        <Row>
+                            <Col lg={10}>
+                                <FormControl
+                                    as={"select"}
+                                    plaintext={true}
+                                    value={descendencia.idDescendencia.toString()}
+                                    key={index}
+                                >
+                                    {this.state.sistema.descendencias.map((descendencia, index) => {
+                                        return (
+                                            <option value={descendencia.idDescendencia}
+                                                key={index}
+                                            >
+                                                {descendencia.nomeDescendencia}
+                                            </option>)
+                                    })}
+                                </FormControl>
+                            </Col>
+                            <Col lg={"auto"} md={"auto"}>
+                                <Button size={"sm"} variant="outline-info"
+                                    onClick={() => this.setState(state => {
+                                        state.modalDescShow[index] = true;
+                                        return { modalDescShow: state.modalDescShow }
+                                    })}>#</Button>
+                            </Col>
+                            <Modal show={this.state.modalDescShow[index]} onHide={() => this.setState(state => {
+                                state.modalDescShow[index] = false;
+                                return { modalDescShow: state.modalDescShow }
+                            })}
+                                key={index}>
+                                <Modal.Header closeButton>
+                                    <ModalTitle>{descendencia.nomeDescendencia}</ModalTitle>
+                                </Modal.Header>
+                                <ModalBody>{descendencia.descDescendencia}</ModalBody>
+                            </Modal>
+                        </Row>
+                    )
+                }
                 )}
             </FormGroup>
         );
