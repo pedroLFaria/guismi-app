@@ -23,8 +23,11 @@ class RacaApp extends React.Component<Props, State> {
     }
 
     handleChange(event:any) {
-        this.state.ficha.idRaca = Number(event.target.value);
-        this.setState({ficha: this.state.ficha});
+        this.setState(state=>{
+            state.ficha.idRaca = Number(event.target.value);
+            return {
+                ficha: state.ficha
+            }});
         this.render();
     }
 

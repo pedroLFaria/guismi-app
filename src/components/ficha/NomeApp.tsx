@@ -44,7 +44,7 @@ class NomeApp extends React.Component<Props,State> {
                 defaultValue={this.state.ficha.nomePersonagem}
                 plaintext={this.state.plaintext}
                 readOnly={this.state.readOnly}
-                onClick={this.onClick}
+                onDoubleClick={this.onClick}
                 onBlur={this.onBlur.bind(this)}
             />
         )

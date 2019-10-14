@@ -26,26 +26,6 @@ function login(username, password) {
         });
 }
 
-function findFichaById(id) {
-
-}
-
-function findFichasByJogador(id) {
-
-}
-
-function updateFicha(ficha) {
-
-}
-
-function insertFicha(ficha) {
-
-}
-
-function findSistema() {
-
-}
-
 function logout() {
     localStorage.removeItem('user');
 }

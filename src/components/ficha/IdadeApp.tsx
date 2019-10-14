@@ -1,39 +1,58 @@
 import * as React from "react";
 import Ficha from "./Ficha";
-import {FormControl} from "react-bootstrap";
+import {Col, Form, FormControl, FormGroup, Row} from "react-bootstrap";
 
 interface Props {
-    ficha:Ficha
+    ficha: Ficha
 }
+
 interface State {
-    ficha:Ficha,
-    plaintext:boolean,
-    readonly:boolean
+    ficha: Ficha,
+    readonly: boolean
 }
-export default class IdadeApp extends React.Component<Props, State>{
-    constructor(props:Props) {
+
+export default class IdadeApp extends React.Component<Props, State> {
+    constructor(props: Props) {
         super(props);
-        this.state={
-            ficha:this.props.ficha,
-            plaintext:true,
-            readonly:true
+        this.state = {
+            ficha: this.props.ficha,
+            readonly: true
         }
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        if(prevProps.ficha.idade !== this.props.ficha.idade)
+        if (prevProps.ficha.idade !== this.props.ficha.idade)
             this.setState({
-                ficha:this.props.ficha
+                ficha: this.props.ficha
             })
     }
 
-    render(){
-        return <FormControl
-            as={'input'}
-            type={"number"}
-            plaintext={this.state.plaintext}
-            readOnly={this.state.readonly}
-            value={this.state.ficha.idade.toString()}
-        />
+    render() {
+        return (
+            <FormGroup as={Row}>
+                <Col lg={"auto"}>
+                    <Form.Label column={false}>Idade</Form.Label>
+                </Col>
+                <Col>
+                    <FormControl
+                        as={'input'}
+                        type={"number"}
+                        plaintext={true}
+                        readOnly={this.state.readonly}
+                        value={this.state.ficha.idade.toString()}
+                        onDoubleClick={()=>this.setState({readonly:false})}
+                        onBlur={()=>this.setState({readonly:true})}
+                        onChange={(e)=>{
+                            let value = (e.target as HTMLInputElement).value;
+                            this.setState(state=> {
+                                state.ficha.idade = Number(value);
+                            return {
+                                ficha: state.ficha
+                            }
+                        })}}
+                    />
+                </Col>
+            </FormGroup>
+        )
     }
 }

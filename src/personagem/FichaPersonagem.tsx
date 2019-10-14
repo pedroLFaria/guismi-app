@@ -64,6 +64,18 @@ class FichaPersonagem extends React.Component<State, State> {
                                         ficha={ficha}
                                     />
                                 </Col>
+                                <Col>
+                                    <Row>
+                                        <NivelPersonagem
+                                            ficha={ficha}
+                                        />
+                                    </Row>
+                                    <Row>
+                                        <ExperienciaApp
+                                            ficha={ficha}
+                                        />
+                                    </Row>
+                                </Col>
                                 <Col md={3}>
                                     <RacaApp
                                         ficha={ficha}
@@ -73,18 +85,6 @@ class FichaPersonagem extends React.Component<State, State> {
                                     <CaminhosApp
                                         ficha={ficha}
                                     />
-                                </Col>
-                                <Col>
-                                    <Row>
-                                    <NivelPersonagem
-                                        ficha={ficha}
-                                    />
-                                    </Row>
-                                    <Row>
-                                        <ExperienciaApp
-                                            ficha={ficha}
-                                        />
-                                    </Row>
                                 </Col>
                             </Row>
                             <Row>

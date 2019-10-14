@@ -2,9 +2,8 @@ import * as React from 'react'
 import Table from "react-bootstrap/Table";
 import Ficha from '../ficha/Ficha';
 import Sistema from '../sistema/Sistema';
-import Habito from "./Habito";
 
-interface props {
+interface Props {
     ficha: Ficha;
 }
 
@@ -13,8 +12,8 @@ interface State{
     sistema:Sistema;
 }
 
-class HabitoApp extends React.Component<props, State> {
-    constructor(props: props) {
+class HabitoApp extends React.Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             ficha: this.props.ficha,
@@ -22,15 +21,9 @@ class HabitoApp extends React.Component<props, State> {
         };
     }
 
-    componentDidUpdate(prevProps: any, prevState: any) {
-        if (prevProps.ficha.habitos.length !== this.props.ficha.habitos.length) {
+    componentDidUpdate(prevProps: Props, prevState: State) {
+        if (JSON.stringify(prevProps.ficha.habitos) !== JSON.stringify(this.props.ficha.habitos)) {
             this.setState({ficha: this.props.ficha})
-        } else {
-            this.props.ficha.habitos.forEach(function (habito: any) {
-                if (prevProps.ficha.habitos.every((prevHabito: { idHabito: any; }) => prevHabito.idHabito !== habito.idHabito)) {
-
-                }
-            })
         }
     }
 

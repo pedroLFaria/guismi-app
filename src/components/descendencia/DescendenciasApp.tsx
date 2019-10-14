@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Col, Form, FormControl, FormGroup, Modal, ModalBody, ModalTitle, Row } from "react-bootstrap";
+import {Col, Form, FormGroup, Row} from "react-bootstrap";
 import Ficha from "../ficha/Ficha";
 import Sistema from "../sistema/Sistema";
 import Descendencia from "./Descendencia";
-import ModalEscolhaDescendencia from "./ModalEscolhaDescendencia";
+import ModalDescendencia from "./ModalDescendencia";
 import "./DescendenciasApp.css"
 
 interface Props {
@@ -41,20 +41,44 @@ export default class DescendenciasApp extends React.Component<Props, State> {
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
         if (JSON.stringify(prevProps.ficha.descendencias) !== JSON.stringify(this.props.ficha.descendencias))
-            this.setState({ ficha: this.props.ficha })
+            this.setState({ficha: this.props.ficha})
     }
 
-    handleChange() {
-
+    trocaDescendencia(novaDescendencia: Descendencia, prevDescendencia: Descendencia) {
+        let index = this.state.ficha.descendencias.findIndex(descendencia => {
+            return (
+                prevDescendencia.idDescendencia === descendencia.idDescendencia
+            )
+        });
+        if (!this.state.ficha.descendencias.find((descendencia) => {
+            return descendencia.idDescendencia === novaDescendencia.idDescendencia
+        })) {
+            this.setState(state => {
+                state.ficha.descendencias[index] = novaDescendencia;
+                return {
+                    ficha: state.ficha
+                }
+            });
+            return true
+        } else {
+            return false
+        }
     }
 
-    adicionaDescendencia(novaDescendencia : Descendencia){
-        this.setState(state=>{
-            state.ficha.descendencias.push(novaDescendencia);
-            return{
-                ficha:state.ficha
-            }
-        })
+    adicionaDescendencia(novaDescendencia: Descendencia) {
+        if (!this.state.ficha.descendencias.find((descendencia) => {
+            return descendencia.idDescendencia === novaDescendencia.idDescendencia
+        })) {
+            this.setState(state => {
+                state.ficha.descendencias.push(novaDescendencia);
+                return {
+                    ficha: state.ficha
+                }
+            });
+            return true
+        } else {
+            return false
+        }
     }
 
     render() {
@@ -66,55 +90,35 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                             Descendencias
                         </Form.Label>
                     </Col>
-                    <Col  lg={"auto"} md={"auto"}>
-                        <ModalEscolhaDescendencia
+                    <Col lg={"auto"} md={"auto"}>
+                        <ModalDescendencia
+                            buttonIcon={"+"}
+                            buttonText={"Add"}
                             descendencias={Sistema.sistema.descendencias}
-                            descendenciaEscolhida={this.adicionaDescendencia.bind(this)}
+                            adicionaDescendencia={this.adicionaDescendencia.bind(this)}
                         />
                     </Col>
                 </Row>
                 {this.state.ficha.descendencias.map((descendencia, index) => {
-                    return (
-                        <Row
-                        key={index}
-                        >
-                            <Col lg={10}>
-                                <FormControl
-                                    as={"select"}
-                                    plaintext={true}
-                                    value={descendencia.idDescendencia.toString()}
-                                    key={index}
-                                >
-                                    {this.state.sistema.descendencias.map((descendencia, index) => {
-                                        return (
-                                            <option value={descendencia.idDescendencia}
-                                                key={index}
-                                            >
-                                                {descendencia.nomeDescendencia}
-                                            </option>)
-                                    })}
-                                </FormControl>
-                            </Col>
-                            <Col lg={"auto"} md={"auto"}>
-                                <Button size={"sm"} variant="outline-info"
-                                    onClick={() => this.setState(state => {
-                                        state.modalDescShow[index] = true;
-                                        return { modalDescShow: state.modalDescShow }
-                                    })}>#</Button>
-                            </Col>
-                            <Modal show={this.state.modalDescShow[index]} onHide={() => this.setState(state => {
-                                state.modalDescShow[index] = false;
-                                return { modalDescShow: state.modalDescShow }
-                            })}
-                                key={index}>
-                                <Modal.Header closeButton>
-                                    <ModalTitle>{descendencia.nomeDescendencia}</ModalTitle>
-                                </Modal.Header>
-                                <ModalBody>{descendencia.descDescendencia}</ModalBody>
-                            </Modal>
-                        </Row>
-                    )
-                }
+                        return (
+                            <Row
+                                key={index}
+                            >
+                                <Col lg={10}>
+                                    <p>{descendencia.nomeDescendencia}</p>
+                                </Col>
+                                <Col lg={"auto"} md={"auto"}>
+                                    <ModalDescendencia
+                                        buttonIcon={"#"}
+                                        buttonText={"Save"}
+                                        descendencias={Sistema.sistema.descendencias}
+                                        adicionaDescendencia={this.trocaDescendencia.bind(this)}
+                                        descendenciaSelecionada={descendencia}
+                                    />
+                                </Col>
+                            </Row>
+                        )
+                    }
                 )}
             </FormGroup>
         );
