@@ -68,7 +68,6 @@ class CaminhosApp extends React.Component<Props, State> {
             <Form.Group>
                 <Form.Label column={false}>Caminhos</Form.Label>
                 {this.state.ficha.caminhos.map((caminho, index) => {
-                    console.log(caminho);
                     return (<CaminhoApp
                         key={index}
                         caminho={caminho}

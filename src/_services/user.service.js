@@ -14,7 +14,6 @@ function login(username, password) {
     };
     return fetch(`/api/auth/callback`, requestOptions)
         .then(response=>{
-            console.log(response);
             return response
         })
         .then(handleResponse)
@@ -54,7 +53,7 @@ function logout() {
 function handleResponse(response) {
     return response.then(response => {
         MyHeaders.getMyHeaders();
-        console.log("testfeqwteqw");
+    
         return response
     }).text().then(text => {
         const data = text && JSON.parse(text);

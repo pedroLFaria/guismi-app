@@ -75,7 +75,9 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                 </Row>
                 {this.state.ficha.descendencias.map((descendencia, index) => {
                     return (
-                        <Row>
+                        <Row
+                        key={index}
+                        >
                             <Col lg={10}>
                                 <FormControl
                                     as={"select"}

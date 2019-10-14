@@ -20,7 +20,6 @@ class HabitoApp extends React.Component<props, State> {
             ficha: this.props.ficha,
             sistema: Sistema.sistema
         };
-        console.log(this.state.ficha.habitos)
     }
 
     componentDidUpdate(prevProps: any, prevState: any) {

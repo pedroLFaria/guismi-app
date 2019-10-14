@@ -29,7 +29,6 @@ class LoginPage extends React.Component {
         const {username, password} = this.state;
         userService.login(username, password).then(
             user => {
-                console.log(user);
                 window.location.hash = ("#/escolhe_ficha");
             },
             error => this.setState({error, loading: false})

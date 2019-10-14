@@ -32,7 +32,6 @@ class FichaPersonagem extends React.Component<State, State> {
     }
 
     componentDidMount() {
-        console.log("Ficha " + this.state.ficha.idFicha);
         fetch("api/ficha/id/" + this.state.ficha.idFicha, {
             method: "GET",
             headers: MyHeaders.getMyHeaders()
