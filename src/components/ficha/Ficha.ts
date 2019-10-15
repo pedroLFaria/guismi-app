@@ -69,15 +69,15 @@ export default class Ficha {
             .then(data => data as Ficha[])
     }
 
-    public update(): void {
+    public static update(ficha:Ficha): void {
         fetch('api/ficha/',
             {
                 method: 'PUT',
                 headers: MyHeaders.getMyHeaders(),
-                body: JSON.stringify(this)
+                body: JSON.stringify(ficha)
             }).then(response => {
             if (response.ok) {
-                console.log("Ficha " + this.idFicha + " atualizada com sucesso.")
+                console.log("Ficha " + ficha.idFicha + " atualizada com sucesso.")
             } else {
                 console.log("Status " + response.statusText)
             }
@@ -375,4 +375,3 @@ export default class Ficha {
         }
     */
 }
-

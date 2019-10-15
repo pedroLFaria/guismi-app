@@ -3,7 +3,6 @@ import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Sidebar} from "../components/Sidebar";
 import {NomeApp} from "../components/ficha/NomeApp";
 import {RacaApp} from "../components/raca/RacaApp";
 import {CaminhosApp} from "../components/caminho/CaminhosApp";
@@ -16,18 +15,31 @@ import IdadeApp from "../components/ficha/IdadeApp";
 import NivelPersonagem from "../components/ficha/NivelPersonagem";
 import ExperienciaApp from "../components/ficha/ExperienciaApp";
 import DescendenciasApp from "../components/descendencia/DescendenciasApp";
+import {Nav, NavItem} from "react-bootstrap";
 
 interface State {
-    ficha: Ficha;
+    ficha: Ficha
     sistema: Sistema
+    show: Show
 }
 
-class FichaPersonagem extends React.Component<State, State> {
+interface Show {
+    ficha: string
+    quadroDeBatalha: string
+    inventario: string
+}
+
+export default class FichaPersonagem extends React.Component<State, State> {
     constructor(props: any) {
         super(props);
         this.state = {
             ficha: new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)),
-            sistema: Sistema.sistema
+            sistema: Sistema.sistema,
+            show: {
+                ficha: "block",
+                quadroDeBatalha: "none",
+                inventario: "none"
+            }
         };
     }
 
@@ -42,25 +54,54 @@ class FichaPersonagem extends React.Component<State, State> {
             });
     };
 
+    atualizaFicha(newFicha: Ficha) {
+        this.setState({
+            ficha: newFicha
+        });
+        Ficha.update(this.state.ficha)
+    }
+
     render() {
         const ficha = this.state.ficha;
         return (
             <Container>
+                <Nav
+                    variant={"tabs"}
+                    defaultActiveKey={"ficha"}
+                    onSelect={(selectedKey:string)=>{
+                        console.log(selectedKey)
+                    }}
+                >
+                    <NavItem>
+                        <Nav.Link eventKey={"ficha"}>
+                            Ficha
+                        </Nav.Link>
+                    </NavItem>
+                    <NavItem>
+                        <Nav.Link eventKey={"quadroDeBatalha"}>
+                            Quadro de Batalha
+                        </Nav.Link>
+                    </NavItem>
+                    <NavItem>
+                        <Nav.Link eventKey={"Inventário"}>
+                            Inventário
+                        </Nav.Link>
+                    </NavItem>
+                </Nav>
                 <Row>
-                    <Col md={"auto"}>
-                        <Sidebar/>
-                    </Col>
                     <Col>
-                        <Container>
+                        <Container style={{display: this.state.show.ficha}}>
                             <Row>
                                 <legend>Personagem</legend>
                             </Row>
                             <Row>
                                 <Col md={3}>
                                     <NomeApp
+                                        updateFicha={this.atualizaFicha.bind(this)}
                                         ficha={ficha}
                                     />
                                     <IdadeApp
+                                        updateFicha={this.atualizaFicha.bind(this)}
                                         ficha={ficha}
                                     />
                                 </Col>
@@ -78,6 +119,7 @@ class FichaPersonagem extends React.Component<State, State> {
                                 </Col>
                                 <Col md={3}>
                                     <RacaApp
+                                        updateFicha={this.atualizaFicha.bind(this)}
                                         ficha={ficha}
                                     />
                                 </Col>
@@ -109,6 +151,12 @@ class FichaPersonagem extends React.Component<State, State> {
                                     />
                                 </Col>
                             </Row>
+                        </Container>
+                        <Container style={{display: this.state.show.quadroDeBatalha}}>
+                            QUADRO DE BATALHA
+                        </Container>
+                        <Container style={{display: this.state.show.inventario}}>
+                            INVENTARIO
                         </Container>
                     </Col>
                 </Row>

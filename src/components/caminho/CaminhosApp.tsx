@@ -40,39 +40,32 @@ class CaminhosApp extends React.Component<Props, State> {
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        if(JSON.stringify(prevProps.ficha.caminhos) !== JSON.stringify(this.props.ficha.caminhos))
+        if (JSON.stringify(prevProps.ficha.caminhos) !== JSON.stringify(this.props.ficha.caminhos))
             this.setState({
-                ficha:this.props.ficha
+                ficha: this.props.ficha
             })
     }
 
     handleChange(event: any, caminho: Caminho, index: number) {
-        if (this.state.ficha.caminhos.find(caminho => caminho.idCaminho === Number(event.target.value))) {
-            this.setState(state => {
-                state.isInvalid[index] = true;
-                return {isInvalid: state.isInvalid}
-            });
-            setInterval(() => this.setState(state => {
-                state.isInvalid[index] = false;
-                return {isInvalid: state.isInvalid}
-            }), 2000);
-            return
-        }
-        caminho.idCaminho = Number(event.target.value);
-        this.setState({ficha: this.state.ficha});
-        this.state.ficha.update()
+
     }
 
     render() {
         return (
             <Form.Group>
-                <Form.Label column={false}>Caminhos</Form.Label>
+                <Form.Label
+                    column={false}
+                >
+                    Caminhos
+                </Form.Label>
                 {this.state.ficha.caminhos.map((caminho, index) => {
-                    return (<CaminhoApp
-                        key={index}
-                        caminho={caminho}
-                        ficha={this.state.ficha}
-                    />)
+                    return (
+                        <CaminhoApp
+                            key={index}
+                            caminho={caminho}
+                            ficha={this.state.ficha}
+                        />
+                    )
                 })}
             </Form.Group>
         )

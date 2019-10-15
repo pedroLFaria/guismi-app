@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import {LoginPage} from "./login";
-import {FichaPersonagem} from "./personagem";
 import {EscolheFicha} from "./escolheFicha/EscolheFicha";
+import FichaPersonagem from "./personagem/FichaPersonagem";
 
 class App extends React.Component {
     render() {

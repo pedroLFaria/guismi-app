@@ -1,51 +1,62 @@
-import React from 'react'
+import React, {FormEvent} from 'react'
 import Form from 'react-bootstrap/Form'
 import Ficha from "./Ficha";
 
-interface Props{
-    ficha:Ficha
+interface Props {
+    ficha: Ficha
+    updateFicha: Function
 }
 
-interface State{
-    ficha:Ficha
-    plaintext : boolean
-    readOnly  : boolean
+interface State {
+    readOnly: boolean
+    nomePersonagem: string
 }
 
-class NomeApp extends React.Component<Props,State> {
-    constructor(props:Props) {
+class NomeApp extends React.Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
-            ficha: this.props.ficha,
-            plaintext: true,
-            readOnly: true
+            readOnly: true,
+            nomePersonagem: this.props.ficha.nomePersonagem
         };
-        this.onClick = this.onClick.bind(this)
+        this.onDoubleClick = this.onDoubleClick.bind(this)
     }
 
-    componentDidUpdate(prevProps:Props) {
+    componentDidUpdate(prevProps: Props) {
         if (prevProps.ficha.nomePersonagem !== this.props.ficha.nomePersonagem)
-            this.setState({ficha: this.props.ficha})
+            this.setState({nomePersonagem: this.props.ficha.nomePersonagem})
     }
 
-    onClick() {
-        this.setState({plaintext: false, readOnly: false})
+    onDoubleClick() {
+        this.setState({readOnly: false})
     }
 
     onBlur() {
-        this.setState({plaintext: true, readOnly: true})
-        //this.state.ficha.update()
+        this.setState({readOnly: true});
+        let ficha = this.props.ficha;
+        ficha.nomePersonagem = this.state.nomePersonagem;
+        this.props.updateFicha(ficha);
+        console.log(this.state.nomePersonagem)
+    }
+
+    handleChange(event: FormEvent) {
+        let value = (event.target as HTMLInputElement).value;
+        this.setState({
+            nomePersonagem: value
+        })
     }
 
     render() {
         return (
             <Form.Control
-                type="text"
-                defaultValue={this.state.ficha.nomePersonagem}
-                plaintext={this.state.plaintext}
+                as={"input"}
+                type={"text"}
+                value={this.state.nomePersonagem}
+                plaintext={true}
                 readOnly={this.state.readOnly}
-                onDoubleClick={this.onClick}
+                onDoubleClick={this.onDoubleClick}
                 onBlur={this.onBlur.bind(this)}
+                onChange={this.handleChange.bind(this)}
             />
         )
     }
