@@ -59,6 +59,36 @@ export default class CaminhosApp extends React.Component<Props, State> {
         )
     }
 
+    tabEspecializacao() {
+        if (this.state.caminho.especializacoes)
+            return (
+                <Tab
+                    eventKey={"especCaminho"}
+                    title={"Especializações"}
+                >
+                    <Row>
+                        <Col>
+                            {this.state.caminho.especializacoes.map(especializacao => {
+                                return (
+                                    <Row>
+                                        {especializacao.nomeEspecializacao}
+                                    </Row>
+                                )
+                            })}
+                        </Col>
+                    </Row>
+                </Tab>
+            )
+        else {
+            return (
+            <Tab
+                eventKey={"especCaminho"}
+                title={"Especializações"}
+                disabled={true}
+            ></Tab>)
+        }
+    }
+
     render() {
         return (
             <Col>
