@@ -2,16 +2,22 @@ import * as React from "react";
 import Caminho from "./Caminho";
 import Form from "react-bootstrap/Form";
 import Sistema from "../sistema/Sistema";
-import Ficha from "../ficha/Ficha";
+import { Button, Tab } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { ModalBody } from "react-bootstrap";
+import { Tabs } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 interface Props {
     caminho: Caminho,
-    ficha: Ficha
+    updateCaminhos(arg0: number, arg1: Caminho): boolean
 }
 
 interface State {
     caminho: Caminho,
-    caminhosSistema: Caminho[]
+    caminhosSistema: Caminho[],
+    show: boolean
 }
 
 export default class CaminhosApp extends React.Component<Props, State> {
@@ -19,20 +25,85 @@ export default class CaminhosApp extends React.Component<Props, State> {
         super(props);
         this.state = {
             caminho: this.props.caminho,
-            caminhosSistema: Sistema.sistema.caminhos
+            caminhosSistema: Sistema.sistema.caminhos,
+            show: false
         };
     }
 
-    handleChange(event: any) {
-        const value = event.target.value;
+    handleChange(event: React.FormEvent) {
+        const value = (event.target as HTMLSelectElement).value;
         this.setState(state => {
-            state.caminho.idCaminho = Number(value);
-            return {caminho: state.caminho}
+            let newCaminho = Sistema.sistema.caminhos.find(caminho => caminho.idCaminho.toString() === value)
+            if (newCaminho) {
+                this.setState({
+                    caminho: newCaminho
+                })
+            } else {
+                alert("Ops algo deu errado!")
+            }
         });
+    }
+
+    tabDesc() {
+        return (
+            <Tab
+                eventKey={"descCaminho"}
+                title={"Descrição"}
+            >
+                <Row>
+                    <Col>
+                        {this.state.caminho.descCaminho}
+                    </Col>
+                </Row>
+            </Tab>
+        )
     }
 
     render() {
         return (
+            <Col>
+                <Button
+                    variant={"light"}
+                    block
+                    onClick={() => this.setState({
+                        show: true,
+                        caminho: this.props.caminho
+                    })}
+                >
+                    {this.props.caminho.nomeCaminho}
+                </Button>
+                <Modal
+                    show={this.state.show}
+                    onHide={() => this.setState({ show: false })}
+                >
+                    <Modal.Header closeButton>
+                        <Form.Control
+                            value={this.state.caminho.idCaminho ? this.state.caminho.idCaminho.toString() : "0"}
+                            as={"select"}
+                            onChange={this.handleChange.bind(this)}
+                        >
+                            {Sistema.sistema.caminhos.map(
+                                (caminho, index) =>
+                                    <option
+                                        key={index}
+                                        value={caminho.idCaminho}
+                                    >
+                                        {caminho.nomeCaminho}
+                                    </option>
+                            )}
+                        </Form.Control>
+                    </Modal.Header>
+                    <ModalBody>
+                        <Tabs
+                            defaultActiveKey={"descCaminho"}
+                            id={"tab-caminho"}
+                        >
+                            {this.tabDesc()}
+                        </Tabs>
+                    </ModalBody>
+                </Modal>
+            </Col>
+            /*
             <Form.Control
                 as={"select"}
                 value={this.state.caminho.idCaminho.toString()}
@@ -44,7 +115,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                         </option>
                     )
                 })}
-            </Form.Control>
+            </Form.Control>*/
         )
     }
 }

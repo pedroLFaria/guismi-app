@@ -33,9 +33,7 @@ class HabitoApp extends React.Component<Props, State> {
                 <thead className="thead-dark">
                 <tr>
                     <th>HABITOS</th>
-                    <th>Quantidade</th>
-                    <th>Mod5</th>
-                    <th>Mod10</th>
+                    <th>Quantidade</th>                   
                 </tr>
                 </thead>
                 <tbody>
@@ -43,8 +41,6 @@ class HabitoApp extends React.Component<Props, State> {
                     <tr key={habito.idHabito}>
                         <td>{habito.nomeHabito}</td>
                         <td>{habito.qtdFichaHabito}</td>
-                        <td>{habito.qtdFichaHabito! / 5}</td>
-                        <td>{habito.qtdFichaHabito! / 10}</td>
                     </tr>)}
                 </tbody>
             </Table>

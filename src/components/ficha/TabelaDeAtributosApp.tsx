@@ -1,8 +1,6 @@
 import * as React from "react";
 import Ficha from "./Ficha";
 import Table from 'react-bootstrap/Table'
-import Form from "react-bootstrap/Form";
-import {FormControl} from "react-bootstrap";
 
 interface Props {
     ficha: Ficha
@@ -36,7 +34,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <th>Atributos</th>
                     <th>R</th>
                     <th>DS</th>
-                    <th>B.Gerais</th>
                     <th>TT</th>
                 </tr>
                 </thead>
@@ -46,9 +43,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <td>{ficha.raca.racaForca}</td>
                     <td>
                         {ficha.distForca}
-                    </td>
-                    <td>
-                        <FormControl as={'input'} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
                     </td>
                     <td>
                         {ficha.distForca + (ficha.raca.racaForca !== undefined ? ficha.raca.racaForca : 0)}
@@ -61,9 +55,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                         {ficha.distConstituicao}
                     </td>
                     <td>
-                        <Form.Control as={"input"} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
-                    </td>
-                    <td>
                         {ficha.distConstituicao + (ficha.raca.racaConstituicao !== undefined ? ficha.raca.racaConstituicao : 0)}
                     </td>
                 </tr>
@@ -72,9 +63,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <td>{ficha.raca.racaAgilidade}</td>
                     <td>
                         {ficha.distAgilidade}
-                    </td>
-                    <td>
-                        <FormControl as={"input"} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
                     </td>
                     <td>
                         {ficha.distForca + (ficha.raca.racaForca !== undefined ? ficha.raca.racaForca : 0)}
@@ -87,9 +75,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                         {ficha.distDestreza}
                     </td>
                     <td>
-                        <FormControl as={"input"} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
-                    </td>
-                    <td>
                         {ficha.distAgilidade + (ficha.raca.racaAgilidade !== undefined ? ficha.raca.racaAgilidade : 0)}
                     </td>
                 </tr>
@@ -98,9 +83,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <td>{ficha.raca.racaInteligencia}</td>
                     <td>
                         {ficha.distInteligencia}
-                    </td>
-                    <td>
-                        <FormControl as={"input"} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
                     </td>
                     <td>
                         {ficha.distInteligencia + (ficha.raca.racaInteligencia !== undefined ? ficha.raca.racaInteligencia : 0)}
@@ -113,9 +95,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                         {ficha.distSabedoria}
                     </td>
                     <td>
-                        <FormControl as={"input"} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
-                    </td>
-                    <td>
                         {ficha.distSabedoria + (ficha.raca.racaSabedoria !== undefined ? ficha.raca.racaSabedoria : 0)}
                     </td>
                 </tr>
@@ -124,9 +103,6 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <td>{ficha.raca.racaCarisma}</td>
                     <td>
                         {ficha.distCarisma}
-                    </td>
-                    <td>
-                        <FormControl as={"input"} type={"number"} size={"sm"} plaintext={true} value={'0'} readOnly={true}/>
                     </td>
                     <td>
                         {ficha.distCarisma + (ficha.raca.racaCarisma !== undefined ? ficha.raca.racaCarisma : 0)}

@@ -20,13 +20,7 @@ import {Nav, NavItem} from "react-bootstrap";
 interface State {
     ficha: Ficha
     sistema: Sistema
-    show: Show
-}
-
-interface Show {
-    ficha: string
-    quadroDeBatalha: string
-    inventario: string
+    show: Map<string,string>
 }
 
 export default class FichaPersonagem extends React.Component<State, State> {
@@ -35,11 +29,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
         this.state = {
             ficha: new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)),
             sistema: Sistema.sistema,
-            show: {
-                ficha: "block",
-                quadroDeBatalha: "none",
-                inventario: "none"
-            }
+            show:new Map([["ficha","block"],[ "quadroDeBatalha","none"],["inventario","none"]])
         };
     }
 
@@ -68,8 +58,18 @@ export default class FichaPersonagem extends React.Component<State, State> {
                 <Nav
                     variant={"tabs"}
                     defaultActiveKey={"ficha"}
-                    onSelect={(selectedKey:string)=>{
-                        console.log(selectedKey)
+                    onSelect={(selectedKey:string)=>{   
+                        console.log(selectedKey)                     
+                        this.setState(state=>{
+                            for(let key of state.show.keys())
+                                state.show.set(key,"none")
+                            state.show.set(selectedKey, "block")
+                            console.log(state.show)
+                            return{
+                                show:state.show
+                            }
+                        })
+                        this.render()
                     }}
                 >
                     <NavItem>
@@ -83,14 +83,14 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         </Nav.Link>
                     </NavItem>
                     <NavItem>
-                        <Nav.Link eventKey={"Inventário"}>
+                        <Nav.Link eventKey={"inventario"}>
                             Inventário
                         </Nav.Link>
                     </NavItem>
                 </Nav>
                 <Row>
                     <Col>
-                        <Container style={{display: this.state.show.ficha}}>
+                        <Container style={{display: this.state.show.get("ficha")}}>
                             <Row>
                                 <legend>Personagem</legend>
                             </Row>
@@ -125,6 +125,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
                                 </Col>
                                 <Col>
                                     <CaminhosApp
+                                        updateFicha={this.atualizaFicha.bind(this)}
                                         ficha={ficha}
                                     />
                                 </Col>
@@ -152,10 +153,10 @@ export default class FichaPersonagem extends React.Component<State, State> {
                                 </Col>
                             </Row>
                         </Container>
-                        <Container style={{display: this.state.show.quadroDeBatalha}}>
+                        <Container style={{display: this.state.show.get("quadroDeBatalha")}}>
                             QUADRO DE BATALHA
                         </Container>
-                        <Container style={{display: this.state.show.inventario}}>
+                        <Container style={{display: this.state.show.get("inventario")}}>
                             INVENTARIO
                         </Container>
                     </Col>

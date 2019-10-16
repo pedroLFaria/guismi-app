@@ -164,7 +164,8 @@ class RacaApp extends React.Component<Props, State> {
         return (
             <div>
                 <Button
-                    variant="light"
+                    variant={"light"}
+                    block={true}
                     onClick={() => this.setState({
                         show: true,
                         raca: this.props.ficha.raca

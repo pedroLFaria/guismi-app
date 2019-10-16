@@ -1,75 +1,70 @@
 import * as React from "react";
 import Form from "react-bootstrap/Form";
 import Ficha from "../ficha/Ficha";
-import Sistema from "../sistema/Sistema";
 import Caminho from "./Caminho";
 import CaminhoApp from "./CaminhoApp";
+import { Row } from "react-bootstrap";
 
 interface Props {
     ficha: Ficha
+    updateFicha(arg0: Ficha): void
 }
 
 interface State {
-    ficha: Ficha,
-    sistema: Sistema,
-    isInvalid: boolean[]
+    caminhos: Caminho[]
 }
 
 class CaminhosApp extends React.Component<Props, State> {
-    private caminhoOptions: JSX.Element[] | undefined;
 
     constructor(props: Props) {
         super(props);
         this.state = {
-            ficha: this.props.ficha,
-            sistema: Sistema.sistema,
-            isInvalid: []
+            caminhos: this.props.ficha.caminhos
         };
+        this.updateCaminhos = this.updateCaminhos.bind(this)
     }
 
-    componentDidMount(): void {
-        this.caminhoOptions = this.state.sistema.caminhos.map(caminho =>
-            <option key={caminho.idCaminho} value={caminho.idCaminho}>
-                {caminho.nomeCaminho}
-            </option>
-        );
-        this.setState(state => {
-            state.isInvalid.fill(false, 0, state.ficha.caminhos.length);
-        });
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+    componentDidUpdate(prevProps: Readonly<Props>) {
         if (JSON.stringify(prevProps.ficha.caminhos) !== JSON.stringify(this.props.ficha.caminhos))
             this.setState({
-                ficha: this.props.ficha
+                caminhos: this.props.ficha.caminhos
             })
     }
 
-    handleChange(event: any, caminho: Caminho, index: number) {
-
+    updateCaminhos(prevCaminhoId: number, newCaminho: Caminho): boolean {
+        let ficha = this.props.ficha
+        if (ficha.caminhos.find(caminho => caminho.idCaminho === newCaminho.idCaminho))
+            return false
+        else {
+            let index = ficha.caminhos.findIndex((caminho) => caminho.idCaminho === prevCaminhoId)
+            ficha.caminhos[index] = newCaminho;
+            this.props.updateFicha(ficha)
+            return true
+        }
     }
 
     render() {
         return (
-            <Form.Group>
-                <Form.Label
-                    column={false}
-                >
+            <div>
+                <label>
                     Caminhos
-                </Form.Label>
-                {this.state.ficha.caminhos.map((caminho, index) => {
+                </label>
+
+                {this.state.caminhos.map((caminho, index) => {
                     return (
-                        <CaminhoApp
-                            key={index}
-                            caminho={caminho}
-                            ficha={this.state.ficha}
-                        />
+                        <Row>
+                            <CaminhoApp
+                                updateCaminhos={this.updateCaminhos}
+                                key={index}
+                                caminho={caminho}
+                            />
+                        </Row>
                     )
                 })}
-            </Form.Group>
+
+            </div>
         )
     }
 }
 
-export {CaminhosApp}
+export { CaminhosApp }
