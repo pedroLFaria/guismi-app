@@ -2,15 +2,11 @@ import * as React from "react";
 import Caminho from "./Caminho";
 import Form from "react-bootstrap/Form";
 import Sistema from "../sistema/Sistema";
-import { Button, Tab } from "react-bootstrap";
-import { Modal } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { ModalBody } from "react-bootstrap";
-import { Tabs } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+import {Button, Col, FormControl, Modal, ModalBody, ModalFooter, Row, Tab, Tabs} from "react-bootstrap";
 
 interface Props {
     caminho: Caminho,
+
     updateCaminhos(arg0: number, arg1: Caminho): boolean
 }
 
@@ -18,6 +14,7 @@ interface State {
     caminho: Caminho,
     caminhosSistema: Caminho[],
     show: boolean
+    isInvalid:boolean
 }
 
 export default class CaminhosApp extends React.Component<Props, State> {
@@ -26,22 +23,22 @@ export default class CaminhosApp extends React.Component<Props, State> {
         this.state = {
             caminho: this.props.caminho,
             caminhosSistema: Sistema.sistema.caminhos,
-            show: false
+            show: false,
+            isInvalid:false
         };
     }
 
     handleChange(event: React.FormEvent) {
         const value = (event.target as HTMLSelectElement).value;
-        this.setState(state => {
-            let newCaminho = Sistema.sistema.caminhos.find(caminho => caminho.idCaminho.toString() === value)
-            if (newCaminho) {
-                this.setState({
-                    caminho: newCaminho
-                })
-            } else {
-                alert("Ops algo deu errado!")
-            }
-        });
+        let newCaminho = Sistema.sistema.caminhos.find(caminho => caminho.idCaminho.toString() === value);
+        if (newCaminho) {
+            this.setState({
+                caminho: newCaminho,
+                isInvalid:false
+            })
+        } else {
+            alert("Ops algo deu errado!")
+        }
     }
 
     tabDesc() {
@@ -78,14 +75,26 @@ export default class CaminhosApp extends React.Component<Props, State> {
                         </Col>
                     </Row>
                 </Tab>
-            )
+            );
         else {
             return (
-            <Tab
-                eventKey={"especCaminho"}
-                title={"Especializações"}
-                disabled={true}
-            ></Tab>)
+                <Tab
+                    eventKey={"especCaminho"}
+                    title={"Especializações"}
+                    disabled={true}
+                >Não tem</Tab>)
+        }
+    }
+
+    handleOnSave() {
+        if(this.props.updateCaminhos(this.props.caminho.idCaminho, this.state.caminho)){
+            this.setState({
+                show:false
+            })
+        }else{
+            this.setState({
+                isInvalid:true
+            })
         }
     }
 
@@ -104,13 +113,14 @@ export default class CaminhosApp extends React.Component<Props, State> {
                 </Button>
                 <Modal
                     show={this.state.show}
-                    onHide={() => this.setState({ show: false })}
+                    onHide={() => this.setState({show: false})}
                 >
                     <Modal.Header closeButton>
-                        <Form.Control
+                        <FormControl
                             value={this.state.caminho.idCaminho ? this.state.caminho.idCaminho.toString() : "0"}
                             as={"select"}
                             onChange={this.handleChange.bind(this)}
+                            isInvalid={this.state.isInvalid}
                         >
                             {Sistema.sistema.caminhos.map(
                                 (caminho, index) =>
@@ -121,7 +131,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                                         {caminho.nomeCaminho}
                                     </option>
                             )}
-                        </Form.Control>
+                        </FormControl>
                     </Modal.Header>
                     <ModalBody>
                         <Tabs
@@ -131,6 +141,9 @@ export default class CaminhosApp extends React.Component<Props, State> {
                             {this.tabDesc()}
                         </Tabs>
                     </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.handleOnSave.bind(this)}>Save</Button>
+                    </ModalFooter>
                 </Modal>
             </Col>
             /*

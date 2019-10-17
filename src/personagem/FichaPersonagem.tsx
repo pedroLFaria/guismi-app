@@ -16,11 +16,13 @@ import NivelPersonagem from "../components/ficha/NivelPersonagem";
 import ExperienciaApp from "../components/ficha/ExperienciaApp";
 import DescendenciasApp from "../components/descendencia/DescendenciasApp";
 import {Nav, NavItem} from "react-bootstrap";
+import Spinner from 'react-bootstrap/Spinner'
 
 interface State {
     ficha: Ficha
     sistema: Sistema
     show: Map<string,string>
+    loading:boolean
 }
 
 export default class FichaPersonagem extends React.Component<State, State> {
@@ -29,7 +31,8 @@ export default class FichaPersonagem extends React.Component<State, State> {
         this.state = {
             ficha: new Ficha(Number(queryString.parse(window.location.href.split("?")[1]).idFicha)),
             sistema: Sistema.sistema,
-            show:new Map([["ficha","block"],[ "quadroDeBatalha","none"],["inventario","none"]])
+            show:new Map([["ficha","block"],[ "quadroDeBatalha","none"],["inventario","none"]]),
+            loading:false
         };
     }
 
@@ -46,9 +49,19 @@ export default class FichaPersonagem extends React.Component<State, State> {
 
     atualizaFicha(newFicha: Ficha) {
         this.setState({
-            ficha: newFicha
+            ficha: newFicha,
+            loading:true
         });
-        Ficha.update(this.state.ficha)
+        Ficha.update(this.state.ficha).then(response => {
+            if (response.ok) {
+                console.log("Ficha atualizada com sucesso.");
+                this.setState({loading:false});
+                return true
+            } else {
+                console.log("Status " + response.statusText);
+                return false
+            }
+        })
     }
 
     render() {
@@ -59,16 +72,16 @@ export default class FichaPersonagem extends React.Component<State, State> {
                     variant={"tabs"}
                     defaultActiveKey={"ficha"}
                     onSelect={(selectedKey:string)=>{   
-                        console.log(selectedKey)                     
+                        console.log(selectedKey);
                         this.setState(state=>{
                             for(let key of state.show.keys())
-                                state.show.set(key,"none")
-                            state.show.set(selectedKey, "block")
-                            console.log(state.show)
+                                state.show.set(key,"none");
+                            state.show.set(selectedKey, "block");
+                            console.log(state.show);
                             return{
                                 show:state.show
                             }
-                        })
+                        });
                         this.render()
                     }}
                 >
@@ -87,6 +100,11 @@ export default class FichaPersonagem extends React.Component<State, State> {
                             Inventário
                         </Nav.Link>
                     </NavItem>
+                    <Spinner
+                        animation="border"
+                        variant="primary"
+                        style={{"float": "right", "margin-left": "auto", "display":this.state.loading?"inline-block":"none"}}
+                    />
                 </Nav>
                 <Row>
                     <Col>
@@ -108,6 +126,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
                                 <Col>
                                     <Row>
                                         <NivelPersonagem
+                                            updateFicha={this.atualizaFicha.bind(this)}
                                             ficha={ficha}
                                         />
                                     </Row>

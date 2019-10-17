@@ -69,19 +69,13 @@ export default class Ficha {
             .then(data => data as Ficha[])
     }
 
-    public static update(ficha:Ficha): void {
-        fetch('api/ficha/',
+    public static update(ficha:Ficha): Promise<Response> {
+        return fetch('api/ficha/',
             {
                 method: 'PUT',
                 headers: MyHeaders.getMyHeaders(),
                 body: JSON.stringify(ficha)
-            }).then(response => {
-            if (response.ok) {
-                console.log("Ficha " + ficha.idFicha + " atualizada com sucesso.")
-            } else {
-                console.log("Status " + response.statusText)
-            }
-        });
+            });
     }
 
     private setFichaFromObject(obj: Ficha) {

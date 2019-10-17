@@ -52,7 +52,7 @@ class NomeApp extends React.Component<Props, State> {
                 as={"input"}
                 type={"text"}
                 value={this.state.nomePersonagem}
-                plaintext={true}
+                plaintext={this.state.readOnly}
                 readOnly={this.state.readOnly}
                 onDoubleClick={this.onDoubleClick}
                 onBlur={this.onBlur.bind(this)}
