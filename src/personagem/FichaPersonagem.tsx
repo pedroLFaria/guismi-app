@@ -67,11 +67,36 @@ export default class FichaPersonagem extends React.Component<State, State> {
     render() {
         const ficha = this.state.ficha;
         return (
-            <Container>
+            <Container fluid >
+              <Row>
+              <Col md={3}>
+                <NomeApp
+                    updateFicha={this.atualizaFicha.bind(this)}
+                    ficha={ficha}
+                />
+              </Col>
+              <Col md={3}>
+                <IdadeApp
+                    updateFicha={this.atualizaFicha.bind(this)}
+                    ficha={ficha}
+                />
+              </Col>
+              <Col md={3}>
+                <NivelPersonagem
+                        updateFicha={this.atualizaFicha.bind(this)}
+                        ficha={ficha}
+                />
+              </Col>
+              <Col md={3}>
+                  <ExperienciaApp
+                      ficha={ficha}
+                  />
+              </Col>
+              </Row>
                 <Nav
                     variant={"tabs"}
                     defaultActiveKey={"ficha"}
-                    onSelect={(selectedKey:string)=>{   
+                    onSelect={(selectedKey:string)=>{
                         console.log(selectedKey);
                         this.setState(state=>{
                             for(let key of state.show.keys())
@@ -113,29 +138,6 @@ export default class FichaPersonagem extends React.Component<State, State> {
                                 <legend>Personagem</legend>
                             </Row>
                             <Row>
-                                <Col md={3}>
-                                    <NomeApp
-                                        updateFicha={this.atualizaFicha.bind(this)}
-                                        ficha={ficha}
-                                    />
-                                    <IdadeApp
-                                        updateFicha={this.atualizaFicha.bind(this)}
-                                        ficha={ficha}
-                                    />
-                                </Col>
-                                <Col>
-                                    <Row>
-                                        <NivelPersonagem
-                                            updateFicha={this.atualizaFicha.bind(this)}
-                                            ficha={ficha}
-                                        />
-                                    </Row>
-                                    <Row>
-                                        <ExperienciaApp
-                                            ficha={ficha}
-                                        />
-                                    </Row>
-                                </Col>
                                 <Col md={3}>
                                     <RacaApp
                                         updateFicha={this.atualizaFicha.bind(this)}
