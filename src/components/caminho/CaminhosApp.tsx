@@ -2,7 +2,7 @@ import * as React from "react";
 import Ficha from "../ficha/Ficha";
 import Caminho from "./Caminho";
 import CaminhoApp from "./CaminhoApp";
-import { Row } from "react-bootstrap";
+import {Button, Col, Row} from "react-bootstrap";
 
 interface Props {
     ficha: Ficha
@@ -11,6 +11,7 @@ interface Props {
 
 interface State {
     caminhos: Caminho[]
+    shows: boolean[]
 }
 
 class CaminhosApp extends React.Component<Props, State> {
@@ -18,9 +19,9 @@ class CaminhosApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            caminhos: this.props.ficha.caminhos
+            caminhos: this.props.ficha.caminhos,
+            shows:[]
         };
-        this.updateCaminhos = this.updateCaminhos.bind(this)
     }
 
     componentDidUpdate(prevProps: Readonly<Props>) {
@@ -30,41 +31,73 @@ class CaminhosApp extends React.Component<Props, State> {
             })
     }
 
-    updateCaminhos(prevCaminhoId: number, newCaminho: Caminho): boolean {
+    updateCaminhos(index: number, newCaminho: Caminho): boolean {
         let ficha = this.props.ficha;
-        let index = ficha.caminhos.findIndex((caminho) => caminho.idCaminho === prevCaminhoId)
-        if (index) {
-            ficha.caminhos[index] = newCaminho;
-            this.props.updateFicha(ficha);
-            return true
-        } else {
-            return false
+        ficha.caminhos[index] = newCaminho;
+        this.props.updateFicha(ficha);
+        return true
+    }
 
-        }
+    addCaminho(newCaminho: Caminho): boolean {
+        let ficha = this.props.ficha;
+        ficha.caminhos.push(newCaminho);
+        return true
+    }
+
+    deleteCaminho(index: number): boolean {
+        let ficha = this.props.ficha;
+        ficha.caminhos.splice(index, 1);
+        return true
     }
 
     render() {
+        console.log(this.props.ficha.caminhos);
         return (
-            <div>
-                <label>
-                    Caminhos
-                </label>
+            <Col>
+                <Row>
+                    <Col>
+                        <label>
+                            Caminhos
+                        </label>
+                    </Col>
+                    <Col>
+                    </Col>
+                </Row>
                 {this.state.caminhos.map((caminho, index) => {
                     return (
                         <Row
                             key={index}
                         >
+                            <Button
+                                variant={"light"}
+                                block
+                                onClick={() => this.setState(state=>{
+                                    state.shows[index] = !state.shows[index];
+                                    return({shows:state.shows})
+                                })}
+                            >
+                                {caminho.nomeCaminho}
+                            </Button>
                             <CaminhoApp
-                                updateCaminhos={this.updateCaminhos}
-                                caminho={caminho}
+                                show={this.state.shows[index]}
+                                caminhos={this.state.caminhos}
+                                index={index}
+                                addCaminho={this.addCaminho.bind(this)}
+                                updateCaminhos={this.updateCaminhos.bind(this)}
+                                deleteCaminho={this.deleteCaminho.bind(this)}
                             />
+                            <Button
+                                size={"sm"} variant="outline-info"
+                                onClick={()=>this.deleteCaminho(index)}
+                            >x
+                            </Button>
                         </Row>
                     )
                 })}
 
-            </div>
+            </Col>
         )
     }
 }
 
-export { CaminhosApp }
+export {CaminhosApp}

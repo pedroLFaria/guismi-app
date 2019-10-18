@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Form, FormGroup, Row} from "react-bootstrap";
+import {Button, Col, Form, FormGroup, Row} from "react-bootstrap";
 import Ficha from "../ficha/Ficha";
 import Sistema from "../sistema/Sistema";
 import Descendencia from "./Descendencia";
@@ -11,9 +11,7 @@ interface Props {
 }
 
 interface State {
-    ficha: Ficha,
-    sistema: Sistema,
-    modalDescShow: boolean[],
+    descendencias:Descendencia[]
     modalCriacShow: boolean,
     descendenciaSelecionada?: Descendencia
 }
@@ -22,41 +20,29 @@ export default class DescendenciasApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            ficha: this.props.ficha,
-            sistema: Sistema.sistema,
-            modalDescShow: [],
+            descendencias:this.props.ficha.descendencias,
             modalCriacShow: false
         };
     }
 
-
-    componentDidMount(): void {
-        this.setState(state => {
-            state.modalDescShow.fill(false, 0, state.ficha.descendencias.length);
-            return {
-                modalDescShow: state.modalDescShow
-            }
-        })
-    }
-
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
         if (JSON.stringify(prevProps.ficha.descendencias) !== JSON.stringify(this.props.ficha.descendencias))
-            this.setState({ficha: this.props.ficha})
+            this.setState({descendencias: this.props.ficha.descendencias})
     }
 
     trocaDescendencia(novaDescendencia: Descendencia, prevDescendencia: Descendencia) {
-        let index = this.state.ficha.descendencias.findIndex(descendencia => {
+        let index = this.state.descendencias.findIndex(descendencia => {
             return (
                 prevDescendencia.idDescendencia === descendencia.idDescendencia
             )
         });
-        if (!this.state.ficha.descendencias.find((descendencia) => {
+        if (!this.state.descendencias.find((descendencia) => {
             return descendencia.idDescendencia === novaDescendencia.idDescendencia
         })) {
             this.setState(state => {
-                state.ficha.descendencias[index] = novaDescendencia;
+                state.descendencias[index] = novaDescendencia;
                 return {
-                    ficha: state.ficha
+                    descendencias: state.descendencias
                 }
             });
             return true
@@ -66,13 +52,13 @@ export default class DescendenciasApp extends React.Component<Props, State> {
     }
 
     adicionaDescendencia(novaDescendencia: Descendencia) {
-        if (!this.state.ficha.descendencias.find((descendencia) => {
+        if (!this.state.descendencias.find((descendencia) => {
             return descendencia.idDescendencia === novaDescendencia.idDescendencia
         })) {
             this.setState(state => {
-                state.ficha.descendencias.push(novaDescendencia);
+                state.descendencias.push(novaDescendencia);
                 return {
-                    ficha: state.ficha
+                    descendencias: state.descendencias
                 }
             });
             return true
@@ -81,7 +67,15 @@ export default class DescendenciasApp extends React.Component<Props, State> {
         }
     }
 
+    removeDescendencia(descendencias:Descendencia[], index:number){
+        descendencias.splice(index,1);
+        this.setState({
+            descendencias:descendencias
+        })
+    }
+
     render() {
+        const descendencias = this.state.descendencias;
         return (
             <FormGroup>
                 <Row>
@@ -99,7 +93,7 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                         />
                     </Col>
                 </Row>
-                {this.state.ficha.descendencias.map((descendencia, index) => {
+                {descendencias.map((descendencia, index) => {
                         return (
                             <Row
                                 key={index}
@@ -115,6 +109,12 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                                         adicionaDescendencia={this.trocaDescendencia.bind(this)}
                                         descendenciaSelecionada={descendencia}
                                     />
+                                </Col>
+                                <Col style={{ paddingLeft: 0, paddingRight: 0 }}>
+                                    <Button
+                                        size={"sm"} variant="outline-info"
+                                        onClick={()=>this.removeDescendencia(descendencias,index)}
+                                    >X</Button>
                                 </Col>
                             </Row>
                         )

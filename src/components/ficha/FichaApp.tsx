@@ -40,13 +40,13 @@ export default class FichaApp extends React.Component<Props, State>{
                     <legend>Personagem</legend>
                 </Row>
                 <Row>
-                    <Col md={3}>
+                    <Col md={2}>
                         <RacaApp
                             updateFicha={this.props.updateFicha}
                             ficha={ficha}
                         />
                     </Col>
-                    <Col>
+                    <Col md={2}>
                         <CaminhosApp
                             updateFicha={this.props.updateFicha}
                             ficha={ficha}
