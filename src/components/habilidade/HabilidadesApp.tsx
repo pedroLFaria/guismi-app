@@ -1,11 +1,10 @@
 import React from "react"
 import Ficha from "../ficha/Ficha"
 import Habilidade from "./Habilidade"
-import Sistema from "../sistema/Sistema"
-import { Container, Button, Row, Tab, Nav, NavItem, TabPane } from "react-bootstrap"
+import { Row, Tab, Nav, NavItem, TabPane } from "react-bootstrap"
 import { Col } from "react-bootstrap"
-import NavLink from "react-bootstrap/NavLink"
 import { TabContent } from "react-bootstrap"
+import HabilidadeApp from "./HabilidadeApp"
 
 interface Props {
     ficha: Ficha
@@ -14,15 +13,13 @@ interface Props {
 
 interface State {
     habilidades: Habilidade[]
-    habilidadesSistema: Habilidade[]
 }
 
 export default class HabilidadesApp extends React.Component<Props, State>{
     constructor(props: Props) {
         super(props)
         this.state = {
-            habilidades: this.props.ficha.habilidades,
-            habilidadesSistema: Sistema.sistema.habilidades
+            habilidades: this.props.ficha.habilidades
         }
     }
 
@@ -33,8 +30,20 @@ export default class HabilidadesApp extends React.Component<Props, State>{
             })
     }
 
+    updateHabilidades(prevHabilidade: Habilidade, newHabilidade: Habilidade) {
+        let ficha = this.props.ficha
+        let index = ficha.habilidades.findIndex(habilidade =>
+            habilidade.idHabilidade === prevHabilidade.idHabilidade)
+        if (index) {
+            ficha.habilidades[index] = newHabilidade;
+            this.props.updateFicha(ficha);
+            return true
+        } else {
+            return false
+        }
+    }
+
     render() {
-        console.log(this.state.habilidades);
         return (
             <Tab.Container
                 id={"habilidades-personagem"}
@@ -65,10 +74,12 @@ export default class HabilidadesApp extends React.Component<Props, State>{
                                     <TabPane
                                         key={index}
                                         eventKey={index}
-                                    >                                          
-                                        {habilidade.descHabilidade}
+                                    >
+                                        <HabilidadeApp
+                                            updateHabilidades={this.updateHabilidades.bind(this)}
+                                            habilidade={habilidade}
+                                        />
                                     </TabPane>
-
                                 )
                             })}
                         </TabContent>

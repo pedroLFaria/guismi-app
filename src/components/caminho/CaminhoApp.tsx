@@ -1,12 +1,10 @@
 import * as React from "react";
 import Caminho from "./Caminho";
-import Form from "react-bootstrap/Form";
 import Sistema from "../sistema/Sistema";
 import {Button, Col, FormControl, Modal, ModalBody, ModalFooter, Row, Tab, Tabs} from "react-bootstrap";
 
 interface Props {
-    caminho: Caminho,
-
+    caminho: Caminho
     updateCaminhos(arg0: number, arg1: Caminho): boolean
 }
 
@@ -146,19 +144,6 @@ export default class CaminhosApp extends React.Component<Props, State> {
                     </ModalFooter>
                 </Modal>
             </Col>
-            /*
-            <Form.Control
-                as={"select"}
-                value={this.state.caminho.idCaminho.toString()}
-                onChange={this.handleChange.bind(this)}>
-                {this.state.caminhosSistema.map((caminhoSistema, index) => {
-                    return (
-                        <option key={index} value={caminhoSistema.idCaminho}>
-                            {caminhoSistema.nomeCaminho}
-                        </option>
-                    )
-                })}
-            </Form.Control>*/
         )
     }
 }

@@ -36,7 +36,6 @@ class NomeApp extends React.Component<Props, State> {
         let ficha = this.props.ficha;
         ficha.nomePersonagem = this.state.nomePersonagem;
         this.props.updateFicha(ficha);
-        console.log(this.state.nomePersonagem)
     }
 
     handleChange(event: FormEvent) {

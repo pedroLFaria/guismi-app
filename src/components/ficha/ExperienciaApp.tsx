@@ -2,7 +2,6 @@ import React, { FormEvent } from "react";
 import Ficha from "./Ficha";
 import { Col, Form, FormGroup, Row } from "react-bootstrap";
 import FormControl from "react-bootstrap/FormControl";
-import { ifStatement } from "@babel/types";
 
 interface Props {
     ficha: Ficha

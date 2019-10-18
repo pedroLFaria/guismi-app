@@ -18,7 +18,6 @@ import DescendenciasApp from "../components/descendencia/DescendenciasApp";
 import { Nav, NavItem, TabContainer, TabContent } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner'
 import { TabPane } from 'react-bootstrap';
-import NavLink from 'react-bootstrap/NavLink';
 import HabilidadesApp from '../components/habilidade/HabilidadesApp';
 
 interface State {
@@ -127,7 +126,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         <Spinner
                             animation="border"
                             variant="primary"
-                            style={{ "float": "right", "margin-left": "auto", "display": this.state.loading ? "inline-block" : "none" }}
+                            style={{ "float": "right", "marginLeft": "auto", "display": this.state.loading ? "inline-block" : "none" }}
                         />
                     </Nav>
                     <TabContent>

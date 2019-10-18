@@ -1,5 +1,4 @@
 import * as React from "react";
-import Form from "react-bootstrap/Form";
 import Ficha from "../ficha/Ficha";
 import Caminho from "./Caminho";
 import CaminhoApp from "./CaminhoApp";
@@ -33,13 +32,14 @@ class CaminhosApp extends React.Component<Props, State> {
 
     updateCaminhos(prevCaminhoId: number, newCaminho: Caminho): boolean {
         let ficha = this.props.ficha;
-        if (ficha.caminhos.find(caminho => caminho.idCaminho === newCaminho.idCaminho))
-            return false;
-        else {
-            let index = ficha.caminhos.findIndex((caminho) => caminho.idCaminho === prevCaminhoId)
+        let index = ficha.caminhos.findIndex((caminho) => caminho.idCaminho === prevCaminhoId)
+        if (index) {
             ficha.caminhos[index] = newCaminho;
             this.props.updateFicha(ficha);
             return true
+        } else {
+            return false
+
         }
     }
 
