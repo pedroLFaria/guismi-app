@@ -15,8 +15,11 @@ import IdadeApp from "../components/ficha/IdadeApp";
 import NivelPersonagem from "../components/ficha/NivelPersonagem";
 import ExperienciaApp from "../components/ficha/ExperienciaApp";
 import DescendenciasApp from "../components/descendencia/DescendenciasApp";
-import { Nav, NavItem } from "react-bootstrap";
+import { Nav, NavItem, TabContainer, TabContent } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner'
+import { TabPane } from 'react-bootstrap';
+import NavLink from 'react-bootstrap/NavLink';
+import HabilidadesApp from '../components/habilidade/HabilidadesApp';
 
 interface State {
     ficha: Ficha
@@ -94,47 +97,41 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         />
                     </Col>
                 </Row>
-                <Nav
-                    variant={"tabs"}
+                <TabContainer
+                    id={"ficha-personagem"}
                     defaultActiveKey={"ficha"}
-                    onSelect={(selectedKey: string) => {
-                        console.log(selectedKey);
-                        this.setState(state => {
-                            for (let key of state.show.keys())
-                                state.show.set(key, "none");
-                            state.show.set(selectedKey, "block");
-                            console.log(state.show);
-                            return {
-                                show: state.show
-                            }
-                        });
-                        this.render()
-                    }}
                 >
-                    <NavItem>
-                        <Nav.Link eventKey={"ficha"}>
-                            Ficha
+                    <Nav
+                        variant={"tabs"}
+                    >
+                        <NavItem>
+                            <Nav.Link eventKey={"ficha"}>
+                                Ficha
                         </Nav.Link>
-                    </NavItem>
-                    <NavItem>
-                        <Nav.Link eventKey={"quadroDeBatalha"}>
-                            Quadro de Batalha
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link eventKey={"quadroDeBatalha"}>
+                                Quadro de Batalha
                         </Nav.Link>
-                    </NavItem>
-                    <NavItem>
-                        <Nav.Link eventKey={"inventario"}>
-                            Inventário
-                        </Nav.Link>
-                    </NavItem>
-                    <Spinner
-                        animation="border"
-                        variant="primary"
-                        style={{ "float": "right", "margin-left": "auto", "display": this.state.loading ? "inline-block" : "none" }}
-                    />
-                </Nav>
-                <Row>
-                    <Col>
-                        <Container style={{ display: this.state.show.get("ficha") }}>
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link
+                                eventKey={"inventario"}
+                            >
+                                Inventário
+                            </Nav.Link>
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link eventKey={"habilidades"}>Habilidades</Nav.Link>
+                        </NavItem>
+                        <Spinner
+                            animation="border"
+                            variant="primary"
+                            style={{ "float": "right", "margin-left": "auto", "display": this.state.loading ? "inline-block" : "none" }}
+                        />
+                    </Nav>
+                    <TabContent>
+                        <TabPane eventKey={"ficha"}>
                             <Row>
                                 <legend>Personagem</legend>
                             </Row>
@@ -174,15 +171,21 @@ export default class FichaPersonagem extends React.Component<State, State> {
                                     />
                                 </Col>
                             </Row>
-                        </Container>
-                        <Container style={{ display: this.state.show.get("quadroDeBatalha") }}>
+                        </TabPane>
+                        <TabPane eventKey={"quadroDeBatalha"}>
                             QUADRO DE BATALHA
-                        </Container>
-                        <Container style={{ display: this.state.show.get("inventario") }}>
+                        </TabPane>
+                        <TabPane eventKey={"inventario"}>
                             INVENTARIO
-                        </Container>
-                    </Col>
-                </Row>
+                        </TabPane>
+                        <TabPane eventKey={"habilidades"}>
+                            <HabilidadesApp
+                                ficha={ficha}
+                                updateFicha={this.atualizaFicha.bind(this)}
+                            />
+                        </TabPane>
+                    </TabContent>
+                </TabContainer>
             </Container>
         )
     }
