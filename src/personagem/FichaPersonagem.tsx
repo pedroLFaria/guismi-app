@@ -3,14 +3,14 @@ import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {NomeApp} from "../components/ficha/NomeApp";
+import { NomeApp } from "../components/ficha/NomeApp";
 import Ficha from "../components/ficha/Ficha";
 import Sistema from "../components/sistema/Sistema";
 import MyHeaders from "../_services/MyHeaders";
 import IdadeApp from "../components/ficha/IdadeApp";
 import NivelPersonagem from "../components/ficha/NivelPersonagem";
 import ExperienciaApp from "../components/ficha/ExperienciaApp";
-import {Nav, NavItem, TabContainer, TabContent, TabPane} from "react-bootstrap";
+import { Nav, NavItem, TabContainer, TabContent, TabPane } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner'
 import HabilidadesApp from '../components/habilidade/HabilidadesApp';
 import FichaApp from "../components/ficha/FichaApp";
@@ -40,7 +40,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
         })
             .then(response => response.json())
             .then(data => {
-                this.setState({ficha: data as Ficha})
+                this.setState({ ficha: data as Ficha })
             });
     };
 
@@ -52,7 +52,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
         Ficha.update(this.state.ficha).then(response => {
             if (response.ok) {
                 console.log("Ficha atualizada com sucesso.");
-                this.setState({loading: false});
+                this.setState({ loading: false });
                 return true
             } else {
                 console.log("Status " + response.statusText);
@@ -154,4 +154,4 @@ export default class FichaPersonagem extends React.Component<State, State> {
     }
 }
 
-export {FichaPersonagem}
+export { FichaPersonagem }

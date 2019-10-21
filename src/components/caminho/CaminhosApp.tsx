@@ -2,7 +2,8 @@ import * as React from "react";
 import Ficha from "../ficha/Ficha";
 import Caminho from "./Caminho";
 import CaminhoApp from "./CaminhoApp";
-import {Button, Col, Row} from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
+
 
 interface Props {
     ficha: Ficha
@@ -20,7 +21,7 @@ class CaminhosApp extends React.Component<Props, State> {
         super(props);
         this.state = {
             caminhos: this.props.ficha.caminhos,
-            shows:[]
+            shows: []
         };
     }
 
@@ -63,41 +64,42 @@ class CaminhosApp extends React.Component<Props, State> {
                     <Col>
                     </Col>
                 </Row>
-                {this.state.caminhos.map((caminho, index) => {
-                    return (
-                        <Row
-                            key={index}
-                        >
-                            <Button
-                                variant={"light"}
-                                block
-                                onClick={() => this.setState(state=>{
-                                    state.shows[index] = !state.shows[index];
-                                    return({shows:state.shows})
-                                })}
+                <Row>
+                    {this.state.caminhos.map((caminho, index) => {
+                        return (
+                            <Col
+                                key={index}
                             >
-                                {caminho.nomeCaminho}
+                                <Button
+                                    variant={"light"}
+                                    block
+                                    onClick={() => this.setState(state => {
+                                        state.shows[index] = !state.shows[index];
+                                        return ({ shows: state.shows })
+                                    })}
+                                >
+                                    {caminho.nomeCaminho}
+                                </Button>
+                                <CaminhoApp
+                                    show={this.state.shows[index]}
+                                    caminhos={this.state.caminhos}
+                                    index={index}
+                                    addCaminho={this.addCaminho.bind(this)}
+                                    updateCaminhos={this.updateCaminhos.bind(this)}
+                                    deleteCaminho={this.deleteCaminho.bind(this)}
+                                />
+                                <Button
+                                    size={"sm"} variant="outline-info"
+                                    onClick={() => this.deleteCaminho(index)}
+                                >x
                             </Button>
-                            <CaminhoApp
-                                show={this.state.shows[index]}
-                                caminhos={this.state.caminhos}
-                                index={index}
-                                addCaminho={this.addCaminho.bind(this)}
-                                updateCaminhos={this.updateCaminhos.bind(this)}
-                                deleteCaminho={this.deleteCaminho.bind(this)}
-                            />
-                            <Button
-                                size={"sm"} variant="outline-info"
-                                onClick={()=>this.deleteCaminho(index)}
-                            >x
-                            </Button>
-                        </Row>
-                    )
-                })}
-
+                            </Col>
+                        )
+                    })}
+                </Row>
             </Col>
         )
     }
 }
 
-export {CaminhosApp}
+export { CaminhosApp }

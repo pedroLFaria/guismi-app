@@ -1,9 +1,9 @@
-import React, {FormEvent} from 'react'
+import React, { FormEvent } from 'react'
 import Form from "react-bootstrap/Form";
 import Ficha from "../ficha/Ficha";
 import Sistema from "../sistema/Sistema";
 import Raca from "./Raca";
-import {Button, Col, Modal, ModalBody, ModalFooter, Row, Tab, Table, Tabs} from "react-bootstrap";
+import { Button, Col, Modal, ModalBody, ModalFooter, Row, Tab, Table, Tabs } from "react-bootstrap";
 
 interface Props {
     ficha: Ficha
@@ -40,7 +40,7 @@ class RacaApp extends React.Component<Props, State> {
     }
     componentDidUpdate(prevProps: Props, prevState: State) {
         if (JSON.stringify(prevProps.ficha.raca) !== JSON.stringify(this.props.ficha.raca))
-            this.setState({raca: this.props.ficha.raca})
+            this.setState({ raca: this.props.ficha.raca })
     }
 
     tabDesc() {
@@ -106,42 +106,42 @@ class RacaApp extends React.Component<Props, State> {
                     <Col>
                         <Table>
                             <tbody>
-                            <tr>
-                                <th>Sangue</th>
-                                <td>{this.state.raca.sangue}</td>
-                            </tr>
-                            <tr>
-                                <th>Vigor</th>
-                                <td>{this.state.raca.vigor}</td>
-                            </tr>
-                            <tr>
-                                <th>FOR</th>
-                                <td>{this.state.raca.racaForca}</td>
-                            </tr>
-                            <tr>
-                                <th>CON</th>
-                                <td>{this.state.raca.racaConstituicao}</td>
-                            </tr>
-                            <tr>
-                                <th>AGI</th>
-                                <td>{this.state.raca.racaAgilidade}</td>
-                            </tr>
-                            <tr>
-                                <th>DES</th>
-                                <td>{this.state.raca.racaDestreza}</td>
-                            </tr>
-                            <tr>
-                                <th>INT</th>
-                                <td>{this.state.raca.racaInteligencia}</td>
-                            </tr>
-                            <tr>
-                                <th>SAB</th>
-                                <td>{this.state.raca.racaSabedoria}</td>
-                            </tr>
-                            <tr>
-                                <th>CAR</th>
-                                <td>{this.state.raca.racaCarisma}</td>
-                            </tr>
+                                <tr>
+                                    <th>Sangue</th>
+                                    <td>{this.state.raca.sangue}</td>
+                                </tr>
+                                <tr>
+                                    <th>Vigor</th>
+                                    <td>{this.state.raca.vigor}</td>
+                                </tr>
+                                <tr>
+                                    <th>FOR</th>
+                                    <td>{this.state.raca.racaForca}</td>
+                                </tr>
+                                <tr>
+                                    <th>CON</th>
+                                    <td>{this.state.raca.racaConstituicao}</td>
+                                </tr>
+                                <tr>
+                                    <th>AGI</th>
+                                    <td>{this.state.raca.racaAgilidade}</td>
+                                </tr>
+                                <tr>
+                                    <th>DES</th>
+                                    <td>{this.state.raca.racaDestreza}</td>
+                                </tr>
+                                <tr>
+                                    <th>INT</th>
+                                    <td>{this.state.raca.racaInteligencia}</td>
+                                </tr>
+                                <tr>
+                                    <th>SAB</th>
+                                    <td>{this.state.raca.racaSabedoria}</td>
+                                </tr>
+                                <tr>
+                                    <th>CAR</th>
+                                    <td>{this.state.raca.racaCarisma}</td>
+                                </tr>
                             </tbody>
                         </Table>
                     </Col>
@@ -150,13 +150,13 @@ class RacaApp extends React.Component<Props, State> {
         )
     }
 
-    handleOnSave(){
+    handleOnSave() {
         let newFicha = this.props.ficha;
         newFicha.idRaca = this.state.raca.idRaca!;
         newFicha.raca = this.state.raca;
         this.props.updateFicha(newFicha);
         this.setState({
-            show:false
+            show: false
         })
     }
 
@@ -175,11 +175,11 @@ class RacaApp extends React.Component<Props, State> {
                 </Button>
                 <Modal
                     show={this.state.show}
-                    onHide={() => this.setState({show: false})}
+                    onHide={() => this.setState({ show: false })}
                 >
                     <Modal.Header closeButton>
                         <Form.Control
-                            value={this.state.raca.idRaca? this.state.raca.idRaca.toString() : "0"}
+                            value={this.state.raca.idRaca ? this.state.raca.idRaca.toString() : "0"}
                             as={"select"}
                             onChange={this.handleChange}
                         >
@@ -206,4 +206,4 @@ class RacaApp extends React.Component<Props, State> {
     }
 }
 
-export {RacaApp}
+export { RacaApp }

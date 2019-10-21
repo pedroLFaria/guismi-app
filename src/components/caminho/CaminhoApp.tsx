@@ -1,7 +1,7 @@
 import * as React from "react";
 import Caminho from "./Caminho";
 import Sistema from "../sistema/Sistema";
-import {Button, Col, FormControl, Modal, ModalBody, ModalFooter, Tab, Tabs} from "react-bootstrap";
+import { Button, Col, FormControl, Modal, ModalBody, ModalFooter, Row, Tab, Tabs } from "react-bootstrap";
 
 interface Props {
     caminhos: Caminho[]
@@ -13,7 +13,7 @@ interface Props {
 }
 
 interface State {
-    caminho: Caminho,
+    caminho: Caminho
     show: boolean
     isInvalid: boolean
 }
@@ -47,7 +47,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
     }
 
     handleOnSave() {
-        if (this.props.updateCaminhos(this.props.index, this.state.caminho)) {
+        if (this.props.updateCaminhos(this.props.caminhos[this.props.index].idCaminho, this.state.caminho)) {
             this.setState({
                 show: false
             })
@@ -64,7 +64,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
 
                 <Modal
                     show={this.state.show}
-                    onHide={() => this.setState({show: false})}
+                    onHide={() => this.setState({ show: false })}
                 >
                     <Modal.Header closeButton>
                         <FormControl
@@ -93,22 +93,14 @@ export default class CaminhosApp extends React.Component<Props, State> {
                         </Tabs>
                     </ModalBody>
                     <ModalFooter>
-                        <Button
-                            size={"sm"} variant="outline-info"
-                            onClick={this.handleOnSave.bind(this)}
-                        >Add</Button>
-                        <Button
-                            size={"sm"} variant="outline-info"
-                        >Save</Button>
-                        <Button
-                            size={"sm"} variant="outline-info"
-                        >Deleto</Button>
+                        <Button onClick={this.handleOnSave.bind(this)}>Add</Button>
+                        <Button onClick={this.handleOnSave.bind(this)}>Save</Button>
+                        <Button onClick={this.handleOnSave.bind(this)}>Del</Button>
                     </ModalFooter>
                 </Modal>
             </Col>
         )
     }
-
     tabDesc() {
         return (
             <Tab
