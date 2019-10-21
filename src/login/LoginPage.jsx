@@ -56,7 +56,7 @@ class LoginPage extends React.Component {
                         <Form.Control type="password" placeholder="Password" name={"password"}
                                       onChange={this.handleChange}/>
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="outline-secondary" type="submit">
                         Aceder
                     </Button>
                 </Form>
