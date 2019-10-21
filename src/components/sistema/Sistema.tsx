@@ -42,7 +42,7 @@ export default class Sistema {
             });
     }
 
-    private setSistemaFromObject(json: Sistema){
+    private setSistemaFromObject(json: any){
         this._racas = json.racas;
         this._caminhos = json.caminhos;
         this._cidades = json.cidades;
@@ -61,66 +61,66 @@ export default class Sistema {
         return this._sistema
     }
 
-    get racas(): Raca[] {
-        if (this._racas !== undefined)
-            return this._racas!;
+    static get racas(): Raca[] {
+        if (this.sistema._racas !== undefined)
+            return this.sistema._racas!;
         else
             return []
     }
 
-    get caminhos(): Caminho[] {
-        if (this._caminhos !== undefined)
-            return this._caminhos!;
+    static get caminhos(): Caminho[] {
+        if (this.sistema._caminhos !== undefined)
+            return this.sistema._caminhos!;
         else
             return []
     }
 
 
-    get cidades(): Cidade[] {
-        if (this._cidades !== undefined)
-            return this._cidades!;
+    static get cidades(): Cidade[] {
+        if (this.sistema._cidades !== undefined)
+            return this.sistema._cidades!;
         else
             return []
     }
 
-    get descendencias(): Descendencia[] {
-        if (this._descendencias !== undefined)
-            return this._descendencias!;
+    static get descendencias(): Descendencia[] {
+        if (this.sistema._descendencias !== undefined)
+            return this.sistema._descendencias!;
         else
             return []
     }
 
-    get especializacoes(): Especializacao[] {
-        if (this._especializacoes !== undefined)
-            return this._especializacoes!;
+    static get especializacoes(): Especializacao[] {
+        if (this.sistema._especializacoes !== undefined)
+            return this.sistema._especializacoes!;
         else
             return []
     }
 
-    get habilidades(): Habilidade[] {
-        if (this._habilidades !== undefined)
-            return this._habilidades!;
+    static get habilidades(): Habilidade[] {
+        if (this.sistema._habilidades !== undefined)
+            return this.sistema._habilidades!;
         else
             return []
     }
 
-    get habitos(): Habito[] {
-        if (this._habitos !== undefined)
-            return this._habitos!;
+    static get habitos(): Habito[] {
+        if (this.sistema._habitos !== undefined)
+            return this.sistema._habitos!;
         else
             return []
     }
 
-    get idiomas(): Idioma[] {
-        if (this._idiomas !== undefined)
-            return this._idiomas!;
+    static get idiomas(): Idioma[] {
+        if (this.sistema._idiomas !== undefined)
+            return this.sistema._idiomas!;
         else
             return []
     }
 
-    get patronos(): Patrono[] {
-        if (this._patronos !== undefined)
-            return this._patronos!;
+    static get patronos(): Patrono[] {
+        if (this.sistema._patronos !== undefined)
+            return this.sistema._patronos!;
         else
             return []
     }

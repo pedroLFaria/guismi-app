@@ -11,7 +11,6 @@ interface Props {
 }
 
 interface State {
-    sistema: Sistema
     raca: Raca
     show: boolean
 }
@@ -20,7 +19,6 @@ class RacaApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            sistema: Sistema.sistema,
             raca: this.props.ficha.raca,
             show: false
         };
@@ -29,7 +27,7 @@ class RacaApp extends React.Component<Props, State> {
 
     handleChange(event: FormEvent) {
         let value = (event.target as HTMLFormElement).value;
-        let newRaca = Sistema.sistema.racas.find(raca => raca.idRaca!.toString() === value);
+        let newRaca = Sistema.racas.find(raca => raca.idRaca!.toString() === value);
         if (newRaca) {
             this.setState({
                 raca: newRaca
@@ -183,7 +181,7 @@ class RacaApp extends React.Component<Props, State> {
                             as={"select"}
                             onChange={this.handleChange}
                         >
-                            {this.state.sistema.racas.map(
+                            {Sistema.racas.map(
                                 (raca) => <option key={raca.idRaca} value={raca.idRaca}>{raca.nomeRaca}</option>
                             )}
                         </Form.Control>

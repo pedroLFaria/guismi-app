@@ -12,7 +12,7 @@ interface State{
     sistema:Sistema;
 }
 
-class HabitoApp extends React.Component<Props, State> {
+export default class HabitoApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -47,6 +47,4 @@ class HabitoApp extends React.Component<Props, State> {
         )
     }
 }
-
-export {HabitoApp}
 

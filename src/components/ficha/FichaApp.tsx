@@ -3,10 +3,10 @@ import Ficha from "./Ficha";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {RacaApp} from "../raca/RacaApp";
-import {CaminhosApp} from "../caminho/CaminhosApp";
+import CaminhosApp from "../caminho/CaminhosApp";
 import DescendenciasApp from "../descendencia/DescendenciasApp";
 import TabelaDeAtributosApp from "./TabelaDeAtributosApp";
-import {HabitoApp} from "../habito/HabitoApp";
+import HabitoApp from "../habito/HabitoApp";
 
 interface Props {
     ficha:Ficha

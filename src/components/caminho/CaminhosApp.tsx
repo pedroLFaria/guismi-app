@@ -2,11 +2,12 @@ import * as React from "react";
 import Ficha from "../ficha/Ficha";
 import Caminho from "./Caminho";
 import CaminhoApp from "./CaminhoApp";
-import { Button, Col, Row } from "react-bootstrap";
+import {Button, Col, Row} from "react-bootstrap";
 
 
 interface Props {
     ficha: Ficha
+
     updateFicha(arg0: Ficha): void
 }
 
@@ -15,7 +16,7 @@ interface State {
     shows: boolean[]
 }
 
-class CaminhosApp extends React.Component<Props, State> {
+export default class CaminhosApp extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
@@ -52,27 +53,26 @@ class CaminhosApp extends React.Component<Props, State> {
     }
 
     render() {
-        console.log(this.props.ficha.caminhos);
         return (
             <Col>
-                    {this.state.caminhos.map((caminho, index) => {
-                        return (
-                            <Row
-                                key={index}
-                            >
-                              <Col md={5}>
+                {this.state.caminhos.map((caminho, index) => {
+                    return (
+                        <Row
+                            key={index}
+                        >
+                            <Col md={5}>
                                 <Button
                                     variant={"light"}
                                     block
                                     onClick={() => this.setState(state => {
                                         state.shows[index] = !state.shows[index];
-                                        return ({ shows: state.shows })
+                                        return ({shows: state.shows})
                                     })}
                                 >
                                     {caminho.nomeCaminho}
                                 </Button>
-                                </Col>
-                                <Col style={{ paddingLeft: 0, paddingRight: 0 }}>
+                            </Col>
+                            <Col style={{paddingLeft: 0, paddingRight: 0}}>
                                 <CaminhoApp
                                     show={this.state.shows[index]}
                                     caminhos={this.state.caminhos}
@@ -86,14 +86,12 @@ class CaminhosApp extends React.Component<Props, State> {
                                     onClick={() => this.deleteCaminho(index)}
                                 >&#10005;
                                 </Button>
-                                </Col>
-                              </Row>
-                        )
-                    })}
+                            </Col>
+                        </Row>
+                    )
+                })}
 
             </Col>
         )
     }
 }
-
-export { CaminhosApp }

@@ -1,9 +1,8 @@
 import React from "react";
 import {Button, Col, Form, FormGroup, Row} from "react-bootstrap";
 import Ficha from "../ficha/Ficha";
-import Sistema from "../sistema/Sistema";
 import Descendencia from "./Descendencia";
-import ModalDescendencia from "./ModalDescendencia";
+import DescendenciaApp from "./DescendenciaApp";
 import "./DescendenciasApp.css"
 
 interface Props {
@@ -30,7 +29,7 @@ export default class DescendenciasApp extends React.Component<Props, State> {
             this.setState({descendencias: this.props.ficha.descendencias})
     }
 
-    trocaDescendencia(novaDescendencia: Descendencia, prevDescendencia: Descendencia) {
+    updateDescendencia(novaDescendencia: Descendencia, prevDescendencia: Descendencia) {
         let index = this.state.descendencias.findIndex(descendencia => {
             return (
                 prevDescendencia.idDescendencia === descendencia.idDescendencia
@@ -51,7 +50,7 @@ export default class DescendenciasApp extends React.Component<Props, State> {
         }
     }
 
-    adicionaDescendencia(novaDescendencia: Descendencia) {
+    addDescendencia(novaDescendencia: Descendencia) {
         if (!this.state.descendencias.find((descendencia) => {
             return descendencia.idDescendencia === novaDescendencia.idDescendencia
         })) {
@@ -66,8 +65,7 @@ export default class DescendenciasApp extends React.Component<Props, State> {
             return false
         }
     }
-
-    removeDescendencia(descendencias:Descendencia[], index:number){
+    deleteDescendencia(descendencias:Descendencia[], index:number){
         descendencias.splice(index,1);
         this.setState({
             descendencias:descendencias
@@ -85,11 +83,12 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                         </Form.Label>
                     </Col>
                     <Col lg={"auto"} md={"auto"}>
-                        <ModalDescendencia
+                        <DescendenciaApp
                             buttonIcon={"+"}
                             buttonText={"Add"}
-                            descendencias={Sistema.sistema.descendencias}
-                            adicionaDescendencia={this.adicionaDescendencia.bind(this)}
+                            index={0}
+                            descendencias={descendencias}
+                            updateDescendencia={this.addDescendencia.bind(this)}
                         />
                     </Col>
                 </Row>
@@ -102,18 +101,18 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                                     <p>{descendencia.nomeDescendencia}</p>
                                 </Col>
                                 <Col md={"auto"}>
-                                    <ModalDescendencia
+                                    <DescendenciaApp
                                         buttonIcon={"Editar"}
                                         buttonText={"Save"}
-                                        descendencias={Sistema.sistema.descendencias}
-                                        adicionaDescendencia={this.trocaDescendencia.bind(this)}
-                                        descendenciaSelecionada={descendencia}
+                                        index={index}
+                                        updateDescendencia={this.updateDescendencia.bind(this)}
+                                        descendencias={this.state.descendencias}
                                     />
                                 </Col>
                                 <Col md style={{ paddingLeft: 0, paddingRight: 0 }}>
                                     <Button
                                         size={"sm"} variant="outline-danger"
-                                        onClick={()=>this.removeDescendencia(descendencias,index)}
+                                        onClick={()=>this.deleteDescendencia(descendencias,index)}
                                     >&#10005;</Button>
                                 </Col>
                             </Row>

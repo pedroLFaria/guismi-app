@@ -35,7 +35,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
 
     handleChange(event: React.FormEvent) {
         const value = (event.target as HTMLSelectElement).value;
-        let newCaminho = Sistema.sistema.caminhos.find(caminho => caminho.idCaminho.toString() === value);
+        let newCaminho = Sistema.caminhos.find(caminho => caminho.idCaminho.toString() === value);
         if (newCaminho) {
             this.setState({
                 caminho: newCaminho,
@@ -73,7 +73,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                             onChange={this.handleChange.bind(this)}
                             isInvalid={this.state.isInvalid}
                         >
-                            {Sistema.sistema.caminhos.map(
+                            {Sistema.caminhos.map(
                                 (caminho, index) =>
                                     <option
                                         key={index}
