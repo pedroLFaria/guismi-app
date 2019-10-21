@@ -37,42 +37,41 @@ export default class FichaApp extends React.Component<Props, State>{
         return(
             <div>
                 <Row>
-                    <legend>Personagem</legend>
-                </Row>
-                <Row>
                     <Col md={2}>
+                      Raça
                         <RacaApp
                             updateFicha={this.props.updateFicha}
                             ficha={ficha}
                         />
                     </Col>
-                    <Col md={2}>
+                    <Col md={4}>
+                      Caminhos
                         <CaminhosApp
                             updateFicha={this.props.updateFicha}
                             ficha={ficha}
                         />
                     </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <DescendenciasApp
-                            ficha={ficha}
-                        />
-                    </Col>
-                    <Col>
-                        espaço vazio
-                    </Col>
-                </Row>
-                <Row>
                     <Col>
                         <TabelaDeAtributosApp
                             ficha={ficha}
                         />
                     </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                      <DescendenciasApp
+                          ficha={ficha}
+                      />
+                  </Col>
+                </Row>
+                <Row>
                     <Col>
                         <HabitoApp
                             ficha={ficha}
                         />
+                    </Col>
+                    <Col>
+                      Especialização
                     </Col>
                 </Row>
             </div>

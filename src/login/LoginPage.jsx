@@ -3,6 +3,8 @@ import {userService} from "../_services";
 import Form from 'react-bootstrap/Form'
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -39,6 +41,8 @@ class LoginPage extends React.Component {
     render() {
         return (
             <Container>
+            <Row className="d-flex justify-content-center">
+              <Col md={5}>
                 <Form onSubmit={this.handleSumit}>
                     <Form.Group controlId="formBasicUsername">
                         <Form.Label column={false}>Username</Form.Label>
@@ -53,9 +57,11 @@ class LoginPage extends React.Component {
                                       onChange={this.handleChange}/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Submit
+                        Aceder
                     </Button>
                 </Form>
+              </Col>
+            </Row>
             </Container>
         )
     }

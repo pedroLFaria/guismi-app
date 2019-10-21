@@ -147,7 +147,7 @@ export default class ModalDescendencia extends React.Component<Props, State> {
                             {this.tabHabitos()}
                         </Tabs>
                         <Row>
-                            <Button onClick={() => {
+                            <Button variant="outline-info" onClick={() => {
                                 if (this.props.adicionaDescendencia(this.state.descendenciaSelecionada, this.props.descendenciaSelecionada)) {
                                     this.setState({
                                         show: false

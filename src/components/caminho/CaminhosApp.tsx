@@ -55,21 +55,12 @@ class CaminhosApp extends React.Component<Props, State> {
         console.log(this.props.ficha.caminhos);
         return (
             <Col>
-                <Row>
-                    <Col>
-                        <label>
-                            Caminhos
-                        </label>
-                    </Col>
-                    <Col>
-                    </Col>
-                </Row>
-                <Row>
                     {this.state.caminhos.map((caminho, index) => {
                         return (
-                            <Col
+                            <Row
                                 key={index}
                             >
+                              <Col md={5}>
                                 <Button
                                     variant={"light"}
                                     block
@@ -80,6 +71,8 @@ class CaminhosApp extends React.Component<Props, State> {
                                 >
                                     {caminho.nomeCaminho}
                                 </Button>
+                                </Col>
+                                <Col style={{ paddingLeft: 0, paddingRight: 0 }}>
                                 <CaminhoApp
                                     show={this.state.shows[index]}
                                     caminhos={this.state.caminhos}
@@ -89,14 +82,15 @@ class CaminhosApp extends React.Component<Props, State> {
                                     deleteCaminho={this.deleteCaminho.bind(this)}
                                 />
                                 <Button
-                                    size={"sm"} variant="outline-info"
+                                    size={"sm"} variant="outline-danger"
                                     onClick={() => this.deleteCaminho(index)}
-                                >x
-                            </Button>
-                            </Col>
+                                >&#10005;
+                                </Button>
+                                </Col>
+                              </Row>
                         )
                     })}
-                </Row>
+
             </Col>
         )
     }

@@ -49,7 +49,7 @@ export default class IdadeApp extends React.Component<Props, State> {
         return (
             <FormGroup as={Row}>
                 <Col lg={"auto"}>
-                    <Form.Label column={false}>Idade</Form.Label>
+                    <Form.Label column={true} sm={2}>Idade</Form.Label>
                 </Col>
                 <Col>
                     <FormControl

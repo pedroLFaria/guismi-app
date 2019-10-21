@@ -28,13 +28,13 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
     render() {
         const ficha = this.state.ficha;
         return (
-            <Table hover={true} size={"sm"}>
+            <Table hover={true} size={"sm"} striped>
                 <thead>
-                <tr>
+                <tr className="thead-dark">
                     <th>Atributos</th>
-                    <th>R</th>
-                    <th>DS</th>
-                    <th>TT</th>
+                    <th>Raça</th>
+                    <th>Distribuido</th>
+                    <th>Total</th>
                 </tr>
                 </thead>
                 <tbody>

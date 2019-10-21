@@ -101,20 +101,20 @@ export default class DescendenciasApp extends React.Component<Props, State> {
                                 <Col lg={10}>
                                     <p>{descendencia.nomeDescendencia}</p>
                                 </Col>
-                                <Col lg={"auto"} md={"auto"}>
+                                <Col md={"auto"}>
                                     <ModalDescendencia
-                                        buttonIcon={"#"}
+                                        buttonIcon={"Editar"}
                                         buttonText={"Save"}
                                         descendencias={Sistema.sistema.descendencias}
                                         adicionaDescendencia={this.trocaDescendencia.bind(this)}
                                         descendenciaSelecionada={descendencia}
                                     />
                                 </Col>
-                                <Col style={{ paddingLeft: 0, paddingRight: 0 }}>
+                                <Col md style={{ paddingLeft: 0, paddingRight: 0 }}>
                                     <Button
-                                        size={"sm"} variant="outline-info"
+                                        size={"sm"} variant="outline-danger"
                                         onClick={()=>this.removeDescendencia(descendencias,index)}
-                                    >X</Button>
+                                    >&#10005;</Button>
                                 </Col>
                             </Row>
                         )

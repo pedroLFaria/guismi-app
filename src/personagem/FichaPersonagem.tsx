@@ -3,6 +3,8 @@ import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { NomeApp } from "../components/ficha/NomeApp";
 import Ficha from "../components/ficha/Ficha";
 import Sistema from "../components/sistema/Sistema";
@@ -14,6 +16,7 @@ import { Nav, NavItem, TabContainer, TabContent, TabPane } from "react-bootstrap
 import Spinner from 'react-bootstrap/Spinner'
 import HabilidadesApp from '../components/habilidade/HabilidadesApp';
 import FichaApp from "../components/ficha/FichaApp";
+import "./FichaPersonagem.css"
 
 interface State {
     ficha: Ficha
@@ -66,29 +69,42 @@ export default class FichaPersonagem extends React.Component<State, State> {
         return (
             <Container fluid>
                 <Row>
-                    <Col md={3}>
+                    <Col md={2}>
                         <NomeApp
                             updateFicha={this.updateFicha.bind(this)}
                             ficha={ficha}
                         />
                     </Col>
-                    <Col md={3}>
+                    <Col md={2}>
                         <IdadeApp
                             updateFicha={this.updateFicha.bind(this)}
                             ficha={ficha}
                         />
                     </Col>
-                    <Col md={3}>
+                    <Col md={2}>
                         <NivelPersonagem
                             updateFicha={this.updateFicha.bind(this)}
                             ficha={ficha}
                         />
                     </Col>
-                    <Col md={3}>
+                    <Col md={2}>
                         <ExperienciaApp
                             updateFicha={this.updateFicha.bind(this)}
                             ficha={ficha}
                         />
+                    </Col>
+                    <Col md={2}>
+                      Vida////////Estado////////
+                    </Col>
+                    <Col className="d-flex justify-content-end">
+                      <ButtonGroup>
+                        <Button
+                            size={"sm"} variant="secondary"
+                        >Retornar</Button>
+                        <Button
+                            size={"sm"} variant="secondary"
+                        >Sair</Button>
+                      </ButtonGroup>
                     </Col>
                 </Row>
                 <TabContainer
@@ -137,6 +153,9 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         </TabPane>
                         <TabPane eventKey={"quadroDeBatalha"}>
                             QUADRO DE BATALHA
+                            -Atributos
+                            -Defesas
+                            -
                         </TabPane>
                         <TabPane eventKey={"inventario"}>
                             INVENTARIO
