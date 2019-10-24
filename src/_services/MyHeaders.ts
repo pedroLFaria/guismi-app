@@ -1,3 +1,4 @@
+
 export default class MyHeaders{
     private static _myHeaders : MyHeaders;
     private headers:Headers;
@@ -14,9 +15,12 @@ export default class MyHeaders{
             return this._myHeaders.headers;
     }
 
-    public static addHeader(name:string, value:string) : MyHeaders{
-        this._myHeaders.headers.append(name, value);
-        return this._myHeaders
+    public static add(name:string, value:string) : void{
+        MyHeaders.getMyHeaders().append(name, value);
+    }
+
+    public  static  delete(name:string){
+        MyHeaders.getMyHeaders().delete(name);
     }
 
     public static resetMyHeaders(){

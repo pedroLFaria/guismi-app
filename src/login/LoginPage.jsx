@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import MyHeaders from "../_services/MyHeaders";
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class LoginPage extends React.Component {
         e.preventDefault();
         this.setState({submitted: true});
         const {username, password} = this.state;
+        MyHeaders.add("Authorization","Basic dGVzdGU6dGVzdGU=");
         userService.login(username, password).then(
             user => {
                 window.location.hash = ("#/escolhe_ficha");
