@@ -7,6 +7,7 @@ import CaminhosApp from "../caminho/CaminhosApp";
 import DescendenciasApp from "../descendencia/DescendenciasApp";
 import TabelaDeAtributosApp from "./TabelaDeAtributosApp";
 import HabitoApp from "../habito/HabitoApp";
+import Descendencia from "../descendencia/Descendencia";
 
 interface Props {
     ficha:Ficha
@@ -14,26 +15,20 @@ interface Props {
 }
 
 interface State {
-    ficha:Ficha
+
 }
 
 export default class FichaApp extends React.Component<Props, State>{
-    constructor(props:Props) {
-        super(props);
-        this.state ={
-            ficha:this.props.ficha
-        }
-    }
 
-    componentDidUpdate(prevProps: Readonly<Props>) {
-        if(JSON.stringify(prevProps.ficha) !== JSON.stringify(this.props.ficha))
-            this.setState({
-                ficha:this.props.ficha
-            })
+    updateDescendencias(descendencias: Descendencia[]){
+        let ficha = this.props.ficha;
+        ficha.descendencias = descendencias;
+        this.props.updateFicha(ficha);
+        return true
     }
 
     render(){
-        const ficha = this.state.ficha;
+        const ficha = this.props.ficha;
         return(
             <div>
                 <Row>
@@ -60,7 +55,8 @@ export default class FichaApp extends React.Component<Props, State>{
                 <Row>
                   <Col md={6}>
                       <DescendenciasApp
-                          ficha={ficha}
+                          descendencias={ficha.descendencias}
+                          updateDescendencias={this.updateDescendencias.bind(this)}
                       />
                   </Col>
                 </Row>

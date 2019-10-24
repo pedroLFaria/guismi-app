@@ -61,7 +61,6 @@ export default class CaminhosApp extends React.Component<Props, State> {
     render() {
         return (
             <Col>
-
                 <Modal
                     show={this.state.show}
                     onHide={() => this.setState({ show: false })}
