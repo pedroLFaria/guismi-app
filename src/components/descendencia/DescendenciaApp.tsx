@@ -7,13 +7,15 @@ interface Props {
     handleHide: Function
     descendencia: Descendencia
     show: boolean
-    add?: Function
-    update?: Function
-    delete?: Function
+
+    add?(newDescendencia: Descendencia): boolean
+
+    update?(newDescendencia: Descendencia, prevDescendencia: Descendencia): boolean
+
+    delete?(descendencia: Descendencia): boolean
 }
 
 interface State {
-    show: boolean
     descendencia: Descendencia
     value: string
     isInvalid: boolean
@@ -23,7 +25,6 @@ export default class DescendenciaApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            show: false,
             descendencia: this.props.descendencia,
             value: this.props.descendencia.idDescendencia.toString(),
             isInvalid: false
@@ -31,20 +32,30 @@ export default class DescendenciaApp extends React.Component<Props, State> {
     }
 
     handleChange(event: FormEvent) {
-        let value = Number((event.target as HTMLFormElement).value);
-        let descendencia = Sistema.descendencias.find(descendencia => descendencia.idDescendencia === value);
-        this.setState({
-            descendencia: descendencia!,
-            value: value.toString()
-        })
+        let value = (event.target as HTMLFormElement).value;
+        let descendencia = Sistema.descendencias.find(descendencia => descendencia.idDescendencia === Number(value));
+        if (descendencia !== undefined)
+            this.setState({
+                descendencia: descendencia,
+                value: value,
+                isInvalid: false
+            });
+        else
+            alert("Ops algo deu errado!");
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        if (prevProps.descendencia.idDescendencia !== this.props.descendencia.idDescendencia) {
+        if (!prevProps.show && this.props.show) {
             this.setState({
+                value: this.props.descendencia.idDescendencia.toString(),
                 descendencia: this.props.descendencia
             })
         }
+    }
+
+    handleInvalid() {
+        this.setState({isInvalid: true});
+        setTimeout(() => this.setState({isInvalid: false}), 1000)
     }
 
     render() {
@@ -62,14 +73,14 @@ export default class DescendenciaApp extends React.Component<Props, State> {
                             plaintext={false}
                             isInvalid={this.state.isInvalid}
                         >
-                            {Sistema.descendencias.map((descendencia, index) => {
-                                return (
-                                    <option value={descendencia.idDescendencia.toString()}
-                                            key={index}
-                                    >
-                                        {descendencia.nomeDescendencia}
-                                    </option>)
-                            })}
+                            {Sistema.descendencias.map((descendencia, index) =>
+                                <option
+                                    value={descendencia.idDescendencia.toString()}
+                                    key={index}
+                                >
+                                    {descendencia.nomeDescendencia}
+                                </option>
+                            )}
                         </FormControl>
                     </Modal.Header>
                     <ModalBody>
@@ -92,7 +103,10 @@ export default class DescendenciaApp extends React.Component<Props, State> {
         if (this.props.add !== undefined) {
             botoes.push(
                 <Button
-                    onClick={()=>this.props.add!(this.state.descendencia)}
+                    onClick={() => {
+                        this.props.add!(this.state.descendencia) ?
+                            this.props.handleHide() : this.handleInvalid()
+                    }}
                     key={'1'}
                 >Add</Button>
             );
@@ -100,7 +114,10 @@ export default class DescendenciaApp extends React.Component<Props, State> {
         if (this.props.update !== undefined) {
             botoes.push(
                 <Button
-                    onClick={()=>this.props.update!(this.state.descendencia, this.props.descendencia)}
+                    onClick={() => {
+                        this.props.update!(this.state.descendencia, this.props.descendencia) ?
+                            this.props.handleHide() : this.handleInvalid()
+                    }}
                     key={'2'}
                 >update</Button>
             );
@@ -108,7 +125,8 @@ export default class DescendenciaApp extends React.Component<Props, State> {
         if (this.props.delete !== undefined) {
             botoes.push(
                 <Button
-                    onClick={()=>this.props.delete!(this.state.descendencia)}
+                    onClick={() => this.props.delete!(this.state.descendencia) ?
+                        this.props.handleHide() : this.handleInvalid()}
                     key={"3"}
                 >delete</Button>
             );
