@@ -1,13 +1,12 @@
 import React, { FormEvent } from 'react'
 import Form from "react-bootstrap/Form";
-import Ficha from "../ficha/Ficha";
 import Sistema from "../sistema/Sistema";
 import Raca from "./Raca";
 import { Button, Col, Modal, ModalBody, ModalFooter, Row, Tab, Table, Tabs } from "react-bootstrap";
 
 interface Props {
-    ficha: Ficha
-    updateFicha: Function
+    raca: Raca
+    updateRaca(raca: Raca): boolean
 }
 
 interface State {
@@ -19,7 +18,7 @@ class RacaApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            raca: this.props.ficha.raca,
+            raca: this.props.raca,
             show: false
         };
         this.handleChange = this.handleChange.bind(this)
@@ -36,9 +35,62 @@ class RacaApp extends React.Component<Props, State> {
             alert("Ops Algo deu errado!")
         }
     }
-    componentDidUpdate(prevProps: Props, prevState: State) {
-        if (JSON.stringify(prevProps.ficha.raca) !== JSON.stringify(this.props.ficha.raca))
-            this.setState({ raca: this.props.ficha.raca })
+
+    handleOnSave() {
+        this.props.updateRaca(this.state.raca)
+    }
+
+    handleOnHide(){
+        this.setState({show:false})
+    }
+
+    handleOnClick(){
+        this.setState({
+            show:true,
+            raca:this.props.raca
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <Button
+                    variant={"light"}
+                    block={true}
+                    onClick={this.handleOnClick.bind(this)}
+                >
+                    {this.props.raca.nomeRaca}
+                </Button>
+                <Modal
+                    show={this.state.show}
+                    onHide={this.handleOnHide.bind(this)}
+                >
+                    <Modal.Header closeButton>
+                        <Form.Control
+                            value={this.state.raca.idRaca? this.state.raca.idRaca.toString() : "0"}
+                            as={"select"}
+                            onChange={this.handleChange}
+                        >
+                            {Sistema.racas.map(
+                                (raca) => <option key={raca.idRaca} value={raca.idRaca}>{raca.nomeRaca}</option>
+                            )}
+                        </Form.Control>
+                    </Modal.Header>
+                    <ModalBody>
+                        <Tabs defaultActiveKey={"descRaca"} id={"tab-raca"}>
+                            {this.tabDesc()}
+                            {this.tabAtributos()}
+                            {this.tabCultura()}
+                            {this.tabHistoria()}
+                        </Tabs>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.handleOnSave.bind(this)}>Save</Button>
+                    </ModalFooter>
+                </Modal>
+            </div>
+            /**/
+        )
     }
 
     tabDesc() {
@@ -145,61 +197,6 @@ class RacaApp extends React.Component<Props, State> {
                     </Col>
                 </Row>
             </Tab>
-        )
-    }
-
-    handleOnSave() {
-        let newFicha = this.props.ficha;
-        newFicha.idRaca = this.state.raca.idRaca!;
-        newFicha.raca = this.state.raca;
-        this.props.updateFicha(newFicha);
-        this.setState({
-            show: false
-        })
-    }
-
-    render() {
-        return (
-            <div>
-                <Button
-                    variant={"light"}
-                    block={true}
-                    onClick={() => this.setState({
-                        show: true,
-                        raca: this.props.ficha.raca
-                    })}
-                >
-                    {this.props.ficha.raca.nomeRaca}
-                </Button>
-                <Modal
-                    show={this.state.show}
-                    onHide={() => this.setState({ show: false })}
-                >
-                    <Modal.Header closeButton>
-                        <Form.Control
-                            value={this.state.raca.idRaca ? this.state.raca.idRaca.toString() : "0"}
-                            as={"select"}
-                            onChange={this.handleChange}
-                        >
-                            {Sistema.racas.map(
-                                (raca) => <option key={raca.idRaca} value={raca.idRaca}>{raca.nomeRaca}</option>
-                            )}
-                        </Form.Control>
-                    </Modal.Header>
-                    <ModalBody>
-                        <Tabs defaultActiveKey={"descRaca"} id={"tab-raca"}>
-                            {this.tabDesc()}
-                            {this.tabAtributos()}
-                            {this.tabCultura()}
-                            {this.tabHistoria()}
-                        </Tabs>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button onClick={this.handleOnSave.bind(this)}>Save</Button>
-                    </ModalFooter>
-                </Modal>
-            </div>
-            /**/
         )
     }
 }

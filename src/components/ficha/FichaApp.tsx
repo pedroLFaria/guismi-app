@@ -9,6 +9,7 @@ import TabelaDeAtributosApp from "./TabelaDeAtributosApp";
 import HabitoApp from "../habito/HabitoApp";
 import Descendencia from "../descendencia/Descendencia";
 import Caminho from "../caminho/Caminho";
+import Raca from "../raca/Raca";
 
 interface Props {
     ficha:Ficha
@@ -35,6 +36,13 @@ export default class FichaApp extends React.Component<Props, State>{
         return true;
     }
 
+    updateRaca(raca:Raca){
+        let ficha = this.props.ficha;
+        ficha.raca = raca;
+        this.props.updateFicha(ficha);
+        return true
+    }
+
     render(){
         const ficha = this.props.ficha;
         return(
@@ -43,8 +51,8 @@ export default class FichaApp extends React.Component<Props, State>{
                     <Col md={2}>
                       Raça
                         <RacaApp
-                            updateFicha={this.props.updateFicha}
-                            ficha={ficha}
+                            updateRaca={this.updateRaca.bind(this)}
+                            raca={ficha.raca}
                         />
                     </Col>
                     <Col md={4}>
