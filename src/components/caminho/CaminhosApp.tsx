@@ -92,7 +92,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                 <Col>
                     caminhos
                     {this.renderAddCaminho()}
-                    {this.props.caminhos.map((caminho, index) => {
+                    {caminhos.map((caminho, index) => {
                         return (
                             <Row
                                 key={index}

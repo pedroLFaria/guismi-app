@@ -2,14 +2,15 @@ import React from "react";
 import Ficha from "./Ficha";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {RacaApp} from "../raca/RacaApp";
+import RacaApp from "../raca/RacaApp";
 import CaminhosApp from "../caminho/CaminhosApp";
 import DescendenciasApp from "../descendencia/DescendenciasApp";
 import TabelaDeAtributosApp from "./TabelaDeAtributosApp";
-import HabitoApp from "../habito/HabitoApp";
+import HabitosApp from "../habito/HabitosApp";
 import Descendencia from "../descendencia/Descendencia";
 import Caminho from "../caminho/Caminho";
 import Raca from "../raca/Raca";
+import Habito from "../habito/Habito";
 
 interface Props {
     ficha:Ficha
@@ -39,6 +40,13 @@ export default class FichaApp extends React.Component<Props, State>{
     updateRaca(raca:Raca){
         let ficha = this.props.ficha;
         ficha.raca = raca;
+        this.props.updateFicha(ficha);
+        return true
+    }
+
+    updateHabitos(habitos:Habito[]){
+        let ficha = this.props.ficha;
+        ficha.habitos = habitos;
         this.props.updateFicha(ficha);
         return true
     }
@@ -77,8 +85,9 @@ export default class FichaApp extends React.Component<Props, State>{
                 </Row>
                 <Row>
                     <Col>
-                        <HabitoApp
-                            ficha={ficha}
+                        <HabitosApp
+                            habitos={ficha.habitos}
+                            updateHabitos={this.updateHabitos.bind(this)}
                         />
                     </Col>
                     <Col>

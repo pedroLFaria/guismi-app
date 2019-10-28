@@ -14,7 +14,7 @@ interface State {
     show: boolean
 }
 
-class RacaApp extends React.Component<Props, State> {
+export default class RacaApp extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -200,5 +200,3 @@ class RacaApp extends React.Component<Props, State> {
         )
     }
 }
-
-export { RacaApp }
