@@ -8,6 +8,7 @@ import Caminho from "../caminho/Caminho";
 import Raca from "../raca/Raca";
 import Inventario from "../inventario/Inventario";
 import MyHeaders from "../../_services/MyHeaders";
+import Especializacao from "../especializacao/Especializacao";
 
 export default class Ficha {
     idFicha: number;
@@ -42,6 +43,7 @@ export default class Ficha {
     inventarios: Inventario[] = [];
     patronos: Patrono[] = [];
     situacoes: Situacao[] = [];
+    especializacoes: Especializacao[] = [];
 
     constructor(idFicha: number) {
         this.idFicha = idFicha;
@@ -110,6 +112,7 @@ export default class Ficha {
         this.inventarios = obj.inventarios;
         this.patronos = obj.patronos;
         this.situacoes = obj.situacoes;
+        this.especializacoes = obj.especializacoes;
     }
 
     /*    get idFicha(): number {

@@ -69,7 +69,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                 >
                     <Modal.Header closeButton>
                         <FormControl
-                            value={this.state.value}
+                            value={this.state.caminho.idCaminho.toString()}
                             onChange={this.handleChange.bind(this)}
                             as={"select"}
                             isInvalid={this.state.isInvalid}
