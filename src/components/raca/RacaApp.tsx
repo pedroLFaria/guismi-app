@@ -38,6 +38,7 @@ export default class RacaApp extends React.Component<Props, State> {
 
     handleOnSave() {
         this.props.updateRaca(this.state.raca)
+        this.handleOnHide()
     }
 
     handleOnHide(){
@@ -71,8 +72,11 @@ export default class RacaApp extends React.Component<Props, State> {
                             as={"select"}
                             onChange={this.handleChange}
                         >
-                            {Sistema.racas.map(
-                                (raca) => <option key={raca.idRaca} value={raca.idRaca}>{raca.nomeRaca}</option>
+                            {Sistema.racas.map((raca,index) => 
+                            <option 
+                                key={index}
+                                value={raca.idRaca}
+                            >{raca.nomeRaca}</option>
                             )}
                         </Form.Control>
                     </Modal.Header>

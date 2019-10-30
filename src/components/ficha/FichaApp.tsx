@@ -13,8 +13,8 @@ import Raca from "../raca/Raca";
 import Habito from "../habito/Habito";
 
 interface Props {
-    ficha:Ficha
-    updateFicha(arg0:Ficha):void
+    ficha: Ficha
+    updateFicha(arg0: Ficha): void
 }
 
 interface State {
@@ -23,77 +23,76 @@ interface State {
 
 export default class FichaApp extends React.Component<Props, State>{
 
-    updateDescendencias(descendencias: Descendencia[]){
+    updateDescendencias(descendencias: Descendencia[]) {
         let ficha = this.props.ficha;
         ficha.descendencias = descendencias;
         this.props.updateFicha(ficha);
         return true
     }
 
-    updateCaminhos(caminhos: Caminho[]){
+    updateCaminhos(caminhos: Caminho[]) {
         let ficha = this.props.ficha;
         ficha.caminhos = caminhos;
         this.props.updateFicha(ficha);
         return true;
     }
 
-    updateRaca(raca:Raca){
+    updateRaca(raca: Raca) {
         let ficha = this.props.ficha;
         ficha.raca = raca;
         this.props.updateFicha(ficha);
         return true
     }
 
-    updateHabitos(habitos:Habito[]){
+    updateHabitos(habitos: Habito[]) {
         let ficha = this.props.ficha;
         ficha.habitos = habitos;
         this.props.updateFicha(ficha);
         return true
     }
 
-    render(){
+    render() {
         const ficha = this.props.ficha;
-        return(
-            <div>
-                <Row>
-                    <Col md={2}>
-                      Raça
-                        <RacaApp
-                            updateRaca={this.updateRaca.bind(this)}
-                            raca={ficha.raca}
+        return (
+            <Row>
+                <Col md={6}>
+                    <Row>
+                        <Col>
+                            Raça
+                            <RacaApp
+                                updateRaca={this.updateRaca.bind(this)}
+                                raca={ficha.raca}
+                            />
+                        </Col>
+                        <Col>
+                            <CaminhosApp
+                                updateCaminhos={this.updateCaminhos.bind(this)}
+                                caminhos={ficha.caminhos}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <DescendenciasApp
+                            descendencias={ficha.descendencias}
+                            updateDescendencias={this.updateDescendencias.bind(this)}
                         />
-                    </Col>
-                    <Col md={4}>
-                        <CaminhosApp
-                            updateCaminhos={this.updateCaminhos.bind(this)}
-                            caminhos={ficha.caminhos}
-                        />
-                    </Col>
-                    <Col md={6}>
+                    </Row>
+                </Col>
+                <Col>
+                    <Row>
                         <TabelaDeAtributosApp
                             ficha={ficha}
                         />
-                    </Col>
-                </Row>
-                <Row>
-                  <Col md={6}>
-                      <DescendenciasApp
-                          descendencias={ficha.descendencias}
-                          updateDescendencias={this.updateDescendencias.bind(this)}
-                      />
-                  </Col>
-                  <Col md={6}>
+                    </Row>
+                    <Row>
                         <HabitosApp
                             habitos={ficha.habitos}
                             updateHabitos={this.updateHabitos.bind(this)}
                             especializacoes={ficha.especializacoes}
                         />
-                    </Col>
-                </Row>
-                <Row>
-                    
-                </Row>
-            </div>
+                    </Row>
+                </Col>
+            </Row>
         )
     }
 }
