@@ -38,9 +38,8 @@ export default class FichaApp extends React.Component<Props, State>{
     }
 
     updateRaca(raca: Raca) {
-        let ficha = this.props.ficha;
-        ficha.raca = raca;
-        this.props.updateFicha(ficha);
+        console.log(Object.assign(new Ficha(this.props.ficha.idFicha),this.props.ficha,{raca:raca, idRaca:raca.idRaca}));
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha),this.props.ficha,{raca:raca, idRaca:raca.idRaca}));
         return true
     }
 

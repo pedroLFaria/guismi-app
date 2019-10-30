@@ -17,6 +17,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import HabilidadesApp from '../components/habilidade/HabilidadesApp';
 import FichaApp from "../components/ficha/FichaApp";
 import "./FichaPersonagem.css"
+import Habilidade from "../components/habilidade/Habilidade";
 
 interface State {
     ficha: Ficha
@@ -62,6 +63,10 @@ export default class FichaPersonagem extends React.Component<State, State> {
                 return false
             }
         })
+    }
+
+    updateHabilidades(habilidades:Habilidade[]){
+        return true
     }
 
     render() {
@@ -162,8 +167,8 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         </TabPane>
                         <TabPane eventKey={"habilidades"}>
                             <HabilidadesApp
-                                ficha={ficha}
-                                updateFicha={this.updateFicha.bind(this)}
+                                habilidades={ficha.habilidades}
+                                updateHabilidades={this.updateHabilidades.bind(this)}
                             />
                         </TabPane>
                     </TabContent>
