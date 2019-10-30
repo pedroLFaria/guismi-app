@@ -69,7 +69,7 @@ export default class FichaApp extends React.Component<Props, State>{
                             caminhos={ficha.caminhos}
                         />
                     </Col>
-                    <Col>
+                    <Col md={6}>
                         <TabelaDeAtributosApp
                             ficha={ficha}
                         />
@@ -82,17 +82,16 @@ export default class FichaApp extends React.Component<Props, State>{
                           updateDescendencias={this.updateDescendencias.bind(this)}
                       />
                   </Col>
-                </Row>
-                <Row>
-                    <Col>
+                  <Col md={6}>
                         <HabitosApp
                             habitos={ficha.habitos}
                             updateHabitos={this.updateHabitos.bind(this)}
+                            especializacoes={ficha.especializacoes}
                         />
                     </Col>
-                    <Col>
-                      Especialização
-                    </Col>
+                </Row>
+                <Row>
+                    
                 </Row>
             </div>
         )

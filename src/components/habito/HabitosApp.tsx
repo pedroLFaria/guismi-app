@@ -1,10 +1,12 @@
 import * as React from 'react'
 import Table from "react-bootstrap/Table";
 import Habito from './Habito';
+import Especializacao from '../especializacao/Especializacao';
 
 interface Props {
     habitos: Habito[]
     updateHabitos(habitos: Habito[]): boolean
+    especializacoes?:Especializacao[]
 }
 
 interface State {
@@ -31,16 +33,25 @@ export default class HabitosApp extends React.Component<Props, State> {
             <Table hover={true} size={"sm"}>
                 <thead className="thead-dark">
                     <tr>
-                        <th>HABITOS</th>
+                        <th>Habito</th>
                         <th>Quantidade</th>
+                        <th>Especilizações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {habitos.map(habito =>
-                        <tr key={habito.idHabito}>
+                    {habitos.map(habito =>{
+                        let especComp="";
+                        if(this.props.especializacoes != undefined && habito.especializacoes != undefined){
+                            this.props.especializacoes.filter((value)=>habito.especializacoes!.some((especHabito)=>value.idEspecializacao === especHabito.idEspecializacao)).forEach(especializacao=>{
+                                especComp += ((especComp === ""?especializacao.nomeEspecializacao :", " + especializacao.nomeEspecializacao))
+                            })
+                        }
+                        return(<tr key={habito.idHabito}>
                             <td>{habito.nomeHabito}</td>
                             <td>{habito.qtdFichaHabito}</td>
-                        </tr>)}
+                            <td>{especComp?especComp:""}</td>
+                        </tr>)
+                    })}
                 </tbody>
             </Table>
         )
