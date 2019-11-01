@@ -17,7 +17,6 @@ interface Props {
 
 interface State {
     caminho: Caminho
-    value: string
     isInvalid: boolean
 }
 
@@ -26,7 +25,6 @@ export default class CaminhosApp extends React.Component<Props, State> {
         super(props);
         this.state = {
             caminho: this.props.caminho,
-            value: this.props.caminho.idCaminho.toString(),
             isInvalid: false
         };
     }
@@ -34,7 +32,6 @@ export default class CaminhosApp extends React.Component<Props, State> {
     componentDidUpdate(prevProps: Readonly<Props>): void {
         if (!prevProps.show && this.props.show) {
             this.setState({
-                value: this.props.caminho.idCaminho.toString(),
                 caminho: this.props.caminho
             })
         }
@@ -52,7 +49,6 @@ export default class CaminhosApp extends React.Component<Props, State> {
         if (newCaminho !== undefined)
             this.setState({
                 caminho: newCaminho,
-                value: value,
                 isInvalid: false
             });
         else

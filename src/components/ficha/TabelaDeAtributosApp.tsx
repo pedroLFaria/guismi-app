@@ -1,32 +1,27 @@
 import * as React from "react";
 import Ficha from "./Ficha";
 import Table from 'react-bootstrap/Table'
+import {FormControl} from "react-bootstrap";
 
 interface Props {
     ficha: Ficha
 }
 
-interface State {
-    ficha: Ficha
+interface State{
+    ficha: Ficha,
+    readonly: boolean[]
 }
-
 export default class TabelaDeAtributosApp extends React.Component<Props, State> {
-    constructor(props: Props) {
+    constructor(props:Props) {
         super(props);
         this.state = {
-            ficha: this.props.ficha
-        }
-    }
-
-    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        if (JSON.stringify(prevProps.ficha) !== JSON.stringify(this.props.ficha))
-            this.setState({
-                ficha: this.props.ficha
-            })
+            ficha:Object.assign({}, this.props.ficha),
+            readonly:[]
+        };
     }
 
     render() {
-        const ficha = this.state.ficha;
+        const ficha = this.props.ficha;
         return (
             <Table hover={true} size={"sm"} striped>
                 <thead>
@@ -42,7 +37,13 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <th>FOR</th>
                     <td>{ficha.raca.racaForca}</td>
                     <td>
-                        {ficha.distForca}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={true}
+                            value={ficha.distForca.toString()}
+                            type={"number"}
+                        />
                     </td>
                     <td>
                         {ficha.distForca + (ficha.raca.racaForca !== undefined ? ficha.raca.racaForca : 0)}

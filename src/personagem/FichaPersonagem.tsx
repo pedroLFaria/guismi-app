@@ -50,19 +50,24 @@ export default class FichaPersonagem extends React.Component<State, State> {
     };
 
     updateFicha(newFicha: Ficha) {
+        console.log(newFicha);
         this.setState({
-            ficha: newFicha,
             loading: true
         });
-        Ficha.update(this.state.ficha).then(response => {
+        Ficha.update(newFicha).then(response => {
             if (response.ok) {
                 console.log("Ficha atualizada com sucesso.");
-                this.setState({ loading: false });
                 return true
             } else {
                 console.log("Status " + response.statusText);
                 return false
             }
+        }).then((retorno)=>{
+            this.setState({
+                ficha: newFicha,
+                loading: false
+            });
+            return retorno;
         })
     }
 
@@ -100,17 +105,21 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         />
                     </Col>
                     <Col md={2}>
-                      Vida////////Estado////////
+                        Vida////////Estado////////
                     </Col>
                     <Col className="d-flex justify-content-end">
-                      <ButtonGroup>
-                        <Button
-                            size={"sm"} variant="secondary"
-                        >Retornar</Button>
-                        <Button
-                            size={"sm"} variant="secondary"
-                        >Sair</Button>
-                      </ButtonGroup>
+                        <ButtonGroup>
+                            <Button
+                                size={"sm"} variant="secondary"
+                                onClick={this.componentDidMount.bind(this)}
+                            >Reload</Button>
+                            <Button
+                                size={"sm"} variant="secondary"
+                            >Retornar</Button>
+                            <Button
+                                size={"sm"} variant="secondary"
+                            >Sair</Button>
+                        </ButtonGroup>
                     </Col>
                 </Row>
                 <TabContainer
@@ -158,7 +167,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
                             />
                         </TabPane>
                         <TabPane eventKey={"quadroDeBatalha"}>
-                            <QuadroDeBatalhaApp 
+                            <QuadroDeBatalhaApp
                                 ficha={ficha}
                             />
                         </TabPane>

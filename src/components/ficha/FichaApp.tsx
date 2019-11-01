@@ -24,29 +24,22 @@ interface State {
 export default class FichaApp extends React.Component<Props, State>{
 
     updateDescendencias(descendencias: Descendencia[]) {
-        let ficha = this.props.ficha;
-        ficha.descendencias = descendencias;
-        this.props.updateFicha(ficha);
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {descendencias:descendencias}));
         return true
     }
 
     updateCaminhos(caminhos: Caminho[]) {
-        let ficha = this.props.ficha;
-        ficha.caminhos = caminhos;
-        this.props.updateFicha(ficha);
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {caminhos:caminhos}));
         return true;
     }
 
     updateRaca(raca: Raca) {
-        console.log(Object.assign(new Ficha(this.props.ficha.idFicha),this.props.ficha,{raca:raca, idRaca:raca.idRaca}));
         this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha),this.props.ficha,{raca:raca, idRaca:raca.idRaca}));
         return true
     }
 
     updateHabitos(habitos: Habito[]) {
-        let ficha = this.props.ficha;
-        ficha.habitos = habitos;
-        this.props.updateFicha(ficha);
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {habittos:habitos}));
         return true
     }
 

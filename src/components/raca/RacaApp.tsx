@@ -1,11 +1,12 @@
-import React, { FormEvent } from 'react'
+import React, {FormEvent} from 'react'
 import Form from "react-bootstrap/Form";
 import Sistema from "../sistema/Sistema";
 import Raca from "./Raca";
-import { Button, Col, Modal, ModalBody, ModalFooter, Row, Tab, Table, Tabs } from "react-bootstrap";
+import {Button, Col, Modal, ModalBody, ModalFooter, Row, Tab, Table, Tabs} from "react-bootstrap";
 
 interface Props {
     raca: Raca
+
     updateRaca(raca: Raca): boolean
 }
 
@@ -21,7 +22,6 @@ export default class RacaApp extends React.Component<Props, State> {
             raca: this.props.raca,
             show: false
         };
-        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(event: FormEvent) {
@@ -37,18 +37,18 @@ export default class RacaApp extends React.Component<Props, State> {
     }
 
     handleOnSave() {
-        this.props.updateRaca(this.state.raca)
+        this.props.updateRaca(this.state.raca);
         this.handleOnHide()
     }
 
-    handleOnHide(){
-        this.setState({show:false})
+    handleOnHide() {
+        this.setState({show: false})
     }
 
-    handleOnClick(){
+    handleOnClick() {
         this.setState({
-            show:true,
-            raca:this.props.raca
+            show: true,
+            raca: this.props.raca
         })
     }
 
@@ -68,15 +68,15 @@ export default class RacaApp extends React.Component<Props, State> {
                 >
                     <Modal.Header closeButton>
                         <Form.Control
-                            value={this.state.raca.idRaca? this.state.raca.idRaca.toString() : "0"}
+                            value={this.state.raca.idRaca ? this.state.raca.idRaca.toString() : "0"}
                             as={"select"}
-                            onChange={this.handleChange}
+                            onChange={this.handleChange.bind(this)}
                         >
-                            {Sistema.racas.map((raca,index) => 
-                            <option 
-                                key={index}
-                                value={raca.idRaca}
-                            >{raca.nomeRaca}</option>
+                            {Sistema.racas.map((raca, index) =>
+                                <option
+                                    key={index}
+                                    value={raca.idRaca}
+                                >{raca.nomeRaca}</option>
                             )}
                         </Form.Control>
                     </Modal.Header>
@@ -160,42 +160,42 @@ export default class RacaApp extends React.Component<Props, State> {
                     <Col>
                         <Table>
                             <tbody>
-                                <tr>
-                                    <th>Sangue</th>
-                                    <td>{this.state.raca.sangue}</td>
-                                </tr>
-                                <tr>
-                                    <th>Vigor</th>
-                                    <td>{this.state.raca.vigor}</td>
-                                </tr>
-                                <tr>
-                                    <th>FOR</th>
-                                    <td>{this.state.raca.racaForca}</td>
-                                </tr>
-                                <tr>
-                                    <th>CON</th>
-                                    <td>{this.state.raca.racaConstituicao}</td>
-                                </tr>
-                                <tr>
-                                    <th>AGI</th>
-                                    <td>{this.state.raca.racaAgilidade}</td>
-                                </tr>
-                                <tr>
-                                    <th>DES</th>
-                                    <td>{this.state.raca.racaDestreza}</td>
-                                </tr>
-                                <tr>
-                                    <th>INT</th>
-                                    <td>{this.state.raca.racaInteligencia}</td>
-                                </tr>
-                                <tr>
-                                    <th>SAB</th>
-                                    <td>{this.state.raca.racaSabedoria}</td>
-                                </tr>
-                                <tr>
-                                    <th>CAR</th>
-                                    <td>{this.state.raca.racaCarisma}</td>
-                                </tr>
+                            <tr>
+                                <th>Sangue</th>
+                                <td>{this.state.raca.sangue}</td>
+                            </tr>
+                            <tr>
+                                <th>Vigor</th>
+                                <td>{this.state.raca.vigor}</td>
+                            </tr>
+                            <tr>
+                                <th>FOR</th>
+                                <td>{this.state.raca.racaForca}</td>
+                            </tr>
+                            <tr>
+                                <th>CON</th>
+                                <td>{this.state.raca.racaConstituicao}</td>
+                            </tr>
+                            <tr>
+                                <th>AGI</th>
+                                <td>{this.state.raca.racaAgilidade}</td>
+                            </tr>
+                            <tr>
+                                <th>DES</th>
+                                <td>{this.state.raca.racaDestreza}</td>
+                            </tr>
+                            <tr>
+                                <th>INT</th>
+                                <td>{this.state.raca.racaInteligencia}</td>
+                            </tr>
+                            <tr>
+                                <th>SAB</th>
+                                <td>{this.state.raca.racaSabedoria}</td>
+                            </tr>
+                            <tr>
+                                <th>CAR</th>
+                                <td>{this.state.raca.racaCarisma}</td>
+                            </tr>
                             </tbody>
                         </Table>
                     </Col>
