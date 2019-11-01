@@ -18,6 +18,7 @@ import HabilidadesApp from '../components/habilidade/HabilidadesApp';
 import FichaApp from "../components/ficha/FichaApp";
 import "./FichaPersonagem.css"
 import Habilidade from "../components/habilidade/Habilidade";
+import QuadroDeBatalhaApp from '../components/quadroDeBatalha/QuadroDeBatalhaApp';
 
 interface State {
     ficha: Ficha
@@ -157,10 +158,9 @@ export default class FichaPersonagem extends React.Component<State, State> {
                             />
                         </TabPane>
                         <TabPane eventKey={"quadroDeBatalha"}>
-                            QUADRO DE BATALHA
-                            -Atributos
-                            -Defesas
-                            -
+                            <QuadroDeBatalhaApp 
+                                ficha={ficha}
+                            />
                         </TabPane>
                         <TabPane eventKey={"inventario"}>
                             INVENTARIO
