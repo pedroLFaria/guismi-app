@@ -44,21 +44,28 @@ export default class Ficha {
     patronos: Patrono[] = [];
     situacoes: Situacao[] = [];
     especializacoes: Especializacao[] = [];
+    apiUrl = "api/ficha";
 
     constructor(idFicha: number) {
         this.idFicha = idFicha;
     }
 
-    public getById(): Ficha {
-        fetch("api/ficha/id/" + this.idFicha, {
+    public getById(): Promise<Ficha> {
+        return fetch("api/ficha/id/" + this.idFicha, {
             method: "GET",
             headers: MyHeaders.getMyHeaders()
         })
             .then(response => response.json())
-            .then(data => {
-                this.setFichaFromObject(data);
-            });
-        return this
+            .then(data => data as Ficha);
+    }
+
+    public asyncGetById(): Promise<Ficha> {
+        return fetch(this.apiUrl + "async/id/" + this.idFicha, {
+            method: "GET",
+            headers: MyHeaders.getMyHeaders()
+        })
+            .then(response => response.json())
+            .then(data => data as Ficha);
     }
 
     public static findByIdJogador(): Promise<Ficha[]> {
@@ -71,7 +78,7 @@ export default class Ficha {
             .then(data => data as Ficha[])
     }
 
-    public static update(ficha:Ficha): Promise<Response> {
+    public static update(ficha: Ficha): Promise<Response> {
         return fetch('api/ficha/',
             {
                 method: 'PUT',
@@ -113,6 +120,7 @@ export default class Ficha {
         this.patronos = obj.patronos;
         this.situacoes = obj.situacoes;
         this.especializacoes = obj.especializacoes;
+        return this;
     }
 
     /*    get idFicha(): number {

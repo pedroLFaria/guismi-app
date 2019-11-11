@@ -36,21 +36,20 @@ export default class FichaPersonagem extends React.Component<State, State> {
             show: new Map([["ficha", "block"], ["quadroDeBatalha", "none"], ["inventario", "none"]]),
             loading: false
         };
+        this.state.ficha.asyncGetById = this.state.ficha.asyncGetById.bind(this.state.ficha);
     }
 
     componentDidMount() {
-        fetch("api/ficha/id/" + this.state.ficha.idFicha, {
-            method: "GET",
-            headers: MyHeaders.getMyHeaders()
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ ficha: data as Ficha })
-            });
+        this.state.ficha.getById()
+            .then(ficha=>this.setState({ficha:ficha}))
+            .then(()=>this.asycUpdate())
     };
 
+    asycUpdate(){
+        this.state.ficha.asyncGetById.call(this.state.ficha)
+    }
+
     updateFicha(newFicha: Ficha) {
-        console.log(newFicha);
         this.setState({
             loading: true
         });
