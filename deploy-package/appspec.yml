@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files: 
+    - source: /
+      destination: /opt/application/webapp
+hooks:
+  BeforeInstall:
+    - location: /uninstall.sh
+      timeout: 300
+      runas: root
