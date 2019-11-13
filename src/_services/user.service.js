@@ -6,14 +6,14 @@ export const userService = {
 };
 
 function login(username, password) {
+    MyHeaders.add("Authorization", "Basic " + btoa(username + ":" + password));
     const requestOptions = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username, password}),
+        headers: MyHeaders.getMyHeaders(),
         credentials: 'include'
     };
     return fetch(`/api/auth/callback`, requestOptions)
-        .then(response=>{
+        .then(response => {
             return response
         })
         .then(handleResponse)
@@ -27,23 +27,24 @@ function login(username, password) {
 }
 
 function logout() {
+    MyHeaders.delete("Authorization");
     localStorage.removeItem('user');
 }
 
 function handleResponse(response) {
     return response.then(response => {
-        MyHeaders.getMyHeaders();
-    
         return response
-    }).text().then(text => {
-        const data = text && JSON.parse(text);
-        if (!response.ok) {
-            if (response.status === 401) {
-                logout();
+    })
+        .text()
+        .then(text => {
+            const data = text && JSON.parse(text);
+            if (!response.ok) {
+                if (response.status === 401) {
+                    logout();
+                }
+                const error = (data && data.message) || response.statusText;
+                return Promise.reject(error);
             }
-            const error = (data && data.message) || response.statusText;
-            return Promise.reject(error);
-        }
-        return data;
-    });
+            return data;
+        });
 }
