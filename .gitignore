@@ -51,3 +51,6 @@ yarn-error.log*
 
 #VS
 .vs
+
+#VSCode 
+.vscode

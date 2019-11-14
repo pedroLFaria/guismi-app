@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import MyHeaders from "../_services/MyHeaders";
 import FormControl from "react-bootstrap/FormControl";
 
 interface Props {
@@ -37,9 +36,9 @@ export default class Login extends React.Component<Props, State> {
         const {name, value} = event.target as HTMLInputElement;
         this.setState((prevState) => {
             if (name === "password")
-                return {password: value, username: prevState.username};
+                return {password: value, username: prevState.username, error:false};
             else
-                return {password: prevState.password, username: value}
+                return {password: prevState.password, username: value, error:false}
         });
     }
 
@@ -47,12 +46,14 @@ export default class Login extends React.Component<Props, State> {
         e.preventDefault();
         this.setState({loading: true});
         const {username, password} = this.state;
-        userService.login(username, password).then(()=>{
+        userService.login(username, password).then(success =>{
             this.setState({loading: false});
-            window.location.hash = ("#/escolhe_ficha")
+            if(success){
+                window.location.hash = ("#/escolhe_ficha")
+            }else{
+                this.setState({error:true})
+            }
         });
-		this.setState({loading: false});
-        window.location.hash = ("#/escolhe_ficha")
     }
 
     render() {
@@ -64,16 +65,16 @@ export default class Login extends React.Component<Props, State> {
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Label column={false}>Username</Form.Label>
                                 <FormControl as={"input"} type="text" placeholder="Enter username" name={"username"}
-                                             onChange={this.handleChange} disabled={this.state.loading}/>
+                                             onChange={this.handleChange} disabled={this.state.loading}  isInvalid={this.state.error}/>
                                 <Form.Text className="text-muted">
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label column={false}>Password</Form.Label>
                                 <Form.Control as={"input"} type="password" placeholder="Password" name={"password"}
-                                              onChange={this.handleChange} disabled={this.state.loading}/>
+                                              onChange={this.handleChange} disabled={this.state.loading} isInvalid={this.state.error}/>
                             </Form.Group>
-                            <Button variant="outline-success" type="submit" disabled={this.state.loading}>
+                            <Button variant="outline-primary" type="submit" disabled={this.state.loading}>
                                 Aceder
                             </Button>
                         </Form>

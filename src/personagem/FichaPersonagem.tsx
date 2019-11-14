@@ -8,7 +8,6 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { NomeApp } from "../components/ficha/NomeApp";
 import Ficha from "../components/ficha/Ficha";
 import Sistema from "../components/sistema/Sistema";
-import MyHeaders from "../_services/MyHeaders";
 import IdadeApp from "../components/ficha/IdadeApp";
 import NivelPersonagem from "../components/ficha/NivelPersonagem";
 import ExperienciaApp from "../components/ficha/ExperienciaApp";
@@ -36,7 +35,6 @@ export default class FichaPersonagem extends React.Component<State, State> {
             show: new Map([["ficha", "block"], ["quadroDeBatalha", "none"], ["inventario", "none"]]),
             loading: false
         };
-        this.state.ficha.asyncGetById = this.state.ficha.asyncGetById.bind(this.state.ficha);
     }
 
     componentDidMount() {
@@ -45,8 +43,10 @@ export default class FichaPersonagem extends React.Component<State, State> {
             .then(()=>this.asycUpdate())
     };
 
-    asycUpdate(){
-        this.state.ficha.asyncGetById.call(this.state.ficha)
+  asycUpdate(){
+        Ficha.asyncGetById(this.state.ficha)
+        .then((ficha)=>this.setState({ficha:ficha}))
+        .then(()=>this.asycUpdate())
     }
 
     updateFicha(newFicha: Ficha) {

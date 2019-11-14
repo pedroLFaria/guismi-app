@@ -41,7 +41,7 @@ export default class HabitosApp extends React.Component<Props, State> {
                 <tbody>
                     {habitos.map(habito =>{
                         let especComp="";
-                        if(this.props.especializacoes != undefined && habito.especializacoes != undefined){
+                        if(this.props.especializacoes !== undefined && habito.especializacoes !== undefined){
                             this.props.especializacoes.filter((value)=>habito.especializacoes!.some((especHabito)=>value.idEspecializacao === especHabito.idEspecializacao)).forEach(especializacao=>{
                                 especComp += ((especComp === ""?especializacao.nomeEspecializacao :", " + especializacao.nomeEspecializacao))
                             })
