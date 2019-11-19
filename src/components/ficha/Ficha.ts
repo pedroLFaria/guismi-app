@@ -50,8 +50,8 @@ export default class Ficha {
         this.idFicha = idFicha;
     }
 
-    public getById(): Promise<Ficha> {
-        return fetch("api/ficha/id/" + this.idFicha, {
+    public static getById(ficha:Ficha): Promise<Ficha> {
+        return fetch("api/ficha/id/" + ficha.idFicha, {
             method: "GET",
             headers: MyHeaders.getMyHeaders()
         })

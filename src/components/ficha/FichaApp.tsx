@@ -14,6 +14,7 @@ import Habito from "../habito/Habito";
 
 interface Props {
     ficha: Ficha
+
     updateFicha(arg0: Ficha): void
 }
 
@@ -21,25 +22,41 @@ interface State {
 
 }
 
-export default class FichaApp extends React.Component<Props, State>{
+export default class FichaApp extends React.Component<Props, State> {
 
     updateDescendencias(descendencias: Descendencia[]) {
-        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {descendencias:descendencias}));
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {descendencias: descendencias}));
         return true
     }
 
     updateCaminhos(caminhos: Caminho[]) {
-        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {caminhos:caminhos}));
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {caminhos: caminhos}));
         return true;
     }
 
     updateRaca(raca: Raca) {
-        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha),this.props.ficha,{raca:raca, idRaca:raca.idRaca}));
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {
+            raca: raca,
+            idRaca: raca.idRaca
+        }));
         return true
     }
 
     updateHabitos(habitos: Habito[]) {
-        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {habittos:habitos}));
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {habittos: habitos}));
+        return true
+    }
+
+    updateAtributos(distForca: number, distConstituicao: number, distAgilidade: number, distDestreza: number, distInteligencia: number, distSabedoria: number, distCarisma: number) {
+        this.props.updateFicha(Object.assign(new Ficha(this.props.ficha.idFicha), this.props.ficha, {
+            distForca,
+            distConstituicao,
+            distAgilidade,
+            distDestreza,
+            distInteligencia,
+            distSabedoria,
+            distCarisma
+        }));
         return true
     }
 
@@ -73,6 +90,7 @@ export default class FichaApp extends React.Component<Props, State>{
                 <Col>
                     <Row>
                         <TabelaDeAtributosApp
+                            updateAtributos={this.updateAtributos.bind(this)}
                             ficha={ficha}
                         />
                     </Row>

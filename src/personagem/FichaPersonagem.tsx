@@ -38,7 +38,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
     }
 
     componentDidMount() {
-        this.state.ficha.getById()
+        Ficha.getById(this.state.ficha)
             .then(ficha=>this.setState({ficha:ficha}))
             .then(()=>this.asycUpdate())
     };
