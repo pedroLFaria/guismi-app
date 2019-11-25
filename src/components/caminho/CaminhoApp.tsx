@@ -48,7 +48,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
         let newCaminho = Sistema.caminhos.find(caminho => caminho.idCaminho === Number(value));
         if (newCaminho !== undefined)
             this.setState({
-                caminho: newCaminho,
+                caminho: Object.assign(newCaminho, {nivelCaminho:0}),
                 isInvalid: false
             });
         else

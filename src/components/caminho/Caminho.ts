@@ -4,9 +4,10 @@ import Habito from "../habito/Habito";
 
 export default  interface Caminho {
     idCaminho: number;
-    nomeCaminho?: string;
-    descCaminho?: string;
-    habilidades?: Habilidade[];
-    especializacoes?: Especializacao[];
-    habitos?: Habito[];
+    nomeCaminho: string;
+    descCaminho: string;
+    nivelCaminho: number;
+    habilidades: Habilidade[];
+    especializacoes: Especializacao[];
+    habitos: Habito[];
 }

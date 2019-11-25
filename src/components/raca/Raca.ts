@@ -2,7 +2,7 @@ import Idioma from "../idioma/Idioma";
 import Patrono from "../patrono/Patrono";
 import Descendencia from "../descendencia/Descendencia";
 import Especializacao from "../especializacao/Especializacao";
-import Habito from "../caminho/Caminho";
+import Habito from "../habito/Habito";
 import Habilidade from "../habilidade/Habilidade";
 
 export default interface Raca {

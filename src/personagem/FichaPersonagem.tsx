@@ -3,8 +3,6 @@ import queryString from 'query-string'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { NomeApp } from "../components/ficha/NomeApp";
 import Ficha from "../components/ficha/Ficha";
 import Sistema from "../components/sistema/Sistema";
@@ -18,6 +16,7 @@ import FichaApp from "../components/ficha/FichaApp";
 import "./FichaPersonagem.css"
 import Habilidade from "../components/habilidade/Habilidade";
 import QuadroDeBatalhaApp from '../components/quadroDeBatalha/QuadroDeBatalhaApp';
+import ButtonBar from "../components/buttonBar/ButtonBar";
 
 interface State {
     ficha: Ficha
@@ -38,10 +37,14 @@ export default class FichaPersonagem extends React.Component<State, State> {
     }
 
     componentDidMount() {
-        Ficha.getById(this.state.ficha)
-            .then(ficha=>this.setState({ficha:ficha}))
+        this.syncUpdate()
             .then(()=>this.asycUpdate())
     };
+
+    syncUpdate(){
+        return Ficha.getById(this.state.ficha)
+            .then(ficha=>this.setState({ficha:ficha}))
+    }
 
   asycUpdate(){
         Ficha.asyncGetById(this.state.ficha)
@@ -107,18 +110,7 @@ export default class FichaPersonagem extends React.Component<State, State> {
                         Vida////////Estado////////
                     </Col>
                     <Col className="d-flex justify-content-end">
-                        <ButtonGroup>
-                            <Button
-                                size={"sm"} variant="secondary"
-                                onClick={this.componentDidMount.bind(this)}
-                            >Reload</Button>
-                            <Button
-                                size={"sm"} variant="secondary"
-                            >Retornar</Button>
-                            <Button
-                                size={"sm"} variant="secondary"
-                            >Sair</Button>
-                        </ButtonGroup>
+                        <ButtonBar reload={this.syncUpdate.bind(this)}/>
                     </Col>
                 </Row>
                 <TabContainer
