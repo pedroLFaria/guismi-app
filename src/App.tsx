@@ -14,6 +14,7 @@ class App extends React.Component {
                         <Route path={"/"} exact={true} component={Login}/>
                         <Route path={"/escolhe_ficha"} component={EscolheFicha}/>
                         <Route path={"/ficha"} component={FichaPersonagem}/>
+                        <Route path={"/registro_do_sistema"} component={FichaPersonagem}/>
                     </Switch>
                 </Router>
             </div>
