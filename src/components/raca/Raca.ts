@@ -28,5 +28,5 @@ export default interface Raca {
     habitos?: Habito[];
     idiomas?: Idioma[];
     patronos?: Patrono[];
-    tracosfisiologicos?: string;
+    tracosFisiologicos?: string;
 }

@@ -51,6 +51,7 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
     handleBlur(){
         const {distForca ,distConstituicao ,distAgilidade ,distDestreza ,distInteligencia ,distSabedoria ,distCarisma } =  this.state;
         this.props.updateAtributos(distForca ,distConstituicao ,distAgilidade ,distDestreza ,distInteligencia ,distSabedoria ,distCarisma);
+        this.setState({readonly:true})
     }
 
     render() {
@@ -78,12 +79,11 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                             onChange={this.handleChange.bind(this)}
                             onDoubleClick={this.handleDoubleClick.bind(this)}
                             onBlur = {this.handleBlur.bind(this)}
-                            name={"distForca"}
                             type={"number"}
                         />
                     </td>
                     <td>
-                        {this.state.distForca + (ficha.raca.racaForca !== undefined ? ficha.raca.racaForca : 0)}
+                        {this.state.distForca + (ficha.raca.racaForca? ficha.raca.racaForca : 0)}
                     </td>
                 </tr>
                 <tr>
@@ -93,7 +93,7 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                         {ficha.distConstituicao}
                     </td>
                     <td>
-                        {ficha.distConstituicao + (ficha.raca.racaConstituicao !== undefined ? ficha.raca.racaConstituicao : 0)}
+                        {ficha.distConstituicao + (ficha.raca.racaConstituicao ? ficha.raca.racaConstituicao : 0)}
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +103,7 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                         {ficha.distAgilidade}
                     </td>
                     <td>
-                        {ficha.distForca + (ficha.raca.racaForca !== undefined ? ficha.raca.racaForca : 0)}
+                        {ficha.distForca + (ficha.raca.racaForca ? ficha.raca.racaForca : 0)}
                     </td>
                 </tr>
                 <tr>
