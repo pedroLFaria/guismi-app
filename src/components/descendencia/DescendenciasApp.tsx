@@ -86,7 +86,14 @@ export default class DescendenciasApp extends React.Component<Props, State> {
     }
 
     render() {
-        const descendencias = this.props.descendencias;
+        const descendencias = this.props.descendencias.sort(((a, b) => {
+            if (a.nomeDescendencia>b.nomeDescendencia)
+                return 1
+            else if(a.nomeDescendencia<b.nomeDescendencia)
+                return -1
+            else
+                return 0
+        }));
         return (
             <Container>
                 <Row>

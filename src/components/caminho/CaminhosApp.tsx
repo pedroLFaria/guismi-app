@@ -86,7 +86,14 @@ export default class CaminhosApp extends React.Component<Props, State> {
     }
 
     render() {
-        const caminhos = this.props.caminhos;
+        const caminhos = this.props.caminhos.sort((a,b)=>{
+            if(a.nomeCaminho>b.nomeCaminho)
+                return 1;
+            else if(a.nomeCaminho< b.nomeCaminho)
+                return -1;
+            else
+                return 0
+        });
         return (
             <Container>
                 <Col>

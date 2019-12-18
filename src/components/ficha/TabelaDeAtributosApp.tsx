@@ -22,15 +22,14 @@ interface State{
 export default class TabelaDeAtributosApp extends React.Component<Props, State> {
     constructor(props:Props) {
         super(props);
-        const ficha = this.props.ficha;
         this.state = {
-            distForca:ficha.distForca,
-            distConstituicao:ficha.distConstituicao,
-            distAgilidade:ficha.distAgilidade,
-            distDestreza:ficha.distDestreza,
-            distInteligencia:ficha.distInteligencia,
-            distSabedoria:ficha.distSabedoria,
-            distCarisma:ficha.distCarisma,
+            distForca:this.props.ficha.distForca,
+            distConstituicao:this.props.ficha.distConstituicao,
+            distAgilidade:this.props.ficha.distAgilidade,
+            distDestreza:this.props.ficha.distDestreza,
+            distInteligencia:this.props.ficha.distInteligencia,
+            distSabedoria:this.props.ficha.distSabedoria,
+            distCarisma:this.props.ficha.distCarisma,
             readonly:true
         };
         this.handleChange.bind(this);
@@ -38,10 +37,24 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
         this.handleBlur.bind(this);
     }
 
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+        if(JSON.stringify(prevProps.ficha) !== JSON.stringify(this.props.ficha)){
+            this.setState({
+                distForca:this.props.ficha.distForca,
+                distConstituicao:this.props.ficha.distConstituicao,
+                distAgilidade:this.props.ficha.distAgilidade,
+                distDestreza:this.props.ficha.distDestreza,
+                distInteligencia:this.props.ficha.distInteligencia,
+                distSabedoria:this.props.ficha.distSabedoria,
+                distCarisma:this.props.ficha.distCarisma
+            })
+        }
+    }
+
     handleChange(event:FormEvent){
         const value = (event.target as HTMLInputElement).value;
         const name= (event.target as HTMLInputElement).name;
-        this.setState({[name]:value} as any)
+        this.setState({[name]:Number.parseInt(value)} as any);
     }
 
     handleDoubleClick(){
@@ -80,6 +93,7 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                             onDoubleClick={this.handleDoubleClick.bind(this)}
                             onBlur = {this.handleBlur.bind(this)}
                             type={"number"}
+                            name={"distForca"}
                         />
                     </td>
                     <td>
@@ -90,60 +104,120 @@ export default class TabelaDeAtributosApp extends React.Component<Props, State> 
                     <th>CON</th>
                     <td>{ficha.raca.racaConstituicao}</td>
                     <td>
-                        {ficha.distConstituicao}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={this.state.readonly}
+                            value={this.state.distConstituicao.toString()}
+                            onChange={this.handleChange.bind(this)}
+                            onDoubleClick={this.handleDoubleClick.bind(this)}
+                            onBlur = {this.handleBlur.bind(this)}
+                            type={"number"}
+                            name={"distConstituicao"}
+                        />
                     </td>
                     <td>
-                        {ficha.distConstituicao + (ficha.raca.racaConstituicao ? ficha.raca.racaConstituicao : 0)}
+                        {this.state.distConstituicao + (ficha.raca.racaConstituicao ? ficha.raca.racaConstituicao : 0)}
                     </td>
                 </tr>
                 <tr>
                     <th>AGI</th>
                     <td>{ficha.raca.racaAgilidade}</td>
                     <td>
-                        {ficha.distAgilidade}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={this.state.readonly}
+                            value={this.state.distAgilidade.toString()}
+                            onChange={this.handleChange.bind(this)}
+                            onDoubleClick={this.handleDoubleClick.bind(this)}
+                            onBlur = {this.handleBlur.bind(this)}
+                            type={"number"}
+                            name={"distAgilidade"}
+                        />
                     </td>
                     <td>
-                        {ficha.distForca + (ficha.raca.racaForca ? ficha.raca.racaForca : 0)}
+                        {this.state.distAgilidade + (ficha.raca.racaAgilidade ? ficha.raca.racaAgilidade : 0)}
                     </td>
                 </tr>
                 <tr>
                     <th>DES</th>
                     <td>{ficha.raca.racaDestreza}</td>
                     <td>
-                        {ficha.distDestreza}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={this.state.readonly}
+                            value={this.state.distDestreza.toString()}
+                            onChange={this.handleChange.bind(this)}
+                            onDoubleClick={this.handleDoubleClick.bind(this)}
+                            onBlur = {this.handleBlur.bind(this)}
+                            type={"number"}
+                            name={"distDestreza"}
+                        />
                     </td>
                     <td>
-                        {ficha.distAgilidade + (ficha.raca.racaAgilidade !== undefined ? ficha.raca.racaAgilidade : 0)}
+                        {this.state.distDestreza + (ficha.raca.racaDestreza ? ficha.raca.racaDestreza : 0)}
                     </td>
                 </tr>
                 <tr>
                     <th>INT</th>
                     <td>{ficha.raca.racaInteligencia}</td>
                     <td>
-                        {ficha.distInteligencia}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={this.state.readonly}
+                            value={this.state.distInteligencia.toString()}
+                            onChange={this.handleChange.bind(this)}
+                            onDoubleClick={this.handleDoubleClick.bind(this)}
+                            onBlur = {this.handleBlur.bind(this)}
+                            type={"number"}
+                            name={"distInteligencia"}
+                        />
                     </td>
                     <td>
-                        {ficha.distInteligencia + (ficha.raca.racaInteligencia !== undefined ? ficha.raca.racaInteligencia : 0)}
+                        {this.state.distInteligencia + (ficha.raca.racaInteligencia !== undefined ? ficha.raca.racaInteligencia : 0)}
                     </td>
                 </tr>
                 <tr>
                     <th>SAB</th>
                     <td>{ficha.raca.racaSabedoria}</td>
                     <td>
-                        {ficha.distSabedoria}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={this.state.readonly}
+                            value={this.state.distSabedoria.toString()}
+                            onChange={this.handleChange.bind(this)}
+                            onDoubleClick={this.handleDoubleClick.bind(this)}
+                            onBlur = {this.handleBlur.bind(this)}
+                            type={"number"}
+                            name={"distSabedoria"}
+                        />
                     </td>
                     <td>
-                        {ficha.distSabedoria + (ficha.raca.racaSabedoria !== undefined ? ficha.raca.racaSabedoria : 0)}
+                        {this.state.distSabedoria + (ficha.raca.racaSabedoria !== undefined ? ficha.raca.racaSabedoria : 0)}
                     </td>
                 </tr>
                 <tr>
                     <th>CAR</th>
                     <td>{ficha.raca.racaCarisma}</td>
                     <td>
-                        {ficha.distCarisma}
+                        <FormControl
+                            as={"input"}
+                            plaintext={true}
+                            readOnly={this.state.readonly}
+                            value={this.state.distCarisma.toString()}
+                            onChange={this.handleChange.bind(this)}
+                            onDoubleClick={this.handleDoubleClick.bind(this)}
+                            onBlur = {this.handleBlur.bind(this)}
+                            type={"number"}
+                            name={"distCarisma"}
+                        />
                     </td>
                     <td>
-                        {ficha.distCarisma + (ficha.raca.racaCarisma !== undefined ? ficha.raca.racaCarisma : 0)}
+                        {this.state.distCarisma + (ficha.raca.racaCarisma !== undefined ? ficha.raca.racaCarisma : 0)}
                     </td>
                 </tr>
                 </tbody>

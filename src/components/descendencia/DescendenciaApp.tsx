@@ -73,7 +73,14 @@ export default class DescendenciaApp extends React.Component<Props, State> {
                             plaintext={false}
                             isInvalid={this.state.isInvalid}
                         >
-                            {Sistema.descendencias.map((descendencia, index) =>
+                            {Sistema.descendencias.sort(((a, b) => {
+                                if (a.nomeDescendencia>b.nomeDescendencia)
+                                    return 1
+                                else if(a.nomeDescendencia<b.nomeDescendencia)
+                                    return -1
+                                else
+                                    return 0
+                            })).map((descendencia, index) =>
                                 <option
                                     value={descendencia.idDescendencia.toString()}
                                     key={index}

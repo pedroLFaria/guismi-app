@@ -9,17 +9,7 @@ interface Props {
     especializacoes?:Especializacao[]
 }
 
-interface State {
-    habitos: Habito[]
-}
-
-export default class HabitosApp extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            habitos: this.props.habitos
-        };
-    }
+export default class HabitosApp extends React.Component<Props, any> {
 
     componentDidUpdate(prevProps: Props) {
         if (JSON.stringify(prevProps.habitos) !== JSON.stringify(this.props.habitos)) {
@@ -28,7 +18,14 @@ export default class HabitosApp extends React.Component<Props, State> {
     }
 
     render() {
-        const habitos = this.props.habitos
+        const habitos = this.props.habitos.sort((a, b) => {
+            if(a.nomeHabito>b.nomeHabito)
+                return 1;
+            else if(a.nomeHabito<b.nomeHabito)
+                return -1;
+            else
+                return 0
+        });
         return (
             <Table hover={true} size={"sm"}>
                 <thead className="thead-dark">
