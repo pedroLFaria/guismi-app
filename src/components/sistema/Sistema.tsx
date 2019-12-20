@@ -30,7 +30,7 @@ export default class Sistema {
     }
 
      private sistemaGetRequest() {
-        fetch('api/sistema',{
+        fetch('http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/api/sistema',{
             method:'GET',
             headers:MyHeaders.getMyHeaders(),
             credentials: 'include'

@@ -51,7 +51,7 @@ export default class Ficha {
     }
 
     public static getById(ficha:Ficha): Promise<Ficha> {
-        return fetch("api/ficha/id/" + ficha.idFicha, {
+        return fetch("http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/api/ficha/id/" + ficha.idFicha, {
             method: "GET",
             headers: MyHeaders.getMyHeaders()
         })
@@ -60,7 +60,7 @@ export default class Ficha {
     }
 
     public static asyncGetById(ficha:Ficha): Promise<Ficha> {
-        return fetch(this.apiUrl + "async/id/" + ficha.idFicha, {
+        return fetch("http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/async/id/" + ficha.idFicha, {
             method: "GET",
             headers: MyHeaders.getMyHeaders()
         })
@@ -69,7 +69,7 @@ export default class Ficha {
     }
 
     public static findByIdJogador(): Promise<Ficha[]> {
-        return fetch("api/ficha/jogador", {
+        return fetch("http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/api/ficha/jogador", {
             method: "GET",
             headers: MyHeaders.getMyHeaders(),
             credentials: 'include'
@@ -79,7 +79,7 @@ export default class Ficha {
     }
 
     public static update(ficha: Ficha): Promise<Response> {
-        return fetch('api/ficha/',
+        return fetch('http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/api/ficha/',
             {
                 method: 'PUT',
                 headers: MyHeaders.getMyHeaders(),

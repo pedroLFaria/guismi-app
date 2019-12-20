@@ -7,7 +7,7 @@ export const userService = {
 
 function login(username: String, password: String) {
     MyHeaders.add("Authorization", "Basic " + btoa(username + ":" + password));
-    return fetch(`/api/auth/callback`, {
+    return fetch("http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/api/auth/callback", {
         method: 'POST',
         headers: MyHeaders.getMyHeaders(),
         credentials: 'include'
