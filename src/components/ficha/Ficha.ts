@@ -44,7 +44,6 @@ export default class Ficha {
     patronos: Patrono[] = [];
     situacoes: Situacao[] = [];
     especializacoes: Especializacao[] = [];
-    static apiUrl = "api/ficha/";
 
     constructor(idFicha: number) {
         this.idFicha = idFicha;
@@ -60,7 +59,7 @@ export default class Ficha {
     }
 
     public static asyncGetById(ficha:Ficha): Promise<Ficha> {
-        return fetch(this.apiUrl + "async/id/" + ficha.idFicha, {
+        return fetch("api/ficha/async/id/" + ficha.idFicha, {
             method: "GET",
             headers: MyHeaders.getMyHeaders()
         })
