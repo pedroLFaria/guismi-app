@@ -6,6 +6,9 @@ export default class MyHeaders{
     private constructor(){
         this.headers = new Headers();
         this.headers.append("Content-Type", "application/json")
+        let user = localStorage.getItem("user");
+        if(user)
+            this.headers.append("Authorization", "Basic " + user)
     }
 
     public static getMyHeaders(): Headers{

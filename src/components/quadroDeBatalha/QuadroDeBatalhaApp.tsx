@@ -14,18 +14,18 @@ export default class QuadroDeBatalhaApp extends React.Component<Props,State>{
         super(props)
         this.state = {fichaBatalha:this.props.ficha}
     }
-    ws = new WebSocket('ws://http://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/chat/1')
+    ws = new WebSocket('ws://ec2-18-228-37-245.sa-east-1.compute.amazonaws.com/chat/1')
     
     componentDidMount(){
-        const k = {user:"teste",action:"JOINED", message:"xuxa"}
+        const k = {user:"teste",type:"DICE", message:"1d100"}
         this.ws.onopen=()=>{
-            console.log('WebSocket Client Connected');
-            this.ws.send(JSON.stringify(k));
+            console.log('WebSocket Client Conneted');
+            console.log(this.ws.send(JSON.stringify(k)));
         };
         this.ws.onmessage = (message) => {
             console.log(message);
           };
-          
+
     }
 
 

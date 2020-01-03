@@ -17,6 +17,7 @@ interface Props {
 
 interface State {
     caminho: Caminho
+    nivelCaminho: number
     isInvalid: boolean
 }
 
@@ -25,6 +26,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
         super(props);
         this.state = {
             caminho: this.props.caminho,
+            nivelCaminho: 1,
             isInvalid: false
         };
     }
@@ -64,6 +66,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                     onHide={() => this.props.handleHide()}
                 >
                     <Modal.Header closeButton>
+
                         <FormControl
                             value={this.state.caminho.idCaminho.toString()}
                             onChange={this.handleChange.bind(this)}
@@ -79,6 +82,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
                                 </option>
                             )}
                         </FormControl>
+
                     </Modal.Header>
                     <ModalBody>
                         <Tabs defaultActiveKey={"descCaminho"} id={"tab-caminho"}
@@ -100,7 +104,7 @@ export default class CaminhosApp extends React.Component<Props, State> {
             botoes.push(
                 <Button
                     onClick={() => {
-                        this.props.add!(this.state.caminho) ?
+                        this.props.add!(Object.assign(this.state.caminho, {nivelCaminho:this.state.nivelCaminho})) ?
                             this.props.handleHide() : this.handleInvalid()
                     }}
                     key={'1'}

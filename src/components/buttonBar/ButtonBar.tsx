@@ -13,7 +13,7 @@ export default class ButtonBar extends React.Component<Props, any>{
     }
     handleSair(){
         userService.logout();
-        window.location.hash = ("#/escolhe_ficha")
+        window.location.hash = ("#/")
     }
     render(){
         return (
