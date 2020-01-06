@@ -1,10 +1,10 @@
 import * as React from 'react';
+import {FormEvent} from 'react';
 import Ficha from '../ficha/Ficha';
 import FormControl from 'react-bootstrap/FormControl';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {FormEvent} from "react";
 
 interface Props {
     ficha: Ficha
@@ -16,13 +16,9 @@ interface State {
     message: string
 }
 
-interface Interface {
-
-}
-
 export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
     constructor(props: Props) {
-        super(props)
+        super(props);
         this.state = {
             fichaBatalha: this.props.ficha,
             messages: [],
@@ -45,18 +41,20 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
         this.setState(state => ({messages: state.messages.concat(message)}));
     }
 
-    handleChange(event:FormEvent){
-        this.setState({message:(event.target as HTMLInputElement).value})
+    handleChange(event: FormEvent) {
+        this.setState({message: (event.target as HTMLInputElement).value})
     }
 
-    handleOnClick(){
+    handleOnClick() {
         let message = this.state.message;
-        if(/(\\r [0-9]{1,}d[0-9]{1,})/.test(message.replace(/\s\s+/,' '))){
-            this.ws.send(JSON.stringify({user: "teste", type: "DICE", message: message.replace(/\s\s+/,' ').split(' ')[1]}))
-        }else{
-            this.ws.send(JSON.stringify({user: "teste", type: "MESSAGE", message: message}))
+        if (/(\\r [0-9]{1,}d[0-9]{1,})/.test(message.replace(/\s\s+/, ' '))) {
+            this.ws.send(JSON.stringify({
+                type: "DICE", message: message.replace(/\s\s+/, ' ').split(' ')[1]
+            }))
+        } else {
+            this.ws.send(JSON.stringify({type: "MESSAGE", message: message}))
         }
-        this.setState({message:""})
+        this.setState({message: ""})
     }
 
     render() {
@@ -67,7 +65,7 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
                             let objMessage = JSON.parse(message);
                             return (<Row
                                     key={index}>
-                                    <strong> {objMessage.user}: </strong>
+                                    <strong>{objMessage.user}: </strong>
                                     <em>{objMessage.message}</em>
                                 </Row>
                             )
@@ -80,6 +78,7 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
                     as={"input"}
                     type={"textarea"}
                     value={this.state.message}
+                    onKeyUp={(event:any)=>{console.log(event.key)}}
                     onChange={this.handleChange.bind(this)}
                 />
                 <button
