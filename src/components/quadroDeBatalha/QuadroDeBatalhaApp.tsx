@@ -4,6 +4,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {FormEvent} from "react";
 
 interface Props {
     ficha: Ficha
@@ -12,6 +13,7 @@ interface Props {
 interface State {
     fichaBatalha: Ficha
     messages: string[]
+    message: string
 }
 
 interface Interface {
@@ -23,7 +25,8 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
         super(props)
         this.state = {
             fichaBatalha: this.props.ficha,
-            messages: []
+            messages: [],
+            message: ""
         }
     }
 
@@ -32,17 +35,28 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
     componentDidMount() {
         this.ws.onopen = () => {
             console.log('WebSocket Client Conneted');
-            console.log(this.ws.send(JSON.stringify({user: "teste", type: "DICE", message: "1d100"})));
         };
         this.ws.onmessage = (message) => {
-            console.log(message);
             this.addMessage(message.data);
         };
     }
 
     addMessage(message: string) {
-        console.log(this.state.messages)
         this.setState(state => ({messages: state.messages.concat(message)}));
+    }
+
+    handleChange(event:FormEvent){
+        this.setState({message:(event.target as HTMLInputElement).value})
+    }
+
+    handleOnClick(){
+        let message = this.state.message;
+        if(/(\\r [0-9]{1,}d[0-9]{1,})/.test(message.replace(/\s\s+/,' '))){
+            this.ws.send(JSON.stringify({user: "teste", type: "DICE", message: message.replace(/\s\s+/,' ').split(' ')[1]}))
+        }else{
+            this.ws.send(JSON.stringify({user: "teste", type: "MESSAGE", message: message}))
+        }
+        this.setState({message:""})
     }
 
     render() {
@@ -63,11 +77,13 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
             </Row>
             <Row>
                 <FormControl
+                    as={"input"}
                     type={"textarea"}
-                    onKeyUp={(e:any)=>{console.log(e)}}
+                    value={this.state.message}
+                    onChange={this.handleChange.bind(this)}
                 />
                 <button
-                    onClick={() => this.ws.send(JSON.stringify({user: "teste", type: "MESSAGE", message: "xuxa"}))}>send
+                    onClick={this.handleOnClick.bind(this)}>send
                 </button>
             </Row>
         </Container>
