@@ -1,8 +1,10 @@
 
+import {userService} from "../_services";
+
 export default class MyHeaders{
     private static _myHeaders : MyHeaders;
     private headers:Headers;
-
+    
     private constructor(){
         this.headers = new Headers();
         this.headers.append("Content-Type", "application/json")
@@ -11,6 +13,15 @@ export default class MyHeaders{
             this.headers.append("Authorization", "Basic " + user)
     }
 
+    public static isAuthenticated() : boolean{
+        let encodedUser = localStorage.getItem("user")
+        if(!encodedUser)
+            return false
+        let decodeUser = atob(encodedUser).split(":")
+        userService.login(decodeUser[0], decodeUser[1])
+        return true
+    }
+ 
     public static getMyHeaders(): Headers{
         if(this._myHeaders === null || this._myHeaders === undefined){
             this._myHeaders = new MyHeaders();

@@ -42,6 +42,7 @@ export default class QuadroDeBatalhaApp extends React.Component<Props, State> {
     }
 
     handleChange(event: FormEvent) {
+        console.log(config.api);
         this.setState({message: (event.target as HTMLInputElement).value})
     }
 
